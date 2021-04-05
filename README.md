@@ -1,2 +1,5 @@
-# Density_Android
-Android App for jet fuel density and mappinng
+Fuel Density Multitarget
+===========================
+Developing an interface for the fuel density system.
+------
+Danny Dowling
