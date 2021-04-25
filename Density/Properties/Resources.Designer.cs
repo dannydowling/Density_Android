@@ -87,7 +87,8 @@ namespace Density.Properties {
         ///},
         ///{
         ///  &quot;state&quot;: &quot;New Mexico&quot;,
-        ///  &quot;city&quot;: &quot;Albuquerque&quot; [rest of string was truncated]&quot;;.
+        ///  &quot;city&quot;: &quot;Albuquerque&quot;,
+        ///  &quot;name&quot;: &quot;Albuquerque I [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Positions {
             get {

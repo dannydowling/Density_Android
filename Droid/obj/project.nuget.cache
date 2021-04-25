@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Rg0yxh2hbjHqSja4muzQi0YoPks5/S2Afi29kd90IxxsIRuxPYZmzEMO1jkzAx2GGUkQ4tpuUr897dhEQcrqcQ==",
+  "dgSpecHash": "k+oquySvYTzSbedFdo2DGO+HzpN+4F+s1ZE2KGwNaYVrrjkWAXvhaIpb0OorD1V/jjBsSD+c9WkPdwFxINmteQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\danny\\OneDrive\\Desktop\\Android_Density_App\\Droid\\Density.Droid.csproj",
+  "projectFilePath": "C:\\Users\\danny\\Source\\Repos\\Density_Android\\Droid\\Density.Droid.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\danny\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
     "C:\\Users\\danny\\.nuget\\packages\\xamarin.android.arch.core.common\\1.1.1.1\\xamarin.android.arch.core.common.1.1.1.1.nupkg.sha512",

@@ -31,3 +31,7 @@ C:\Users\danny\OneDrive\Desktop\Android_Density_App\Density\bin\Debug\netstandar
 C:\Users\danny\OneDrive\Desktop\Android_Density_App\Density\bin\Debug\netstandard2.0\Mono.Android.xml
 C:\Users\danny\OneDrive\Desktop\Android_Density_App\Density\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\danny\OneDrive\Desktop\Android_Density_App\Density\obj\Debug\netstandard2.0\Density.csproj.CopyComplete
+C:\Users\danny\Source\Repos\Density_Android\Density\obj\Debug\netstandard2.0\Density.csprojAssemblyReference.cache
+C:\Users\danny\Source\Repos\Density_Android\Density\obj\Debug\netstandard2.0\Density.csproj.GenerateResource.cache
+C:\Users\danny\Source\Repos\Density_Android\Density\obj\Debug\netstandard2.0\Density.dll
+C:\Users\danny\Source\Repos\Density_Android\Density\obj\Debug\netstandard2.0\Density.pdb
