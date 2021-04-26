@@ -44,6 +44,7 @@ namespace Density
             Sourceicaocodeentry.VerticalTextAlignment = TextAlignment.Center;
             Sourceicaocodeentry.HorizontalTextAlignment = TextAlignment.Center;
             Sourceicaocodeentry.Text = "Enter Start Icao code:  ";
+            Sourceicaocodeentry.BindingContext = "SourceLocation.icao";
 
             Label Destinationicaocodeentry = new Label();
             Destinationicaocodeentry.FontSize = 16;
@@ -52,6 +53,8 @@ namespace Density
             Destinationicaocodeentry.VerticalTextAlignment = TextAlignment.Center;
             Destinationicaocodeentry.HorizontalTextAlignment = TextAlignment.Center;
             Destinationicaocodeentry.Text = "Enter Destination Icao code:  ";
+            Destinationicaocodeentry.BindingContext = "DestinationLocation.icao";
+
 
             var exit = new SpringBoardButton();
             exit.Icon = "Exit.png";
