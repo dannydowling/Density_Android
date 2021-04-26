@@ -2,8 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
-
+using System.Threading.Tasks;
 
 namespace Density
 {
@@ -45,16 +44,16 @@ namespace Density
         { return Locations.Single(c => c.Key == stateName).Value.First(v => v.city == cityName).icao; }
 
 
-        internal Location LookupLocation()
+        internal async Task<Location> LookupLocation()
         {
             if (httpClient == null)
             {
                 httpClient = new System.Net.Http.HttpClient();
             }
-            var IP = httpClient.GetStringAsync("https://icanhazip.com").Result;
+            var IP = await httpClient.GetStringAsync("https://icanhazip.com");
             IP.Replace("/n", "");
             var url = String.Format("http://ip-api.com/json/{0}", IP);
-            var locationurl = httpClient.GetStringAsync(url).Result;
+            var locationurl = await httpClient.GetStringAsync(url);
             JObject reader = JObject.Parse(locationurl);
             JToken thisLocationJToken = 
                 locationsArray.Single(x => String.Equals(x["city"].ToString(), reader.SelectToken("city").ToString()));

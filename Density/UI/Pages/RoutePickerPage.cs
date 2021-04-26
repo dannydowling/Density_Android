@@ -44,7 +44,7 @@ namespace Density
             Sourceicaocodeentry.VerticalTextAlignment = TextAlignment.Center;
             Sourceicaocodeentry.HorizontalTextAlignment = TextAlignment.Center;
             Sourceicaocodeentry.Text = "Enter Start Icao code:  ";
-            Sourceicaocodeentry.BindingContext = "SourceLocation.icao";
+            
 
             Label Destinationicaocodeentry = new Label();
             Destinationicaocodeentry.FontSize = 16;
@@ -53,16 +53,13 @@ namespace Density
             Destinationicaocodeentry.VerticalTextAlignment = TextAlignment.Center;
             Destinationicaocodeentry.HorizontalTextAlignment = TextAlignment.Center;
             Destinationicaocodeentry.Text = "Enter Destination Icao code:  ";
-            Destinationicaocodeentry.BindingContext = "DestinationLocation.icao";
-
-
+           
             var exit = new SpringBoardButton();
             exit.Icon = "Exit.png";
             exit.Label = "Exit";
             var exittapGestureRecognizer = new TapGestureRecognizer();
             exittapGestureRecognizer.Tapped += (s, e) =>
             {
-                App.location.icao = SourceAirportText.Text;
                 SourceLocation.icao = SourceAirportText.Text;
                 DestinationLocation.icao = DestinationAirportText.Text;
                 Navigation.PopModalAsync();
@@ -134,6 +131,8 @@ namespace Density
             {
                 var locationIcao = App.getLocation.GetIcao(StatePickerSource.SelectedItem.ToString(), 
                     CityPickerSource.SelectedItem.ToString());
+                    SourceAirportText.Text = locationIcao;
+
                     Location source = App.getLocation.GetLocationFromIcao(locationIcao.Trim().ToUpperInvariant());
 
                     SourceLocation.lat = source.lat;
@@ -141,9 +140,7 @@ namespace Density
                     SourceLocation.city = source.city;
                     SourceLocation.name = source.name;
                     SourceLocation.state = source.state;
-
-
-                    SourceAirportText.Text = SourceLocation.icao;
+                    SourceLocation.icao = source.icao;
             }
 
             ////////////////////////////////////////////////////////////////////////////////////
@@ -192,6 +189,8 @@ namespace Density
             void CityPickerDestination_SelectedIndexChanged(object sender, EventArgs e)
             {
                 var locationIcao = App.getLocation.GetIcao(StatePickerDestination.SelectedItem.ToString(), CityPickerDestination.SelectedItem.ToString());
+                    DestinationAirportText.Text = locationIcao;
+
                     Location destination = App.getLocation.GetLocationFromIcao(locationIcao.Trim().ToUpperInvariant());
 
                     DestinationLocation.lat = destination.lat;
@@ -199,8 +198,7 @@ namespace Density
                     DestinationLocation.city = destination.city;
                     DestinationLocation.name = destination.name;
                     DestinationLocation.state = destination.state;
-
-                DestinationAirportText.Text = DestinationLocation.icao;
+                    DestinationLocation.icao = destination.icao;
 
             }
 

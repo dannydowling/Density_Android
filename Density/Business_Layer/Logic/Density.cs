@@ -14,7 +14,7 @@ namespace Density
     {
         internal static LocationHelper getLocation { get; set; }
         internal static Location location { get; set; }
-        internal static Weather weather { get; set; }        
+        internal static Weather weather { get; set; }
         internal HttpClient httpClient { get; set; }
         internal LayoutPage layoutPage { get; set; }
         internal NavigationPage nav { get; set; }
@@ -40,12 +40,19 @@ namespace Density
 
         protected override void OnStart()
         {
-            
+            Task.Factory.StartNew(async () =>
+            {
                 location = new Location();
                 getLocation = new LocationHelper();
+                location = await getLocation.LookupLocation();
+            });
+
+            Task.Factory.StartNew(async () =>
+            {
                 weather = new Weather();
-                weather.InitAsync();
-           
+                await weather.InitAsync();
+            });
+
         }
 
         protected override void OnSleep()
