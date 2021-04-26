@@ -14,7 +14,7 @@ namespace Density
 
         public async Task InitAsync() {
             //this will populate the dictionary with the current weather
-            TempPressureDictionary = await GetWeatherAsync(location.Icao);
+            TempPressureDictionary = await GetWeatherAsync(location.icao);
         }
 
         public async Task<Dictionary<double, double>> GetWeatherAsync(string icao)

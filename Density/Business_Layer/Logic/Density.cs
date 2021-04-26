@@ -41,12 +41,8 @@ namespace Density
         protected override void OnStart()
         {
             
-                
-
                 location = new Location();
                 getLocation = new LocationHelper();
-                getLocation.Init();
-
                 weather = new Weather();
                 weather.InitAsync();
            

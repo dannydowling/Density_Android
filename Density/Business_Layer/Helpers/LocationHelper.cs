@@ -26,10 +26,10 @@ namespace Density
                                 .Select(x => new Location
                                 {
 
-                                    CityName = x["city"].ToString(),
-                                    Icao = x["icao"].ToString(),
-                                    Latitude = Convert.ToDouble(x["lat"]),
-                                    Longitude = Convert.ToDouble(x["lon"])
+                                    city = x["city"].ToString(),
+                                    icao = x["icao"].ToString(),
+                                    lat = Convert.ToDouble(x["lat"]),
+                                    lon = Convert.ToDouble(x["lon"])
                                 })
                                      .ToList()
             }).ToDictionary(s => s.StateName, s => s.Cities);
@@ -39,10 +39,10 @@ namespace Density
         { return Locations.Keys.OrderBy(k => k).ToList(); }
 
         internal IEnumerable<string> GetCities(string stateName)
-        { return Locations.Single(c => c.Key == stateName).Value.Select(v => v.CityName).Distinct().OrderBy(c => c); }
+        { return Locations.Single(c => c.Key == stateName).Value.Select(v => v.city).Distinct().OrderBy(c => c); }
 
         internal string GetIcao(string stateName, string cityName)
-        { return Locations.Single(c => c.Key == stateName).Value.First(v => v.CityName == cityName).Icao; }
+        { return Locations.Single(c => c.Key == stateName).Value.First(v => v.city == cityName).icao; }
 
 
         internal Location LookupLocation()

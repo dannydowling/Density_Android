@@ -18,13 +18,10 @@ namespace Density
                     VerticalOptions = LayoutOptions.Fill,
                     HorizontalOptions = LayoutOptions.Fill
                 };
-                if (App.location == null)
-                {
-                    App.getLocation.Init();
-                }
+               
                 map.MapType = MapType.Street;
                 map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position
-                    (App.location.Latitude, App.location.Longitude), Distance.FromMiles(0.6)));
+                    (App.location.lat, App.location.lon), Distance.FromMiles(0.6)));
 
                 var slider = new Slider(12, 18, 1);
                 slider.ValueChanged += (sender, e) =>
@@ -54,7 +51,7 @@ namespace Density
                 {
                     var b = sender as Button;
                     {
-                        Android.Net.Uri gmmIntentUri = Android.Net.Uri.Parse("google.streetview:cbll=" + App.location.Latitude + "," + App.location.Longitude);
+                        Android.Net.Uri gmmIntentUri = Android.Net.Uri.Parse("google.streetview:cbll=" + App.location.lat + "," + App.location.lon);
                         Intent mapIntent = new Intent(Intent.ActionView, gmmIntentUri);
                         mapIntent.SetPackage("com.google.android.apps.maps");
                         Android.App.Application.Context.StartActivity(mapIntent);

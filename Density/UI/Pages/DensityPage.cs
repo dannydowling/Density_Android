@@ -19,9 +19,9 @@ namespace Density
         private async Task<string> ArrangeControlForWeatherMethodAsync()
         {
                      
-                if (!string.IsNullOrEmpty(App.location.Icao))
+                if (!string.IsNullOrEmpty(App.location.icao))
                 {
-                    AirportText.Text = App.location.Icao;                    
+                    AirportText.Text = App.location.icao;                    
                 }                
                            
                 x = App.weather.ConvertToDensity(App.weather.AirPressure, App.weather.AirTemperature, null);
@@ -36,8 +36,8 @@ namespace Density
             {
                 AirportText = new Entry();
                 AirportText.BindingContext = AirportText;
-                if (!string.IsNullOrEmpty(App.location.Icao))
-                { AirportText.Text = App.location.Icao; }
+                if (!string.IsNullOrEmpty(App.location.icao))
+                { AirportText.Text = App.location.icao; }
 
                 return_density = new Label();
                 return_density.FontSize = 25;
@@ -98,10 +98,10 @@ namespace Density
                         pickerIcao = "";
                     }
                     pickerIcao = App.getLocation.GetIcao(StatePicker.SelectedItem.ToString(), CityPicker.SelectedItem.ToString());
-                    App.location.Icao = pickerIcao.Trim().ToUpperInvariant();
-                    AirportText.Text = App.location.Icao;
+                    App.location.icao = pickerIcao.Trim().ToUpperInvariant();
+                    AirportText.Text = App.location.icao;
 
-                    App.getLocation.GetLocationFromIcao(App.location.Icao);
+                    App.getLocation.GetLocationFromIcao(App.location.icao);
 
                 }
 
@@ -128,7 +128,7 @@ namespace Density
                 var exittapGestureRecognizer = new TapGestureRecognizer();
                 exittapGestureRecognizer.Tapped += (s, e) =>
                 {
-                    App.location.Icao = AirportText.Text;
+                    App.location.icao = AirportText.Text;
                     Navigation.PopModalAsync();
                 };
                 exit.GestureRecognizers.Add(exittapGestureRecognizer);
@@ -139,7 +139,7 @@ namespace Density
                 var updatetapGestureRecognizer = new TapGestureRecognizer();
                 updatetapGestureRecognizer.Tapped += async (s, e) =>
                 {
-                    if (!string.IsNullOrWhiteSpace(App.location.Icao))
+                    if (!string.IsNullOrWhiteSpace(App.location.icao))
                     {
                     //an anonymous function cannot return a value so it has to 
                     //be in a separate method.

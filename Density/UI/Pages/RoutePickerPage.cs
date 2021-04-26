@@ -59,9 +59,9 @@ namespace Density
             var exittapGestureRecognizer = new TapGestureRecognizer();
             exittapGestureRecognizer.Tapped += (s, e) =>
             {
-                App.location.Icao = SourceAirportText.Text;
-                App.location.Sourceicao = SourceAirportText.Text;
-                App.location.Destinationicao = DestinationAirportText.Text;
+                App.location.icao = SourceAirportText.Text;
+                SourceLocation.icao = SourceAirportText.Text;
+                DestinationLocation.icao = DestinationAirportText.Text;
                 Navigation.PopModalAsync();
             };
             exit.GestureRecognizers.Add(exittapGestureRecognizer);
@@ -72,7 +72,7 @@ namespace Density
             var starttapGestureRecognizer = new TapGestureRecognizer();
             starttapGestureRecognizer.Tapped += async (s, e) =>
             {
-                if (!string.IsNullOrWhiteSpace(App.location.Sourceicao))
+                if (!string.IsNullOrWhiteSpace(SourceLocation.icao))
                 {
                     RouteMapPage routePage = new RouteMapPage();
                     routePage.RouteMapCreate();
@@ -90,8 +90,8 @@ namespace Density
 
         SourceAirportText = new Entry();
             SourceAirportText.BindingContext = SourceAirportText;
-            if (!string.IsNullOrEmpty(App.location.Sourceicao))
-            { SourceAirportText.Text = App.location.Sourceicao; }
+            if (!string.IsNullOrEmpty(SourceLocation.icao))
+            { SourceAirportText.Text = SourceLocation.icao; }
            
             var statesSource = App.getLocation.GetStates();
 
@@ -129,9 +129,18 @@ namespace Density
 
             void CityPickerSource_SelectedIndexChanged(object sender, EventArgs e)
             {
-                var locationIcao = App.getLocation.GetIcao(StatePickerSource.SelectedItem.ToString(), CityPickerSource.SelectedItem.ToString());
-                    App.location.Sourceicao = locationIcao.Trim().ToUpperInvariant();
-                SourceAirportText.Text = App.location.Sourceicao;
+                var locationIcao = App.getLocation.GetIcao(StatePickerSource.SelectedItem.ToString(), 
+                    CityPickerSource.SelectedItem.ToString());
+                    Location source = App.getLocation.GetLocationFromIcao(locationIcao.Trim().ToUpperInvariant());
+
+                    SourceLocation.lat = source.lat;
+                    SourceLocation.lon = source.lon;
+                    SourceLocation.city = source.city;
+                    SourceLocation.name = source.name;
+                    SourceLocation.state = source.state;
+
+
+                    SourceAirportText.Text = SourceLocation.icao;
             }
 
             ////////////////////////////////////////////////////////////////////////////////////
@@ -142,8 +151,8 @@ namespace Density
             
             DestinationAirportText = new Entry();
             DestinationAirportText.BindingContext = DestinationAirportText;
-            if (!string.IsNullOrEmpty(App.location.Destinationicao))
-            { DestinationAirportText.Text = App.location.Destinationicao; }
+            if (!string.IsNullOrEmpty(DestinationLocation.icao))
+            { DestinationAirportText.Text = DestinationLocation.icao; }
 
             StatePickerDestination = new Picker();
             StatePickerDestination.Title = "Destination State";
@@ -180,8 +189,15 @@ namespace Density
             void CityPickerDestination_SelectedIndexChanged(object sender, EventArgs e)
             {
                 var locationIcao = App.getLocation.GetIcao(StatePickerDestination.SelectedItem.ToString(), CityPickerDestination.SelectedItem.ToString());
-                    App.location.Destinationicao = locationIcao.Trim().ToUpperInvariant();
-                DestinationAirportText.Text = App.location.Destinationicao;
+                    Location destination = App.getLocation.GetLocationFromIcao(locationIcao.Trim().ToUpperInvariant());
+
+                    DestinationLocation.lat = destination.lat;
+                    DestinationLocation.lon = destination.lon;
+                    DestinationLocation.city = destination.city;
+                    DestinationLocation.name = destination.name;
+                    DestinationLocation.state = destination.state;
+
+                DestinationAirportText.Text = DestinationLocation.icao;
 
             }
 

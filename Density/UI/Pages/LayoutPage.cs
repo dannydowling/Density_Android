@@ -34,13 +34,13 @@ namespace Density
                 Map.GestureRecognizers.Add(MaptapGestureRecognizer);
                 MaptapGestureRecognizer.Tapped += async (s, e) =>
                 {
-                    if (!string.IsNullOrWhiteSpace(App.location.Icao))
+                    if (!string.IsNullOrWhiteSpace(App.location.icao))
                     {
                         MapPage mapPage = new MapPage();
                         mapPage.MapCreate();
                         await Navigation.PushModalAsync(mapPage);
                     }
-                    if (string.IsNullOrWhiteSpace(App.location.Icao))
+                    if (string.IsNullOrWhiteSpace(App.location.icao))
                     {
                         DensityPage densityPage = new DensityPage();
                         densityPage.DensityPageCreate();

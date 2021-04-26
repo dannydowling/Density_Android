@@ -16,8 +16,6 @@ namespace Density
         }
     }
 
-
-
     public class RouteMapPage : ContentPage
     {
        
@@ -25,14 +23,6 @@ namespace Density
 
         public void RouteMapCreate()
         {
-
-            #region Get the Position
-            App.location.Sourcelatitude = Convert.ToDouble(App.location.Sourcelatitude);
-            App.location.Sourcelongitude = Convert.ToDouble(App.location.Sourcelongitude);
-            App.location.Destinationlatitude = Convert.ToDouble(App.location.Destinationlatitude);
-            App.location.Destinationlongitude = Convert.ToDouble(App.location.Destinationlongitude);
-            #endregion
-
             #region Define the map and what's on it
             map = new CustomMap
             {                
@@ -42,11 +32,11 @@ namespace Density
 
             map.MapType = MapType.Hybrid;
 
-            map.RouteCoordinates.Add(new Position(App.location.Sourcelatitude, App.location.Sourcelongitude));
-            map.RouteCoordinates.Add(new Position(App.location.Destinationlatitude, App.location.Destinationlongitude));
+            map.RouteCoordinates.Add(new Position(SourceLocation.lat, SourceLocation.lon));
+            map.RouteCoordinates.Add(new Position(DestinationLocation.lat, DestinationLocation.lon));
 
 
-            map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(App.location.Sourcelatitude, App.location.Sourcelongitude), Distance.FromMiles(4.0)));
+            map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(SourceLocation.lat, SourceLocation.lon), Distance.FromMiles(4.0)));
 
 
             var maptype = new Button { Text = "Map Type" };
