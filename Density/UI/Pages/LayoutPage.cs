@@ -85,6 +85,18 @@ namespace Density
                     await Navigation.PushModalAsync(routePage);
                 };
 
+                var FlightRadar = new SpringBoardButton();
+                FlightRadar.Icon = "Tracking.png";
+                FlightRadar.Label = "Flight Tracking";
+                var FlightRadartapGestureRecognizer = new TapGestureRecognizer();
+                FlightRadar.GestureRecognizers.Add(FlightRadartapGestureRecognizer);
+                FlightRadartapGestureRecognizer.Tapped += async (s, e) =>
+                {
+                    FlightRadarPage frPage = new FlightRadarPage();
+                    frPage.FlightRadarCreate();
+                    await Navigation.PushModalAsync(frPage);
+                };
+
                 var Exit = new SpringBoardButton();
                 Exit.Icon = "MenuExit.png";
                 Exit.Label = "Exit";
@@ -122,8 +134,10 @@ namespace Density
                 Grid.SetColumn(Map, 0);
                 Grid.SetRow(Timer, 1);
                 Grid.SetColumn(Timer, 1);
-                Grid.SetRow(About, 2);
-                Grid.SetColumn(About, 0);
+                Grid.SetRow(FlightRadar, 2);
+                Grid.SetColumn(FlightRadar, 0);
+               // Grid.SetRow(About, 2);
+               //Grid.SetColumn(About, 0);
                 Grid.SetRow(Exit, 2);
                 Grid.SetColumn(Exit, 1);
 
@@ -131,7 +145,8 @@ namespace Density
                 grid.Children.Add(FuelWeight);
                 grid.Children.Add(Map);
                 grid.Children.Add(Timer);
-                grid.Children.Add(About);
+                grid.Children.Add(FlightRadar);
+               // grid.Children.Add(About);
                 grid.Children.Add(Exit);
 
                 var segments = new StackLayout
