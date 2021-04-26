@@ -6,19 +6,17 @@ namespace Density
 {
     public class Location
     {
-        public string Icao { get; set; }
-        public string Sourceicao { get; set; }
-        public string Destinationicao { get; set; }
+        internal string Icao { get; set; }
+        internal string Sourceicao { get; set; }
+        internal string Destinationicao { get; set; }
 
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
-        public double Sourcelatitude { get; set; }
-        public double Sourcelongitude { get; set; }
-        public double Destinationlatitude { get; set; }
-        public double Destinationlongitude { get; set; }
+        internal double Latitude { get; set; }
+        internal double Longitude { get; set; }
+        internal double Sourcelatitude { get; set; }
+        internal double Sourcelongitude { get; set; }
+        internal double Destinationlatitude { get; set; }
+        internal double Destinationlongitude { get; set; }
 
-        public string CityName { get; set; }
-        public string Sourcecity { get; set; }
-        public string Destinationcity { get; set; }
+        internal string CityName { get; set; }        
     }
 }

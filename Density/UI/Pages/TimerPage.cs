@@ -134,21 +134,19 @@ namespace Density
 
         public async System.Threading.Tasks.Task StartTimer()
         {            
-            await App.weather.InitAsync();            
-            double offset = 160 + ((App.weather.AirTemperature + App.weather.AirPressure)/2);
-            //gives an hour at 50 degrees, 
-            //gives 53 minutes at 40 degrees, 
-            //46 minutes at 30 degrees, 30 
-            //minutes at 0 degrees
+            await App.weather.InitAsync(); 
 
-            CountDownTimer countdown = new CountDownTimer(0); //delay
-            countdown.Update(offset);
+            DateTimeOffset offset = new DateTimeOffset();
+            offset.AddSeconds(App.weather.AirTemperature - 60);
+            offset.AddSeconds(App.weather.AirPressure - 1018);
+
+            CountDownTimer countdown = new CountDownTimer(offset); //delay            
             countdown.OnTimerFire += Countdown_TimerTicked;
         }
 
         private void Countdown_TimerTicked(object sender, TimerEventArgs e)
         {
-            remainTime.Text = string.Format(string.Format("{0:D2} : {1:D2} : {2:D2}", e.TimeOffset.Hours, e.TimeOffset.Minutes, e.TimeOffset.Seconds));
+            remainTime.Text = string.Format(string.Format("{0:D2} : {1:D2} : {2:D2}", e.Delta.Hours, e.Delta.Minutes, e.Delta.Seconds));
         }
     }
 }

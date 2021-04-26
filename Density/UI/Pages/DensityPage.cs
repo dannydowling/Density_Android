@@ -101,6 +101,8 @@ namespace Density
                     App.location.Icao = pickerIcao.Trim().ToUpperInvariant();
                     AirportText.Text = App.location.Icao;
 
+                    App.getLocation.GetLocationFromIcao(App.location.Icao);
+
                 }
 
                 Label EstimateMSG = new Label();

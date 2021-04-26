@@ -29,24 +29,27 @@ namespace Density
             nav = new NavigationPage(layoutPage);
             MainPage = nav;
 
+            httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders
+                      .Add("Accept", "application/json");
+            httpClient.DefaultRequestHeaders
+                      .Add("User-Agent", "DensityApp");
+
         }
 
 
         protected override void OnStart()
-        {           
-            httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders
-                      .Accept
-                      .Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        {
             
-            getLocation = new LocationHelper();
-            getLocation.Init();
-            location = getLocation.LookupLocation();
+                
 
-            weather = new Weather();            
-            weather.InitAsync();
-            
+                location = new Location();
+                getLocation = new LocationHelper();
+                getLocation.Init();
 
+                weather = new Weather();
+                weather.InitAsync();
+           
         }
 
         protected override void OnSleep()

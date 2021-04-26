@@ -2,17 +2,18 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+
 
 
 namespace Density
 {
     public class LocationHelper : App
     {
-        private Dictionary<string, List<Location>> Locations { get; set; }
-        private JArray locationsArray { get; set; }
+        internal Dictionary<string, List<Location>> Locations { get; set; }
+        internal JArray locationsArray { get; set; }
 
-        public void Init()
+
+        public LocationHelper()
         {
             locationsArray = JArray.Parse(Density.Properties.Resources.Positions);
             var states = locationsArray.Select(x => x["state"].ToString()).Distinct().OrderBy(x => x);
@@ -27,24 +28,24 @@ namespace Density
 
                                     CityName = x["city"].ToString(),
                                     Icao = x["icao"].ToString(),
-                                    Latitude = string.IsNullOrWhiteSpace(x["lat"].ToString()) ? default : Convert.ToDouble(x["lat"]),
-                                    Longitude = string.IsNullOrWhiteSpace(x["lon"].ToString()) ? default : Convert.ToDouble(x["lon"])
+                                    Latitude = Convert.ToDouble(x["lat"]),
+                                    Longitude = Convert.ToDouble(x["lon"])
                                 })
                                      .ToList()
             }).ToDictionary(s => s.StateName, s => s.Cities);
         }
 
-        public IEnumerable<string> GetStates()
+        internal IEnumerable<string> GetStates()
         { return Locations.Keys.OrderBy(k => k).ToList(); }
 
-        public IEnumerable<string> GetCities(string stateName)
+        internal IEnumerable<string> GetCities(string stateName)
         { return Locations.Single(c => c.Key == stateName).Value.Select(v => v.CityName).Distinct().OrderBy(c => c); }
 
-        public string GetIcao(string stateName, string cityName)
+        internal string GetIcao(string stateName, string cityName)
         { return Locations.Single(c => c.Key == stateName).Value.First(v => v.CityName == cityName).Icao; }
 
 
-        public Location LookupLocation()
+        internal Location LookupLocation()
         {
             if (httpClient == null)
             {
@@ -56,29 +57,38 @@ namespace Density
             var locationurl = httpClient.GetStringAsync(url).Result;
             JObject reader = JObject.Parse(locationurl);
             JToken thisLocationJToken = 
-                locationsArray.First(x => String.Equals(x["city"].ToString(), reader.SelectToken("city").ToString()));
-            return thisLocationJToken.ToObject<Location>();
+                locationsArray.Single(x => String.Equals(x["city"].ToString(), reader.SelectToken("city").ToString()));
+
+            location = thisLocationJToken.ToObject<Location>();
+            return location;
         }
 
 
-        public Location TranslateCity(string city)
+        internal Location TranslateCity(string city)
         {
-            JToken thisLocationJToken = locationsArray.First(x => String.Equals(x["city"].ToString(), city,
+            JToken thisLocationJToken = locationsArray.Single(x => String.Equals(x["city"].ToString(), city,
                                       StringComparison.InvariantCultureIgnoreCase));
-            return thisLocationJToken.ToObject<Location>();
-        }     
+            location = thisLocationJToken.ToObject<Location>();
+            return location;
+        }
 
-        public (double, double) longlat(string icao)
+        internal Location GetLocationFromIcao(string icao)
+        {
+            JToken thisLocationJToken = locationsArray.Single(x => String.Equals(x["icao"].ToString(), icao,
+                                     StringComparison.InvariantCultureIgnoreCase));
+            location = thisLocationJToken.ToObject<Location>();
+            return location;
+        }
+
+        internal Location longlat(string icao)
         {
             if (location == null) { LookupLocation(); }
 
-            JToken thisLocationJtoken = locationsArray.First(x => String.Equals(x["icao"].ToString(), icao,
+            JToken thisLocationJToken = locationsArray.Single(x => String.Equals(x["icao"].ToString(), icao,
                                            StringComparison.InvariantCultureIgnoreCase));
 
-            App.location = thisLocationJtoken.ToObject<Location>();                                           
-            return (location.Longitude, location.Latitude);
-        }
+            location = thisLocationJToken.ToObject<Location>();
+            return location;
+        }        
     }
-
-
 }

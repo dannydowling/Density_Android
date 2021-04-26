@@ -1,51 +1,49 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Density.Business_Layer.Logic
 {
     public class CountDownTimer : TimerEventArgs
     {
-        private double currentTimerTicks;
-        private double delay;      
-        public event OnTimerFireHandler OnTimerFire;        
+        private TimeSpan currentTimerTicks;
+        private int delay;      
+        public event EventHandler<TimerEventArgs> OnTimerFire;
 
         public CountDownTimer()
-        {       
-            // 1 second increments, the callback is to the update method
-            Device.StartTimer(TimeSpan.FromSeconds(1), () => Update(currentTimerTicks));
-        }
-
-        public CountDownTimer(double delay)
         {
-            //if we pass in a delay to start, set the currentTimerTicks to have to wait until that delay elapses
-            this.delay = delay;
-            currentTimerTicks -= delay;         
-        }     
-
-        public bool Update(double offset)
-        {                        
-            currentTimerTicks += offset;
-           
-           
-            //check for any subscribers to the event
+            Task.Factory.StartNew(() =>
+            {
+                Thread.Sleep(delay);
+                //check for any subscribers to the event
                 if (OnTimerFire != null)
                 {
-                    TimerEventArgs args = new TimerEventArgs() { TimeTicks = currentTimerTicks };  
-                    OnTimerFire += Timer_OnTimerFire;                    
-                    return true;
+                    Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+                    {
+                        TimerEventArgs args = new TimerEventArgs() { Delta = currentTimerTicks };
+                        OnTimerFire += Timer_OnTimerFire;
+                        return true;
+                    });
                 }
-            
-            return false;
+            });  
         }
+
+        public CountDownTimer(DateTimeOffset delay)
+        {
+            //if we pass in a delay to start, set the currentTimerTicks to have to wait until that delay elapses
+            this.delay = delay.Second;                    
+        }
+
 
         private void Timer_OnTimerFire(object sender, TimerEventArgs args)
         {
-            if (args.TimeOffset.TotalSeconds >= 1200)
+            if (args.Delta.TotalSeconds >= 1200)
             {
                 App.Current.MainPage.DisplayAlert("20 Minute Warning.", "In 20 minutes the de-Icing effectiveness will be questionable", "OK");
             }
 
-            if (args.TimeOffset.TotalSeconds >= 600)
+            if (args.Delta.TotalSeconds >= 600)
             {
                 App.Current.MainPage.DisplayAlert("10 Minute Warning.", "In 10 minutes the de-Icing effectiveness will be questionable", "OK");
             }
@@ -55,10 +53,7 @@ namespace Density.Business_Layer.Logic
 
     public class TimerEventArgs : EventArgs
     {
-        public TimeSpan TimeOffset;
-        public double TimeTicks { get => TimeOffset.TotalSeconds; set => Convert.ToDateTime(value); }
-    }
-
-    public delegate void OnTimerFireHandler(object sender, TimerEventArgs args);
+       public TimeSpan Delta { get; set; }
+    }      
     
 }

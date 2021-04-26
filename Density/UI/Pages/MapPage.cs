@@ -18,7 +18,10 @@ namespace Density
                     VerticalOptions = LayoutOptions.Fill,
                     HorizontalOptions = LayoutOptions.Fill
                 };
-
+                if (App.location == null)
+                {
+                    App.getLocation.Init();
+                }
                 map.MapType = MapType.Street;
                 map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position
                     (App.location.Latitude, App.location.Longitude), Distance.FromMiles(0.6)));
