@@ -18,33 +18,15 @@ namespace Density
         /*Format the entry box and make the values reset appropriately*/
         private async Task<string> ArrangeControlForWeatherMethodAsync()
         {
-            string airportText;
-            try
-            {
+                     
                 if (!string.IsNullOrEmpty(App.location.Icao))
                 {
-                    AirportText.Text = App.location.Icao;
-                    airportText = App.location.Icao;
-                }
-
-                airportText = String.Format("{0}", AirportText.Text).Trim();    //set the input to Weather() as the Label Text Property
-
-                var stringhandler = new StringHandler();
-                stringhandler.StringEvaluateAsync(airportText);                  //format the label
-
-                if (airportText.Length > 4)
-                {
-                    App.getLocation.TranslateCity(stringhandler.city).Trim();
-                }
-                var Weather = new Weather();                                 //create the class.
-                string x = await Weather.GetWeatherAsync(App.location.Icao);   //set x to be the return from getweather, passing in airportText
-
-                return return_density.Text = x;
-            }
-            finally
-            {
-                App.location.Icao = null;
-            }
+                    AirportText.Text = App.location.Icao;                    
+                }                
+                           
+                x = App.weather.ConvertToDensity(App.weather.AirPressure, App.weather.AirTemperature, null);
+                return return_density.Text = x.ToString();
+                        
         }
         #endregion
 
@@ -108,12 +90,13 @@ namespace Density
                     {
                         CityPicker.Items.Add(city);
                     }
-                }            
-
-               
-
+                }       
         void CityPicker_SelectedIndexChanged(object sender, EventArgs e)
                 {
+                    if (pickerIcao == null)
+                    {
+                        pickerIcao = "";
+                    }
                     pickerIcao = App.getLocation.GetIcao(StatePicker.SelectedItem.ToString(), CityPicker.SelectedItem.ToString());
                     App.location.Icao = pickerIcao.Trim().ToUpperInvariant();
                     AirportText.Text = App.location.Icao;

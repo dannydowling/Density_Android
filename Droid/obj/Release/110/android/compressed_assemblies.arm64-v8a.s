@@ -8,7 +8,7 @@
 .L.compressed_assembly_descriptors:
 	/* 0: Density.dll */
 	/* uncompressed_file_size */
-	.word	260608
+	.word	153088
 	/* loaded */
 	.byte	0
 	/* data */
@@ -98,7 +98,7 @@
 
 	/* 10: System.Net.Http.dll */
 	/* uncompressed_file_size */
-	.word	217600
+	.word	216064
 	/* loaded */
 	.byte	0
 	/* data */
@@ -152,7 +152,7 @@
 
 	/* 16: System.dll */
 	/* uncompressed_file_size */
-	.word	876544
+	.word	855040
 	/* loaded */
 	.byte	0
 	/* data */
@@ -593,7 +593,7 @@
 
 	/* 65: mscorlib.dll */
 	/* uncompressed_file_size */
-	.word	2094080
+	.word	2092544
 	/* loaded */
 	.byte	0
 	/* data */

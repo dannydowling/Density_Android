@@ -1,3 +1,4 @@
+C:\Users\danny\Source\Repos\Density_Android\Density\bin\Release\netstandard2.0\Business_Layer\Assets\Positions.txt
 C:\Users\danny\Source\Repos\Density_Android\Density\bin\Release\netstandard2.0\Density.deps.json
 C:\Users\danny\Source\Repos\Density_Android\Density\bin\Release\netstandard2.0\Density.dll
 C:\Users\danny\Source\Repos\Density_Android\Density\bin\Release\netstandard2.0\Density.pdb

@@ -2,12 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\Density",
-    "\\Density\\Logic",
-    "\\Density\\Pages",
+    "\\Density\\Business_Layer",
+    "\\Density\\Business_Layer\\Assets",
+    "\\Density\\Business_Layer\\Helpers",
+    "\\Density\\Business_Layer\\Logic",
+    "\\Density\\Business_Layer\\Repositories",
     "\\Density\\Properties",
-    "\\Density\\Repositories",
-    "\\Droid"
+    "\\Density\\UI",
+    "\\Density\\UI\\Pages"
   ],
-  "SelectedNode": "\\Density\\Logic\\GetLocation.cs",
+  "SelectedNode": "\\Density\\Properties\\Resources.resx",
   "PreviewInSolutionExplorer": false
 }

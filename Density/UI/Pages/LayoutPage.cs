@@ -145,7 +145,7 @@ namespace Density
                 var view = new RelativeLayout();
                 {
                     view.Children.Add(segments,
-                xConstraint: Constraint.Constant(0),
+                    xConstraint: Constraint.Constant(0),
                     yConstraint: Constraint.Constant(0),
                     widthConstraint: Constraint.RelativeToParent((parent) => { return parent.Width; }),
                     heightConstraint: Constraint.RelativeToParent((parent) => { return parent.Height; }));

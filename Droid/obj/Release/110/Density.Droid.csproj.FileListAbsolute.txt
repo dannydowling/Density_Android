@@ -486,3 +486,4 @@ C:\Users\danny\Source\Repos\Density_Android\Droid\obj\Release\110\stamp\_Convert
 C:\Users\danny\Source\Repos\Density_Android\Droid\obj\Release\110\stamp\_GenerateJavaStubs.stamp
 C:\Users\danny\Source\Repos\Density_Android\Droid\obj\Release\110\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\danny\Source\Repos\Density_Android\Droid\obj\Release\110\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\danny\Source\Repos\Density_Android\Droid\bin\Release\Business_Layer\Assets\Positions.txt

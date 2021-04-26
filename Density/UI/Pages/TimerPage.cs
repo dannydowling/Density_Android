@@ -8,8 +8,7 @@ namespace Density
 {
     class TimerPage : ContentPage
     {
-        public Label remainTime { get; set; }
-        readonly HttpClient httpClient;
+        public Label remainTime { get; set; }           
 
         public void TimerCreate()
         {
@@ -60,7 +59,7 @@ namespace Density
                 var menutapGestureRecognizer = new TapGestureRecognizer();
                 menutapGestureRecognizer.Tapped += (s, e) =>
                 {
-                    StartTimerWithTemperatureOffsetAsync();
+                    StartTimer();
                 };
                 menu.GestureRecognizers.Add(menutapGestureRecognizer); ;
 
@@ -133,19 +132,13 @@ namespace Density
             }
         }
 
-        public async System.Threading.Tasks.Task StartTimerWithTemperatureOffsetAsync()
-        {            
-            var location = App.location;                       
-            string weatherUrl = string.Format("https://api.weather.gov/stations/{0}/observations/current", location.Icao);
-
-            httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
-            httpClient.DefaultRequestHeaders.Add("User-Agent", "DensityApp");
-            string json = await httpClient.GetStringAsync(weatherUrl);
-            JObject w = JObject.Parse(json);
-            double Temperature = Convert.ToInt32(w.SelectToken("properties.temperature.value"));
-
-            Temperature *= 40000;
-            double counter = 1600000 + Temperature;
+        public async System.Threading.Tasks.Task StartTimer()
+        {
+            //I hate this, it's because I can't inherit or see the things in the APP class.
+            Weather weather = new Weather();
+            weather.Init();
+            weather.AirTemperature *= 40000;
+            double counter = 1600000 + weather.AirTemperature;
             //gives an hour at 50 degrees, 
             //gives 53 minutes at 40 degrees, 
             //46 minutes at 30 degrees, 30 

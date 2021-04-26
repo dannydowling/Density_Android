@@ -62,9 +62,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Repositories\AirportRepository.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Business_Layer\Assets\Positions.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+   
   </ItemGroup>
 
 </Project>

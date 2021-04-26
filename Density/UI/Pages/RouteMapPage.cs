@@ -27,10 +27,10 @@ namespace Density
         {
 
             #region Get the Position
-            App.location.Sourcelatitude = Convert.ToDouble(App.getLocation.latitude(App.location.Sourceicao));
-            App.location.Sourcelongitude = Convert.ToDouble(App.getLocation.longitude(App.location.Sourceicao));
-            App.location.Destinationlatitude = Convert.ToDouble(App.getLocation.latitude(App.location.Destinationicao));
-            App.location.Destinationlongitude = Convert.ToDouble(App.getLocation.longitude(App.location.Destinationicao));
+            App.location.Sourcelatitude = Convert.ToDouble(App.location.Sourcelatitude);
+            App.location.Sourcelongitude = Convert.ToDouble(App.location.Sourcelongitude);
+            App.location.Destinationlatitude = Convert.ToDouble(App.location.Destinationlatitude);
+            App.location.Destinationlongitude = Convert.ToDouble(App.location.Destinationlongitude);
             #endregion
 
             #region Define the map and what's on it

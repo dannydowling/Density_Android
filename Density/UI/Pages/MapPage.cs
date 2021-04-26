@@ -13,12 +13,6 @@ namespace Density
         {            
             try
             {
-                #region Get the Position
-                App.location.Latitude = Convert.ToDouble(App.getLocation.latitude(App.location.Icao));
-                App.location.Longitude = Convert.ToDouble(App.getLocation.longitude(App.location.Icao));
-                #endregion
-
-                #region Define the map and what's on it
                 map = new Map
                 {
                     VerticalOptions = LayoutOptions.Fill,
@@ -81,7 +75,7 @@ namespace Density
                             break;
                     }
                 }
-                #endregion
+         
 
                 #region Create the Page
                 var segments = new StackLayout

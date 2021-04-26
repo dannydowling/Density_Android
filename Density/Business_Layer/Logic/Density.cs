@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Reflection;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -13,8 +14,10 @@ namespace Density
     {
         internal static GetLocation getLocation { get; set; }
         internal static Location location { get; set; }
-        internal JArray JPositions { get; set; }
-        internal HttpClient httpClient { get; set; }
+
+        internal static Weather weather { get; set; }
+        
+        internal HttpClient httpClient { get; private set; }
 
         internal LayoutPage layoutPage { get; set; }
         internal NavigationPage nav { get; set; }
@@ -22,6 +25,10 @@ namespace Density
 
         public App()
         {
+            //on start, create the main page
+            layoutPage = new LayoutPage();
+            layoutPage.LayoutCreate();
+            nav = new NavigationPage(layoutPage);
             MainPage = nav;
 
         }
@@ -29,16 +36,21 @@ namespace Density
 
         protected override void OnStart()
         {
-            //on start, create the main page
-            layoutPage = new LayoutPage();
-            layoutPage.LayoutCreate();
-            nav = new NavigationPage(layoutPage);
-            MainPage = nav;
+           
 
+            httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders
+                      .Accept
+                      .Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
+            
             getLocation = new GetLocation();
             location = new Location();
+            weather = new Weather();
             getLocation.Init();
+            weather.Init();
+            
+
         }
 
         protected override void OnSleep()
