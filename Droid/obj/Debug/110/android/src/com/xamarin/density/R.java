@@ -5103,7 +5103,8 @@ public final class R {
     public static final int timer=0x7f070159;
     public static final int tooltip_frame_dark=0x7f07015a;
     public static final int tooltip_frame_light=0x7f07015b;
-    public static final int update=0x7f07015c;
+    public static final int tracking=0x7f07015c;
+    public static final int update=0x7f07015d;
   }
   public static final class id {
     public static final int ALT=0x7f080000;

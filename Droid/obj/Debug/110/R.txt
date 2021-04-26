@@ -1268,7 +1268,8 @@ int drawable start 0x7f070158
 int drawable timer 0x7f070159
 int drawable tooltip_frame_dark 0x7f07015a
 int drawable tooltip_frame_light 0x7f07015b
-int drawable update 0x7f07015c
+int drawable tracking 0x7f07015c
+int drawable update 0x7f07015d
 int id ALT 0x7f080000
 int id CTRL 0x7f080001
 int id FUNCTION 0x7f080002
