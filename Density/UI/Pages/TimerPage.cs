@@ -41,7 +41,7 @@ namespace Density
                 remainTime = new Label();
                 remainTime.FontSize = 18;
                 remainTime.HorizontalTextAlignment = TextAlignment.Center;
-                remainTime.BindingContext = "CountDownTimer";
+                remainTime.Text = "";
 
                 var exit = new SpringBoardButton();
                 exit.Icon = "Exit.png";
@@ -132,21 +132,19 @@ namespace Density
             }
         }
 
-        public async System.Threading.Tasks.Task StartTimer()
-        {            
-            await App.weather.InitAsync(); 
-
-            DateTimeOffset offset = new DateTimeOffset();
-            offset.AddSeconds(App.weather.AirTemperature - 60);
-            offset.AddSeconds(App.weather.AirPressure - 1018);
+        public void StartTimer()
+        {
+            int offset = 0;
+            offset += (Convert.ToInt32(App.weather.AirTemperature - 60));
+            offset += (Convert.ToInt32(App.weather.AirPressure - 1018));           
 
             CountDownTimer countdown = new CountDownTimer(offset); //delay            
             countdown.OnTimerFire += Countdown_TimerTicked;
         }
 
-        private void Countdown_TimerTicked(object sender, TimerEventArgs e)
+        public void Countdown_TimerTicked(object sender, TimerEventArgs e)
         {
-            remainTime.Text = string.Format(string.Format("{0:D2} : {1:D2} : {2:D2}", e.Delta.Hours, e.Delta.Minutes, e.Delta.Seconds));
+            remainTime.Text = string.Format("{0:D2} : {1:D2} : {2:D2}", e.Delta.Hours, e.Delta.Minutes, e.Delta.Seconds);
         }
     }
 }

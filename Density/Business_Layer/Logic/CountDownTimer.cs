@@ -7,15 +7,15 @@ namespace Density.Business_Layer.Logic
 {
     public class CountDownTimer : TimerEventArgs
     {
-        private TimeSpan currentTimerTicks;
-        private int delay;      
+        private TimeSpan currentTimerTicks;     
         public event EventHandler<TimerEventArgs> OnTimerFire;
 
-        public CountDownTimer()
+        public CountDownTimer(int delay)
         {
+                       
             Task.Factory.StartNew(() =>
             {
-                Thread.Sleep(delay);
+                
                 //check for any subscribers to the event
                 if (OnTimerFire != null)
                 {
@@ -23,21 +23,17 @@ namespace Density.Business_Layer.Logic
                     {
                         TimerEventArgs args = new TimerEventArgs() { Delta = currentTimerTicks };
                         OnTimerFire += Timer_OnTimerFire;
+                        Thread.Sleep(delay);
                         return true;
                     });
                 }
             });  
         }
-
-        public CountDownTimer(DateTimeOffset delay)
-        {
-            //if we pass in a delay to start, set the currentTimerTicks to have to wait until that delay elapses
-            this.delay = delay.Second;                    
-        }
-
+                
 
         private void Timer_OnTimerFire(object sender, TimerEventArgs args)
         {
+
             if (args.Delta.TotalSeconds >= 1200)
             {
                 App.Current.MainPage.DisplayAlert("20 Minute Warning.", "In 20 minutes the de-Icing effectiveness will be questionable", "OK");
