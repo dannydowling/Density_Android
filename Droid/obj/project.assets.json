@@ -2046,11 +2046,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\danny\\Source\\Repos\\Density_Android\\Droid\\Density.Droid.csproj",
+      "projectUniqueName": "C:\\Users\\danny\\source\\repos\\dannydowling\\Density_Android\\Droid\\Density.Droid.csproj",
       "projectName": "Density.Droid",
-      "projectPath": "C:\\Users\\danny\\Source\\Repos\\Density_Android\\Droid\\Density.Droid.csproj",
+      "projectPath": "C:\\Users\\danny\\source\\repos\\dannydowling\\Density_Android\\Droid\\Density.Droid.csproj",
       "packagesPath": "C:\\Users\\danny\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\danny\\Source\\Repos\\Density_Android\\Droid\\obj\\",
+      "outputPath": "C:\\Users\\danny\\source\\repos\\dannydowling\\Density_Android\\Droid\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2073,8 +2073,8 @@
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "C:\\Users\\danny\\Source\\Repos\\Density_Android\\Density\\Density.csproj": {
-              "projectPath": "C:\\Users\\danny\\Source\\Repos\\Density_Android\\Density\\Density.csproj"
+            "C:\\Users\\danny\\source\\repos\\dannydowling\\Density_Android\\Density\\Density.csproj": {
+              "projectPath": "C:\\Users\\danny\\source\\repos\\dannydowling\\Density_Android\\Density\\Density.csproj"
             }
           }
         }

@@ -7,7 +7,7 @@
 .L.compressed_assembly_descriptors:
 	/* 0: Density.dll */
 	/* uncompressed_file_size */
-	.long	153088
+	.long	160768
 	/* loaded */
 	.byte	0
 	/* data */
@@ -97,7 +97,7 @@
 
 	/* 10: System.Net.Http.dll */
 	/* uncompressed_file_size */
-	.long	216064
+	.long	217600
 	/* loaded */
 	.byte	0
 	/* data */

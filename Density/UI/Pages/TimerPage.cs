@@ -1,7 +1,4 @@
-﻿using Density.Business_Layer.Logic;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Net.Http;
+﻿using System;
 using Xamarin.Forms;
 
 namespace Density
@@ -41,7 +38,7 @@ namespace Density
                 remainTime = new Label();
                 remainTime.FontSize = 18;
                 remainTime.HorizontalTextAlignment = TextAlignment.Center;
-                remainTime.Text = "";
+                remainTime.BindingContext = "CountDownTimer";
 
                 var exit = new SpringBoardButton();
                 exit.Icon = "Exit.png";
@@ -132,19 +129,60 @@ namespace Density
             }
         }
 
+
+        public event EventHandler<TimerEventArgs> TimerTicked;
+        public DateTime StartDateTime { get; private set; }
+        internal int delay;
+        internal bool active;
+
         public void StartTimer()
         {
-            int offset = 0;
-            offset += (Convert.ToInt32(App.weather.AirTemperature - 60));
-            offset += (Convert.ToInt32(App.weather.AirPressure - 1018));           
 
-            CountDownTimer countdown = new CountDownTimer(offset); //delay            
-            countdown.OnTimerFire += Countdown_TimerTicked;
+            delay = 0;
+            delay += (Convert.ToInt32(App.weather.AirTemperature - 60));
+            delay += (Convert.ToInt32(App.weather.AirPressure - 1018));
+
+            StartDateTime = DateTime.Now;
+            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+            {
+                TimeSpan delta = (DateTime.Now - StartDateTime);
+                TimerTicked?.Invoke(this, new TimerEventArgs { Delta = delta });
+                TimerTicked += Countdown_TimerTicked;
+
+                return active;
+
+            });
         }
 
-        public void Countdown_TimerTicked(object sender, TimerEventArgs e)
+        private void Countdown_TimerTicked(object sender, TimerEventArgs e)
         {
-            remainTime.Text = string.Format("{0:D2} : {1:D2} : {2:D2}", e.Delta.Hours, e.Delta.Minutes, e.Delta.Seconds);
+            remainTime.Text = string.Format(string.Format("{0:D2} : {1:D2} : {2:D2}", e.Delta.Hours, e.Delta.Minutes, e.Delta.Seconds));
+
+            var delta_int = e.Delta.TotalSeconds;
+
+            if (delta_int >= 0 + delay)
+            {
+                App.Current.MainPage.DisplayAlert("20 Minute Warning.", "In 20 minutes the de-Icing effectiveness will be questionable", "OK");
+                active = true;
+            }
+
+            if (delta_int >= 600 + delay)
+            {
+                App.Current.MainPage.DisplayAlert("10 Minute Warning.", "In 10 minutes the de-Icing effectiveness will be questionable", "OK");
+                active = true;
+            }
+
+            if (delta_int >= 1200 + delay)
+            {
+                App.Current.MainPage.DisplayAlert("Time's up.", "The de-ice holdover timer has expired.", "OK");
+                active = false;
+            }
+            active = true;
+        }
+
+        public class TimerEventArgs : EventArgs
+        {
+            public TimeSpan Delta { get; set; }
         }
     }
 }
