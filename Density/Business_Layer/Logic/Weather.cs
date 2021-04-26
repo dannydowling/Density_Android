@@ -12,9 +12,9 @@ namespace Density
         internal double AirPressure { get; set; }
         internal Dictionary<double, double> TempPressureDictionary { get; set; }
 
-        public void Init() {
+        public async Task InitAsync() {
             //this will populate the dictionary with the current weather
-            TempPressureDictionary = GetWeatherAsync(App.location.Icao).Result;
+            TempPressureDictionary = await GetWeatherAsync(location.Icao);
         }
 
         public async Task<Dictionary<double, double>> GetWeatherAsync(string icao)
@@ -32,8 +32,7 @@ namespace Density
                     TempPressureDictionary.Add(Convert.ToInt32(w.SelectToken("properties.temperature.value")), 
                                                Convert.ToInt32(w.SelectToken("properties.barometricPressure.value")));
                     
-                    AirTemperature = Convert.ToInt32(w.SelectToken("properties.temperature.value"));
-                    
+                    AirTemperature = Convert.ToInt32(w.SelectToken("properties.temperature.value"));                    
                     AirPressure = Convert.ToInt32(w.SelectToken("properties.barometricPressure.value"));
                 }                
             }

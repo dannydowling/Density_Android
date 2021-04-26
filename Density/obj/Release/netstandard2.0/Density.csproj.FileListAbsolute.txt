@@ -6,7 +6,6 @@ C:\Users\danny\Source\Repos\Density_Android\Density\bin\Release\netstandard2.0\M
 C:\Users\danny\Source\Repos\Density_Android\Density\bin\Release\netstandard2.0\Windows.Foundation.UniversalApiContract.winmd
 C:\Users\danny\Source\Repos\Density_Android\Density\bin\Release\netstandard2.0\Mono.Android.pdb
 C:\Users\danny\Source\Repos\Density_Android\Density\bin\Release\netstandard2.0\Mono.Android.xml
-C:\Users\danny\Source\Repos\Density_Android\Density\obj\Release\netstandard2.0\Density.csprojAssemblyReference.cache
 C:\Users\danny\Source\Repos\Density_Android\Density\obj\Release\netstandard2.0\Density.Properties.Resources.resources
 C:\Users\danny\Source\Repos\Density_Android\Density\obj\Release\netstandard2.0\Density.csproj.GenerateResource.cache
 C:\Users\danny\Source\Repos\Density_Android\Density\obj\Release\netstandard2.0\Density.AssemblyInfoInputs.cache

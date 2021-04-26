@@ -1,3 +1,4 @@
+Density.dll
 FormsViewGroup.dll
 Xamarin.Android.Arch.Core.Common.dll
 Xamarin.Android.Arch.Core.Runtime.dll
@@ -45,4 +46,3 @@ Xamarin.GooglePlayServices.Base.dll
 Xamarin.GooglePlayServices.Basement.dll
 Xamarin.GooglePlayServices.Maps.dll
 Xamarin.GooglePlayServices.Tasks.dll
-Density.dll

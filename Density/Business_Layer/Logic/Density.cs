@@ -12,13 +12,10 @@ namespace Density
 {
     public class App : Application
     {
-        internal static GetLocation getLocation { get; set; }
+        internal static LocationHelper getLocation { get; set; }
         internal static Location location { get; set; }
-
-        internal static Weather weather { get; set; }
-        
-        internal HttpClient httpClient { get; private set; }
-
+        internal static Weather weather { get; set; }        
+        internal HttpClient httpClient { get; set; }
         internal LayoutPage layoutPage { get; set; }
         internal NavigationPage nav { get; set; }
 
@@ -28,6 +25,7 @@ namespace Density
             //on start, create the main page
             layoutPage = new LayoutPage();
             layoutPage.LayoutCreate();
+
             nav = new NavigationPage(layoutPage);
             MainPage = nav;
 
@@ -35,20 +33,18 @@ namespace Density
 
 
         protected override void OnStart()
-        {
-           
-
+        {           
             httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders
                       .Accept
                       .Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
             
-            getLocation = new GetLocation();
-            location = new Location();
-            weather = new Weather();
+            getLocation = new LocationHelper();
             getLocation.Init();
-            weather.Init();
+            location = getLocation.LookupLocation();
+
+            weather = new Weather();            
+            weather.InitAsync();
             
 
         }

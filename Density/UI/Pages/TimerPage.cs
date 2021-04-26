@@ -133,19 +133,16 @@ namespace Density
         }
 
         public async System.Threading.Tasks.Task StartTimer()
-        {
-            //I hate this, it's because I can't inherit or see the things in the APP class.
-            Weather weather = new Weather();
-            weather.Init();
-            weather.AirTemperature *= 40000;
-            double counter = 1600000 + weather.AirTemperature;
+        {            
+            await App.weather.InitAsync();            
+            double offset = 160 + ((App.weather.AirTemperature + App.weather.AirPressure)/2);
             //gives an hour at 50 degrees, 
             //gives 53 minutes at 40 degrees, 
             //46 minutes at 30 degrees, 30 
             //minutes at 0 degrees
 
-            Timer countdown = new Timer();
-            countdown.Update(counter);
+            CountDownTimer countdown = new CountDownTimer(0); //delay
+            countdown.Update(offset);
             countdown.OnTimerFire += Countdown_TimerTicked;
         }
 

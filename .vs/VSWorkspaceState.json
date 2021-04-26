@@ -11,6 +11,6 @@
     "\\Density\\UI",
     "\\Density\\UI\\Pages"
   ],
-  "SelectedNode": "\\Density\\Properties\\Resources.resx",
+  "SelectedNode": "\\Density\\Business_Layer\\Helpers\\LocationHelper.cs",
   "PreviewInSolutionExplorer": false
 }
