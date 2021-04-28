@@ -3,14 +3,14 @@
     "",
     "\\Density",
     "\\Density\\Business_Layer",
-    "\\Density\\Business_Layer\\Assets",
     "\\Density\\Business_Layer\\Helpers",
     "\\Density\\Business_Layer\\Logic",
     "\\Density\\Business_Layer\\Repositories",
     "\\Density\\Properties",
     "\\Density\\UI",
-    "\\Density\\UI\\Pages"
+    "\\Density\\UI\\Pages",
+    "\\UWP"
   ],
-  "SelectedNode": "\\Density\\Business_Layer\\Helpers\\LocationHelper.cs",
+  "SelectedNode": "\\Density\\Business_Layer\\Logic\\App.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -21,7 +21,7 @@ namespace Density
                
                 map.MapType = MapType.Street;
                 map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position
-                    (App.location.lat, App.location.lon), Distance.FromMiles(0.6)));
+                    (App.locationClass.lat, App.locationClass.lon), Distance.FromMiles(0.6)));
 
                 var slider = new Slider(12, 18, 1);
                 slider.ValueChanged += (sender, e) =>
@@ -51,7 +51,7 @@ namespace Density
                 {
                     var b = sender as Button;
                     {
-                        Android.Net.Uri gmmIntentUri = Android.Net.Uri.Parse("google.streetview:cbll=" + App.location.lat + "," + App.location.lon);
+                        Android.Net.Uri gmmIntentUri = Android.Net.Uri.Parse("google.streetview:cbll=" + App.locationClass.lat + "," + App.locationClass.lon);
                         Intent mapIntent = new Intent(Intent.ActionView, gmmIntentUri);
                         mapIntent.SetPackage("com.google.android.apps.maps");
                         Android.App.Application.Context.StartActivity(mapIntent);

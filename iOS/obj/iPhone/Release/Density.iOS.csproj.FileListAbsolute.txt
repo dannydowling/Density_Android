@@ -1,0 +1,8 @@
+C:\Users\danny\Source\Repos\Density_Android\iOS\obj\iPhone\Release\actool\_PartialAppManifest.items
+C:\Users\danny\Source\Repos\Density_Android\iOS\obj\iPhone\Release\actool\_BundleResourceWithLogicalName.items
+C:\Users\danny\Source\Repos\Density_Android\iOS\obj\iPhone\Release\ibtool\_BundleResourceWithLogicalName.items
+C:\Users\danny\Source\Repos\Density_Android\iOS\obj\iPhone\Release\coremlc\_PartialAppManifest.items
+C:\Users\danny\Source\Repos\Density_Android\iOS\obj\iPhone\Release\coremlc\_BundleResourceWithLogicalName.items
+C:\Users\danny\Source\Repos\Density_Android\iOS\obj\iPhone\Release\optimized\
+C:\Users\danny\Source\Repos\Density_Android\iOS\obj\iPhone\Release\Density.iOS.csprojAssemblyReference.cache
+C:\Users\danny\Source\Repos\Density_Android\iOS\obj\iPhone\Release\Density.iOS.csproj.CoreCompileInputs.cache

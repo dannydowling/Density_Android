@@ -6488,7 +6488,10 @@ namespace Fuel_Density
 			public const int tooltip_frame_light = 2131165531;
 			
 			// aapt resource value: 0x7F07015C
-			public const int Update = 2131165532;
+			public const int Tracking = 2131165532;
+			
+			// aapt resource value: 0x7F07015D
+			public const int Update = 2131165533;
 			
 			static Drawable()
 			{

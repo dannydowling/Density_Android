@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Density.Business_Layer.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
@@ -13,8 +14,8 @@ namespace Density
         public Picker CityPickerDestination { get; set; }       
         public Entry SourceAirportText { get; set; }
         public Entry DestinationAirportText { get; set; }
-     
-        
+
+        LocationHelper getLocation;
 
         public void RouteCreate()
         {
@@ -93,7 +94,7 @@ namespace Density
             if (!string.IsNullOrEmpty(SourceLocation.icao))
             { SourceAirportText.Text = SourceLocation.icao; }
            
-            var statesSource = App.getLocation.GetStates();
+            var statesSource = getLocation.GetStates();
 
             StatePickerSource = new Picker();
             StatePickerSource.Title = "Start State";
@@ -114,7 +115,7 @@ namespace Density
             {
                 StatePickerDestination.SelectedIndex = StatePickerSource.SelectedIndex;
 
-                var citiesSource = App.getLocation.GetCities(StatePickerSource.SelectedItem.ToString());
+                var citiesSource = getLocation.GetCities(StatePickerSource.SelectedItem.ToString());
                                 
                 if (CityPickerSource.Items.Count >= 2)
                 {
@@ -129,11 +130,11 @@ namespace Density
 
             void CityPickerSource_SelectedIndexChanged(object sender, EventArgs e)
             {
-                var locationIcao = App.getLocation.GetIcao(StatePickerSource.SelectedItem.ToString(), 
+                var locationIcao = getLocation.GetIcao(StatePickerSource.SelectedItem.ToString(), 
                     CityPickerSource.SelectedItem.ToString());
                     SourceAirportText.Text = locationIcao;
 
-                    Location source = App.getLocation.GetLocationFromIcao(locationIcao.Trim().ToUpperInvariant());
+                    LocationClass source = getLocation.GetLocationFromIcao(locationIcao.Trim().ToUpperInvariant());
 
                     SourceLocation.lat = source.lat;
                     SourceLocation.lon = source.lon;
@@ -165,7 +166,7 @@ namespace Density
             CityPickerDestination.SelectedIndexChanged += CityPickerDestination_SelectedIndexChanged;
 
 
-            var statesDestination = App.getLocation.GetStates();
+            var statesDestination = getLocation.GetStates();
 
             foreach (var state in statesDestination)
             {
@@ -173,7 +174,7 @@ namespace Density
             }
             void StatePickerDestination_SelectedIndexChanged(object sender, EventArgs e)
             {
-                var citiesDestination = App.getLocation.GetCities(StatePickerDestination.SelectedItem.ToString());
+                var citiesDestination = getLocation.GetCities(StatePickerDestination.SelectedItem.ToString());
 
                 if (CityPickerDestination.Items.Count >= 2)
                 {
@@ -188,10 +189,10 @@ namespace Density
 
             void CityPickerDestination_SelectedIndexChanged(object sender, EventArgs e)
             {
-                var locationIcao = App.getLocation.GetIcao(StatePickerDestination.SelectedItem.ToString(), CityPickerDestination.SelectedItem.ToString());
+                var locationIcao = getLocation.GetIcao(StatePickerDestination.SelectedItem.ToString(), CityPickerDestination.SelectedItem.ToString());
                     DestinationAirportText.Text = locationIcao;
 
-                    Location destination = App.getLocation.GetLocationFromIcao(locationIcao.Trim().ToUpperInvariant());
+                    LocationClass destination = getLocation.GetLocationFromIcao(locationIcao.Trim().ToUpperInvariant());
 
                     DestinationLocation.lat = destination.lat;
                     DestinationLocation.lon = destination.lon;

@@ -1,14 +1,18 @@
-﻿using System;
+﻿using Density.Business_Layer.Logic;
+using System;
 using Xamarin.Forms;
 
 namespace Density
 {
     class TimerPage : ContentPage
     {
-        public Label remainTime { get; set; }           
+        public Label remainTime { get; set; }
 
+        
         public void TimerCreate()
         {
+            WeatherHelper getWeather = new WeatherHelper();
+
             try
             {
                 Image banner = new Image();
@@ -139,8 +143,8 @@ namespace Density
         {
 
             delay = 0;
-            delay += (Convert.ToInt32(App.weather.AirTemperature - 60));
-            delay += (Convert.ToInt32(App.weather.AirPressure - 1018));
+            delay += (Convert.ToInt32(App.weatherClass.AirTemperature - 60));
+            delay += (Convert.ToInt32(App.weatherClass.AirPressure - 1018));
 
             StartDateTime = DateTime.Now;
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>

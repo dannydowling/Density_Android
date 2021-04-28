@@ -1,8 +1,13 @@
-﻿using System;
+﻿using Android.Content;
+using System;
 using Xamarin.Forms;
 
 namespace Density
 {
+
+    public interface ILaunchBrowserPage
+    { void StartBrowser(double lat, double lon); }
+
     public class LayoutPage : ContentPage
     {
         public void LayoutCreate()
@@ -34,13 +39,13 @@ namespace Density
                 Map.GestureRecognizers.Add(MaptapGestureRecognizer);
                 MaptapGestureRecognizer.Tapped += async (s, e) =>
                 {
-                    if (!string.IsNullOrWhiteSpace(App.location.icao))
+                    if (!string.IsNullOrWhiteSpace(App.locationClass.icao))
                     {
                         MapPage mapPage = new MapPage();
                         mapPage.MapCreate();
                         await Navigation.PushModalAsync(mapPage);
                     }
-                    if (string.IsNullOrWhiteSpace(App.location.icao))
+                    if (string.IsNullOrWhiteSpace(App.locationClass.icao))
                     {
                         DensityPage densityPage = new DensityPage();
                         densityPage.DensityPageCreate();
@@ -85,16 +90,16 @@ namespace Density
                     await Navigation.PushModalAsync(routePage);
                 };
 
-                var FlightRadar = new SpringBoardButton();
+
+        var FlightRadar = new SpringBoardButton();
                 FlightRadar.Icon = "Tracking.png";
                 FlightRadar.Label = "Flight Tracking";
                 var FlightRadartapGestureRecognizer = new TapGestureRecognizer();
                 FlightRadar.GestureRecognizers.Add(FlightRadartapGestureRecognizer);
                 FlightRadartapGestureRecognizer.Tapped += async (s, e) =>
                 {
-                    FlightRadarPage frPage = new FlightRadarPage();
-                    frPage.FlightRadarCreate();
-                    await Navigation.PushModalAsync(frPage);
+                    DependencyService.Register<ILaunchBrowserPage>();
+                    DependencyService.Get<ILaunchBrowserPage>().StartBrowser(App.locationClass.lat, App.locationClass.lon);
                 };
 
                 var Exit = new SpringBoardButton();

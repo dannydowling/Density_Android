@@ -1618,3 +1618,7 @@ C:\Users\danny\source\repos\dannydowling\Density_Android\Droid\obj\Debug\110\res
 C:\Users\danny\source\repos\dannydowling\Density_Android\Droid\obj\Debug\110\res\drawable-hdpi\tracking.png
 C:\Users\danny\source\repos\dannydowling\Density_Android\Droid\obj\Debug\110\res\drawable-xhdpi\tracking.png
 C:\Users\danny\source\repos\dannydowling\Density_Android\Droid\obj\Debug\110\res\drawable-xxhdpi\tracking.png
+C:\Users\danny\Source\Repos\Density_Android\Droid\obj\Debug\110\res\drawable\tracking.png
+C:\Users\danny\Source\Repos\Density_Android\Droid\obj\Debug\110\res\drawable-hdpi\tracking.png
+C:\Users\danny\Source\Repos\Density_Android\Droid\obj\Debug\110\res\drawable-xhdpi\tracking.png
+C:\Users\danny\Source\Repos\Density_Android\Droid\obj\Debug\110\res\drawable-xxhdpi\tracking.png
