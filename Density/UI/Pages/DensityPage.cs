@@ -1,57 +1,34 @@
 ﻿using Density.Business_Layer.Logic;
 using Density.Business_Layer.Repositories;
-
 using System;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Density
 {
     class DensityPage : ContentPage
     {
-        public string x { get; set; }
-
-        private Label return_density { get; set; }
+        private Label densityLabel { get; set; }
         private Picker StatePicker { get; set; }
         private Picker CityPicker { get; set; }
-        private Entry AirportText { get; set; }
+        private Entry icaoEntryLabel { get; set; }
         public string pickerIcao { get; set; }
 
-    
-
-        #region ArrangeControlForWeatherMethodAsync()
-        /*Format the entry box and make the values reset appropriately*/
-        private async Task<string> ArrangeControlForWeatherMethodAsync()
-        {
-            DensityHelper getDensity = new DensityHelper();
-
-            if (!string.IsNullOrEmpty(App.locationClass.icao))
-            {
-                AirportText.Text = App.locationClass.icao;
-            }
-            await getDensity.ConvertToDensity(App.weatherClass.AirPressure, App.weatherClass.AirTemperature);
-            x = App.densityClass.densityValue;
-            return return_density.Text = x.ToString();
-
-        }
-        #endregion
-
-        public void DensityPageCreate()
+        public void DensityPageCreate(LocationHelper locationHelper, WeatherHelper weatherHelper, DensityHelper densityHelper, LocationClass locationClass, WeatherClass weatherClass, DensityClass densityClass)
         {
             try
             {
-                AirportText = new Entry();
-                AirportText.BindingContext = AirportText;
-                if (!string.IsNullOrEmpty(App.locationClass.icao))
-                { AirportText.Text = App.locationClass.icao; }
+                icaoEntryLabel = new Entry();
+                icaoEntryLabel.BindingContext = icaoEntryLabel;
+                if (!string.IsNullOrEmpty(locationClass.icao))
+                { icaoEntryLabel.Text = locationClass.icao; }
 
-                return_density = new Label();
-                return_density.FontSize = 25;
-                return_density.TextColor = Color.Black;
-                return_density.VerticalTextAlignment = TextAlignment.Center;
-                return_density.HorizontalTextAlignment = TextAlignment.Center;
-                return_density.Text = "";
-                return_density.BindingContext = return_density;
+                densityLabel = new Label();
+                densityLabel.FontSize = 25;
+                densityLabel.TextColor = Color.Black;
+                densityLabel.VerticalTextAlignment = TextAlignment.Center;
+                densityLabel.HorizontalTextAlignment = TextAlignment.Center;
+                densityLabel.Text = "";
+                densityLabel.BindingContext = densityLabel;
 
 
                 Image banner = new Image();
@@ -67,7 +44,7 @@ namespace Density
                 icaocodeentry.HorizontalTextAlignment = TextAlignment.Center;
                 icaocodeentry.Text = "Enter Icao code:  ";
 
-                LocationHelper getLocation = new LocationHelper();
+                
 
                 StatePicker = new Picker();
                 StatePicker.Title = "State";
@@ -79,8 +56,8 @@ namespace Density
                 CityPicker.WidthRequest = 150;
                 CityPicker.SelectedIndexChanged += CityPicker_SelectedIndexChanged;
 
-                
-                var states = getLocation.GetStates();
+
+                var states = locationHelper.GetStates();
 
                 foreach (var state in states)
                 {
@@ -88,7 +65,7 @@ namespace Density
                 }
                 void StatePicker_SelectedIndexChanged(object sender, EventArgs e)
                 {
-                    var cities = getLocation.GetCities(StatePicker.SelectedItem.ToString());
+                    var cities = locationHelper.GetCities(StatePicker.SelectedItem.ToString());
 
                     if (CityPicker.Items.Count >= 2)
                     {
@@ -106,11 +83,11 @@ namespace Density
                     {
                         pickerIcao = "";
                     }
-                    pickerIcao = getLocation.GetIcao(StatePicker.SelectedItem.ToString(), CityPicker.SelectedItem.ToString());
-                    App.locationClass.icao = pickerIcao.Trim().ToUpperInvariant();
-                    AirportText.Text = App.locationClass.icao;
+                    pickerIcao = locationHelper.GetIcao(StatePicker.SelectedItem.ToString(), CityPicker.SelectedItem.ToString());
+                    locationClass.icao = pickerIcao.Trim().ToUpperInvariant();
+                    icaoEntryLabel.Text = locationClass.icao;
 
-                    getLocation.GetLocationFromIcao(App.locationClass.icao);
+                    locationHelper.GetLocationFromIcao(locationClass);
 
                 }
 
@@ -137,7 +114,7 @@ namespace Density
                 var exittapGestureRecognizer = new TapGestureRecognizer();
                 exittapGestureRecognizer.Tapped += (s, e) =>
                 {
-                    App.locationClass.icao = AirportText.Text;
+                    locationClass.icao = icaoEntryLabel.Text;
                     Navigation.PopModalAsync();
                 };
                 exit.GestureRecognizers.Add(exittapGestureRecognizer);
@@ -148,16 +125,13 @@ namespace Density
                 var updatetapGestureRecognizer = new TapGestureRecognizer();
                 updatetapGestureRecognizer.Tapped += async (s, e) =>
                 {
-                    if (!string.IsNullOrWhiteSpace(App.locationClass.icao))
-                    {
-                        //an anonymous function cannot return a value so it has to 
-                        //be in a separate method.
-                        x = await ArrangeControlForWeatherMethodAsync();
-                        return_density.Text = x;
-                    }
+                    await weatherHelper.GetWeatherAsync(locationClass, weatherClass);
+
+                    await densityHelper.ConvertToDensity(weatherClass, locationHelper, weatherHelper, locationClass, densityClass);
+              
+                    densityLabel.Text = densityClass.densityValue;
                 };
                 update.GestureRecognizers.Add(updatetapGestureRecognizer);
-
 
                 #region Setup Grid and create the page
                 Grid grid = new Grid();
@@ -192,15 +166,15 @@ namespace Density
 
                 Grid.SetRow(icaocodeentry, 3);
                 Grid.SetColumn(icaocodeentry, 0);
-                Grid.SetRow(AirportText, 3);
-                Grid.SetColumn(AirportText, 1);
+                Grid.SetRow(icaoEntryLabel, 3);
+                Grid.SetColumn(icaoEntryLabel, 1);
 
                 Grid.SetRow(Densitypremessage, 4);
                 Grid.SetColumn(Densitypremessage, 0);
                 Grid.SetColumnSpan(Densitypremessage, 2);
-                Grid.SetRow(return_density, 5);
-                Grid.SetColumn(return_density, 0);
-                Grid.SetColumnSpan(return_density, 2);
+                Grid.SetRow(densityLabel, 5);
+                Grid.SetColumn(densityLabel, 0);
+                Grid.SetColumnSpan(densityLabel, 2);
 
                 Grid.SetRow(update, 6);
                 Grid.SetColumn(update, 0);
@@ -210,11 +184,11 @@ namespace Density
                 grid.Children.Add(EstimateMSG);
                 grid.Children.Add(EstimateMSG2);
                 grid.Children.Add(icaocodeentry);
-                grid.Children.Add(AirportText);
+                grid.Children.Add(icaoEntryLabel);
                 grid.Children.Add(StatePicker);
                 grid.Children.Add(CityPicker);
                 grid.Children.Add(Densitypremessage);
-                grid.Children.Add(return_density);
+                grid.Children.Add(densityLabel);
                 grid.Children.Add(update);
                 grid.Children.Add(exit);
 

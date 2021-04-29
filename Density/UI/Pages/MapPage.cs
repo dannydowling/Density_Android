@@ -1,4 +1,5 @@
 ﻿using Android.Content;
+using Density.Business_Layer.Repositories;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
@@ -9,7 +10,7 @@ namespace Density
     {        
         Map map;
 
-        public void MapCreate()
+        public void MapCreate(LocationClass locationClass)
         {            
             try
             {
@@ -21,7 +22,7 @@ namespace Density
                
                 map.MapType = MapType.Street;
                 map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position
-                    (App.locationClass.lat, App.locationClass.lon), Distance.FromMiles(0.6)));
+                    (locationClass.lat, locationClass.lon), Distance.FromMiles(0.6)));
 
                 var slider = new Slider(12, 18, 1);
                 slider.ValueChanged += (sender, e) =>
@@ -51,7 +52,7 @@ namespace Density
                 {
                     var b = sender as Button;
                     {
-                        Android.Net.Uri gmmIntentUri = Android.Net.Uri.Parse("google.streetview:cbll=" + App.locationClass.lat + "," + App.locationClass.lon);
+                        Android.Net.Uri gmmIntentUri = Android.Net.Uri.Parse("google.streetview:cbll=" + locationClass.lat + "," + locationClass.lon);
                         Intent mapIntent = new Intent(Intent.ActionView, gmmIntentUri);
                         mapIntent.SetPackage("com.google.android.apps.maps");
                         Android.App.Application.Context.StartActivity(mapIntent);

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Density.Business_Layer.Repositories
 {
-    internal class DensityClass
+    public class DensityClass
     {
         public string densityValue { get; set; }
     }

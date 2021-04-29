@@ -1,4 +1,5 @@
 ﻿using Density.Business_Layer.Logic;
+using Density.Business_Layer.Repositories;
 using System;
 using Xamarin.Forms;
 
@@ -9,10 +10,8 @@ namespace Density
         public Label remainTime { get; set; }
 
         
-        public void TimerCreate()
+        public void TimerCreate(WeatherClass weatherClass)
         {
-            WeatherHelper getWeather = new WeatherHelper();
-
             try
             {
                 Image banner = new Image();
@@ -60,7 +59,7 @@ namespace Density
                 var menutapGestureRecognizer = new TapGestureRecognizer();
                 menutapGestureRecognizer.Tapped += (s, e) =>
                 {
-                    StartTimer();
+                    StartTimer(weatherClass);
                 };
                 menu.GestureRecognizers.Add(menutapGestureRecognizer); ;
 
@@ -139,12 +138,12 @@ namespace Density
         internal int delay;
         internal bool active;
 
-        public void StartTimer()
+        public void StartTimer(WeatherClass weatherClass)
         {
 
             delay = 0;
-            delay += (Convert.ToInt32(App.weatherClass.AirTemperature - 60));
-            delay += (Convert.ToInt32(App.weatherClass.AirPressure - 1018));
+            delay += (Convert.ToInt32(weatherClass.AirTemperature - 60));
+            delay += (Convert.ToInt32(weatherClass.AirPressure - 1018));
 
             StartDateTime = DateTime.Now;
             Device.StartTimer(TimeSpan.FromSeconds(1), () =>

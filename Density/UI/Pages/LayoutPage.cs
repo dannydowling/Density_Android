@@ -1,4 +1,6 @@
 ﻿using Android.Content;
+using Density.Business_Layer.Logic;
+using Density.Business_Layer.Repositories;
 using System;
 using Xamarin.Forms;
 
@@ -10,6 +12,14 @@ namespace Density
 
     public class LayoutPage : ContentPage
     {
+        protected static LocationClass locationClass = new LocationClass();
+        protected static WeatherClass weatherClass = new WeatherClass();
+        protected static DensityClass densityClass = new DensityClass();
+
+        LocationHelper locationHelper = new LocationHelper(locationClass);
+        WeatherHelper weatherHelper = new WeatherHelper();
+        DensityHelper densityHelper = new DensityHelper();
+
         public void LayoutCreate()
         {
             try
@@ -26,7 +36,7 @@ namespace Density
                 FuelWeighttapGestureRecognizer.Tapped += async (s, e) =>
                     {
                         DensityPage densityPage = new DensityPage();
-                        densityPage.DensityPageCreate();
+                        densityPage.DensityPageCreate(locationHelper, weatherHelper, densityHelper, locationClass, weatherClass, densityClass);
                         await Navigation.PushModalAsync(densityPage);
                     };
 
@@ -39,16 +49,16 @@ namespace Density
                 Map.GestureRecognizers.Add(MaptapGestureRecognizer);
                 MaptapGestureRecognizer.Tapped += async (s, e) =>
                 {
-                    if (!string.IsNullOrWhiteSpace(App.locationClass.icao))
+                    if (!string.IsNullOrWhiteSpace(locationClass.icao))
                     {
                         MapPage mapPage = new MapPage();
-                        mapPage.MapCreate();
+                        mapPage.MapCreate(locationClass);
                         await Navigation.PushModalAsync(mapPage);
                     }
-                    if (string.IsNullOrWhiteSpace(App.locationClass.icao))
+                    if (string.IsNullOrWhiteSpace(locationClass.icao))
                     {
                         DensityPage densityPage = new DensityPage();
-                        densityPage.DensityPageCreate();
+                        densityPage.DensityPageCreate(locationHelper, weatherHelper, densityHelper, locationClass, weatherClass, densityClass);
                         await Navigation.PushModalAsync(densityPage);
                     }
                 };
@@ -62,7 +72,7 @@ namespace Density
                 TimertapGestureRecognizer.Tapped += async (s, e) =>
                 {
                     TimerPage timerPage = new TimerPage();
-                    timerPage.TimerCreate();
+                    timerPage.TimerCreate(weatherClass);
                     await Navigation.PushModalAsync(timerPage);
                 };
 
@@ -86,7 +96,7 @@ namespace Density
                 RoutetapGestureRecognizer.Tapped += async (s, e) =>
                 {
                     RoutePickerPage routePage = new RoutePickerPage();
-                    routePage.RouteCreate();
+                    routePage.RouteCreate(locationHelper, locationClass);
                     await Navigation.PushModalAsync(routePage);
                 };
 
@@ -99,7 +109,7 @@ namespace Density
                 FlightRadartapGestureRecognizer.Tapped += async (s, e) =>
                 {
                     DependencyService.Register<ILaunchBrowserPage>();
-                    DependencyService.Get<ILaunchBrowserPage>().StartBrowser(App.locationClass.lat, App.locationClass.lon);
+                    DependencyService.Get<ILaunchBrowserPage>().StartBrowser(locationClass.lat, locationClass.lon);
                 };
 
                 var Exit = new SpringBoardButton();

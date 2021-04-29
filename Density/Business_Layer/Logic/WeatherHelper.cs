@@ -7,21 +7,13 @@ namespace Density.Business_Layer.Logic
 {
     internal class WeatherHelper : App
     {
-
-        internal async Task<WeatherClass> GetWeatherAsync(string icao)
+        internal async Task<WeatherClass> GetWeatherAsync(LocationClass locationClass, WeatherClass weatherClass)
         {
-            if (weatherClass == null)
+
+            if (weatherClass.AirPressure == 0)
             { weatherClass = new WeatherClass();              
             }
-
-            if (locationClass == null)
-            {
-                locationClass = new LocationClass();
-                locationClass = getLocation.LookupLocation().Result;
-            }
-            locationClass.icao = icao;
-
-            string weatherWebsite = String.Format("https://api.weather.gov/stations/{0}/observations/current", icao);
+            string weatherWebsite = String.Format("https://api.weather.gov/stations/{0}/observations/current", locationClass.icao);
             string weather_From_Website_in_Json = await httpClient.GetStringAsync(weatherWebsite);
 
             JObject w = JObject.Parse(weather_From_Website_in_Json);
@@ -29,7 +21,6 @@ namespace Density.Business_Layer.Logic
             weatherClass.AirPressure = Convert.ToInt32(w.SelectToken("properties.barometricPressure.value"));
 
             return weatherClass;
-
         }
     }
 }

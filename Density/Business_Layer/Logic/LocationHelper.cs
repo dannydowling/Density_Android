@@ -13,13 +13,9 @@ namespace Density
         internal JArray locationsArray { get; set; }
 
 
-        public LocationHelper()
+        public LocationHelper(LocationClass locationClass)
         {
-            if (locationClass == null)
-            {  locationClass = new LocationClass();                
-               locationClass = getLocation.LookupLocation().Result;
-            }
-
+            
             locationsArray = JArray.Parse(Density.Properties.Resources.Positions);
             var states = locationsArray.Select(x => x["state"].ToString()).Distinct().OrderBy(x => x);
 
@@ -51,7 +47,7 @@ namespace Density
         { return Locations.Single(c => c.Key == stateName).Value.First(v => v.city == cityName).icao; }
 
 
-        internal async Task<LocationClass> LookupLocation()
+        internal async Task<LocationClass> LookupLocation(LocationClass locationClass)
         {           
             var IP = await httpClient.GetStringAsync("https://icanhazip.com");
             IP.Replace("/n", "");
@@ -66,7 +62,7 @@ namespace Density
         }
 
 
-        internal LocationClass TranslateCity(string city)
+        internal LocationClass TranslateCity(LocationClass locationClass, string city)
         {
             JToken thisLocationJToken = locationsArray.Single(x => String.Equals(x["city"].ToString(), city,
                                       StringComparison.InvariantCultureIgnoreCase));
@@ -74,15 +70,15 @@ namespace Density
             return locationClass;
         }
 
-        internal LocationClass GetLocationFromIcao(string icao)
+        internal LocationClass GetLocationFromIcao(LocationClass locationClass)
         {
-            JToken thisLocationJToken = locationsArray.Single(x => String.Equals(x["icao"].ToString(), icao,
+            JToken thisLocationJToken = locationsArray.Single(x => String.Equals(x["icao"].ToString(), locationClass.icao,
                                      StringComparison.InvariantCultureIgnoreCase));
             locationClass = thisLocationJToken.ToObject<LocationClass>();
             return locationClass;
         }
 
-        internal LocationClass longlat(string icao)
+        internal LocationClass longlat(LocationClass locationClass, string icao)
         {
             
             JToken thisLocationJToken = locationsArray.Single(x => String.Equals(x["icao"].ToString(), icao,

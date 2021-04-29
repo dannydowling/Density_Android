@@ -8,12 +8,13 @@ namespace Density
 {
     public class App : Application
     {
-        internal static LocationClass locationClass { get; set; }
-        internal static WeatherClass weatherClass { get; set; }
-        internal static DensityClass densityClass { get; set; }
-        internal DensityHelper getDensity { get; set; }
-        internal LocationHelper getLocation { get; set; }
-        internal WeatherHelper getWeather { get; set; }
+        //internal LocationClass locationClass { get; set; }
+        //internal WeatherClass weatherClass { get; set; }
+        //internal DensityClass densityClass { get; set; }
+
+        //internal DensityHelper getDensity { get; set; }
+        //internal LocationHelper getLocation { get; set; }
+        //internal WeatherHelper getWeather { get; set; }
         internal HttpClient httpClient { get; set; }
         internal LayoutPage layoutPage { get; set; }
         internal NavigationPage nav { get; set; }
@@ -33,9 +34,9 @@ namespace Density
             httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
             httpClient.DefaultRequestHeaders.Add("User-Agent", "DensityApp");
 
-            locationClass = new LocationClass { city = "", icao = "", lat = 0, lon = 0, name = "", state = "" };
-            weatherClass = new WeatherClass { AirTemperature = 0, AirPressure = 0 };
-            densityClass = new DensityClass { densityValue = "" };
+            //locationClass = new LocationClass { city = "", icao = "", lat = 0, lon = 0, name = "", state = "" };
+            //weatherClass = new WeatherClass { AirTemperature = 0, AirPressure = 0 };
+            //densityClass = new DensityClass { densityValue = "" };
         }
     }
 }

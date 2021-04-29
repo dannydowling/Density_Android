@@ -15,9 +15,7 @@ namespace Density
         public Entry SourceAirportText { get; set; }
         public Entry DestinationAirportText { get; set; }
 
-        LocationHelper getLocation;
-
-        public void RouteCreate()
+        public void RouteCreate(LocationHelper locationHelper, LocationClass locationClass)
         {
           try { 
             Image banner = new Image();
@@ -94,7 +92,7 @@ namespace Density
             if (!string.IsNullOrEmpty(SourceLocation.icao))
             { SourceAirportText.Text = SourceLocation.icao; }
            
-            var statesSource = getLocation.GetStates();
+            var statesSource = locationHelper.GetStates();
 
             StatePickerSource = new Picker();
             StatePickerSource.Title = "Start State";
@@ -115,7 +113,7 @@ namespace Density
             {
                 StatePickerDestination.SelectedIndex = StatePickerSource.SelectedIndex;
 
-                var citiesSource = getLocation.GetCities(StatePickerSource.SelectedItem.ToString());
+                var citiesSource = locationHelper.GetCities(StatePickerSource.SelectedItem.ToString());
                                 
                 if (CityPickerSource.Items.Count >= 2)
                 {
@@ -130,11 +128,15 @@ namespace Density
 
             void CityPickerSource_SelectedIndexChanged(object sender, EventArgs e)
             {
-                var locationIcao = getLocation.GetIcao(StatePickerSource.SelectedItem.ToString(), 
-                    CityPickerSource.SelectedItem.ToString());
-                    SourceAirportText.Text = locationIcao;
+                var icaoPicker = locationHelper.GetIcao(
+                                    StatePickerSource.SelectedItem.ToString(), 
+                    
+                                    CityPickerSource.SelectedItem.ToString());
+                   
+                    SourceAirportText.Text = icaoPicker;
+                    locationClass.icao = icaoPicker.ToString().ToUpperInvariant();
 
-                    LocationClass source = getLocation.GetLocationFromIcao(locationIcao.Trim().ToUpperInvariant());
+                    var source = locationHelper.GetLocationFromIcao(locationClass);
 
                     SourceLocation.lat = source.lat;
                     SourceLocation.lon = source.lon;
@@ -166,7 +168,7 @@ namespace Density
             CityPickerDestination.SelectedIndexChanged += CityPickerDestination_SelectedIndexChanged;
 
 
-            var statesDestination = getLocation.GetStates();
+            var statesDestination = locationHelper.GetStates();
 
             foreach (var state in statesDestination)
             {
@@ -174,7 +176,7 @@ namespace Density
             }
             void StatePickerDestination_SelectedIndexChanged(object sender, EventArgs e)
             {
-                var citiesDestination = getLocation.GetCities(StatePickerDestination.SelectedItem.ToString());
+                var citiesDestination = locationHelper.GetCities(StatePickerDestination.SelectedItem.ToString());
 
                 if (CityPickerDestination.Items.Count >= 2)
                 {
@@ -189,10 +191,15 @@ namespace Density
 
             void CityPickerDestination_SelectedIndexChanged(object sender, EventArgs e)
             {
-                var locationIcao = getLocation.GetIcao(StatePickerDestination.SelectedItem.ToString(), CityPickerDestination.SelectedItem.ToString());
-                    DestinationAirportText.Text = locationIcao;
+                    var icaoPicker = locationHelper.GetIcao(
+                                    StatePickerSource.SelectedItem.ToString(),
 
-                    LocationClass destination = getLocation.GetLocationFromIcao(locationIcao.Trim().ToUpperInvariant());
+                                    CityPickerSource.SelectedItem.ToString());
+
+                    DestinationAirportText.Text = icaoPicker;
+                    locationClass.icao = icaoPicker.ToString().ToUpperInvariant();
+
+                    var destination = locationHelper.GetLocationFromIcao(locationClass);
 
                     DestinationLocation.lat = destination.lat;
                     DestinationLocation.lon = destination.lon;
