@@ -4,18 +4,24 @@ using System.Threading.Tasks;
 
 namespace Density.Business_Layer.Logic
 {
-    internal class DensityHelper : App
+    public class DensityHelper : App
     {        
-        internal async Task<DensityClass> ConvertToDensity(WeatherClass weatherClass, LocationHelper getLocation, WeatherHelper getWeather, LocationClass locationClass,DensityClass densityClass)
+        internal async Task<DensityClass> ConvertToDensity(WeatherClass weatherClass, LocationHelper locationHelper, WeatherHelper weatherHelper, LocationClass locationClass,DensityClass densityClass)
         {
+
+            if (locationHelper == null)
+            {  locationHelper = new LocationHelper();  }
+            if (weatherHelper == null)
+            {  weatherHelper = new WeatherHelper();     }
+           
 
             if (weatherClass.AirPressure == 0)
             {
                 if (string.IsNullOrEmpty(locationClass.icao))
                 {
-                    await getLocation.LookupLocation(locationClass);
+                    await locationHelper.LookupLocation(locationClass);
                 }                
-                await getWeather.GetWeatherAsync(locationClass, weatherClass);
+                await weatherHelper.GetWeatherAsync(locationClass, weatherClass);
             }
                        
 

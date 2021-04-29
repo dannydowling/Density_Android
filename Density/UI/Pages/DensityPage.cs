@@ -15,6 +15,23 @@ namespace Density
 
         public void DensityPageCreate(LocationHelper locationHelper, WeatherHelper weatherHelper, DensityHelper densityHelper, LocationClass locationClass, WeatherClass weatherClass, DensityClass densityClass)
         {
+            if (locationClass == null)
+            { 
+                locationClass = new LocationClass();
+                weatherClass = new WeatherClass();
+                densityClass = new DensityClass();            
+            }
+           
+            if (locationHelper == null)
+            { locationHelper = new LocationHelper(); }
+           
+            if (weatherHelper == null)
+            { weatherHelper = new WeatherHelper(); }
+           
+            if (densityHelper == null)
+            { densityHelper = new DensityHelper(); }            
+       
+
             try
             {
                 icaoEntryLabel = new Entry();
@@ -124,7 +141,7 @@ namespace Density
                 update.Label = "Update";
                 var updatetapGestureRecognizer = new TapGestureRecognizer();
                 updatetapGestureRecognizer.Tapped += async (s, e) =>
-                {
+                {                    
                     await weatherHelper.GetWeatherAsync(locationClass, weatherClass);
 
                     await densityHelper.ConvertToDensity(weatherClass, locationHelper, weatherHelper, locationClass, densityClass);

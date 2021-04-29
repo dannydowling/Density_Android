@@ -12,16 +12,17 @@ namespace Density
 
     public class LayoutPage : ContentPage
     {
-        protected static LocationClass locationClass = new LocationClass();
-        protected static WeatherClass weatherClass = new WeatherClass();
-        protected static DensityClass densityClass = new DensityClass();
+        protected LocationClass locationClass { get; set; }
+        protected WeatherClass weatherClass { get; set; }
+        protected DensityClass densityClass { get; set; }
 
-        LocationHelper locationHelper = new LocationHelper(locationClass);
-        WeatherHelper weatherHelper = new WeatherHelper();
-        DensityHelper densityHelper = new DensityHelper();
+        protected LocationHelper locationHelper { get; set; }
+        protected WeatherHelper weatherHelper { get; set; }
+        protected DensityHelper densityHelper { get; set; }
 
         public void LayoutCreate()
         {
+                      
             try
             {
                 Image banner = new Image();

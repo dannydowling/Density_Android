@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Density.Business_Layer.Logic
 {
-    internal class WeatherHelper : App
+    public class WeatherHelper : App
     {
         internal async Task<WeatherClass> GetWeatherAsync(LocationClass locationClass, WeatherClass weatherClass)
         {

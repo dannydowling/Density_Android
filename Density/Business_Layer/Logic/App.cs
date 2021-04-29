@@ -33,10 +33,6 @@ namespace Density
             httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
             httpClient.DefaultRequestHeaders.Add("User-Agent", "DensityApp");
-
-            //locationClass = new LocationClass { city = "", icao = "", lat = 0, lon = 0, name = "", state = "" };
-            //weatherClass = new WeatherClass { AirTemperature = 0, AirPressure = 0 };
-            //densityClass = new DensityClass { densityValue = "" };
         }
     }
 }

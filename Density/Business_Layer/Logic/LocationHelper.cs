@@ -13,7 +13,7 @@ namespace Density
         internal JArray locationsArray { get; set; }
 
 
-        public LocationHelper(LocationClass locationClass)
+        public LocationHelper()
         {
             
             locationsArray = JArray.Parse(Density.Properties.Resources.Positions);
