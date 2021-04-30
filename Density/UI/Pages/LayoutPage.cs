@@ -2,6 +2,8 @@
 using Density.Business_Layer.Logic;
 using Density.Business_Layer.Repositories;
 using System;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Density
@@ -20,9 +22,23 @@ namespace Density
         protected WeatherHelper weatherHelper { get; set; }
         protected DensityHelper densityHelper { get; set; }
 
-        public void LayoutCreate()
+        public LayoutPage()
         {
-                      
+
+            if (locationHelper == null || weatherHelper == null || densityHelper == null)
+            {
+                Task.Factory.StartNew<object>(() => locationHelper = new LocationHelper())
+                  .ContinueWith<object>(antecedent => weatherHelper = new WeatherHelper())
+                  .ContinueWith<object>(antecedent => densityHelper = new DensityHelper());
+            }
+
+            if (locationClass == null)
+            { locationClass = new LocationClass();   }
+            if (weatherClass == null)
+            { weatherClass = new WeatherClass();  }
+            if (densityClass == null)
+            { densityClass = new DensityClass();  }
+
             try
             {
                 Image banner = new Image();
@@ -37,7 +53,13 @@ namespace Density
                 FuelWeighttapGestureRecognizer.Tapped += async (s, e) =>
                     {
                         DensityPage densityPage = new DensityPage();
-                        densityPage.DensityPageCreate(locationHelper, weatherHelper, densityHelper, locationClass, weatherClass, densityClass);
+                        densityPage.DensityPageCreate(
+                            locationHelper, 
+                            weatherHelper, 
+                            densityHelper, 
+                            locationClass, 
+                            weatherClass, 
+                            densityClass);
                         await Navigation.PushModalAsync(densityPage);
                     };
 
@@ -52,6 +74,7 @@ namespace Density
                 {
                     if (!string.IsNullOrWhiteSpace(locationClass.icao))
                     {
+                       locationClass = locationHelper.GetLocationFromIcao(locationClass);
                         MapPage mapPage = new MapPage();
                         mapPage.MapCreate(locationClass);
                         await Navigation.PushModalAsync(mapPage);
@@ -59,7 +82,14 @@ namespace Density
                     if (string.IsNullOrWhiteSpace(locationClass.icao))
                     {
                         DensityPage densityPage = new DensityPage();
-                        densityPage.DensityPageCreate(locationHelper, weatherHelper, densityHelper, locationClass, weatherClass, densityClass);
+                        densityPage.DensityPageCreate(
+                            locationHelper, 
+                            weatherHelper, 
+                            densityHelper, 
+                            locationClass, 
+                            weatherClass, 
+                            densityClass);
+                       
                         await Navigation.PushModalAsync(densityPage);
                     }
                 };
@@ -107,7 +137,7 @@ namespace Density
                 FlightRadar.Label = "Flight Tracking";
                 var FlightRadartapGestureRecognizer = new TapGestureRecognizer();
                 FlightRadar.GestureRecognizers.Add(FlightRadartapGestureRecognizer);
-                FlightRadartapGestureRecognizer.Tapped += async (s, e) =>
+                FlightRadartapGestureRecognizer.Tapped += (s, e) =>
                 {
                     DependencyService.Register<ILaunchBrowserPage>();
                     DependencyService.Get<ILaunchBrowserPage>().StartBrowser(locationClass.lat, locationClass.lon);

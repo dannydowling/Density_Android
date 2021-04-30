@@ -1,6 +1,8 @@
 ﻿using Density.Business_Layer.Logic;
 using Density.Business_Layer.Repositories;
 using System;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Density
@@ -13,27 +15,25 @@ namespace Density
         private Entry icaoEntryLabel { get; set; }
         public string pickerIcao { get; set; }
 
-        public void DensityPageCreate(LocationHelper locationHelper, WeatherHelper weatherHelper, DensityHelper densityHelper, LocationClass locationClass, WeatherClass weatherClass, DensityClass densityClass)
+        public void DensityPageCreate(           
+            LocationHelper locationHelper,
+            WeatherHelper weatherHelper,
+            DensityHelper densityHelper,
+
+            LocationClass locationClass,
+            WeatherClass weatherClass,
+            DensityClass densityClass)
         {
-            if (locationClass == null)
-            { 
-                locationClass = new LocationClass();
-                weatherClass = new WeatherClass();
-                densityClass = new DensityClass();            
+            if (locationHelper == null || weatherHelper == null || densityHelper == null)
+            {
+                Task.Factory.StartNew<object>(() => locationHelper = new LocationHelper())
+                  .ContinueWith<object>(antecedent => weatherHelper = new WeatherHelper())
+                  .ContinueWith<object>(antecedent => densityHelper = new DensityHelper());
             }
-           
-            if (locationHelper == null)
-            { locationHelper = new LocationHelper(); }
-           
-            if (weatherHelper == null)
-            { weatherHelper = new WeatherHelper(); }
-           
-            if (densityHelper == null)
-            { densityHelper = new DensityHelper(); }            
-       
 
             try
             {
+
                 icaoEntryLabel = new Entry();
                 icaoEntryLabel.BindingContext = icaoEntryLabel;
                 if (!string.IsNullOrEmpty(locationClass.icao))
@@ -60,8 +60,6 @@ namespace Density
                 icaocodeentry.VerticalTextAlignment = TextAlignment.Center;
                 icaocodeentry.HorizontalTextAlignment = TextAlignment.Center;
                 icaocodeentry.Text = "Enter Icao code:  ";
-
-                
 
                 StatePicker = new Picker();
                 StatePicker.Title = "State";
@@ -140,13 +138,32 @@ namespace Density
                 update.Icon = "Update.png";
                 update.Label = "Update";
                 var updatetapGestureRecognizer = new TapGestureRecognizer();
-                updatetapGestureRecognizer.Tapped += async (s, e) =>
-                {                    
-                    await weatherHelper.GetWeatherAsync(locationClass, weatherClass);
+                updatetapGestureRecognizer.Tapped += (s, e) =>
+                {
+                    //gets a weather class
+                    Task<WeatherClass> updateDensity = Task.Run(async () =>
+                    await weatherHelper.GetWeatherAsync
+                    (locationClass, weatherClass));
 
-                    await densityHelper.ConvertToDensity(weatherClass, locationHelper, weatherHelper, locationClass, densityClass);
-              
-                    densityLabel.Text = densityClass.densityValue;
+                    //antecedent is the return from the previous task.
+                    updateDensity.ContinueWith(async antecedent => 
+                    await densityHelper.ConvertToDensity
+                    (antecedent.Result, locationHelper, weatherHelper, locationClass, densityClass));
+
+                    try
+                    {
+                        updateDensity.Wait();
+
+                        densityLabel.Text = densityClass.densityValue;
+                    }
+                    catch (Exception)
+                    {
+                        densityLabel.Text = "Not found or other error";
+                    }
+
+                    
+                    
+                    
                 };
                 update.GestureRecognizers.Add(updatetapGestureRecognizer);
 

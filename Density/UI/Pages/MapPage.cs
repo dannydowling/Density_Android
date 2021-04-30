@@ -11,9 +11,7 @@ namespace Density
         Map map;
 
         public void MapCreate(LocationClass locationClass)
-        {            
-            if(locationClass == null)
-            { locationClass = new LocationClass(); }
+        {         
 
             try
             {

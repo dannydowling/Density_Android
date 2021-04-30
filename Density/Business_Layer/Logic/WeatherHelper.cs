@@ -1,18 +1,32 @@
 ﻿using Density.Business_Layer.Repositories;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Density.Business_Layer.Logic
 {
-    public class WeatherHelper : App
+    public class WeatherHelper
     {
-        internal async Task<WeatherClass> GetWeatherAsync(LocationClass locationClass, WeatherClass weatherClass)
-        {
+        HttpClient httpClient;
 
-            if (weatherClass.AirPressure == 0)
-            { weatherClass = new WeatherClass();              
-            }
+        internal async Task<WeatherClass> GetWeatherAsync(
+            LocationClass locationClass, WeatherClass weatherClass)
+        {
+            //default the values from whatever was there before
+            weatherClass.AirPressure = 0;
+            weatherClass.AirTemperature = 0;
+
+            if (locationClass == null)
+            { locationClass = new LocationClass(); }
+
+            if (httpClient == null)
+            {
+                httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
+                httpClient.DefaultRequestHeaders.Add("User-Agent", "DensityApp");
+            }           
+
             string weatherWebsite = String.Format("https://api.weather.gov/stations/{0}/observations/current", locationClass.icao);
             string weather_From_Website_in_Json = await httpClient.GetStringAsync(weatherWebsite);
 

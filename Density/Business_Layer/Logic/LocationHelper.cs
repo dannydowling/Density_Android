@@ -3,16 +3,15 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Density
 {
-    public class LocationHelper : App
+    public class LocationHelper
     {
         internal Dictionary<string, List<LocationClass>> Locations { get; set; }
         internal JArray locationsArray { get; set; }
-
-
         public LocationHelper()
         {
             
@@ -48,7 +47,11 @@ namespace Density
 
 
         internal async Task<LocationClass> LookupLocation(LocationClass locationClass)
-        {           
+        {
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
+            httpClient.DefaultRequestHeaders.Add("User-Agent", "DensityApp");
+
             var IP = await httpClient.GetStringAsync("https://icanhazip.com");
             IP.Replace("/n", "");
             var url = String.Format("http://ip-api.com/json/{0}", IP);

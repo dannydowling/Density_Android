@@ -1,19 +1,42 @@
 ﻿using Density.Business_Layer.Repositories;
 using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Density.Business_Layer.Logic
 {
-    public class DensityHelper : App
-    {        
-        internal async Task<DensityClass> ConvertToDensity(WeatherClass weatherClass, LocationHelper locationHelper, WeatherHelper weatherHelper, LocationClass locationClass,DensityClass densityClass)
+    public class DensityHelper
+    {
+        HttpClient httpClient;
+
+        internal async Task<DensityClass> ConvertToDensity(WeatherClass weatherClass, LocationHelper locationHelper, WeatherHelper weatherHelper, LocationClass locationClass, DensityClass densityClass)
         {
+            if (locationClass == null)
+            {
+                locationClass = new LocationClass();
+                weatherClass = new WeatherClass();
+                densityClass = new DensityClass();
+            }
+
+            if (httpClient == null)
+            {
+                Task.Run(() =>
+                {
+                    httpClient = new HttpClient();
+                    httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
+                    httpClient.DefaultRequestHeaders.Add("User-Agent", "DensityApp");
+
+                });
+            }
 
             if (locationHelper == null)
-            {  locationHelper = new LocationHelper();  }
+            { locationHelper = new LocationHelper(); }
+
             if (weatherHelper == null)
-            {  weatherHelper = new WeatherHelper();     }
-           
+            { weatherHelper = new WeatherHelper(); }
+
+
+
 
             if (weatherClass.AirPressure == 0)
             {
