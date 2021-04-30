@@ -139,6 +139,7 @@ namespace Density
                 FlightRadar.GestureRecognizers.Add(FlightRadartapGestureRecognizer);
                 FlightRadartapGestureRecognizer.Tapped += (s, e) =>
                 {
+                    locationClass = locationHelper.GetLocationFromIcao(locationClass);
                     DependencyService.Register<ILaunchBrowserPage>();
                     DependencyService.Get<ILaunchBrowserPage>().StartBrowser(locationClass.lat, locationClass.lon);
                 };

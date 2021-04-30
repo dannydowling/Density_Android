@@ -8,7 +8,7 @@
 .L.compressed_assembly_descriptors:
 	/* 0: Density.dll */
 	/* uncompressed_file_size */
-	.word	156160
+	.word	156672
 	/* loaded */
 	.byte	0
 	/* data */
@@ -26,7 +26,7 @@
 
 	/* 2: Fuel_Density.dll */
 	/* uncompressed_file_size */
-	.word	187904
+	.word	188928
 	/* loaded */
 	.byte	0
 	/* data */
@@ -44,7 +44,7 @@
 
 	/* 4: Mono.Android.dll */
 	/* uncompressed_file_size */
-	.word	1830400
+	.word	1831424
 	/* loaded */
 	.byte	0
 	/* data */
