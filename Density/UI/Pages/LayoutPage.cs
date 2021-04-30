@@ -10,7 +10,7 @@ namespace Density
 {
 
     public interface ILaunchBrowserPage
-    { void StartBrowser(double lat, double lon); }
+    { void StartBrowser(string webAddress); }
 
     public class LayoutPage : ContentPage
     {
@@ -139,9 +139,12 @@ namespace Density
                 FlightRadar.GestureRecognizers.Add(FlightRadartapGestureRecognizer);
                 FlightRadartapGestureRecognizer.Tapped += (s, e) =>
                 {
-                    locationClass = locationHelper.GetLocationFromIcao(locationClass);
+                    locationClass = locationHelper.GetLocationFromIcao(locationClass);                 
                     DependencyService.Register<ILaunchBrowserPage>();
-                    DependencyService.Get<ILaunchBrowserPage>().StartBrowser(locationClass.lat, locationClass.lon);
+                    DependencyService.Get<ILaunchBrowserPage>().StartBrowser(
+                        string.Format("https://www.flightradar24.com/{0},{1}/10", 
+                        Math.Round(locationClass.lat, 2), 
+                        Math.Round(locationClass.lon, 2)));
                 };
 
                 var Exit = new SpringBoardButton();

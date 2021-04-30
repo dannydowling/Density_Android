@@ -46,7 +46,7 @@
 
 	/* 2: Fuel_Density.dll */
 	/* uncompressed_file_size */
-	.long	188928
+	.long	188416
 	/* loaded */
 	.byte	0
 	/* data */

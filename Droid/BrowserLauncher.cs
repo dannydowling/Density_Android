@@ -18,9 +18,9 @@ namespace Density
     [Activity(Label = "FlightRadar")]
     public class BrowserLaunchActivity : ILaunchBrowserPage
     {
-        public void StartBrowser(double lat, double lon)
-        {
-            Android.Net.Uri browserIntentUri = Android.Net.Uri.Parse("https://www.flightradar24.com/" + lat + "," + lon);
+        public void StartBrowser(string webAddress)
+        {            
+            Android.Net.Uri browserIntentUri = Android.Net.Uri.Parse(webAddress);
             Intent browserIntent = new Intent(Intent.ActionView);
             browserIntent.SetData(browserIntentUri);
             browserIntent.SetPackage("com.android.chrome");
