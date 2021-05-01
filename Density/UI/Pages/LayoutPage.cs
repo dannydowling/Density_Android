@@ -127,7 +127,7 @@ namespace Density
                 RoutetapGestureRecognizer.Tapped += async (s, e) =>
                 {
                     RoutePickerPage routePage = new RoutePickerPage();
-                    routePage.RouteCreate(locationHelper, locationClass);
+                    routePage.RouteCreate(locationHelper);
                     await Navigation.PushModalAsync(routePage);
                 };
 

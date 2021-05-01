@@ -1,5 +1,4 @@
-﻿
-using Density.Business_Layer.Repositories;
+﻿using Density.Business_Layer.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,6 +10,7 @@ namespace Density
     public class CustomMap : Map
     {        
         public List<Position> RouteCoordinates { get; set; }
+        public string Mode { get; set; }
         public CustomMap()
         {
             RouteCoordinates = new List<Position>();
@@ -21,8 +21,9 @@ namespace Density
     {
        
         CustomMap map;
+        TransportModel transport;
 
-        public void RouteMapCreate()
+        public void RouteMapCreate(LocationClass sourceLocation, LocationClass destinationLocation)
         {
             #region Define the map and what's on it
             map = new CustomMap
@@ -33,19 +34,18 @@ namespace Density
 
             map.MapType = MapType.Hybrid;
 
-            map.RouteCoordinates.Add(new Position(SourceLocation.lat, SourceLocation.lon));
-            map.RouteCoordinates.Add(new Position(DestinationLocation.lat, DestinationLocation.lon));
+            map.RouteCoordinates.Add(new Position(sourceLocation.lat, sourceLocation.lon));
+            map.RouteCoordinates.Add(new Position(destinationLocation.lat, destinationLocation.lon));
 
-
-            map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(SourceLocation.lat, SourceLocation.lon), Distance.FromMiles(4.0)));
+            map.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(sourceLocation.lat, sourceLocation.lon), Distance.FromMiles(4.0)));
 
 
             var maptype = new Button { Text = "Map Type" };
-            var waypoint = new Button { Text = "Waypoint" };
+            var distance = new Button { Text = "Distance" };
             var menu = new Button { Text = "Menu" };
 
             maptype.Clicked += MapClicked;
-            waypoint.Clicked += WaypointClicked;
+            distance.Clicked += DistanceClicked;
             menu.Clicked += MenuClicked;
 
             void MenuClicked(object sender, EventArgs e)
@@ -56,12 +56,16 @@ namespace Density
                 }
             }
 
-            void WaypointClicked(object sender, EventArgs e)
+            void DistanceClicked(object sender, EventArgs e)
             {
                 var b = sender as Button;
-                {
-
-                }
+                b.Text = "Distance";
+                DistanceCalculator distanceCalculator = new DistanceCalculator();
+                map.Mode = transport.TransportType.ToString();
+                distanceCalculator.GetInfoForRoute(map.Mode, 
+                      sourceLocation, 
+                    destinationLocation);              
+                b.Text = transport.ModeDistance.ToString() + "Distance";
             }
 
 
@@ -90,7 +94,7 @@ namespace Density
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
                 VerticalOptions = LayoutOptions.End,
                 Orientation = StackOrientation.Horizontal,
-                Children = { maptype, waypoint, menu }
+                Children = { maptype, distance, menu }
             };
 
             var stack = new RelativeLayout();

@@ -133,14 +133,20 @@ namespace Density
         }
 
 
-        public event EventHandler<TimerEventArgs> TimerTicked;
+        public event EventHandler<TimerEventArgs> TimerTicked;        
         public DateTime StartDateTime { get; private set; }
         internal int delay;
-        internal bool active;
+        internal bool timerActive;
+
+        public event EventHandler TimerExpired;
+        public event EventHandler timerWarning;        
+
+        private bool minute20WarningShown;
+        private bool minute10WarningShown;
+        private bool minute0WarningShown;
 
         public void StartTimer(WeatherClass weatherClass)
         {
-
             delay = 0;
             delay += (Convert.ToInt32(weatherClass.AirTemperature - 60));
             delay += (Convert.ToInt32(weatherClass.AirPressure - 1018));
@@ -152,7 +158,8 @@ namespace Density
                 TimerTicked?.Invoke(this, new TimerEventArgs { Delta = delta });
                 TimerTicked += Countdown_TimerTicked;
 
-                return active;
+                //active because as long as the timer returns true the timer keeps running.
+                return timerActive;
 
             });
         }
@@ -163,24 +170,54 @@ namespace Density
 
             var delta_int = e.Delta.TotalSeconds;
 
-            if (delta_int >= 0 + delay)
+            if (minute20WarningShown != true)
             {
-                App.Current.MainPage.DisplayAlert("20 Minute Warning.", "In 20 minutes the de-Icing effectiveness will be questionable", "OK");
-                active = true;
+                if (delta_int >= 0 + delay)
+                {
+                    App.Current.MainPage.DisplayAlert("20 Minute Warning.", "In 20 minutes the de-Icing effectiveness will be questionable", "OK");
+                    timerActive = true;
+                    timerWarning += TimerPage_timerWarning;
+                    minute20WarningShown = true;
+                }
             }
 
-            if (delta_int >= 600 + delay)
+            if (minute10WarningShown != true)
             {
-                App.Current.MainPage.DisplayAlert("10 Minute Warning.", "In 10 minutes the de-Icing effectiveness will be questionable", "OK");
-                active = true;
+                if (delta_int >= 600 + delay)
+                {
+                    App.Current.MainPage.DisplayAlert("10 Minute Warning.", "In 10 minutes the de-Icing effectiveness will be questionable", "OK");
+                    timerActive = true;
+                    timerWarning += TimerPage_timerWarning;
+                    minute10WarningShown = true;
+                }
             }
 
-            if (delta_int >= 1200 + delay)
+            if (minute0WarningShown != true)
             {
-                App.Current.MainPage.DisplayAlert("Time's up.", "The de-ice holdover timer has expired.", "OK");
-                active = false;
+                if (delta_int >= 1200 + delay)
+                {
+                    App.Current.MainPage.DisplayAlert("Time's up.", "The de-ice holdover timer has expired.", "OK");
+                    timerActive = false;
+                    timerWarning += TimerPage_timerWarning;
+                    TimerExpired += TimerPage_TimerExpired;
+                    minute0WarningShown = true;
+                    
+                }
             }
-            active = true;
+           
+            timerActive = true;
+        }
+
+        private void TimerPage_timerWarning(object sender, EventArgs e)
+        {
+            
+            throw new NotImplementedException();
+        }
+
+        private void TimerPage_TimerExpired(object sender, EventArgs e)
+        {
+            
+            throw new NotImplementedException();
         }
 
         public class TimerEventArgs : EventArgs
