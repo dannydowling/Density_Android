@@ -25,7 +25,7 @@ namespace Density.Business_Layer.Logic
 
             var AirTemp_Temp = weatherClass.AirTemperature;
             var pascalPressure = weatherClass.AirPressure /= 100;                   //Ambient air pressure at a temperature
-            AirTemp_Temp *= 9;                //conversion to Farenheit
+            AirTemp_Temp *= 9;                //conversion to Fahrenheit
             AirTemp_Temp /= 5;
             var TemperatureFarenheit = AirTemp_Temp + 32;
 

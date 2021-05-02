@@ -16,6 +16,7 @@ namespace Density
         private Picker StatePicker { get; set; }
         private Picker CityPicker { get; set; }
         private Entry icaoEntryLabel { get; set; }
+        private Entry gallonsEntryLabel { get; set; }
         public string pickerIcao { get; set; }
 
         public void DensityPageCreate(           
@@ -41,6 +42,10 @@ namespace Density
                 icaoEntryLabel.BindingContext = icaoEntryLabel;
                 if (!string.IsNullOrEmpty(locationClass.icao))
                 { icaoEntryLabel.Text = locationClass.icao; }
+
+                gallonsEntryLabel = new Entry();
+                gallonsEntryLabel.BindingContext = gallonsEntryLabel;
+                gallonsEntryLabel.Text = "";
 
                 Density_Label = new Label();
                 Density_Label.FontSize = 25;
@@ -72,14 +77,15 @@ namespace Density
                 banner.Source = "Banner.png";
 
 
-                Label icaocodeentry = new Label();
-                icaocodeentry.FontSize = 16;
-                icaocodeentry.WidthRequest = 150;
-                icaocodeentry.TextColor = Color.Black;
-                icaocodeentry.VerticalTextAlignment = TextAlignment.Center;
-                icaocodeentry.HorizontalTextAlignment = TextAlignment.Center;
-                icaocodeentry.Text = "Enter Icao code:  ";
+                Label Icao_Code_Label = new Label();
+                Icao_Code_Label.FontSize = 16;
+                Icao_Code_Label.WidthRequest = 150;
+                Icao_Code_Label.TextColor = Color.Black;
+                Icao_Code_Label.VerticalTextAlignment = TextAlignment.Center;
+                Icao_Code_Label.HorizontalTextAlignment = TextAlignment.Center;
+                Icao_Code_Label.Text = "Enter Icao code:  ";
 
+               
                 StatePicker = new Picker();
                 StatePicker.Title = "State";
                 StatePicker.WidthRequest = 150;
@@ -130,16 +136,17 @@ namespace Density
                 EstimateMSG.HorizontalTextAlignment = TextAlignment.Center;
                 EstimateMSG.Text = "Estimate for Jet-A fuel adjusted for weather";
 
-                Label EstimateMSG2 = new Label();
-                EstimateMSG2.FontSize = 14;
-                EstimateMSG2.HorizontalTextAlignment = TextAlignment.Center;
-                EstimateMSG2.Text = "Weight changes with Air Pressure and Temperature";
-
                 Label Pre_Message = new Label();
                 Pre_Message.FontSize = 14;
                 Pre_Message.HorizontalTextAlignment = TextAlignment.Center;
                 Pre_Message.VerticalTextAlignment = TextAlignment.Center;
-                Pre_Message.Text = "The Fuel Density in pounds per gallon is:";
+                Pre_Message.Text = "Jet Fuel Weight:";
+
+                Label Cost_Calculator = new Label();
+                Cost_Calculator.FontSize = 14;
+                Cost_Calculator.HorizontalTextAlignment = TextAlignment.Center;
+                Cost_Calculator.VerticalTextAlignment = TextAlignment.Center;
+                Cost_Calculator.Text = "Number of gallons:";
 
                 Label Post_Message = new Label();
                 Post_Message.FontSize = 14;
@@ -181,11 +188,18 @@ namespace Density
                         Density_Label.Text = densityClass.densityValue;
 
                         double AirTemp_Temp = weatherClass.AirTemperature;
-                        AirTemp_Temp *= 9;                //conversion to Farenheit
+                        AirTemp_Temp *= 9;                //conversion to Fahrenheit
                         AirTemp_Temp /= 5;
                         AirTemp_Temp += 32;
                         AirTemperature_Label.Text = AirTemp_Temp.ToString();
                         AirPressure_Label.Text = weatherClass.AirPressure.ToString();
+
+                        if (gallonsEntryLabel.Text != "")
+                        {
+                            double denseValue = Convert.ToDouble(densityClass.densityValue);
+                            double gallonAmount = Convert.ToDouble(gallonsEntryLabel.Text);
+                            gallonsEntryLabel.Text = gallonAmount.ToString() + " is " + (denseValue * gallonAmount).ToString() + "lbs";
+                        }
 
                     }
                     catch (Exception)
@@ -220,35 +234,35 @@ namespace Density
 
                 Grid.SetRow(EstimateMSG, 0);
                 Grid.SetColumn(EstimateMSG, 0);
-                Grid.SetColumnSpan(EstimateMSG, 2);
-                Grid.SetRow(EstimateMSG2, 1);
-                Grid.SetColumn(EstimateMSG2, 0);
-                Grid.SetColumnSpan(EstimateMSG2, 2);
+                Grid.SetColumnSpan(EstimateMSG, 2);              
 
-                Grid.SetRow(StatePicker, 2);
+                Grid.SetRow(StatePicker, 1);
                 Grid.SetColumn(StatePicker, 0);
-                Grid.SetRow(CityPicker, 2);
+                Grid.SetRow(CityPicker, 1);
                 Grid.SetColumn(CityPicker, 1);
 
-                Grid.SetRow(icaocodeentry, 3);
-                Grid.SetColumn(icaocodeentry, 0);
-                Grid.SetRow(icaoEntryLabel, 3);
+                Grid.SetRow(Icao_Code_Label, 2);
+                Grid.SetColumn(Icao_Code_Label, 0);
+                Grid.SetRow(icaoEntryLabel, 2);
                 Grid.SetColumn(icaoEntryLabel, 1);
 
-                Grid.SetRow(Pre_Message, 4);
-                Grid.SetColumn(Pre_Message, 0);
-                Grid.SetColumnSpan(Pre_Message, 2);
-                Grid.SetRow(Density_Label, 5);
-                Grid.SetColumn(Density_Label, 0);
-                Grid.SetColumnSpan(Density_Label, 2);
 
-                Grid.SetRow(Post_Message, 6);
+                Grid.SetRow(Pre_Message, 3);
+                Grid.SetColumn(Pre_Message, 0);
+                Grid.SetRow(Cost_Calculator, 3);
+                Grid.SetColumn(Cost_Calculator, 1);
+
+                Grid.SetRow(gallonsEntryLabel, 4);
+                Grid.SetColumn(gallonsEntryLabel, 1);
+                Grid.SetRow(Density_Label, 4);
+                Grid.SetColumn(Density_Label, 0);
+
+                Grid.SetRow(Post_Message, 5);
                 Grid.SetColumn(Post_Message, 0);
                 Grid.SetColumnSpan(Post_Message, 2);
-                Grid.SetRow(AirTemperature_Label, 7);
-                Grid.SetColumn(AirTemperature_Label, 0);
-                
-                Grid.SetRow(AirPressure_Label, 7);
+                Grid.SetRow(AirTemperature_Label, 6);
+                Grid.SetColumn(AirTemperature_Label, 0);                
+                Grid.SetRow(AirPressure_Label, 6);
                 Grid.SetColumn(AirPressure_Label, 1);
                 
 
@@ -258,12 +272,13 @@ namespace Density
                 Grid.SetColumn(exit, 1);
 
                 grid.Children.Add(EstimateMSG);
-                grid.Children.Add(EstimateMSG2);
-                grid.Children.Add(icaocodeentry);
+                grid.Children.Add(Icao_Code_Label);
+                grid.Children.Add(gallonsEntryLabel);
                 grid.Children.Add(icaoEntryLabel);
                 grid.Children.Add(StatePicker);
                 grid.Children.Add(CityPicker);
                 grid.Children.Add(Pre_Message);
+                grid.Children.Add(Cost_Calculator);
                 grid.Children.Add(Density_Label);
                 grid.Children.Add(AirTemperature_Label);
                 grid.Children.Add(AirPressure_Label);

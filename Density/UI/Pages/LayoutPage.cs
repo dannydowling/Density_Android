@@ -54,7 +54,7 @@ namespace Density
 
                 var FuelWeight = new SpringBoardButton();
                 FuelWeight.Icon = "location.png";
-                FuelWeight.Label = "Set Location";
+                FuelWeight.Label = "Fuel Weight";
                 var FuelWeighttapGestureRecognizer = new TapGestureRecognizer();
                 FuelWeight.GestureRecognizers.Add(FuelWeighttapGestureRecognizer);
                 FuelWeighttapGestureRecognizer.Tapped += async (s, e) =>
