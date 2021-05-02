@@ -62,6 +62,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Business_Layer\Assets\Aircraft.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Business_Layer\Assets\Keys.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Business_Layer\Assets\Positions.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

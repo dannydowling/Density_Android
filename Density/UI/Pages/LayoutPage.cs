@@ -17,14 +17,16 @@ namespace Density
         protected LocationClass locationClass { get; set; }
         protected WeatherClass weatherClass { get; set; }
         protected DensityClass densityClass { get; set; }
+        protected AircraftClass aircraftClass { get; set; }
 
         protected LocationHelper locationHelper { get; set; }
         protected WeatherHelper weatherHelper { get; set; }
         protected DensityHelper densityHelper { get; set; }
+        protected AircraftHelper aircraftHelper { get; set; }
 
         public LayoutPage()
         {
-
+            //chains the interdependent helpers into the same thread.
             if (locationHelper == null || weatherHelper == null || densityHelper == null)
             {
                 Task.Factory.StartNew<object>(() => locationHelper = new LocationHelper())
@@ -32,12 +34,17 @@ namespace Density
                   .ContinueWith<object>(antecedent => densityHelper = new DensityHelper());
             }
 
+            if (aircraftHelper == null)
+            {  aircraftHelper = new AircraftHelper();  }
+
             if (locationClass == null)
             { locationClass = new LocationClass();   }
             if (weatherClass == null)
             { weatherClass = new WeatherClass();  }
             if (densityClass == null)
             { densityClass = new DensityClass();  }
+            if (aircraftClass == null)
+            { aircraftClass = new AircraftClass();  }
 
             try
             {
@@ -127,7 +134,7 @@ namespace Density
                 RoutetapGestureRecognizer.Tapped += async (s, e) =>
                 {
                     RoutePickerPage routePage = new RoutePickerPage();
-                    routePage.RouteCreate(locationHelper);
+                    routePage.RouteCreate(locationHelper, aircraftHelper);
                     await Navigation.PushModalAsync(routePage);
                 };
 

@@ -61,7 +61,25 @@ namespace Density.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to [{
+        ///  &quot;aircraft&quot;: &quot;737&quot;,
+        ///  &quot;speed&quot;: &quot;340&quot;
+        ///  },
+        ///  {
+        ///  &quot;aircraft&quot;: &quot;Gulfstream 5&quot;,
+        ///  &quot;speed&quot;: &quot;300&quot;
+        ///  }].
+        /// </summary>
+        public static string Aircraft {
+            get {
+                return ResourceManager.GetString("Aircraft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [{
+        ///  &quot;MapsAPI&quot;: &quot;AIzaSyA7_xqTgHHdFo6Fe19OmcVpkF7If4Vz8Zw&quot;
+        ///  }].
         /// </summary>
         public static string Keys {
             get {

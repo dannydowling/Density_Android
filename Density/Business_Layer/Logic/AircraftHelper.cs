@@ -9,7 +9,7 @@ namespace Density.Business_Layer.Logic
 {
     public class AircraftHelper
     {
-        internal Dictionary<string, double> Aircrafts { get; set; }
+        internal Dictionary<string, List<AircraftClass>> Aircrafts { get; set; }
         internal JArray aircraftArray { get; set; }
 
         public AircraftHelper()
@@ -19,15 +19,18 @@ namespace Density.Business_Layer.Logic
             var aircrafts = aircraftArray.Select(x => x["aircraft"].ToString()).Distinct().OrderBy(x => x);
 
             //select each one.
-            Aircrafts = (Dictionary<string, double>)aircrafts.Select(s => new
+            Aircrafts = aircrafts.Select(s => new
             {
                 AircraftName = s,
                 AircraftSpeed = aircraftArray.Where(x => x["aircraft"].ToString() == s
-                         && !string.IsNullOrWhiteSpace(x["speed"].ToString()))
-                                .Select(x => Convert.ToDouble(x["speed"])
-                                )
-            });
-        }
+                         ).Select(x => new AircraftClass
+                         {
+                             aircraftName = x["aircraft"].ToString(),
+                             aircraftSpeed = Convert.ToDouble(x["speed"])
+                         }
+                                ).ToList()
+            }).ToDictionary(s => s.AircraftName, s => s.AircraftSpeed);
+         }
      
 
         //used to populate the picker on the page, selecting the aircraft
@@ -37,9 +40,9 @@ namespace Density.Business_Layer.Logic
         }
 
        
-        internal double GetSpeed(string aircraftName)
+        internal string GetSpeed(string aircraftName)
         {
-            return Aircrafts.Single(c => c.Key == aircraftName).Value;
+            return Aircrafts.Single(c => c.Key == aircraftName).Value.ToString();
                  }
 
         internal AircraftClass GetAircraftFromName(string aircraftName)
