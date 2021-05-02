@@ -179,7 +179,12 @@ namespace Density
                         updateDensity.Wait();
 
                         Density_Label.Text = densityClass.densityValue;
-                        AirTemperature_Label.Text = weatherClass.AirTemperature.ToString();
+
+                        double AirTemp_Temp = weatherClass.AirTemperature;
+                        AirTemp_Temp *= 9;                //conversion to Farenheit
+                        AirTemp_Temp /= 5;
+                        AirTemp_Temp += 32;
+                        AirTemperature_Label.Text = AirTemp_Temp.ToString();
                         AirPressure_Label.Text = weatherClass.AirPressure.ToString();
 
                     }
