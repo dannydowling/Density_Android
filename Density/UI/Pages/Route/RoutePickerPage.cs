@@ -7,20 +7,20 @@ namespace Density
 {
     class RoutePickerPage : ContentPage
     {
-        public LocationClass sourceLocation { get; set; }
-        public Picker StatePickerSource { get; set; }
-        public Picker CityPickerSource { get; set; }
-        public Entry SourceAirportText { get; set; }
+        public LocationClass source_Location { get; set; }
+        public Picker Source_State_Picker { get; set; }
+        public Picker Source_City_Picker { get; set; }
+        public Entry Source_AirportText { get; set; }
 
 
-        public LocationClass destinationLocation { get; set; }
-        public Picker StatePickerDestination { get; set; }
-        public Picker CityPickerDestination { get; set; }        
-        public Entry DestinationAirportText { get; set; }
+        public LocationClass destination_Location { get; set; }
+        public Picker Destination_State_Picker { get; set; }
+        public Picker Destination_City_Picker { get; set; }        
+        public Entry Destination_AirportText { get; set; }
 
 
         public AircraftClass aircraftClass { get; set; }
-        public Picker AircraftPicker { get; set; }
+        public Picker Aircraft_Picker { get; set; }
         public Entry AircraftSpeedText { get; set; }
 
        
@@ -68,7 +68,7 @@ namespace Density
                 Aircraft_Speed_Entry.WidthRequest = 150;
                 Aircraft_Speed_Entry.TextColor = Color.Black;
                 Aircraft_Speed_Entry.VerticalTextAlignment = TextAlignment.Center;
-                Aircraft_Speed_Entry.HorizontalTextAlignment = TextAlignment.Center;
+                Aircraft_Speed_Entry.HorizontalTextAlignment = TextAlignment.End;
                 Aircraft_Speed_Entry.Text = "  Aircraft Type:   ";
 
                 var exit = new SpringBoardButton();
@@ -89,121 +89,119 @@ namespace Density
                 {
 
                     RouteMapPage routePage = new RouteMapPage();
-                    routePage.RouteMapCreate(sourceLocation, destinationLocation, aircraftClass);
+                    routePage.RouteMapCreate(source_Location, destination_Location, aircraftClass);
                     await Navigation.PushModalAsync(routePage);
 
                 };
                 start.GestureRecognizers.Add(starttapGestureRecognizer);
 
-                sourceLocation = new LocationClass();
-                destinationLocation = new LocationClass();
+                source_Location = new LocationClass();
+                destination_Location = new LocationClass();
                 aircraftClass = new AircraftClass();
 
-                SourceAirportText = new Entry();
-                SourceAirportText.BindingContext = SourceAirportText;
+                Source_AirportText = new Entry();
+                Source_AirportText.BindingContext = Source_AirportText;
 
-                DestinationAirportText = new Entry();
-                DestinationAirportText.BindingContext = DestinationAirportText;
+                Destination_AirportText = new Entry();
+                Destination_AirportText.BindingContext = Destination_AirportText;
 
                 AircraftSpeedText = new Entry();
                 AircraftSpeedText.BindingContext = AircraftSpeedText;
 
                 var statesSource = locationHelper.GetStates();
 
-                StatePickerSource = new Picker();
-                StatePickerSource.Title = "Start State";
-                StatePickerSource.WidthRequest = 150;
-                StatePickerSource.SelectedIndexChanged += StatePickerSource_SelectedIndexChanged;
+                Source_State_Picker = new Picker();
+                Source_State_Picker.Title = "Start State";
+                Source_State_Picker.WidthRequest = 150;
+                Source_State_Picker.SelectedIndexChanged += Source_State_Picker_SelectedIndexChanged;
 
-                CityPickerSource = new Picker();
-                CityPickerSource.Title = "Start City";
-                CityPickerSource.WidthRequest = 150;
-                CityPickerSource.SelectedIndexChanged += CityPickerSource_SelectedIndexChanged;
+                Source_City_Picker = new Picker();
+                Source_City_Picker.Title = "Start City";
+                Source_City_Picker.WidthRequest = 150;
+                Source_City_Picker.SelectedIndexChanged += Source_City_Picker_SelectedIndexChanged;
 
-                AircraftPicker = new Picker();
-                AircraftPicker.Title = "Type";
-                AircraftPicker.WidthRequest = 150;
-                AircraftPicker.SelectedIndexChanged += AircraftPicker_SelectedIndexChanged;
+                Destination_State_Picker = new Picker();
+                Destination_State_Picker.Title = "Destination State";
+                Destination_State_Picker.WidthRequest = 150;
+                Destination_State_Picker.SelectedIndexChanged += Destination_State_Picker_SelectedIndexChanged;
 
-                StatePickerDestination = new Picker();
-                StatePickerDestination.Title = "Destination State";
-                StatePickerDestination.WidthRequest = 150;
-                StatePickerDestination.SelectedIndexChanged += StatePickerDestination_SelectedIndexChanged;
+                Destination_City_Picker = new Picker();
+                Destination_City_Picker.Title = "Destination City";
+                Destination_City_Picker.WidthRequest = 150;
+                Destination_City_Picker.SelectedIndexChanged += Destination_City_Picker_SelectedIndexChanged;
 
-                CityPickerDestination = new Picker();
-                CityPickerDestination.Title = "Destination City";
-                CityPickerDestination.WidthRequest = 150;
-                CityPickerDestination.SelectedIndexChanged += CityPickerDestination_SelectedIndexChanged;
+                Aircraft_Picker = new Picker();
+                Aircraft_Picker.Title = "Type";
+                Aircraft_Picker.WidthRequest = 150;
+                Aircraft_Picker.SelectedIndexChanged += AircraftPicker_SelectedIndexChanged;
 
                 //populate the source picker with state information                
                 foreach (var stateSource in statesSource)
-                {  StatePickerSource.Items.Add(stateSource);  }
-                //event for when the state picker source is pressed
-                void StatePickerSource_SelectedIndexChanged(object sender, EventArgs e)
+                {  Source_State_Picker.Items.Add(stateSource);  }
+
+                void Source_State_Picker_SelectedIndexChanged(object sender, EventArgs e)
                 {
-                    StatePickerDestination.SelectedIndex = StatePickerSource.SelectedIndex;
+                    Destination_State_Picker.SelectedIndex = Source_State_Picker.SelectedIndex;
 
-                    var citiesSource = locationHelper.GetCities(StatePickerSource.SelectedItem.ToString());
+                    var citiesSource = locationHelper.GetCities(Source_State_Picker.SelectedItem.ToString());
 
-                    if (CityPickerSource.Items.Count >= 2)
-                    {   CityPickerSource.Items.Clear();  }
+                    if (Source_City_Picker.Items.Count >= 2)
+                    {   Source_City_Picker.Items.Clear();  }
 
                     foreach (var citySource in citiesSource)
-                    {   CityPickerSource.Items.Add(citySource);  }
+                    {   Source_City_Picker.Items.Add(citySource);  }
                 }
 
-                //event for when the city picker source is pressed
-                void CityPickerSource_SelectedIndexChanged(object sender, EventArgs e)
+                void Source_City_Picker_SelectedIndexChanged(object sender, EventArgs e)
                 {
                     var icaoPicker = locationHelper.GetIcao(
-                                        StatePickerSource.SelectedItem.ToString(),
-                                        CityPickerSource.SelectedItem.ToString());
+                                        Source_State_Picker.SelectedItem.ToString(),
+                                        Source_City_Picker.SelectedItem.ToString());
 
-                    SourceAirportText.Text = icaoPicker;
-                    sourceLocation.icao = icaoPicker.ToString().ToUpperInvariant();
+                    Source_AirportText.Text = icaoPicker;
+                    source_Location.icao = icaoPicker.ToString().ToUpperInvariant();
 
-                    sourceLocation = locationHelper.GetLocationFromIcao(sourceLocation);
+                    source_Location = locationHelper.GetLocationFromIcao(source_Location);
                 }
 
-                //populate the picker for the aircraft
+                var Desitnation_States = locationHelper.GetStates();
+
+                foreach (var state in Desitnation_States)
+                {  Destination_State_Picker.Items.Add(state);  }
+
+                void Destination_State_Picker_SelectedIndexChanged(object sender, EventArgs e)
+                {
+                    var citiesDestination = locationHelper.GetCities(Destination_State_Picker.SelectedItem.ToString());
+
+                    if (Destination_City_Picker.Items.Count >= 2)
+                    { Destination_City_Picker.Items.Clear(); }
+
+                    foreach (var city in citiesDestination)
+                    { Destination_City_Picker.Items.Add(city); }
+                }
+
+                void Destination_City_Picker_SelectedIndexChanged(object sender, EventArgs e)
+                {
+                    var destinationCity_Icao_Picker = locationHelper.GetIcao(
+                                    Destination_State_Picker.SelectedItem.ToString(),
+                                    Destination_City_Picker.SelectedItem.ToString());
+
+                    Destination_AirportText.Text = destinationCity_Icao_Picker;
+                    destination_Location.icao = destinationCity_Icao_Picker.ToString().ToUpperInvariant();
+
+                    destination_Location = locationHelper.GetLocationFromIcao(destination_Location);
+                }
+
                 var aircrafts = aircraftHelper.GetAircrafts();
 
                 foreach (var item in aircrafts)
-                { AircraftPicker.Items.Add(item);  }
+                { Aircraft_Picker.Items.Add(item); }
 
                 void AircraftPicker_SelectedIndexChanged(object sender, EventArgs e)
                 {
-                    aircraftClass = aircraftHelper.GetAircraftFromName(AircraftPicker.SelectedItem.ToString());
-                    AircraftSpeedText.Text = aircraftClass.aircraftSpeed.ToString();
-                }
+                    aircraftClass = aircraftHelper.GetAircraftFromName(Aircraft_Picker.SelectedItem.ToString());
+                    AircraftSpeedText.Text = aircraftHelper.GetSpeed(aircraftClass);
 
-                var statesDestination = locationHelper.GetStates();
-
-                foreach (var state in statesDestination)
-                {
-                    StatePickerDestination.Items.Add(state);
-                }
-                void StatePickerDestination_SelectedIndexChanged(object sender, EventArgs e)
-                {
-                    var citiesDestination = locationHelper.GetCities(StatePickerDestination.SelectedItem.ToString());
-
-                    if (CityPickerDestination.Items.Count >= 2)
-                    { CityPickerDestination.Items.Clear(); }
-
-                    foreach (var city in citiesDestination)
-                    { CityPickerDestination.Items.Add(city); }
-                }
-
-                void CityPickerDestination_SelectedIndexChanged(object sender, EventArgs e)
-                {
-                    var icaoPicker = locationHelper.GetIcao(
-                                    StatePickerSource.SelectedItem.ToString(),
-                                    CityPickerSource.SelectedItem.ToString());
-
-                    DestinationAirportText.Text = icaoPicker;
-                    destinationLocation.icao = icaoPicker.ToString().ToUpperInvariant();
-
-                    destinationLocation = locationHelper.GetLocationFromIcao(destinationLocation);
                 }
 
                 Grid grid = new Grid();
@@ -228,43 +226,43 @@ namespace Density
                 Grid.SetColumn(Source_Icao_Entry, 0);
                 Grid.SetColumnSpan(Source_Label, 3);
 
-                Grid.SetRow(StatePickerSource, 1);
-                Grid.SetColumn(StatePickerSource, 0);
-                Grid.SetColumnSpan(StatePickerSource, 2);
+                Grid.SetRow(Source_State_Picker, 1);
+                Grid.SetColumn(Source_State_Picker, 0);
+                Grid.SetColumnSpan(Source_State_Picker, 2);
 
 
-                Grid.SetRow(CityPickerSource, 1);
-                Grid.SetColumn(CityPickerSource, 2);
-                Grid.SetColumnSpan(CityPickerSource, 2);
+                Grid.SetRow(Source_City_Picker, 1);
+                Grid.SetColumn(Source_City_Picker, 2);
+                Grid.SetColumnSpan(Source_City_Picker, 2);
 
                 Grid.SetRow(Source_Icao_Entry, 2);
                 Grid.SetColumn(Source_Icao_Entry, 0);
                 Grid.SetColumnSpan(Source_Icao_Entry, 2);
-                Grid.SetRow(SourceAirportText, 2);
-                Grid.SetColumn(SourceAirportText, 2);
+                Grid.SetRow(Source_AirportText, 2);
+                Grid.SetColumn(Source_AirportText, 2);
 
                 Grid.SetRow(Destination_Label, 3);
                 Grid.SetColumn(Destination_Label, 0);
                 Grid.SetColumnSpan(Destination_Label, 3);
 
-                Grid.SetRow(StatePickerDestination, 4);
-                Grid.SetColumn(StatePickerDestination, 0);
-                Grid.SetColumnSpan(StatePickerDestination, 2);
+                Grid.SetRow(Destination_State_Picker, 4);
+                Grid.SetColumn(Destination_State_Picker, 0);
+                Grid.SetColumnSpan(Destination_State_Picker, 2);
 
-                Grid.SetRow(CityPickerDestination, 4);
-                Grid.SetColumn(CityPickerDestination, 2);
-                Grid.SetColumnSpan(CityPickerDestination, 2)
+                Grid.SetRow(Destination_City_Picker, 4);
+                Grid.SetColumn(Destination_City_Picker, 2);
+                Grid.SetColumnSpan(Destination_City_Picker, 2)
                 ;
 
                 Grid.SetRow(Destination_Icao_Entry, 5);
                 Grid.SetColumn(Destination_Icao_Entry, 0);
                 Grid.SetColumnSpan(Destination_Icao_Entry, 2);
-                Grid.SetRow(DestinationAirportText, 5);
-                Grid.SetColumn(DestinationAirportText, 2);
+                Grid.SetRow(Destination_AirportText, 5);
+                Grid.SetColumn(Destination_AirportText, 2);
 
-                Grid.SetRow(AircraftPicker, 6);
-                Grid.SetColumn(AircraftPicker, 1);
-                Grid.SetColumnSpan(AircraftPicker, 2);
+                Grid.SetRow(Aircraft_Picker, 6);
+                Grid.SetColumn(Aircraft_Picker, 1);
+                Grid.SetColumnSpan(Aircraft_Picker, 2);
                 Grid.SetRow(Aircraft_Speed_Entry, 6);
                 Grid.SetColumn(Aircraft_Speed_Entry, 0);
                 Grid.SetRow(AircraftSpeedText, 6);
@@ -278,18 +276,18 @@ namespace Density
                 Grid.SetColumn(exit, 2);
 
                 grid.Children.Add(Source_Label);
-                grid.Children.Add(StatePickerSource);
-                grid.Children.Add(CityPickerSource);
+                grid.Children.Add(Source_State_Picker);
+                grid.Children.Add(Source_City_Picker);
                 grid.Children.Add(Source_Icao_Entry);
-                grid.Children.Add(SourceAirportText);
+                grid.Children.Add(Source_AirportText);
 
                 grid.Children.Add(Destination_Label);
-                grid.Children.Add(StatePickerDestination);
-                grid.Children.Add(CityPickerDestination);
+                grid.Children.Add(Destination_State_Picker);
+                grid.Children.Add(Destination_City_Picker);
                 grid.Children.Add(Destination_Icao_Entry);
-                grid.Children.Add(DestinationAirportText);
+                grid.Children.Add(Destination_AirportText);
 
-                grid.Children.Add(AircraftPicker);
+                grid.Children.Add(Aircraft_Picker);
                 grid.Children.Add(Aircraft_Speed_Entry);
                 grid.Children.Add(AircraftSpeedText);
 

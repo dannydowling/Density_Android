@@ -25,8 +25,8 @@ namespace Density.Business_Layer.Logic
                 AircraftSpeed = aircraftArray.Where(x => x["aircraft"].ToString() == s
                          ).Select(x => new AircraftClass
                          {
-                             aircraftName = x["aircraft"].ToString(),
-                             aircraftSpeed = Convert.ToDouble(x["speed"])
+                             aircraft = x["aircraft"].ToString(),
+                             speed = Convert.ToDouble(x["speed"])
                          }
                                 ).ToList()
             }).ToDictionary(s => s.AircraftName, s => s.AircraftSpeed);
@@ -40,17 +40,17 @@ namespace Density.Business_Layer.Logic
         }
 
        
-        internal string GetSpeed(string aircraftName)
+        internal string GetSpeed(AircraftClass aircraft)
         {
-            return Aircrafts.Single(c => c.Key == aircraftName).Value.ToString();
+            return Aircrafts.Single(c => c.Key == aircraft.aircraft).Value.First().speed.ToString();
+                //.Value.Select(v => v.aircraftSpeed).Distinct().OrderBy(c => c); 
                  }
 
         internal AircraftClass GetAircraftFromName(string aircraftName)
         {
             JToken thisAircraftJToken = aircraftArray.Single(x => String.Equals(x["aircraft"].ToString(), aircraftName,
                                      StringComparison.InvariantCultureIgnoreCase));
-            AircraftClass aircraftClass = thisAircraftJToken.ToObject<AircraftClass>();
-            return aircraftClass;
+            return thisAircraftJToken.ToObject<AircraftClass>();            
         }
     }
 }

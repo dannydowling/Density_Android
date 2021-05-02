@@ -6,7 +6,7 @@ namespace Density.Business_Layer.Repositories
 {
     public class AircraftClass
     {
-        public string aircraftName { get; set; }
-        public double aircraftSpeed { get; set; }
+        public string aircraft { get; set; }
+        public double speed { get; set; }
     }
 }

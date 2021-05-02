@@ -66,7 +66,7 @@ namespace Density
                       sourceLocation, destinationLocation).Result
                                             .ModeDistance.ToString();
                 duration = new Label();
-                duration.Text = distanceCalculator.getDurationOfRoute(b.Text, aircraftClass.aircraftSpeed);
+                duration.Text = distanceCalculator.getDurationOfRoute(b.Text, aircraftClass.speed);
 
             }
 
