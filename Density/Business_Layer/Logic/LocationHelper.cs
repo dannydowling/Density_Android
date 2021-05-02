@@ -45,8 +45,8 @@ namespace Density
         internal IEnumerable<string> GetAirports(string stateName)
         { return Locations.Single(c => c.Key == stateName).Value.Select(v => v.name).OrderBy(c => c); }
 
-        internal IEnumerable<LocationClass> GetIcaoLocations(string stateName, string cityName)
-        { return Locations.Single(c => c.Key == stateName).Value.TakeWhile(v => v.city == cityName); }
+        internal IEnumerable<string> GetAirports(string stateName, string cityName)
+        { return Locations.Single(c => c.Key == stateName).Value.Where(v => v.city == cityName).Select(v => v.name).OrderBy(c => c); }
 
         internal string GetIcaoFromAirport (string stateName, string airportName)
         {

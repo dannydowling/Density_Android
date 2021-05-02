@@ -8,7 +8,7 @@
 .L.compressed_assembly_descriptors:
 	/* 0: Density.dll */
 	/* uncompressed_file_size */
-	.word	165888
+	.word	167424
 	/* loaded */
 	.byte	0
 	/* data */
@@ -71,7 +71,7 @@
 
 	/* 7: System.Core.dll */
 	/* uncompressed_file_size */
-	.word	391168
+	.word	392192
 	/* loaded */
 	.byte	0
 	/* data */

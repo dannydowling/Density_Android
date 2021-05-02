@@ -16,7 +16,6 @@ namespace Density
         private Picker StatePicker { get; set; }
         private Picker CityPicker { get; set; }
         private Picker AirportPicker { get; set; }
-        private Entry icaoEntryLabel { get; set; }
         private Entry gallonsEntryLabel { get; set; }
         public string pickerIcao { get; set; }
 
@@ -38,12 +37,6 @@ namespace Density
 
             try
             {
-
-                icaoEntryLabel = new Entry();
-                icaoEntryLabel.BindingContext = icaoEntryLabel;
-                if (!string.IsNullOrEmpty(locationClass.icao))
-                { icaoEntryLabel.Text = locationClass.icao; }
-
                 gallonsEntryLabel = new Entry();
                 gallonsEntryLabel.BindingContext = gallonsEntryLabel;
                 gallonsEntryLabel.Text = "";
@@ -107,6 +100,7 @@ namespace Density
 
                 foreach (var state in states)
                 {  StatePicker.Items.Add(state);  }
+
                 void StatePicker_SelectedIndexChanged(object sender, EventArgs e)
                 {
                     var cities = locationHelper.GetCities(StatePicker.SelectedItem.ToString());
@@ -119,25 +113,21 @@ namespace Density
                 }
                 void CityPicker_SelectedIndexChanged(object sender, EventArgs e)
                 {
-                    var airports = locationHelper.GetIcaoLocations(StatePicker.SelectedItem.ToString(), CityPicker.SelectedItem.ToString());
+                    var airports = locationHelper.GetAirports(StatePicker.SelectedItem.ToString(), CityPicker.SelectedItem.ToString());
                          
                         if (AirportPicker.Items.Count >= 2)
                     {   AirportPicker.Items.Clear(); }
 
                     foreach (var airport in airports)
-                    {  AirportPicker.Items.Add(airport.name);  }   
+                    {  AirportPicker.Items.Add(airport);  }   
                 }
 
                 void AirportPicker_SelectedIndexChanged(object sender, EventArgs e)
                 {
-                    var Airport_Icao_Picker = locationHelper.GetIcaoFromAirport(
-                                    StatePicker.SelectedItem.ToString(),
-                                    AirportPicker.SelectedItem.ToString());
-
-                    icaoEntryLabel.Text = Airport_Icao_Picker;
-                    locationClass.icao = Airport_Icao_Picker;
-                      
-                    locationHelper.GetLocationFromIcao(locationClass);
+                    if (locationClass == null)
+                    {  locationClass = new LocationClass();  }
+                    locationClass.icao = locationHelper.GetIcaoFromAirport(StatePicker.SelectedItem.ToString(), AirportPicker.SelectedItem.ToString());
+                    locationClass = locationHelper.GetLocationFromIcao(locationClass);
                 }
 
                 Label EstimateMSG = new Label();
@@ -169,7 +159,6 @@ namespace Density
                 var exittapGestureRecognizer = new TapGestureRecognizer();
                 exittapGestureRecognizer.Tapped += (s, e) =>
                 {
-                    locationClass.icao = icaoEntryLabel.Text;
                     Navigation.PopModalAsync();
                 };
                 exit.GestureRecognizers.Add(exittapGestureRecognizer);
@@ -180,6 +169,8 @@ namespace Density
                 var updatetapGestureRecognizer = new TapGestureRecognizer();
                 updatetapGestureRecognizer.Tapped += (s, e) =>
                 {
+                    
+
                     //gets a weather class
                     Task<WeatherClass> updateDensity = Task.Run(async () =>
                     await weatherHelper.GetWeatherAsync
