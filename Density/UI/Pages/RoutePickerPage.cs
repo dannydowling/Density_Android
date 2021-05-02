@@ -1,4 +1,5 @@
-﻿using Density.Business_Layer.Repositories;
+﻿using Density.Business_Layer.Logic;
+using Density.Business_Layer.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,17 +9,26 @@ namespace Density
 {
     class RoutePickerPage : ContentPage
     {
+        public LocationClass sourceLocation { get; set; }
         public Picker StatePickerSource { get; set; }
         public Picker CityPickerSource { get; set; }
-        public Picker StatePickerDestination { get; set; }
-        public Picker CityPickerDestination { get; set; }
         public Entry SourceAirportText { get; set; }
+
+
+        public LocationClass destinationLocation { get; set; }
+        public Picker StatePickerDestination { get; set; }
+        public Picker CityPickerDestination { get; set; }        
         public Entry DestinationAirportText { get; set; }
 
-        public LocationClass sourceLocation { get; set; }
-        public LocationClass destinationLocation { get; set; }
 
-        public void RouteCreate(LocationHelper locationHelper)
+        public AircraftClass aircraftClass { get; set; }
+        public Picker AircraftPicker { get; set; }
+        public Entry AircraftSpeedText { get; set; }
+
+       
+        
+
+        public void RouteCreate(LocationHelper locationHelper, AircraftHelper aircraftHelper)
         {
             try
             {
@@ -57,6 +67,14 @@ namespace Density
                 Destinationicaocodeentry.HorizontalTextAlignment = TextAlignment.Center;
                 Destinationicaocodeentry.Text = "Enter Destination Icao code:  ";
 
+                Label AircraftSpeedEntry = new Label();
+                AircraftSpeedEntry.FontSize = 16;
+                AircraftSpeedEntry.WidthRequest = 150;
+                AircraftSpeedEntry.TextColor = Color.Black;
+                AircraftSpeedEntry.VerticalTextAlignment = TextAlignment.Center;
+                AircraftSpeedEntry.HorizontalTextAlignment = TextAlignment.Center;
+                AircraftSpeedEntry.Text = "Enter Aircraft Speed:   ";
+
                 var exit = new SpringBoardButton();
                 exit.Icon = "Exit.png";
                 exit.Label = "Exit";
@@ -75,7 +93,7 @@ namespace Density
                 {
 
                     RouteMapPage routePage = new RouteMapPage();
-                    routePage.RouteMapCreate(sourceLocation, destinationLocation);
+                    routePage.RouteMapCreate(sourceLocation, destinationLocation, aircraftClass);
                     await Navigation.PushModalAsync(routePage);
 
                 };
@@ -92,6 +110,9 @@ namespace Density
                 SourceAirportText = new Entry();
                 SourceAirportText.BindingContext = SourceAirportText;
 
+                AircraftSpeedText = new Entry();
+                AircraftSpeedText.BindingContext = AircraftSpeedText;
+
 
                 var statesSource = locationHelper.GetStates();
 
@@ -104,6 +125,13 @@ namespace Density
                 CityPickerSource.Title = "Start City";
                 CityPickerSource.WidthRequest = 150;
                 CityPickerSource.SelectedIndexChanged += CityPickerSource_SelectedIndexChanged;
+
+                AircraftPicker = new Picker();
+                AircraftPicker.Title = "Aircraft Type";
+                AircraftPicker.WidthRequest = 150;
+                AircraftPicker.SelectedIndexChanged += AircraftPicker_SelectedIndexChanged;
+
+
 
 
                 foreach (var stateSource in statesSource)
@@ -133,6 +161,12 @@ namespace Density
                     sourceLocation.icao = icaoPicker.ToString().ToUpperInvariant();
 
                     sourceLocation = locationHelper.GetLocationFromIcao(sourceLocation);
+                }
+
+                void AircraftPicker_SelectedIndexChanged(object sender, EventArgs e)
+                {
+                    var aircraftPicker = aircraftHelper.GetAircraftFromName(AircraftPicker.SelectedItem.ToString());
+                    aircraftClass.aircraftSpeed = aircraftPicker.aircraftSpeed;
                 }
 
                 ////////////////////////////////////////////////////////////////////////////////////
@@ -276,8 +310,7 @@ namespace Density
             {
                 App.Current.MainPage.DisplayAlert("The picker page failed to load.", "Check the code and try again", "OK");
             }
-        }
-
+        }    
     }
 }
 

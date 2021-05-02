@@ -8,7 +8,7 @@ using Xamarin.Forms.Maps;
 namespace Density
 {
     public class CustomMap : Map
-    {        
+    {
         public List<Position> RouteCoordinates { get; set; }
         public string Mode { get; set; }
         public CustomMap()
@@ -19,15 +19,16 @@ namespace Density
 
     public class RouteMapPage : ContentPage
     {
-       
+
         CustomMap map;
         TransportModel transport;
+        private Label duration { get; set; }
 
-        public void RouteMapCreate(LocationClass sourceLocation, LocationClass destinationLocation)
+        public void RouteMapCreate(LocationClass sourceLocation, LocationClass destinationLocation, AircraftClass aircraftClass)
         {
             #region Define the map and what's on it
             map = new CustomMap
-            {                
+            {
                 VerticalOptions = LayoutOptions.Fill,
                 HorizontalOptions = LayoutOptions.Fill
             };
@@ -41,8 +42,9 @@ namespace Density
 
 
             var maptype = new Button { Text = "Map Type" };
-            var distance = new Button { Text = "Distance" };
+            var distance = new Button { Text = "Distance" };            
             var menu = new Button { Text = "Menu" };
+            
 
             maptype.Clicked += MapClicked;
             distance.Clicked += DistanceClicked;
@@ -62,10 +64,12 @@ namespace Density
                 b.Text = "Distance";
                 DistanceCalculator distanceCalculator = new DistanceCalculator();
                 map.Mode = transport.TransportType.ToString();
-                distanceCalculator.GetInfoForRoute(map.Mode, 
-                      sourceLocation, 
-                    destinationLocation);              
-                b.Text = transport.ModeDistance.ToString() + "Distance";
+                b.Text = distanceCalculator.GetInfoForRoute(map.Mode,
+                      sourceLocation, destinationLocation).Result
+                                            .ModeDistance.ToString();
+                duration = new Label();
+                duration.Text = distanceCalculator.getDurationOfRoute(b.Text, aircraftClass.aircraftSpeed);
+
             }
 
 

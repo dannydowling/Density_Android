@@ -1,50 +1,17 @@
 ﻿using Density.Business_Layer.Repositories;
 using Newtonsoft.Json.Linq;
 using System;
-using System.IO;
-using System.Net;
-using System.Text;
+using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Density
 {
     public class DistanceCalculator
     {
-        private readonly string APIKey = ("AIzaSyA7_xqTgHHdFo6Fe19OmcVpkF7If4Vz8Zw");
-      //  private string[] API_KEYS = { "", "AIzaSyA7_xqTgHHdFo6Fe19OmcVpkF7If4Vz8Zw" };
-
         private (double, double) sourcePosition { get; set; }
         private (double, double) destinationPosition { get; set; }
 
-
-
-        private TimeSpan ParseTimespan(string time)
-        {
-            int days = 0;
-            int hours = 0;
-            int minutes = 0;
-            int seconds = 0;
-            int milliseconds = 0;
-
-            string[] times = time.Split(' ');
-            for (int i = 0; i < times.Length; i += 2)
-            {
-                int amount = Convert.ToInt32(times[i]);
-                string type = times[i + 1].ToLower();
-
-                if (type == "day" || type == "days")
-                    days = amount;
-                else if (type == "hour" || type == "hours")
-                    hours = amount;
-                else if (type == "min" || type == "mins")
-                    minutes = amount;
-                else if (type == "sec" || type == "secs")
-                    seconds = amount;
-            }
-
-            return new TimeSpan(days, hours, minutes, seconds, milliseconds);
-        }
-
-  
         private double ParseDistance(string distance)
         {
             double kilometers = 0;
@@ -70,76 +37,44 @@ namespace Density
 
             return kilometers + (meters / 1000) + (centimeters / 100000) + (millimeters / 1000000);
         }
-   
-       
-        private string GetURL((double, double) sourcePosition, (double, double) destinationPosition, string mode, string apiKey)
-        {           
 
-            if (apiKey == "")
-            {
-                return string.Format(@"https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins={0}&destinations={1}&mode={2}",
-                                                       sourcePosition,
-                                                       destinationPosition,
-                                                       mode);
-            }
-            else
-            {
-                return string.Format(@"https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins={0}&destinations={1}&mode={2}&key={3}",
-                                                   sourcePosition,
-                                                   destinationPosition,
-                                                   mode,
-                                                   apiKey);
-            }
+        internal string getDurationOfRoute(string distance, double speedOfTravel)
+        {
+            double parsedDistance = ParseDistance(distance);
+            return (parsedDistance / speedOfTravel).ToString();
         }
-        
-        public TransportModel GetInfoForRoute(string mode, LocationClass sourceLocation, LocationClass destinationLocation)
+
+
+        private string GetURL((double, double) sourcePosition, (double, double) destinationPosition, string mode)
+        {
+            if (Density.Properties.Resources.Keys != null)
+            {
+                JArray APIKey = JArray.Parse(Density.Properties.Resources.Keys);
+                APIKey.Select(x => x["MapsAPI"].ToString());
+
+                return string.Format(@"https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins={0}&destinations={1}&mode={2}&key={3}", sourcePosition, destinationPosition, mode, APIKey);
+            }
+
+            return "";
+        }
+
+        public async Task<TransportModel> GetInfoForRoute(string mode, LocationClass sourceLocation, LocationClass destinationLocation)
         {         
             sourcePosition = (sourceLocation.lat, sourceLocation.lon);
             destinationPosition = (destinationLocation.lat, destinationLocation.lon);
 
-
-            //int curAPIKeyIndex = 0;
-
-            //while (curAPIKeyIndex < API_KEYS.Length)
-            //{
-                //API_KEYS[curAPIKeyIndex]
                 string distanceURL = GetURL(
-                    sourcePosition, 
-                    destinationPosition, 
-                    mode, 
-                    APIKey);
+                    sourcePosition, destinationPosition, mode);
 
-                // Making and getting the GET response to get the data
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(distanceURL);
-                request.Timeout = 10000;
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                Stream resStream = response.GetResponseStream();
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
+            httpClient.DefaultRequestHeaders.Add("User-Agent", "DensityApp");
 
-                // Reading and parsing the data
-                using (var reader = new StreamReader(resStream, Encoding.UTF8))
-                {
-                    try
-                    {
-                        string value = reader.ReadToEnd();
-                        JObject json = JObject.Parse(value);
-                        string modeDuration = (string)json["rows"][0]["elements"][0]["duration"]["text"];
-                        string modeDistance = (string)json["rows"][0]["elements"][0]["distance"]["text"];
-
-                        return new TransportModel()
-                        {
-                            ModeDuration = ParseTimespan(modeDuration).TotalMinutes,
-                            ModeDistance = ParseDistance(modeDistance)
-                        };
-                    }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(e.Message);
-                        Console.WriteLine("Maps API Key error...");
-                    }
-                }
-            //    curAPIKeyIndex++;
-            //}
-            return null;
+            string response = await httpClient.GetStringAsync(distanceURL);
+            
+            JObject json = JObject.Parse(response);
+            return json.ToObject<TransportModel>();
+          
         }
     }
 }

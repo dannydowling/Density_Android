@@ -61,6 +61,15 @@ namespace Density.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Keys {
+            get {
+                return ResourceManager.GetString("Keys", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [{
         ///  &quot;state&quot;: &quot;Pennsylvania&quot;,
         ///  &quot;city&quot;: &quot;Allentown&quot;,
