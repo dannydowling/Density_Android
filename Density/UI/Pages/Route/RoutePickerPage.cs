@@ -9,13 +9,13 @@ namespace Density
     {
         public LocationClass source_Location { get; set; }
         public Picker Source_State_Picker { get; set; }
-        public Picker Source_City_Picker { get; set; }
+        public Picker Source_Airport_Picker { get; set; }
         public Entry Source_AirportText { get; set; }
 
 
         public LocationClass destination_Location { get; set; }
         public Picker Destination_State_Picker { get; set; }
-        public Picker Destination_City_Picker { get; set; }        
+        public Picker Desntination_Airport_Picker { get; set; }        
         public Entry Destination_AirportText { get; set; }
 
 
@@ -115,20 +115,20 @@ namespace Density
                 Source_State_Picker.WidthRequest = 150;
                 Source_State_Picker.SelectedIndexChanged += Source_State_Picker_SelectedIndexChanged;
 
-                Source_City_Picker = new Picker();
-                Source_City_Picker.Title = "Start City";
-                Source_City_Picker.WidthRequest = 150;
-                Source_City_Picker.SelectedIndexChanged += Source_City_Picker_SelectedIndexChanged;
+                Source_Airport_Picker = new Picker();
+                Source_Airport_Picker.Title = "Start City";
+                Source_Airport_Picker.WidthRequest = 150;
+                Source_Airport_Picker.SelectedIndexChanged += Source_City_Picker_SelectedIndexChanged;
 
                 Destination_State_Picker = new Picker();
                 Destination_State_Picker.Title = "Destination State";
                 Destination_State_Picker.WidthRequest = 150;
                 Destination_State_Picker.SelectedIndexChanged += Destination_State_Picker_SelectedIndexChanged;
 
-                Destination_City_Picker = new Picker();
-                Destination_City_Picker.Title = "Destination City";
-                Destination_City_Picker.WidthRequest = 150;
-                Destination_City_Picker.SelectedIndexChanged += Destination_City_Picker_SelectedIndexChanged;
+                Desntination_Airport_Picker = new Picker();
+                Desntination_Airport_Picker.Title = "Destination City";
+                Desntination_Airport_Picker.WidthRequest = 150;
+                Desntination_Airport_Picker.SelectedIndexChanged += Destination_Airport_Picker_SelectedIndexChanged;
 
                 Aircraft_Picker = new Picker();
                 Aircraft_Picker.Title = "Type";
@@ -143,20 +143,20 @@ namespace Density
                 {
                     Destination_State_Picker.SelectedIndex = Source_State_Picker.SelectedIndex;
 
-                    var citiesSource = locationHelper.GetCities(Source_State_Picker.SelectedItem.ToString());
+                    var airportsSource = locationHelper.GetAirports(Source_State_Picker.SelectedItem.ToString());
 
-                    if (Source_City_Picker.Items.Count >= 2)
-                    {   Source_City_Picker.Items.Clear();  }
+                    if (Source_Airport_Picker.Items.Count >= 2)
+                    {   Source_Airport_Picker.Items.Clear();  }
 
-                    foreach (var citySource in citiesSource)
-                    {   Source_City_Picker.Items.Add(citySource);  }
+                    foreach (var airportSource in airportsSource)
+                    {   Source_Airport_Picker.Items.Add(airportSource);  }
                 }
 
                 void Source_City_Picker_SelectedIndexChanged(object sender, EventArgs e)
                 {
-                    var icaoPicker = locationHelper.GetIcao(
+                    var icaoPicker = locationHelper.GetIcaoFromAirport(
                                         Source_State_Picker.SelectedItem.ToString(),
-                                        Source_City_Picker.SelectedItem.ToString());
+                                        Source_Airport_Picker.SelectedItem.ToString());
 
                     Source_AirportText.Text = icaoPicker;
                     source_Location.icao = icaoPicker.ToString().ToUpperInvariant();
@@ -171,23 +171,23 @@ namespace Density
 
                 void Destination_State_Picker_SelectedIndexChanged(object sender, EventArgs e)
                 {
-                    var citiesDestination = locationHelper.GetCities(Destination_State_Picker.SelectedItem.ToString());
+                    var airportsDestination = locationHelper.GetAirports(Destination_State_Picker.SelectedItem.ToString());
 
-                    if (Destination_City_Picker.Items.Count >= 2)
-                    { Destination_City_Picker.Items.Clear(); }
+                    if (Desntination_Airport_Picker.Items.Count >= 2)
+                    { Desntination_Airport_Picker.Items.Clear(); }
 
-                    foreach (var city in citiesDestination)
-                    { Destination_City_Picker.Items.Add(city); }
+                    foreach (var airport in airportsDestination)
+                    { Desntination_Airport_Picker.Items.Add(airport); }
                 }
 
-                void Destination_City_Picker_SelectedIndexChanged(object sender, EventArgs e)
+                void Destination_Airport_Picker_SelectedIndexChanged(object sender, EventArgs e)
                 {
-                    var destinationCity_Icao_Picker = locationHelper.GetIcao(
+                    var destinationAirport_Icao_Picker = locationHelper.GetIcaoFromAirport(
                                     Destination_State_Picker.SelectedItem.ToString(),
-                                    Destination_City_Picker.SelectedItem.ToString());
+                                    Desntination_Airport_Picker.SelectedItem.ToString());
 
-                    Destination_AirportText.Text = destinationCity_Icao_Picker;
-                    destination_Location.icao = destinationCity_Icao_Picker.ToString().ToUpperInvariant();
+                    Destination_AirportText.Text = destinationAirport_Icao_Picker;
+                    destination_Location.icao = destinationAirport_Icao_Picker.ToString().ToUpperInvariant();
 
                     destination_Location = locationHelper.GetLocationFromIcao(destination_Location);
                 }
@@ -231,9 +231,9 @@ namespace Density
                 Grid.SetColumnSpan(Source_State_Picker, 2);
 
 
-                Grid.SetRow(Source_City_Picker, 1);
-                Grid.SetColumn(Source_City_Picker, 2);
-                Grid.SetColumnSpan(Source_City_Picker, 2);
+                Grid.SetRow(Source_Airport_Picker, 1);
+                Grid.SetColumn(Source_Airport_Picker, 2);
+                Grid.SetColumnSpan(Source_Airport_Picker, 2);
 
                 Grid.SetRow(Source_Icao_Entry, 2);
                 Grid.SetColumn(Source_Icao_Entry, 0);
@@ -249,9 +249,9 @@ namespace Density
                 Grid.SetColumn(Destination_State_Picker, 0);
                 Grid.SetColumnSpan(Destination_State_Picker, 2);
 
-                Grid.SetRow(Destination_City_Picker, 4);
-                Grid.SetColumn(Destination_City_Picker, 2);
-                Grid.SetColumnSpan(Destination_City_Picker, 2)
+                Grid.SetRow(Desntination_Airport_Picker, 4);
+                Grid.SetColumn(Desntination_Airport_Picker, 2);
+                Grid.SetColumnSpan(Desntination_Airport_Picker, 2)
                 ;
 
                 Grid.SetRow(Destination_Icao_Entry, 5);
@@ -277,13 +277,13 @@ namespace Density
 
                 grid.Children.Add(Source_Label);
                 grid.Children.Add(Source_State_Picker);
-                grid.Children.Add(Source_City_Picker);
+                grid.Children.Add(Source_Airport_Picker);
                 grid.Children.Add(Source_Icao_Entry);
                 grid.Children.Add(Source_AirportText);
 
                 grid.Children.Add(Destination_Label);
                 grid.Children.Add(Destination_State_Picker);
-                grid.Children.Add(Destination_City_Picker);
+                grid.Children.Add(Desntination_Airport_Picker);
                 grid.Children.Add(Destination_Icao_Entry);
                 grid.Children.Add(Destination_AirportText);
 

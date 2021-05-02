@@ -15,6 +15,7 @@ namespace Density
 
         private Picker StatePicker { get; set; }
         private Picker CityPicker { get; set; }
+        private Picker AirportPicker { get; set; }
         private Entry icaoEntryLabel { get; set; }
         private Entry gallonsEntryLabel { get; set; }
         public string pickerIcao { get; set; }
@@ -83,7 +84,7 @@ namespace Density
                 Icao_Code_Label.TextColor = Color.Black;
                 Icao_Code_Label.VerticalTextAlignment = TextAlignment.Center;
                 Icao_Code_Label.HorizontalTextAlignment = TextAlignment.Center;
-                Icao_Code_Label.Text = "Enter Icao code:  ";
+                Icao_Code_Label.Text = "Airport:  ";
 
                
                 StatePicker = new Picker();
@@ -96,39 +97,47 @@ namespace Density
                 CityPicker.WidthRequest = 150;
                 CityPicker.SelectedIndexChanged += CityPicker_SelectedIndexChanged;
 
+                AirportPicker = new Picker();
+                AirportPicker.Title = "Airport";
+                AirportPicker.WidthRequest = 150;
+                AirportPicker.SelectedIndexChanged += AirportPicker_SelectedIndexChanged;
+
 
                 var states = locationHelper.GetStates();
 
                 foreach (var state in states)
-                {
-                    StatePicker.Items.Add(state);
-                }
+                {  StatePicker.Items.Add(state);  }
                 void StatePicker_SelectedIndexChanged(object sender, EventArgs e)
                 {
                     var cities = locationHelper.GetCities(StatePicker.SelectedItem.ToString());
 
                     if (CityPicker.Items.Count >= 2)
-                    {
-                        CityPicker.Items.Clear();
-                    }
+                    {  CityPicker.Items.Clear();   }
 
                     foreach (var city in cities)
-                    {
-                        CityPicker.Items.Add(city);
-                    }
+                    {  CityPicker.Items.Add(city); }
                 }
                 void CityPicker_SelectedIndexChanged(object sender, EventArgs e)
                 {
-                    if (pickerIcao == null)
-                    {
-                        pickerIcao = "";
-                    }
-                    pickerIcao = locationHelper.GetIcao(StatePicker.SelectedItem.ToString(), CityPicker.SelectedItem.ToString());
-                    locationClass.icao = pickerIcao.Trim().ToUpperInvariant();
-                    icaoEntryLabel.Text = locationClass.icao;
+                    var airports = locationHelper.GetIcaoLocations(StatePicker.SelectedItem.ToString(), CityPicker.SelectedItem.ToString());
+                         
+                        if (AirportPicker.Items.Count >= 2)
+                    {   AirportPicker.Items.Clear(); }
 
+                    foreach (var airport in airports)
+                    {  AirportPicker.Items.Add(airport.name);  }   
+                }
+
+                void AirportPicker_SelectedIndexChanged(object sender, EventArgs e)
+                {
+                    var Airport_Icao_Picker = locationHelper.GetIcaoFromAirport(
+                                    StatePicker.SelectedItem.ToString(),
+                                    AirportPicker.SelectedItem.ToString());
+
+                    icaoEntryLabel.Text = Airport_Icao_Picker;
+                    locationClass.icao = Airport_Icao_Picker;
+                      
                     locationHelper.GetLocationFromIcao(locationClass);
-
                 }
 
                 Label EstimateMSG = new Label();
@@ -207,9 +216,6 @@ namespace Density
                         Density_Label.Text = "Not found or other error";
                     }
 
-                    
-                    
-                    
                 };
                 update.GestureRecognizers.Add(updatetapGestureRecognizer);
 
@@ -243,8 +249,8 @@ namespace Density
 
                 Grid.SetRow(Icao_Code_Label, 2);
                 Grid.SetColumn(Icao_Code_Label, 0);
-                Grid.SetRow(icaoEntryLabel, 2);
-                Grid.SetColumn(icaoEntryLabel, 1);
+                Grid.SetRow(AirportPicker, 2);
+                Grid.SetColumn(AirportPicker, 1);
 
 
                 Grid.SetRow(Pre_Message, 3);
@@ -274,7 +280,7 @@ namespace Density
                 grid.Children.Add(EstimateMSG);
                 grid.Children.Add(Icao_Code_Label);
                 grid.Children.Add(gallonsEntryLabel);
-                grid.Children.Add(icaoEntryLabel);
+                grid.Children.Add(AirportPicker);
                 grid.Children.Add(StatePicker);
                 grid.Children.Add(CityPicker);
                 grid.Children.Add(Pre_Message);
@@ -311,5 +317,7 @@ namespace Density
             }
             #endregion
         }
+
+     
     }
 }

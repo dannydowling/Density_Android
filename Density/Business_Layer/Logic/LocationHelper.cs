@@ -25,9 +25,9 @@ namespace Density
                          && !string.IsNullOrWhiteSpace(x["icao"].ToString()))
                                 .Select(x => new LocationClass
                                 {
-
                                     city = x["city"].ToString(),
                                     icao = x["icao"].ToString(),
+                                    name = x["name"].ToString(),
                                     lat = Convert.ToDouble(x["lat"]),
                                     lon = Convert.ToDouble(x["lon"])
                                 })
@@ -40,10 +40,18 @@ namespace Density
             return Locations.Keys.OrderBy(k => k).ToList(); }
 
         internal IEnumerable<string> GetCities(string stateName)
-        { return Locations.Single(c => c.Key == stateName).Value.Select(v => v.city).Distinct().OrderBy(c => c); }
+        { return Locations.Single(c => c.Key == stateName).Value.Select(v => v.city).OrderBy(c => c); }
 
-        internal string GetIcao(string stateName, string cityName)
-        { return Locations.Single(c => c.Key == stateName).Value.First(v => v.city == cityName).icao; }
+        internal IEnumerable<string> GetAirports(string stateName)
+        { return Locations.Single(c => c.Key == stateName).Value.Select(v => v.name).OrderBy(c => c); }
+
+        internal IEnumerable<LocationClass> GetIcaoLocations(string stateName, string cityName)
+        { return Locations.Single(c => c.Key == stateName).Value.TakeWhile(v => v.city == cityName); }
+
+        internal string GetIcaoFromAirport (string stateName, string airportName)
+        {
+            return Locations.Single(c => c.Key == stateName).Value.Single(v => airportName == v.name).icao;
+        }
 
 
         internal async Task<LocationClass> LookupLocation(LocationClass locationClass)
