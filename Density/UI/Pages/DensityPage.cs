@@ -9,7 +9,10 @@ namespace Density
 {
     class DensityPage : ContentPage
     {
-        private Label densityLabel { get; set; }
+        private Label Density_Label { get; set; }
+        private Label AirTemperature_Label { get; set; }
+        private Label AirPressure_Label { get; set; }
+
         private Picker StatePicker { get; set; }
         private Picker CityPicker { get; set; }
         private Entry icaoEntryLabel { get; set; }
@@ -39,13 +42,29 @@ namespace Density
                 if (!string.IsNullOrEmpty(locationClass.icao))
                 { icaoEntryLabel.Text = locationClass.icao; }
 
-                densityLabel = new Label();
-                densityLabel.FontSize = 25;
-                densityLabel.TextColor = Color.Black;
-                densityLabel.VerticalTextAlignment = TextAlignment.Center;
-                densityLabel.HorizontalTextAlignment = TextAlignment.Center;
-                densityLabel.Text = "";
-                densityLabel.BindingContext = densityLabel;
+                Density_Label = new Label();
+                Density_Label.FontSize = 25;
+                Density_Label.TextColor = Color.Black;
+                Density_Label.VerticalTextAlignment = TextAlignment.Center;
+                Density_Label.HorizontalTextAlignment = TextAlignment.Center;
+                Density_Label.Text = "";
+                Density_Label.BindingContext = Density_Label;
+
+                AirTemperature_Label = new Label();
+                AirTemperature_Label.FontSize = 25;
+                AirTemperature_Label.TextColor = Color.Black;
+                AirTemperature_Label.VerticalTextAlignment = TextAlignment.Center;
+                AirTemperature_Label.HorizontalTextAlignment = TextAlignment.Center;
+                AirTemperature_Label.Text = "";
+                AirTemperature_Label.BindingContext = AirTemperature_Label;
+
+                AirPressure_Label = new Label();
+                AirPressure_Label.FontSize = 25;
+                AirPressure_Label.TextColor = Color.Black;
+                AirPressure_Label.VerticalTextAlignment = TextAlignment.Center;
+                AirPressure_Label.HorizontalTextAlignment = TextAlignment.Center;
+                AirPressure_Label.Text = "";
+                AirPressure_Label.BindingContext = AirPressure_Label;
 
 
                 Image banner = new Image();
@@ -116,12 +135,17 @@ namespace Density
                 EstimateMSG2.HorizontalTextAlignment = TextAlignment.Center;
                 EstimateMSG2.Text = "Weight changes with Air Pressure and Temperature";
 
-                Label Densitypremessage = new Label();
-                Densitypremessage.FontSize = 14;
-                Densitypremessage.HorizontalTextAlignment = TextAlignment.Center;
-                Densitypremessage.VerticalTextAlignment = TextAlignment.Center;
-                Densitypremessage.Text = "The Fuel Density in pounds per gallon is:";
+                Label Pre_Message = new Label();
+                Pre_Message.FontSize = 14;
+                Pre_Message.HorizontalTextAlignment = TextAlignment.Center;
+                Pre_Message.VerticalTextAlignment = TextAlignment.Center;
+                Pre_Message.Text = "The Fuel Density in pounds per gallon is:";
 
+                Label Post_Message = new Label();
+                Post_Message.FontSize = 14;
+                Post_Message.HorizontalTextAlignment = TextAlignment.Center;
+                Post_Message.VerticalTextAlignment = TextAlignment.Center;
+                Post_Message.Text = "Based on air temperature and pressure of:";
 
                 var exit = new SpringBoardButton();
                 exit.Icon = "Exit.png";
@@ -146,19 +170,22 @@ namespace Density
                     (locationClass, weatherClass));
 
                     //antecedent is the return from the previous task.
-                    updateDensity.ContinueWith(async antecedent => 
-                    await densityHelper.ConvertToDensity
+                    updateDensity.ContinueWith(antecedent => 
+                    densityHelper.ConvertToDensity
                     (antecedent.Result, locationHelper, weatherHelper, locationClass, densityClass));
 
                     try
                     {
                         updateDensity.Wait();
 
-                        densityLabel.Text = densityClass.densityValue;
+                        Density_Label.Text = densityClass.densityValue;
+                        AirTemperature_Label.Text = weatherClass.AirTemperature.ToString();
+                        AirPressure_Label.Text = weatherClass.AirPressure.ToString();
+
                     }
                     catch (Exception)
                     {
-                        densityLabel.Text = "Not found or other error";
+                        Density_Label.Text = "Not found or other error";
                     }
 
                     
@@ -203,16 +230,26 @@ namespace Density
                 Grid.SetRow(icaoEntryLabel, 3);
                 Grid.SetColumn(icaoEntryLabel, 1);
 
-                Grid.SetRow(Densitypremessage, 4);
-                Grid.SetColumn(Densitypremessage, 0);
-                Grid.SetColumnSpan(Densitypremessage, 2);
-                Grid.SetRow(densityLabel, 5);
-                Grid.SetColumn(densityLabel, 0);
-                Grid.SetColumnSpan(densityLabel, 2);
+                Grid.SetRow(Pre_Message, 4);
+                Grid.SetColumn(Pre_Message, 0);
+                Grid.SetColumnSpan(Pre_Message, 2);
+                Grid.SetRow(Density_Label, 5);
+                Grid.SetColumn(Density_Label, 0);
+                Grid.SetColumnSpan(Density_Label, 2);
 
-                Grid.SetRow(update, 6);
+                Grid.SetRow(Post_Message, 6);
+                Grid.SetColumn(Post_Message, 0);
+                Grid.SetColumnSpan(Post_Message, 2);
+                Grid.SetRow(AirTemperature_Label, 7);
+                Grid.SetColumn(AirTemperature_Label, 0);
+                
+                Grid.SetRow(AirPressure_Label, 7);
+                Grid.SetColumn(AirPressure_Label, 1);
+                
+
+                Grid.SetRow(update, 8);
                 Grid.SetColumn(update, 0);
-                Grid.SetRow(exit, 6);
+                Grid.SetRow(exit, 8);
                 Grid.SetColumn(exit, 1);
 
                 grid.Children.Add(EstimateMSG);
@@ -221,8 +258,11 @@ namespace Density
                 grid.Children.Add(icaoEntryLabel);
                 grid.Children.Add(StatePicker);
                 grid.Children.Add(CityPicker);
-                grid.Children.Add(Densitypremessage);
-                grid.Children.Add(densityLabel);
+                grid.Children.Add(Pre_Message);
+                grid.Children.Add(Density_Label);
+                grid.Children.Add(AirTemperature_Label);
+                grid.Children.Add(AirPressure_Label);
+                grid.Children.Add(Post_Message);
                 grid.Children.Add(update);
                 grid.Children.Add(exit);
 

@@ -34,3 +34,5 @@ C:\Users\danny\Source\Repos\Density_Android\Density\obj\Release\netstandard2.0\X
 C:\Users\danny\Source\Repos\Density_Android\Density\obj\Release\netstandard2.0\Density.csproj.CopyComplete
 C:\Users\danny\Source\Repos\Density_Android\Density\obj\Release\netstandard2.0\Density.dll
 C:\Users\danny\Source\Repos\Density_Android\Density\obj\Release\netstandard2.0\Density.pdb
+C:\Users\danny\Source\Repos\Density_Android\Density\bin\Release\netstandard2.0\Business_Layer\Assets\Aircraft.txt
+C:\Users\danny\Source\Repos\Density_Android\Density\bin\Release\netstandard2.0\Business_Layer\Assets\Keys.txt

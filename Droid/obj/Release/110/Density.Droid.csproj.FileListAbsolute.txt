@@ -984,3 +984,13 @@ C:\Users\danny\Source\Repos\Density_Android\Droid\obj\Release\110\stamp\_Convert
 C:\Users\danny\Source\Repos\Density_Android\Droid\obj\Release\110\stamp\_GenerateJavaStubs.stamp
 C:\Users\danny\Source\Repos\Density_Android\Droid\obj\Release\110\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\danny\Source\Repos\Density_Android\Droid\obj\Release\110\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\danny\Source\Repos\Density_Android\Droid\bin\Release\Business_Layer\Assets\Aircraft.txt
+C:\Users\danny\Source\Repos\Density_Android\Droid\bin\Release\Business_Layer\Assets\Keys.txt
+C:\Users\danny\Source\Repos\Density_Android\Droid\obj\Release\110\res\drawable\route.png
+C:\Users\danny\Source\Repos\Density_Android\Droid\obj\Release\110\res\drawable-hdpi\route.png
+C:\Users\danny\Source\Repos\Density_Android\Droid\obj\Release\110\res\drawable-xhdpi\route.png
+C:\Users\danny\Source\Repos\Density_Android\Droid\obj\Release\110\res\drawable-xxhdpi\route.png
+C:\Users\danny\Source\Repos\Density_Android\Droid\obj\Release\110\res\drawable\location.png
+C:\Users\danny\Source\Repos\Density_Android\Droid\obj\Release\110\res\drawable-hdpi\location.png
+C:\Users\danny\Source\Repos\Density_Android\Droid\obj\Release\110\res\drawable-xhdpi\location.png
+C:\Users\danny\Source\Repos\Density_Android\Droid\obj\Release\110\res\drawable-xxhdpi\location.png

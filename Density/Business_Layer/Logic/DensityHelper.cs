@@ -7,9 +7,8 @@ namespace Density.Business_Layer.Logic
 {
     public class DensityHelper
     {
-        HttpClient httpClient;
-
-        internal async Task<DensityClass> ConvertToDensity(WeatherClass weatherClass, LocationHelper locationHelper, WeatherHelper weatherHelper, LocationClass locationClass, DensityClass densityClass)
+        
+        internal DensityClass ConvertToDensity(WeatherClass weatherClass, LocationHelper locationHelper, WeatherHelper weatherHelper, LocationClass locationClass, DensityClass densityClass)
         {
             if (locationClass == null)
             {
@@ -18,41 +17,19 @@ namespace Density.Business_Layer.Logic
                 densityClass = new DensityClass();
             }
 
-            if (httpClient == null)
-            {
-                Task.Run(() =>
-                {
-                    httpClient = new HttpClient();
-                    httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
-                    httpClient.DefaultRequestHeaders.Add("User-Agent", "DensityApp");
-
-                });
-            }
-
             if (locationHelper == null)
             { locationHelper = new LocationHelper(); }
 
             if (weatherHelper == null)
             { weatherHelper = new WeatherHelper(); }
 
-
-
-
-            if (weatherClass.AirPressure == 0)
-            {
-                if (string.IsNullOrEmpty(locationClass.icao))
-                {
-                    await locationHelper.LookupLocation(locationClass);
-                }                
-                await weatherHelper.GetWeatherAsync(locationClass, weatherClass);
-            }
-                       
-
-            weatherClass.AirTemperature *= 9;                //conversion to Farenheit
-            weatherClass.AirTemperature /= 5;
-            var TemperatureFarenheit = weatherClass.AirTemperature + 32;
-
+            var AirTemp_Temp = weatherClass.AirTemperature;
             var pascalPressure = weatherClass.AirPressure /= 100;                   //Ambient air pressure at a temperature
+            AirTemp_Temp *= 9;                //conversion to Farenheit
+            AirTemp_Temp /= 5;
+            var TemperatureFarenheit = AirTemp_Temp + 32;
+
+           
             var expansionRate = 820.462 * TemperatureFarenheit;        //fuel expansion rate                   
             var expansion = expansionRate + pascalPressure;              //combine to give an expansion value that's specific
 
