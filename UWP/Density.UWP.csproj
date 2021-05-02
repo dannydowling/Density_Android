@@ -125,10 +125,12 @@
     <Content Include="Assets\icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\location.png" />
     <Content Include="Assets\MenuExit.png" />
     <Content Include="Assets\Options.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Route.png" />
     <Content Include="Assets\Start.png" />
     <Content Include="Assets\timer.png" />
     <Content Include="Assets\Tracking.png" />

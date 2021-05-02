@@ -53,7 +53,7 @@ namespace Density
                 banner.Source = "Banner.png";
 
                 var FuelWeight = new SpringBoardButton();
-                FuelWeight.Icon = "API.png";
+                FuelWeight.Icon = "location.png";
                 FuelWeight.Label = "Set Location";
                 var FuelWeighttapGestureRecognizer = new TapGestureRecognizer();
                 FuelWeight.GestureRecognizers.Add(FuelWeighttapGestureRecognizer);
@@ -127,7 +127,7 @@ namespace Density
                 };
 
                 var Route = new SpringBoardButton();
-                Route.Icon = "FuelDensity.png";
+                Route.Icon = "Route.png";
                 Route.Label = "Create Route";
                 var RoutetapGestureRecognizer = new TapGestureRecognizer();
                 Route.GestureRecognizers.Add(RoutetapGestureRecognizer);

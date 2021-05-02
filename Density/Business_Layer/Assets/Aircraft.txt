@@ -1,8 +1,16 @@
 ﻿[{
-  "aircraft": "737",
+  "aircraft": "Boeing 737",
   "speed": "340"
   },
   {
   "aircraft": "Gulfstream 5",
   "speed": "300"
+  },
+   {
+  "aircraft": "KingAir 350",
+  "speed": "300"
+  },
+   {
+  "aircraft": "Lear 45",
+  "speed": "465"
   }]

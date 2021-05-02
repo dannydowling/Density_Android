@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -10,7 +11,6 @@ namespace Density
     public class CustomMap : Map
     {
         public List<Position> RouteCoordinates { get; set; }
-        public string Mode { get; set; }
         public CustomMap()
         {
             RouteCoordinates = new List<Position>();
@@ -25,6 +25,15 @@ namespace Density
 
         public void RouteMapCreate(LocationClass sourceLocation, LocationClass destinationLocation, AircraftClass aircraftClass)
         {
+            Label duration = new Label();
+            duration.FontSize = 16;
+            duration.WidthRequest = 150;
+            duration.TextColor = Color.Black;
+            duration.VerticalTextAlignment = TextAlignment.Center;
+            duration.HorizontalTextAlignment = TextAlignment.Center;
+            duration.Text = "  Time of flight:  ";
+
+
             #region Define the map and what's on it
             map = new CustomMap
             {
@@ -46,25 +55,24 @@ namespace Density
             
 
             maptype.Clicked += MapClicked;
-            distance.Clicked += DistanceClicked;
+            distance.Clicked += DistanceClickedAsync;
             menu.Clicked += MenuClicked;
 
-            void MenuClicked(object sender, EventArgs e)
+            async void MenuClicked(object sender, EventArgs e)
             {
                 var b = sender as Button;
                 {
-                    Navigation.PopModalAsync();
+                   await Navigation.PopModalAsync();
                 }
             }
 
-            void DistanceClicked(object sender, EventArgs e)
+            async void DistanceClickedAsync(object sender, EventArgs e)
             {
                 var b = sender as Button;
                 b.Text = "Distance";
                 DistanceCalculator distanceCalculator = new DistanceCalculator();
-                b.Text = distanceCalculator.GetInfoForRoute(map.Mode,
-                      sourceLocation, destinationLocation).Result
-                                            .ModeDistance.ToString();
+                var route = await distanceCalculator.GetInfoForRoute(3, sourceLocation, destinationLocation);                           
+                b.Text = route.Distance.ToString();
                 duration = new Label();
                 duration.Text = distanceCalculator.getDurationOfRoute(b.Text, aircraftClass.speed);
 
@@ -96,7 +104,7 @@ namespace Density
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
                 VerticalOptions = LayoutOptions.End,
                 Orientation = StackOrientation.Horizontal,
-                Children = { maptype, distance, menu }
+                Children = { maptype, distance, menu, duration }
             };
 
             var stack = new RelativeLayout();
