@@ -88,37 +88,32 @@ namespace Density
                 cities = new Dictionary<string, IEnumerable<string>>();
                 airports = new Dictionary<string, IEnumerable<string>>();
 
-                StatePicker = new Picker();
-                StatePicker.Title = "State";
-                StatePicker.WidthRequest = 150;
-                StatePicker.SelectedIndexChanged += StatePicker_SelectedIndexChanged;
-
-                CityPicker = new Picker();
-                CityPicker.Title = "City";
-                CityPicker.WidthRequest = 150;
-                CityPicker.SelectedIndexChanged += CityPicker_SelectedIndexChanged;
-
-                AirportPicker = new Picker();
-                AirportPicker.Title = "Airport";
-                AirportPicker.WidthRequest = 150;
-                AirportPicker.SelectedIndexChanged += AirportPicker_SelectedIndexChanged;
-
                 foreach (var state in states)
                 {
                     StatePicker.Items.Add(state);
                     cities.Add(state, locationHelper.GetCities(state));                       //get a collection of cities for that state
                     foreach (var city in cities.Keys)                                        //for every city in that collection
-                    {
-                        airports.Add(city, locationHelper.GetAirports(city, state));        //add the airports
-                    }
+                    {  airports.Add(city, locationHelper.GetAirports(city, state)); }      //add the airports
                 }
 
+                StatePicker = new Picker();
+                StatePicker.Title = "State";
+                StatePicker.WidthRequest = 150;
+                StatePicker.SelectedIndexChanged += StatePicker_SelectedIndexChanged;
                 void StatePicker_SelectedIndexChanged(object sender, EventArgs e)
                 { CityPicker.Items.Add(cities.Where(x => x.Key == StatePicker.SelectedItem.ToString()).Distinct().ToString()); }
 
+                CityPicker = new Picker();
+                CityPicker.Title = "City";
+                CityPicker.WidthRequest = 150;
+                CityPicker.SelectedIndexChanged += CityPicker_SelectedIndexChanged;
                 void CityPicker_SelectedIndexChanged(object sender, EventArgs e)
                 { AirportPicker.Items.Add(airports.Where(x => x.Key == CityPicker.SelectedItem.ToString()).Distinct().ToString()); }
 
+                AirportPicker = new Picker();
+                AirportPicker.Title = "Airport";
+                AirportPicker.WidthRequest = 150;
+                AirportPicker.SelectedIndexChanged += AirportPicker_SelectedIndexChanged;
                 void AirportPicker_SelectedIndexChanged(object sender, EventArgs e)
                 {
                     if (locationClass == null)
