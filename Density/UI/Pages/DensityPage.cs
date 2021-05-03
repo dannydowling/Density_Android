@@ -87,26 +87,7 @@ namespace Density
                 cities = new Dictionary<string, List<string>>();
                 airports = new Dictionary<string, List<string>>();
 
-                Task populate = Task.Factory.StartNew(() =>
-                {
-                    foreach (var stateName in states)
-                    {
-                        if (!cities.ContainsKey(stateName))
-                            cities.Add(stateName, locationHelper.GetCities(stateName).ToList());
-
-
-                        foreach (var cityNames in cities.Values)
-                        {
-                            foreach (var cityName in cityNames)
-                            {
-                                if (!airports.ContainsKey(cityName))
-                                    airports.Add(cityName, locationHelper.GetAirports(stateName, cityName).ToList());
-                            }
-                        }
-                    }
-                });
-
-                populate.Wait();
+                populate_Picker_Dictionaries(locationHelper);
 
                 StatePicker = new Picker();
                 StatePicker.Title = "State";
@@ -116,7 +97,6 @@ namespace Density
 
                 void StatePicker_SelectedIndexChanged(object sender, EventArgs e)
                 {
-                    if (cities.ContainsKey(StatePicker.SelectedItem.ToString()))
                     { CityPicker.ItemsSource = cities.Single(x => x.Key == StatePicker.SelectedItem.ToString()).Value.ToList(); }
                 }
 
@@ -127,7 +107,6 @@ namespace Density
                 CityPicker.SelectedIndexChanged += CityPicker_SelectedIndexChanged;
                 void CityPicker_SelectedIndexChanged(object sender, EventArgs e)
                 {
-                    if (airports.ContainsKey(CityPicker.SelectedItem.ToString()))
                     { AirportPicker.ItemsSource = airports.Single(x => x.Key == CityPicker.SelectedItem.ToString()).Value.ToList(); }
                 }
 
@@ -311,6 +290,23 @@ namespace Density
             #endregion
         }
 
+        private void populate_Picker_Dictionaries(LocationHelper locationHelper)
+        {
+            foreach (var stateName in states)
+            {
+                if (!cities.ContainsKey(stateName))
+                    cities.Add(stateName, locationHelper.GetCities(stateName).ToList());
 
+
+                foreach (var cityNames in cities.Values)
+                {
+                    foreach (var cityName in cityNames)
+                    {
+                        if (!airports.ContainsKey(cityName))
+                            airports.Add(cityName, locationHelper.GetAirports(stateName, cityName).ToList());
+                    }
+                }
+            }
+        }
     }
 }
