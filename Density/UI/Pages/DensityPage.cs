@@ -20,8 +20,8 @@ namespace Density
         private Entry gallonsEntryLabel { get; set; }
 
         IEnumerable<string> states { get; set; }
-        Dictionary<string, IEnumerable<string>> cities { get; set; }
-        Dictionary<string, IEnumerable<string>> airports { get; set; }
+        Dictionary<string, List<string>> cities { get; set; }
+        Dictionary<string, List<string>> airports { get; set; }
         public string string_Picker_Contents_Holder { get; set; }
 
         public void DensityPageCreate(
@@ -85,15 +85,23 @@ namespace Density
                 Icao_Code_Label.Text = "Airport:  ";
 
                 states = locationHelper.GetStates();
-                cities = new Dictionary<string, IEnumerable<string>>();
-                airports = new Dictionary<string, IEnumerable<string>>();
+                cities = new Dictionary<string, List<string>>();
+                airports = new Dictionary<string, List<string>>();
 
+                StatePicker.ItemsSource = states.ToList();
                 foreach (var state in states)
                 {
-                    StatePicker.Items.Add(state);
-                    cities.Add(state, locationHelper.GetCities(state));                       //get a collection of cities for that state
-                    foreach (var city in cities.Keys)                                        //for every city in that collection
-                    {  airports.Add(city, locationHelper.GetAirports(city, state)); }      //add the airports
+                    if (!cities.ContainsKey(state))
+                        cities.Add(state, new List<string>());
+                    cities[state].AddRange(locationHelper.GetCities(state));    
+
+
+                    foreach (var city in cities.Keys)                                        
+                    {
+                        if (!airports.ContainsKey(city))
+                            airports.Add(city, new List<string>());
+                        airports[city].AddRange(locationHelper.GetAirports(city, state));
+                    }     
                 }
 
                 StatePicker = new Picker();
