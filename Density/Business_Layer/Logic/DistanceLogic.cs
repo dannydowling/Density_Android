@@ -19,13 +19,13 @@ namespace Density
             double centimeters = 0;
             double millimeters = 0;
 
-            string[] distances = distance.Split(' ');
-            for (int i = 0; i < distances.Length; i += 2)
-            {
-                double amount = Convert.ToDouble(distances[i]);
-                string type = distances[i + 1].ToLower();
+            string[] distances = distance.Split(' ');               //there's a gap between distances sent in
+            for (int i = 0; i < distances.Length; i += 2)           //a for loop on every second string.
+            {                                                       // 11 km would be 11 and km as two iterations
+                double amount = Convert.ToDouble(distances[i]);     //we convert the 11 into a double
+                string type = distances[i + 1].ToLower();           //and we set the next iteration to lower case km
 
-                if (type == "km")
+                if (type == "km")                                   //this is where we identify what we're dealing with
                     kilometers = amount;
                 else if (type == "m")
                     meters = amount;
@@ -35,15 +35,14 @@ namespace Density
                     millimeters = amount;
             }
 
-            return kilometers + (meters / 1000) + (centimeters / 100000) + (millimeters / 1000000);
+            return kilometers + (meters / 1000) + (centimeters / 100000) + (millimeters / 1000000); //and we want it all in kilometers for now.
         }
 
         internal string getDurationOfRoute(string distance, double speedOfTravel)
         {
-            double parsedDistance = ParseDistance(distance);
-            return (parsedDistance / speedOfTravel).ToString();
+            double parsedDistance = ParseDistance(distance);        //send it to be converted
+            return ((parsedDistance / speedOfTravel)/1.852).ToString(); //1.852 is how many kilometers an hour a knot is.
         }
-
 
         private string GetURL((double, double) sourcePosition, (double, double) destinationPosition, int mode)
         {
@@ -54,7 +53,6 @@ namespace Density
 
                 return string.Format("https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins={0}&destinations={1}&mode={2}&key={3}", sourcePosition, destinationPosition, mode, key);
             }
-
             return "";
         }
 

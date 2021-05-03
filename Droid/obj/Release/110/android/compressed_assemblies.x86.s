@@ -70,7 +70,7 @@
 
 	/* 7: System.Core.dll */
 	/* uncompressed_file_size */
-	.long	392192
+	.long	391168
 	/* loaded */
 	.byte	0
 	/* data */

@@ -71,7 +71,7 @@
 
 	/* 7: System.Core.dll */
 	/* uncompressed_file_size */
-	.word	392192
+	.word	391168
 	/* loaded */
 	.byte	0
 	/* data */

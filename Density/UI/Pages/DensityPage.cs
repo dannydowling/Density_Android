@@ -1,7 +1,8 @@
 ﻿using Density.Business_Layer.Logic;
 using Density.Business_Layer.Repositories;
 using System;
-using System.Net.Http;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -17,9 +18,13 @@ namespace Density
         private Picker CityPicker { get; set; }
         private Picker AirportPicker { get; set; }
         private Entry gallonsEntryLabel { get; set; }
-        public string pickerIcao { get; set; }
 
-        public void DensityPageCreate(           
+        IEnumerable<string> states { get; set; }
+        Dictionary<string, IEnumerable<string>> cities { get; set; }
+        Dictionary<string, IEnumerable<string>> airports { get; set; }
+        public string string_Picker_Contents_Holder { get; set; }
+
+        public void DensityPageCreate(
             LocationHelper locationHelper,
             WeatherHelper weatherHelper,
             DensityHelper densityHelper,
@@ -79,7 +84,10 @@ namespace Density
                 Icao_Code_Label.HorizontalTextAlignment = TextAlignment.Center;
                 Icao_Code_Label.Text = "Airport:  ";
 
-               
+                states = locationHelper.GetStates();
+                cities = new Dictionary<string, IEnumerable<string>>();
+                airports = new Dictionary<string, IEnumerable<string>>();
+
                 StatePicker = new Picker();
                 StatePicker.Title = "State";
                 StatePicker.WidthRequest = 150;
@@ -95,37 +103,26 @@ namespace Density
                 AirportPicker.WidthRequest = 150;
                 AirportPicker.SelectedIndexChanged += AirportPicker_SelectedIndexChanged;
 
-
-                var states = locationHelper.GetStates();
-
                 foreach (var state in states)
-                {  StatePicker.Items.Add(state);  }
+                {
+                    StatePicker.Items.Add(state);
+                    cities.Add(state, locationHelper.GetCities(state));                       //get a collection of cities for that state
+                    foreach (var city in cities.Keys)                                        //for every city in that collection
+                    {
+                        airports.Add(city, locationHelper.GetAirports(city, state));        //add the airports
+                    }
+                }
 
                 void StatePicker_SelectedIndexChanged(object sender, EventArgs e)
-                {
-                    var cities = locationHelper.GetCities(StatePicker.SelectedItem.ToString());
+                { CityPicker.Items.Add(cities.Where(x => x.Key == StatePicker.SelectedItem.ToString()).Distinct().ToString()); }
 
-                    if (CityPicker.Items.Count >= 2)
-                    {  CityPicker.Items.Clear();   }
-
-                    foreach (var city in cities)
-                    {  CityPicker.Items.Add(city); }
-                }
                 void CityPicker_SelectedIndexChanged(object sender, EventArgs e)
-                {
-                    var airports = locationHelper.GetAirports(StatePicker.SelectedItem.ToString(), CityPicker.SelectedItem.ToString());
-                         
-                        if (AirportPicker.Items.Count >= 2)
-                    {   AirportPicker.Items.Clear(); }
-
-                    foreach (var airport in airports)
-                    {  AirportPicker.Items.Add(airport);  }   
-                }
+                { AirportPicker.Items.Add(airports.Where(x => x.Key == CityPicker.SelectedItem.ToString()).Distinct().ToString()); }
 
                 void AirportPicker_SelectedIndexChanged(object sender, EventArgs e)
                 {
                     if (locationClass == null)
-                    {  locationClass = new LocationClass();  }
+                    { locationClass = new LocationClass(); }
                     locationClass.icao = locationHelper.GetIcaoFromAirport(StatePicker.SelectedItem.ToString(), AirportPicker.SelectedItem.ToString());
                     locationClass = locationHelper.GetLocationFromIcao(locationClass);
                 }
@@ -167,24 +164,14 @@ namespace Density
                 update.Icon = "Update.png";
                 update.Label = "Update";
                 var updatetapGestureRecognizer = new TapGestureRecognizer();
-                updatetapGestureRecognizer.Tapped += (s, e) =>
+                updatetapGestureRecognizer.Tapped += async (s, e) =>
                 {
-                    
-
-                    //gets a weather class
-                    Task<WeatherClass> updateDensity = Task.Run(async () =>
-                    await weatherHelper.GetWeatherAsync
-                    (locationClass, weatherClass));
-
-                    //antecedent is the return from the previous task.
-                    updateDensity.ContinueWith(antecedent => 
-                    densityHelper.ConvertToDensity
-                    (antecedent.Result, locationHelper, weatherHelper, locationClass, densityClass));
+                    //updates the weather class and then the density class.
+                    weatherClass = await weatherHelper.GetWeatherAsync(locationClass, weatherClass);
+                    densityClass = densityHelper.ConvertToDensity(weatherClass, densityClass);
 
                     try
                     {
-                        updateDensity.Wait();
-
                         Density_Label.Text = densityClass.densityValue;
 
                         double AirTemp_Temp = weatherClass.AirTemperature;
@@ -200,11 +187,10 @@ namespace Density
                             double gallonAmount = Convert.ToDouble(gallonsEntryLabel.Text);
                             gallonsEntryLabel.Text = gallonAmount.ToString() + " is " + (denseValue * gallonAmount).ToString() + "lbs";
                         }
-
                     }
-                    catch (Exception)
+                    catch (Exception error)
                     {
-                        Density_Label.Text = "Not found or other error";
+                        Density_Label.Text = error.Message + error.Source;
                     }
 
                 };
@@ -231,7 +217,7 @@ namespace Density
 
                 Grid.SetRow(EstimateMSG, 0);
                 Grid.SetColumn(EstimateMSG, 0);
-                Grid.SetColumnSpan(EstimateMSG, 2);              
+                Grid.SetColumnSpan(EstimateMSG, 2);
 
                 Grid.SetRow(StatePicker, 1);
                 Grid.SetColumn(StatePicker, 0);
@@ -258,10 +244,10 @@ namespace Density
                 Grid.SetColumn(Post_Message, 0);
                 Grid.SetColumnSpan(Post_Message, 2);
                 Grid.SetRow(AirTemperature_Label, 6);
-                Grid.SetColumn(AirTemperature_Label, 0);                
+                Grid.SetColumn(AirTemperature_Label, 0);
                 Grid.SetRow(AirPressure_Label, 6);
                 Grid.SetColumn(AirPressure_Label, 1);
-                
+
 
                 Grid.SetRow(update, 8);
                 Grid.SetColumn(update, 0);
@@ -309,6 +295,6 @@ namespace Density
             #endregion
         }
 
-     
+
     }
 }

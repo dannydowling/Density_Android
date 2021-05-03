@@ -10,13 +10,8 @@ namespace Density.Business_Layer.Logic
     {
         HttpClient httpClient;
 
-        internal async Task<WeatherClass> GetWeatherAsync(
-            LocationClass locationClass, WeatherClass weatherClass)
+        internal async Task<WeatherClass> GetWeatherAsync( LocationClass locationClass, WeatherClass weatherClass)
         {
-            //default the values from whatever was there before
-            weatherClass.AirPressure = 0;
-            weatherClass.AirTemperature = 0;
-
             if (locationClass == null)
             { locationClass = new LocationClass(); }
 
@@ -31,8 +26,18 @@ namespace Density.Business_Layer.Logic
             string weather_From_Website_in_Json = await httpClient.GetStringAsync(weatherWebsite);
 
             JObject w = JObject.Parse(weather_From_Website_in_Json);
-            weatherClass.AirTemperature = Convert.ToInt32(w.SelectToken("properties.temperature.value"));
-            weatherClass.AirPressure = Convert.ToInt32(w.SelectToken("properties.barometricPressure.value"));
+            if (w.SelectToken("properties.temperature.value") != null)
+            {
+                weatherClass.AirTemperature = Convert.ToInt32(w.SelectToken("properties.temperature.value"));
+
+                if (w.SelectToken("properties.barometricPressure.value") != null)
+                { weatherClass.AirPressure = Convert.ToInt32(w.SelectToken("properties.barometricPressure.value")); }
+            }
+            else
+            {
+                weatherClass.AirTemperature = 0;
+                weatherClass.AirPressure = 0;
+            }           
 
             return weatherClass;
         }
