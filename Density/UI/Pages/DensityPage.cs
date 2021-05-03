@@ -87,7 +87,21 @@ namespace Density
                 cities = new Dictionary<string, List<string>>();
                 airports = new Dictionary<string, List<string>>();
 
-                populate_Picker_Dictionaries(locationHelper);
+                foreach (var stateName in states)
+                {
+                    if (!cities.ContainsKey(stateName))
+                        cities.Add(stateName, locationHelper.GetCities(stateName).ToList());
+
+
+                    foreach (var cityNames in cities.Values)
+                    {
+                        foreach (var cityName in cityNames)
+                        {
+                            if (!airports.ContainsKey(cityName))
+                                airports.Add(cityName, locationHelper.GetAirports(stateName, cityName).ToList());
+                        }
+                    }
+                }
 
                 StatePicker = new Picker();
                 StatePicker.Title = "State";
@@ -97,9 +111,10 @@ namespace Density
 
                 void StatePicker_SelectedIndexChanged(object sender, EventArgs e)
                 {
+                    CityPicker.Items.Clear();
+                    AirportPicker.Items.Clear();
                     { CityPicker.ItemsSource = cities.Single(x => x.Key == StatePicker.SelectedItem.ToString()).Value.ToList(); }
                 }
-
 
                 CityPicker = new Picker();
                 CityPicker.Title = "City";
@@ -107,6 +122,7 @@ namespace Density
                 CityPicker.SelectedIndexChanged += CityPicker_SelectedIndexChanged;
                 void CityPicker_SelectedIndexChanged(object sender, EventArgs e)
                 {
+                    AirportPicker.Items.Clear();
                     { AirportPicker.ItemsSource = airports.Single(x => x.Key == CityPicker.SelectedItem.ToString()).Value.ToList(); }
                 }
 
@@ -119,7 +135,7 @@ namespace Density
                     if (locationClass == null)
                     { locationClass = new LocationClass(); }
                     locationClass.icao = locationHelper.GetIcaoFromAirport(StatePicker.SelectedItem.ToString(), AirportPicker.SelectedItem.ToString());
-                    locationClass = locationHelper.GetLocationFromIcao(locationClass);
+                    locationClass = locationHelper.GetLocationFromIcao(locationClass);               
                 }
 
                 Label EstimateMSG = new Label();
@@ -288,25 +304,6 @@ namespace Density
                 App.Current.MainPage.DisplayAlert(error.Message, error.Source + error.StackTrace, "OK");
             }
             #endregion
-        }
-
-        private void populate_Picker_Dictionaries(LocationHelper locationHelper)
-        {
-            foreach (var stateName in states)
-            {
-                if (!cities.ContainsKey(stateName))
-                    cities.Add(stateName, locationHelper.GetCities(stateName).ToList());
-
-
-                foreach (var cityNames in cities.Values)
-                {
-                    foreach (var cityName in cityNames)
-                    {
-                        if (!airports.ContainsKey(cityName))
-                            airports.Add(cityName, locationHelper.GetAirports(stateName, cityName).ToList());
-                    }
-                }
-            }
         }
     }
 }
