@@ -22,7 +22,6 @@ namespace Density
         IEnumerable<string> states { get; set; }
         Dictionary<string, List<string>> cities { get; set; }
         Dictionary<string, List<string>> airports { get; set; }
-        public string string_Picker_Contents_Holder { get; set; }
 
         public void DensityPageCreate(
             LocationHelper locationHelper,
@@ -88,35 +87,49 @@ namespace Density
                 cities = new Dictionary<string, List<string>>();
                 airports = new Dictionary<string, List<string>>();
 
-                StatePicker.ItemsSource = states.ToList();
-                foreach (var state in states)
+                Task populate = Task.Factory.StartNew(() =>
                 {
-                    if (!cities.ContainsKey(state))
-                        cities.Add(state, new List<string>());
-                    cities[state].AddRange(locationHelper.GetCities(state));    
-
-
-                    foreach (var city in cities.Keys)                                        
+                    foreach (var stateName in states)
                     {
-                        if (!airports.ContainsKey(city))
-                            airports.Add(city, new List<string>());
-                        airports[city].AddRange(locationHelper.GetAirports(city, state));
-                    }     
-                }
+                        if (!cities.ContainsKey(stateName))
+                            cities.Add(stateName, locationHelper.GetCities(stateName).ToList());
+
+
+                        foreach (var cityNames in cities.Values)
+                        {
+                            foreach (var cityName in cityNames)
+                            {
+                                if (!airports.ContainsKey(cityName))
+                                    airports.Add(cityName, locationHelper.GetAirports(stateName, cityName).ToList());
+                            }
+                        }
+                    }
+                });
+
+                populate.Wait();
 
                 StatePicker = new Picker();
                 StatePicker.Title = "State";
                 StatePicker.WidthRequest = 150;
                 StatePicker.SelectedIndexChanged += StatePicker_SelectedIndexChanged;
+                StatePicker.ItemsSource = states.ToList();
+
                 void StatePicker_SelectedIndexChanged(object sender, EventArgs e)
-                { CityPicker.Items.Add(cities.Where(x => x.Key == StatePicker.SelectedItem.ToString()).Distinct().ToString()); }
+                {
+                    if (cities.ContainsKey(StatePicker.SelectedItem.ToString()))
+                    { CityPicker.ItemsSource = cities.Single(x => x.Key == StatePicker.SelectedItem.ToString()).Value.ToList(); }
+                }
+
 
                 CityPicker = new Picker();
                 CityPicker.Title = "City";
                 CityPicker.WidthRequest = 150;
                 CityPicker.SelectedIndexChanged += CityPicker_SelectedIndexChanged;
                 void CityPicker_SelectedIndexChanged(object sender, EventArgs e)
-                { AirportPicker.Items.Add(airports.Where(x => x.Key == CityPicker.SelectedItem.ToString()).Distinct().ToString()); }
+                {
+                    if (airports.ContainsKey(CityPicker.SelectedItem.ToString()))
+                    { AirportPicker.ItemsSource = airports.Single(x => x.Key == CityPicker.SelectedItem.ToString()).Value.ToList(); }
+                }
 
                 AirportPicker = new Picker();
                 AirportPicker.Title = "Airport";
@@ -291,9 +304,9 @@ namespace Density
                 Content = view;
 
             }
-            catch (Exception)
+            catch (Exception error)
             {
-                App.Current.MainPage.DisplayAlert("The controls on the page failed to load.", "Check the controls and try again", "OK");
+                App.Current.MainPage.DisplayAlert(error.Message, error.Source + error.StackTrace, "OK");
             }
             #endregion
         }
