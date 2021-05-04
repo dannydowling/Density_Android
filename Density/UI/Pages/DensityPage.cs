@@ -113,7 +113,11 @@ namespace Density
                 {
                     CityPicker.Items.Clear();
                     AirportPicker.Items.Clear();
-                    { CityPicker.ItemsSource = cities.Single(x => x.Key == StatePicker.SelectedItem.ToString()).Value.ToList(); }
+                    { var cityList = cities.Single(x => x.Key == StatePicker.SelectedItem.ToString()).Value.ToList();
+
+                        foreach (var item in cityList)
+                        { CityPicker.Items.Add(item); }
+                    }
                 }
 
                 CityPicker = new Picker();
@@ -123,7 +127,11 @@ namespace Density
                 void CityPicker_SelectedIndexChanged(object sender, EventArgs e)
                 {
                     AirportPicker.Items.Clear();
-                    { AirportPicker.ItemsSource = airports.Single(x => x.Key == CityPicker.SelectedItem.ToString()).Value.ToList(); }
+                    {
+                        var airportList = airports.Single(x => x.Key == CityPicker.SelectedItem.ToString()).Value.ToList();
+                        foreach (var item in airportList)
+                        {  AirportPicker.Items.Add(item);  }  
+                    }
                 }
 
                 AirportPicker = new Picker();

@@ -7779,11 +7779,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\danny\\Source\\Repos\\Density_Android\\UWP\\Density.UWP.csproj",
+      "projectUniqueName": "C:\\Users\\danny\\source\\repos\\dannydowling\\Density_Android\\UWP\\Density.UWP.csproj",
       "projectName": "Density.UWP",
-      "projectPath": "C:\\Users\\danny\\Source\\Repos\\Density_Android\\UWP\\Density.UWP.csproj",
+      "projectPath": "C:\\Users\\danny\\source\\repos\\dannydowling\\Density_Android\\UWP\\Density.UWP.csproj",
       "packagesPath": "C:\\Users\\danny\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\danny\\Source\\Repos\\Density_Android\\UWP\\obj\\",
+      "outputPath": "C:\\Users\\danny\\source\\repos\\dannydowling\\Density_Android\\UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -7807,8 +7807,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "C:\\Users\\danny\\Source\\Repos\\Density_Android\\Density\\Density.csproj": {
-              "projectPath": "C:\\Users\\danny\\Source\\Repos\\Density_Android\\Density\\Density.csproj"
+            "C:\\Users\\danny\\source\\repos\\dannydowling\\Density_Android\\Density\\Density.csproj": {
+              "projectPath": "C:\\Users\\danny\\source\\repos\\dannydowling\\Density_Android\\Density\\Density.csproj"
             }
           }
         }

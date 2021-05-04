@@ -1,6 +1,8 @@
 ﻿using Density.Business_Layer.Logic;
 using Density.Business_Layer.Repositories;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace Density
@@ -9,21 +11,29 @@ namespace Density
     {
         public LocationClass source_Location { get; set; }
         public Picker Source_State_Picker { get; set; }
+        public Picker Source_City_Picker { get; set; }
+
         public Picker Source_Airport_Picker { get; set; }
-        public Entry Source_AirportText { get; set; }
+        
 
 
         public LocationClass destination_Location { get; set; }
         public Picker Destination_State_Picker { get; set; }
-        public Picker Desntination_Airport_Picker { get; set; }        
-        public Entry Destination_AirportText { get; set; }
+        public Picker Destination_City_Picker { get; set; }  
+        
+        public Picker Destination_Airport_Picker { get; set; }
+        
 
 
         public AircraftClass aircraftClass { get; set; }
         public Picker Aircraft_Picker { get; set; }
         public Entry AircraftSpeedText { get; set; }
 
-       
+        IEnumerable<string> states { get; set; }
+        Dictionary<string, List<string>> cities { get; set; }
+        Dictionary<string, List<string>> airports { get; set; }
+
+
         public void RouteCreate(LocationHelper locationHelper, AircraftHelper aircraftHelper)
         {
             try
@@ -99,12 +109,6 @@ namespace Density
                 destination_Location = new LocationClass();
                 aircraftClass = new AircraftClass();
 
-                Source_AirportText = new Entry();
-                Source_AirportText.BindingContext = Source_AirportText;
-
-                Destination_AirportText = new Entry();
-                Destination_AirportText.BindingContext = Destination_AirportText;
-
                 AircraftSpeedText = new Entry();
                 AircraftSpeedText.BindingContext = AircraftSpeedText;
 
@@ -115,80 +119,113 @@ namespace Density
                 Source_State_Picker.WidthRequest = 150;
                 Source_State_Picker.SelectedIndexChanged += Source_State_Picker_SelectedIndexChanged;
 
+                Source_City_Picker = new Picker();
+                Source_City_Picker.Title = "Start City";
+                Source_City_Picker.WidthRequest = 150;
+                Source_City_Picker.SelectedIndexChanged += Source_City_Picker_SelectedIndexChanged;
+
                 Source_Airport_Picker = new Picker();
-                Source_Airport_Picker.Title = "Start City";
+                Source_Airport_Picker.Title = "Start Airport";
                 Source_Airport_Picker.WidthRequest = 150;
-                Source_Airport_Picker.SelectedIndexChanged += Source_City_Picker_SelectedIndexChanged;
+                Source_Airport_Picker.SelectedIndexChanged += Source_Airport_Picker_SelectedIndexChanged;
 
                 Destination_State_Picker = new Picker();
                 Destination_State_Picker.Title = "Destination State";
                 Destination_State_Picker.WidthRequest = 150;
                 Destination_State_Picker.SelectedIndexChanged += Destination_State_Picker_SelectedIndexChanged;
 
-                Desntination_Airport_Picker = new Picker();
-                Desntination_Airport_Picker.Title = "Destination City";
-                Desntination_Airport_Picker.WidthRequest = 150;
-                Desntination_Airport_Picker.SelectedIndexChanged += Destination_Airport_Picker_SelectedIndexChanged;
+                Destination_City_Picker = new Picker();
+                Destination_City_Picker.Title = "Destination City";
+                Destination_City_Picker.WidthRequest = 150;
+                Destination_City_Picker.SelectedIndexChanged += Destination_City_Picker_SelectedIndexChanged;
 
                 Aircraft_Picker = new Picker();
                 Aircraft_Picker.Title = "Type";
                 Aircraft_Picker.WidthRequest = 150;
                 Aircraft_Picker.SelectedIndexChanged += AircraftPicker_SelectedIndexChanged;
 
+                Destination_Airport_Picker = new Picker();
+                Destination_Airport_Picker.Title = "Start Airport";
+                Destination_Airport_Picker.WidthRequest = 150;
+                Destination_Airport_Picker.SelectedIndexChanged += Destination_Airport_Picker_SelectedIndexChanged;
+
+
+                states = locationHelper.GetStates();
+                cities = new Dictionary<string, List<string>>();
+                airports = new Dictionary<string, List<string>>();
+
+                foreach (var stateName in states)
+                {
+                    if (!cities.ContainsKey(stateName))
+                        cities.Add(stateName, locationHelper.GetCities(stateName).ToList());
+
+
+                    foreach (var cityNames in cities.Values)
+                    {
+                        foreach (var cityName in cityNames)
+                        {
+                            if (!airports.ContainsKey(cityName))
+                                airports.Add(cityName, locationHelper.GetAirports(stateName, cityName).ToList());
+                        }
+                    }
+                }
+
                 //populate the source picker with state information                
-                foreach (var stateSource in statesSource)
-                {  Source_State_Picker.Items.Add(stateSource);  }
+                foreach (var state in states)
+                {  Source_State_Picker.Items.Add(state);
+                   Destination_State_Picker.Items.Add(state);
+                }
 
                 void Source_State_Picker_SelectedIndexChanged(object sender, EventArgs e)
-                {
-                    Destination_State_Picker.SelectedIndex = Source_State_Picker.SelectedIndex;
+                {                    
+                    var sourceCityList = cities.Single(x => x.Key == Source_State_Picker.SelectedItem.ToString()).Value.ToList();
 
-                    var airportsSource = locationHelper.GetAirports(Source_State_Picker.SelectedItem.ToString());
-
-                    if (Source_Airport_Picker.Items.Count >= 2)
-                    {   Source_Airport_Picker.Items.Clear();  }
-
-                    foreach (var airportSource in airportsSource)
-                    {   Source_Airport_Picker.Items.Add(airportSource);  }
+                    foreach (var item in sourceCityList)
+                    {   Source_City_Picker.Items.Add(item);  }
                 }
 
                 void Source_City_Picker_SelectedIndexChanged(object sender, EventArgs e)
                 {
-                    var icaoPicker = locationHelper.GetIcaoFromAirport(
-                                        Source_State_Picker.SelectedItem.ToString(),
-                                        Source_Airport_Picker.SelectedItem.ToString());
-
-                    Source_AirportText.Text = icaoPicker;
-                    source_Location.icao = icaoPicker.ToString().ToUpperInvariant();
-
-                    source_Location = locationHelper.GetLocationFromIcao(source_Location);
+                    Source_Airport_Picker.Items.Clear();
+                    {
+                        var sourceAirportList = airports.Single(x => x.Key == Source_City_Picker.SelectedItem.ToString()).Value.ToList();
+                        foreach (var item in sourceAirportList)
+                        { Source_Airport_Picker.Items.Add(item); }
+                    }
                 }
 
-                var Desitnation_States = locationHelper.GetStates();
+                void Source_Airport_Picker_SelectedIndexChanged(object sender, EventArgs e)
+                {
+                    source_Location.icao = locationHelper.GetIcaoFromAirport(
+                                        Source_State_Picker.SelectedItem.ToString(),
+                                        Source_Airport_Picker.SelectedItem.ToString());
+                    source_Location = locationHelper.GetLocationFromIcao(source_Location);                    
+                }
 
-                foreach (var state in Desitnation_States)
-                {  Destination_State_Picker.Items.Add(state);  }
 
                 void Destination_State_Picker_SelectedIndexChanged(object sender, EventArgs e)
                 {
-                    var airportsDestination = locationHelper.GetAirports(Destination_State_Picker.SelectedItem.ToString());
+                    var destinationCityList = cities.Single(x => x.Key == Destination_State_Picker.SelectedItem.ToString()).Value.ToList();
 
-                    if (Desntination_Airport_Picker.Items.Count >= 2)
-                    { Desntination_Airport_Picker.Items.Clear(); }
+                    foreach (var item in destinationCityList)
+                    { Destination_City_Picker.Items.Add(item); }
+                }
 
-                    foreach (var airport in airportsDestination)
-                    { Desntination_Airport_Picker.Items.Add(airport); }
+                void Destination_City_Picker_SelectedIndexChanged(object sender, EventArgs e)
+                {
+                    Destination_Airport_Picker.Items.Clear();
+                    {
+                        var destinationAirportList = airports.Single(x => x.Key == Destination_City_Picker.SelectedItem.ToString()).Value.ToList();
+                        foreach (var item in destinationAirportList)
+                        { Destination_Airport_Picker.Items.Add(item); }
+                    }
                 }
 
                 void Destination_Airport_Picker_SelectedIndexChanged(object sender, EventArgs e)
                 {
-                    var destinationAirport_Icao_Picker = locationHelper.GetIcaoFromAirport(
-                                    Destination_State_Picker.SelectedItem.ToString(),
-                                    Desntination_Airport_Picker.SelectedItem.ToString());
-
-                    Destination_AirportText.Text = destinationAirport_Icao_Picker;
-                    destination_Location.icao = destinationAirport_Icao_Picker.ToString().ToUpperInvariant();
-
+                    destination_Location.icao = locationHelper.GetIcaoFromAirport(
+                                        Destination_State_Picker.SelectedItem.ToString(),
+                                        Destination_Airport_Picker.SelectedItem.ToString());
                     destination_Location = locationHelper.GetLocationFromIcao(destination_Location);
                 }
 
@@ -201,7 +238,6 @@ namespace Density
                 {
                     aircraftClass = aircraftHelper.GetAircraftFromName(Aircraft_Picker.SelectedItem.ToString());
                     AircraftSpeedText.Text = aircraftHelper.GetSpeed(aircraftClass);
-
                 }
 
                 Grid grid = new Grid();
@@ -231,15 +267,14 @@ namespace Density
                 Grid.SetColumnSpan(Source_State_Picker, 2);
 
 
-                Grid.SetRow(Source_Airport_Picker, 1);
-                Grid.SetColumn(Source_Airport_Picker, 2);
-                Grid.SetColumnSpan(Source_Airport_Picker, 2);
+                Grid.SetRow(Source_City_Picker, 1);
+                Grid.SetColumn(Source_City_Picker, 2);
+                Grid.SetColumnSpan(Source_City_Picker, 2);
 
-                Grid.SetRow(Source_Icao_Entry, 2);
-                Grid.SetColumn(Source_Icao_Entry, 0);
-                Grid.SetColumnSpan(Source_Icao_Entry, 2);
-                Grid.SetRow(Source_AirportText, 2);
-                Grid.SetColumn(Source_AirportText, 2);
+                Grid.SetRow(Source_Airport_Picker, 2);
+                Grid.SetColumn(Source_Airport_Picker, 0);
+                Grid.SetColumnSpan(Source_Airport_Picker, 2);
+             
 
                 Grid.SetRow(Destination_Label, 3);
                 Grid.SetColumn(Destination_Label, 0);
@@ -249,16 +284,13 @@ namespace Density
                 Grid.SetColumn(Destination_State_Picker, 0);
                 Grid.SetColumnSpan(Destination_State_Picker, 2);
 
-                Grid.SetRow(Desntination_Airport_Picker, 4);
-                Grid.SetColumn(Desntination_Airport_Picker, 2);
-                Grid.SetColumnSpan(Desntination_Airport_Picker, 2)
-                ;
+                Grid.SetRow(Destination_City_Picker, 4);
+                Grid.SetColumn(Destination_City_Picker, 2);
+                Grid.SetColumnSpan(Destination_City_Picker, 2);
 
-                Grid.SetRow(Destination_Icao_Entry, 5);
-                Grid.SetColumn(Destination_Icao_Entry, 0);
-                Grid.SetColumnSpan(Destination_Icao_Entry, 2);
-                Grid.SetRow(Destination_AirportText, 5);
-                Grid.SetColumn(Destination_AirportText, 2);
+                Grid.SetRow(Destination_Airport_Picker, 5);
+                Grid.SetColumn(Destination_Airport_Picker, 0);
+                Grid.SetColumnSpan(Destination_Airport_Picker, 2);              
 
                 Grid.SetRow(Aircraft_Picker, 6);
                 Grid.SetColumn(Aircraft_Picker, 1);
@@ -277,15 +309,14 @@ namespace Density
 
                 grid.Children.Add(Source_Label);
                 grid.Children.Add(Source_State_Picker);
-                grid.Children.Add(Source_Airport_Picker);
-                grid.Children.Add(Source_Icao_Entry);
-                grid.Children.Add(Source_AirportText);
+                grid.Children.Add(Source_City_Picker);
+                grid.Children.Add(Source_Airport_Picker);               
 
                 grid.Children.Add(Destination_Label);
                 grid.Children.Add(Destination_State_Picker);
-                grid.Children.Add(Desntination_Airport_Picker);
-                grid.Children.Add(Destination_Icao_Entry);
-                grid.Children.Add(Destination_AirportText);
+                grid.Children.Add(Destination_City_Picker);
+                grid.Children.Add(Destination_Airport_Picker);                
+                
 
                 grid.Children.Add(Aircraft_Picker);
                 grid.Children.Add(Aircraft_Speed_Entry);
@@ -316,7 +347,9 @@ namespace Density
             {
                 App.Current.MainPage.DisplayAlert("The picker page failed to load.", "Check the code and try again", "OK");
             }
-        }    
+        }
+
+       
     }
 }
 
