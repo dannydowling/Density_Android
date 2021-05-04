@@ -38,3 +38,4 @@ C:\Users\danny\Source\Repos\Density_Android\Density\bin\Release\netstandard2.0\B
 C:\Users\danny\Source\Repos\Density_Android\Density\bin\Release\netstandard2.0\Business_Layer\Assets\Keys.txt
 C:\Users\danny\source\repos\dannydowling\Density_Android\Density\bin\Release\netstandard2.0\Business_Layer\Assets\Aircraft.txt
 C:\Users\danny\source\repos\dannydowling\Density_Android\Density\bin\Release\netstandard2.0\Business_Layer\Assets\Keys.txt
+C:\Users\danny\source\repos\dannydowling\Density_Android\Density\bin\Release\netstandard2.0\Business_Layer\Assets\WeatherCams.txt

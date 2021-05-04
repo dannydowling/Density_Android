@@ -71,6 +71,9 @@
     <None Update="Business_Layer\Assets\Positions.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Business_Layer\Assets\WeatherCams.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
    
   </ItemGroup>
 

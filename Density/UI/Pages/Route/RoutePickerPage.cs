@@ -3,6 +3,7 @@ using Density.Business_Layer.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Density
@@ -12,22 +13,26 @@ namespace Density
         public LocationClass source_Location { get; set; }
         public Picker Source_State_Picker { get; set; }
         public Picker Source_City_Picker { get; set; }
-
         public Picker Source_Airport_Picker { get; set; }
+        public WeatherCamClass sourceWeatherCamClass { get; set; }
+        public ImageSource sourceAirportImage { get; set; }
         
 
 
         public LocationClass destination_Location { get; set; }
         public Picker Destination_State_Picker { get; set; }
-        public Picker Destination_City_Picker { get; set; }  
-        
+        public Picker Destination_City_Picker { get; set; }          
         public Picker Destination_Airport_Picker { get; set; }
+        public WeatherCamClass destinationWeatherCamClass { get; set; }
+
+        public ImageSource destinationAirportImage { get; set; }
         
 
 
         public AircraftClass aircraftClass { get; set; }
         public Picker Aircraft_Picker { get; set; }
         public Entry AircraftSpeedText { get; set; }
+
 
         IEnumerable<string> states { get; set; }
         Dictionary<string, List<string>> cities { get; set; }
@@ -199,7 +204,16 @@ namespace Density
                     source_Location.icao = locationHelper.GetIcaoFromAirport(
                                         Source_State_Picker.SelectedItem.ToString(),
                                         Source_Airport_Picker.SelectedItem.ToString());
-                    source_Location = locationHelper.GetLocationFromIcao(source_Location);                    
+                    source_Location = locationHelper.GetLocationFromIcao(source_Location);
+
+                    //Task.Run(() => {
+                    //    WeatherCamHelper weatherCamHelper = new WeatherCamHelper();
+
+                    //    //WARNING INDEXING INTO THE LIST WITH THE [0] BIT AT THE END
+                    //   sourceWeatherCamClass = weatherCamHelper.GetAirport(source_Location.name)[0];
+                    //});
+
+
                 }
 
 

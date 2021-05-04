@@ -7,7 +7,7 @@
 .L.compressed_assembly_descriptors:
 	/* 0: Density.dll */
 	/* uncompressed_file_size */
-	.long	168960
+	.long	178688
 	/* loaded */
 	.byte	0
 	/* data */

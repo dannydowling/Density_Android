@@ -62,12 +62,20 @@ namespace Density.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to [{
-        ///  &quot;aircraft&quot;: &quot;737&quot;,
+        ///  &quot;aircraft&quot;: &quot;Boeing 737&quot;,
         ///  &quot;speed&quot;: &quot;340&quot;
         ///  },
         ///  {
         ///  &quot;aircraft&quot;: &quot;Gulfstream 5&quot;,
         ///  &quot;speed&quot;: &quot;300&quot;
+        ///  },
+        ///   {
+        ///  &quot;aircraft&quot;: &quot;KingAir 350&quot;,
+        ///  &quot;speed&quot;: &quot;300&quot;
+        ///  },
+        ///   {
+        ///  &quot;aircraft&quot;: &quot;Lear 45&quot;,
+        ///  &quot;speed&quot;: &quot;465&quot;
         ///  }].
         /// </summary>
         public static string Aircraft {
@@ -114,12 +122,22 @@ namespace Density.Properties {
         ///},
         ///{
         ///  &quot;state&quot;: &quot;New Mexico&quot;,
-        ///  &quot;city&quot;: &quot;Albuquerque&quot;,
-        ///  &quot;name&quot;: &quot;Albuquerque I [rest of string was truncated]&quot;;.
+        ///  &quot;city&quot;: &quot;Albuquerque&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Positions {
             get {
                 return ResourceManager.GetString("Positions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [{
+        ///  &quot;Juneau&quot;: &quot;https://weathercams.faa.gov/map/-136.49545,56.88676,-128.82699,59.76355/airport/JNU/details/camera/10018&quot;
+        ///  }].
+        /// </summary>
+        public static string WeatherCams {
+            get {
+                return ResourceManager.GetString("WeatherCams", resourceCulture);
             }
         }
     }
