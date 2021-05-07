@@ -1,16 +1,17 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Density",
-    "\\Density\\Business_Layer",
-    "\\Density\\Business_Layer\\Logic",
-    "\\Density\\Business_Layer\\Repositories",
-    "\\Density\\UI",
-    "\\Density\\UI\\Pages",
-    "\\Density\\UI\\Pages\\Route",
-    "\\Droid",
-    "\\UWP"
+    "\\Server",
+    "\\Server\\PreFlightAI",
+    "\\Server\\PreFlightAI\\Controllers",
+    "\\Server\\PreFlightAI\\Data",
+    "\\Server\\PreFlightAI\\ModelsandRepositories",
+    "\\Server\\PreFlightAI\\ModelsandRepositories\\Location",
+    "\\Server\\PreFlightAI\\ModelsandRepositories\\User",
+    "\\Server\\PreFlightAI\\Pages",
+    "\\Server\\PreFlightAI\\Pages\\Shared",
+    "\\Server\\PreFlightAI\\Services"
   ],
-  "SelectedNode": "\\Density\\UI\\Pages\\DensityPage.cs",
+  "SelectedNode": "\\Server\\PreFlightAI\\Controllers\\LocationController.cs",
   "PreviewInSolutionExplorer": false
 }

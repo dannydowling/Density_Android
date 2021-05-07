@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZUZHIsXYlA0NG1Afm1F5pedS424Gzz44V+j72Kv43kOoxpIl5I3n15vJUmV/wecyRcLMp/oEIsErMQAH3a/9mA==",
+  "dgSpecHash": "CLiDGDMxmSmV8+CNuSVuuTaOFGHRjvT9Hk6Gf1BjnyK6qMPLVlq1+JJ74GVGze0Et1sunJyXTzky7Pp2cNR9Qw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\danny\\source\\repos\\dannydowling\\Density_Android\\UWP\\Density.UWP.csproj",
+  "projectFilePath": "C:\\Users\\danny\\Source\\Repos\\Density_Android\\UWP\\Density.UWP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\danny\\.nuget\\packages\\microsoft.net.native.compiler\\2.1.8\\microsoft.net.native.compiler.2.1.8.nupkg.sha512",
     "C:\\Users\\danny\\.nuget\\packages\\microsoft.net.uwpcoreruntimesdk\\2.1.2\\microsoft.net.uwpcoreruntimesdk.2.1.2.nupkg.sha512",

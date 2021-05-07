@@ -1005,3 +1005,4 @@ C:\Users\danny\source\repos\dannydowling\Density_Android\Droid\obj\Release\110\r
 C:\Users\danny\source\repos\dannydowling\Density_Android\Droid\obj\Release\110\res\drawable-xhdpi\location.png
 C:\Users\danny\source\repos\dannydowling\Density_Android\Droid\obj\Release\110\res\drawable-xxhdpi\location.png
 C:\Users\danny\source\repos\dannydowling\Density_Android\Droid\bin\Release\Business_Layer\Assets\WeatherCams.txt
+C:\Users\danny\Source\Repos\Density_Android\Droid\bin\Release\Business_Layer\Assets\WeatherCams.txt
