@@ -8,5 +8,8 @@ namespace PreFlightAI.Server.Services
     {
         Task<IEnumerable<Location>> GetAllLocations();
         Task<Location> GetLocationById(int locationId);
+        Task<Location> AddLocation(Location location);
+        Task UpdateLocation(Location location);
+        Task DeleteLocation(int locationId);
     }
 }

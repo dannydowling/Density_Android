@@ -27,11 +27,11 @@
                 </NavLink>
 
                 <NavLink class="list-group-item list-group-item-action bg-light" href="/locationeoverview">
-                    <span class="oi oi-list-rich" aria-hidden="true"></span> Users
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Locations
                 </NavLink>
 
                 <NavLink class="list-group-item list-group-item-action bg-light" href="/locationedit">
-                    <span class="oi oi-list-rich" aria-hidden="true"></span> Add new user
+                    <span class="oi oi-list-rich" aria-hidden="true"></span> Add new location
                 </NavLink>
 
                 <NavLink class="list-group-item list-group-item-action bg-light"
@@ -39,7 +39,7 @@
                     <span class="oi oi-list-rich" aria-hidden="true"></span> Log Out
 
                     (@context.User.Claims.FirstOrDefault(c =>
-             c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name")?.Value)
+                 c.Type == "http://schemas.microsoft.com/2012/01/devicecontext/claims/displayname")?.Value)
 
                 </NavLink>
 

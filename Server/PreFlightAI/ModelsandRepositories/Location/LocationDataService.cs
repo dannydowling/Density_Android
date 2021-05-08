@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using PreFlightAI.Shared;
@@ -15,6 +16,26 @@ namespace PreFlightAI.Server.Services
             _httpClient = httpClient;
         }
 
+        public async Task<Location> AddLocation(Location location)
+        {
+            var locationJson =
+                new StringContent(JsonSerializer.Serialize(location), Encoding.UTF8, "application/json");
+
+            var response = await _httpClient.PostAsync("api/location", locationJson);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return await JsonSerializer.DeserializeAsync<Location>(await response.Content.ReadAsStreamAsync());
+            }
+
+            return null;
+        }
+
+        public async Task DeleteLocation(int locationId)
+        {
+            await _httpClient.DeleteAsync($"api/location/{locationId}");
+        }
+
         public async Task<IEnumerable<Location>> GetAllLocations()
         {
             return await JsonSerializer.DeserializeAsync<IEnumerable<Location>>
@@ -25,6 +46,14 @@ namespace PreFlightAI.Server.Services
         {
             return await JsonSerializer.DeserializeAsync<Location>
                 (await _httpClient.GetStreamAsync($"api/location{locationId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+
+        public async Task UpdateLocation(Location location)
+        {
+            var locationJson =
+                new StringContent(JsonSerializer.Serialize(location), Encoding.UTF8, "application/json");
+
+            await _httpClient.PutAsync("api/location", locationJson);
         }
     }
 }

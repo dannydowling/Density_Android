@@ -1,0 +1,68 @@
+﻿
+@page "/Airport/Register"
+@inherits AddLocationDialogBase
+@using PreFlightAI.Server.Pages
+
+@if (ShowDialog)
+{
+    <div class="modal fade show d-block" id="exampleModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="titleLabel">Location Quick Add</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" @onclick="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <EditForm Model="@location" OnValidSubmit="@HandleValidSubmit">
+
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+
+                        <div class="form-group">
+                            <label for="state">State: </label>
+                            <InputText id="lastName" class="form-control" @bind-Value="@location.state" placeholder="Enter state"></InputText>
+                            <ValidationMessage For="@(() => location.state)" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="city">City name: </label>
+                            <InputText id="city" class="form-control" @bind-Value="@location.city" placeholder="Enter city name"></InputText>
+                            <ValidationMessage For="@(() => location.city)" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Airport Name: </label>
+                            <InputText id="name" class="form-control" @bind-Value="@location.name" placeholder="Enter Airport Name"></InputText>
+                            <ValidationMessage For="@(() => location.name)" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="icao">Airport Icao Code: </label>
+                            <InputText id="icao" class="form-control" @bind-Value="@location.icao" placeholder="Enter Airport Code"></InputText>
+                            <ValidationMessage For="@(() => location.icao)" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lat">Airport Latitude: </label>
+                            <InputText id="lat" class="form-control" @bind-Value="@location.lat.ToString()" placeholder="Enter Airport Latitude"></InputText>
+                            <ValidationMessage For="@(() => location.lat)" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lon">Airport Longitude: </label>
+                            <InputText id="lon" class="form-control" @bind-Value="@location.lon.ToString()" placeholder="Enter Airport Longitude"></InputText>
+                            <ValidationMessage For="@(() => location.lon)" />
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Save employee</button>
+                        <a class="btn btn-outline-primary" @onclick="@Close">Close</a>
+                    </EditForm>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}

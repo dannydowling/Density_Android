@@ -728,3 +728,11 @@ C:\Users\danny\source\repos\Density_Android\Server\PreFlightAI\obj\Debug\netcore
 C:\Users\danny\source\repos\Density_Android\Server\PreFlightAI\obj\Debug\netcoreapp3.1\PreFlight.AI.Server.Views.pdb
 C:\Users\danny\source\repos\Density_Android\Server\PreFlightAI\obj\Debug\netcoreapp3.1\PreFlight.AI.Server.csproj.CopyComplete
 C:\Users\danny\source\repos\Density_Android\Server\PreFlightAI\obj\Debug\netcoreapp3.1\PreFlight.AI.Server.genruntimeconfig.cache
+C:\Users\danny\Source\Repos\Density_Android\Server\PreFlightAI\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Employee\AddEmployeeDialog.razor.g.cs
+C:\Users\danny\Source\Repos\Density_Android\Server\PreFlightAI\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Employee\EmployeeDetail.razor.g.cs
+C:\Users\danny\Source\Repos\Density_Android\Server\PreFlightAI\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Employee\EmployeeEdit.razor.g.cs
+C:\Users\danny\Source\Repos\Density_Android\Server\PreFlightAI\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Employee\EmployeeOverview.razor.g.cs
+C:\Users\danny\Source\Repos\Density_Android\Server\PreFlightAI\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Location\AddLocationDialog.razor.g.cs
+C:\Users\danny\Source\Repos\Density_Android\Server\PreFlightAI\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Location\LocationDetail.razor.g.cs
+C:\Users\danny\Source\Repos\Density_Android\Server\PreFlightAI\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Location\LocationEdit.razor.g.cs
+C:\Users\danny\Source\Repos\Density_Android\Server\PreFlightAI\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Location\LocationOverview.razor.g.cs

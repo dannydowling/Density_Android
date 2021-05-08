@@ -6,8 +6,17 @@ namespace PreFlightAI.Shared
 {
     public class Location
     {
-        public int LocationId { get; set; }
-        public string Name { get; set; }
+        public string state { get; set; }
+
+        public string city { get; set; }
+
+        public string name { get; set; }
+
+        public string icao { get; set; }
+
+        public double lat { get; set; }
+
+        public double lon { get; set; }
 
     }
 }

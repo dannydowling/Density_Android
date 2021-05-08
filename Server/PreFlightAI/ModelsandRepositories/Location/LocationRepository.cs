@@ -16,12 +16,12 @@ namespace PreFlightAI.Api.Models
 
         public IEnumerable<Location> GetAllLocations()
         {
-            return _appDbContext.Locations;
+            return _appDbContext.locations;
         }
 
-        public Location GetLocationById(int locationId)
+        public Location GetLocationById(string icao)
         {
-            return _appDbContext.Locations.FirstOrDefault(c => c.LocationId == locationId);
+            return _appDbContext.locations.FirstOrDefault(c => c.icao == icao);
         }
     }
 }

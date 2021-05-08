@@ -1,17 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Density",
+    "\\Density\\Business_Layer",
+    "\\Density\\Business_Layer\\Repositories",
     "\\Server",
     "\\Server\\PreFlightAI",
-    "\\Server\\PreFlightAI\\Controllers",
-    "\\Server\\PreFlightAI\\Data",
     "\\Server\\PreFlightAI\\ModelsandRepositories",
-    "\\Server\\PreFlightAI\\ModelsandRepositories\\Location",
-    "\\Server\\PreFlightAI\\ModelsandRepositories\\User",
+    "\\Server\\PreFlightAI\\ModelsandRepositories\\Employee",
     "\\Server\\PreFlightAI\\Pages",
-    "\\Server\\PreFlightAI\\Pages\\Shared",
-    "\\Server\\PreFlightAI\\Services"
+    "\\Server\\PreFlightAI\\Pages\\Employee"
   ],
-  "SelectedNode": "\\Server\\PreFlightAI\\Controllers\\LocationController.cs",
+  "SelectedNode": "\\Server\\PreFlightAI\\Pages\\Location\\LocatonEditBase.cs",
   "PreviewInSolutionExplorer": false
 }

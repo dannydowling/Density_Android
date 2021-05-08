@@ -9,6 +9,6 @@ namespace PreFlightAI.Api.Models
     public interface ILocationRepository
     {
         IEnumerable<Location> GetAllLocations();
-        Location GetLocationById(int locationId);
+        Location GetLocationById(string icao);
     }
 }

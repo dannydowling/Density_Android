@@ -13,10 +13,9 @@ namespace PreFlightAI.Data
            
         }
         
-        public DbSet<Country> Countries { get; set; }
         public DbSet<typedUser> typedUsers { get; set; }
-       
-        public DbSet<Location> Locations { get; set; }
+        public DbSet<Employee> employees { get; set; }
+        public DbSet<Location> locations { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -34,11 +33,10 @@ namespace PreFlightAI.Data
             modelBuilder.Entity<Country>().HasData(new Country { CountryId = 8, Name = "France" });
             modelBuilder.Entity<Country>().HasData(new Country { CountryId = 9, Name = "Brazil" });
 
+            //foreach... in positions... add the thing to the collection here...
+
             modelBuilder.Entity<Location>().HasData(new Location { LocationId = 1, Name = "Juneau" });
-            modelBuilder.Entity<Location>().HasData(new Location { LocationId = 2, Name = "Sitka" });
-            modelBuilder.Entity<Location>().HasData(new Location { LocationId = 3, Name = "Ketchikan" });
-            modelBuilder.Entity<Location>().HasData(new Location { LocationId = 4, Name = "Petersburg" });
-            modelBuilder.Entity<Location>().HasData(new Location { LocationId = 5, Name = "Wrangell" });
+           
 
 
 
