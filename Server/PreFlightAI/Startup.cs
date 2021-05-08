@@ -7,13 +7,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using PreFlightAI.Areas.Identity;
-using PreFlightAI.Data;
-using PreFlightAI.Api.Models;
-using PreFlightAI.Server.Services;
-using PreFlight.AI.Server.Http.Services;
+using DensityServer.Areas.Identity;
+using DensityServer.Data;
+using DensityServer.Api.Models;
+using DensityServer.Server.Services;
+using DensityServer.AI.Server.Http.Services;
 
-namespace PreFlightAI
+namespace DensityServer
 {
     public class Startup
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace PreFlight.AI.Server.Migrations
+namespace DensityServer.AI.Server.Migrations
 {
     public partial class initialcreate : Migration
     {

@@ -2,11 +2,11 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
-using PreFlightAI.Shared;
-using PreFlightAI.Server.Services;
+using DensityServer.Shared;
+using DensityServer.Server.Services;
 using Microsoft.AspNetCore.Components.Forms;
 
-namespace PreFlightAI.Server.Pages
+namespace DensityServer.Server.Pages
 {
     public class LocationEditBase : ComponentBase
     {
@@ -48,27 +48,27 @@ namespace PreFlightAI.Server.Pages
         protected async Task HandleValidSubmit()
         {
 
-            if (Employee.Id == 0) //new
+            if (string.IsNullOrEmpty(location.icao)) //new
             {
-                var addedEmployee = await EmployeeDataService.AddEmployee(Employee);
-                if (addedEmployee != null)
+                var addedLocation = await locationDataService.AddLocation(location);
+                if (addedLocation != null)
                 {
                     StatusClass = "alert-success";
-                    Message = "New employee added successfully.";
+                    Message = "New location added successfully.";
                     Saved = true;
                 }
                 else
                 {
                     StatusClass = "alert-danger";
-                    Message = "Something went wrong adding the new employee. Please try again.";
+                    Message = "Something went wrong adding the new location. Please try again.";
                     Saved = false;
                 }
             }
             else
             {
-                await EmployeeDataService.UpdateEmployee(Employee);
+                await locationDataService.UpdateLocation(location);
                 StatusClass = "alert-success";
-                Message = "Employee updated successfully.";
+                Message = "Location updated successfully.";
                 Saved = true;
             }
         }
@@ -79,9 +79,9 @@ namespace PreFlightAI.Server.Pages
             Message = "There are some validation errors. Please try again.";
         }
 
-        protected async Task DeleteEmployee()
+        protected async Task DeleteLocation()
         {
-            await EmployeeDataService.DeleteEmployee(Employee.Id);
+            await locationDataService.DeleteLocation(location.icao);
 
             StatusClass = "alert-success";
             Message = "Deleted successfully";
@@ -91,7 +91,7 @@ namespace PreFlightAI.Server.Pages
 
         protected void NavigateToOverview()
         {
-            NavigationManager.NavigateTo("/employeeoverview");
+            NavigationManager.NavigateTo("/locationoverview");
         }
     }
 }

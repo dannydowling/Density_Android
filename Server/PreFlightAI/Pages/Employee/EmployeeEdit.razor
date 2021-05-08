@@ -1,12 +1,12 @@
 ﻿@page "/employeeedit"
 @page "/employeeedit/{EmployeeId}"
-@using PreFlightAI.Server.Pages
+@using DensityServer.Server.Pages
 @inherits EmployeeEditBase
 
 <section class="employee-edit">
     @if (!Saved)
     {
-        <h1 class="page-title">Details for @employee.firstname @employee.lastname</h1>
+        <h1 class="page-title">Details for @employee.firstName @employee.lastName</h1>
 
         <EditForm Model="@employee" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
 

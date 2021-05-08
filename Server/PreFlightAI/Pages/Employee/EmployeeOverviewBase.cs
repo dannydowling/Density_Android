@@ -2,10 +2,10 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
-using PreFlightAI.Server.Services;
-using PreFlightAI.Shared;
+using DensityServer.Server.Services;
+using DensityServer.Shared;
 
-namespace PreFlightAI.Server.Pages
+namespace DensityServer.Server.Pages
 {
     public class EmployeeOverviewBase: ComponentBase
     {

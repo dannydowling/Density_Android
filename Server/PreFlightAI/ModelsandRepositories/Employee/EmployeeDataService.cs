@@ -3,11 +3,11 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using PreFlightAI.Shared;
+using DensityServer.Shared;
 using Microsoft.AspNetCore.Http;
 using System.Linq;
 
-namespace PreFlightAI.Server.Services
+namespace DensityServer.Server.Services
 {
     public class EmployeeDataService : IEmployeeDataService
     {

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using PreFlightAI.Shared;
-using PreFlightAI.Data;
+using DensityServer.Shared;
+using DensityServer.Data;
 
-namespace PreFlightAI.Api.Models
+namespace DensityServer.Api.Models
 {
     public class EmployeeRepository : IEmployeeRepository
     {

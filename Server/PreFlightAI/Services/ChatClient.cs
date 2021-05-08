@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace PreFlightAI.Server.Services
+namespace DensityServer.Server.Services
 {       
     public class ChatClient : IAsyncDisposable
     {        

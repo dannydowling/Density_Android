@@ -2,12 +2,12 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
-using PreFlightAI.Shared;
-using PreFlightAI.Server.Services;
+using DensityServer.Shared;
+using DensityServer.Server.Services;
 using Microsoft.AspNetCore.Components.Forms;
 
 
-namespace PreFlightAI.Server.Pages
+namespace DensityServer.Server.Pages
 {
     public class EmployeeEditBase : ComponentBase
     {

@@ -1,0 +1,5704 @@
+﻿[{
+  "state": "Pennsylvania",
+  "city": "Allentown",
+  "name": "Lehigh Valley International Airport",
+  "icao": "KABE",
+  "lat": "40.6514",
+  "lon": "-75.4342"
+},
+{
+  "state": "Texas",
+  "city": "Abilene",
+  "name": "Abilene Regional Airport",
+  "icao": "KABI",
+  "lat": "32.4164",
+  "lon": "-99.6803"
+},
+{
+  "state": "Alaska",
+  "city": "Kiana",
+  "name": "Ambler Airport",
+  "icao": "PAIK",
+  "lat": "67.1058",
+  "lon": "-157.854"
+},
+{
+  "state": "New Mexico",
+  "city": "Albuquerque",
+  "name": "Albuquerque International Airport",
+  "icao": "KABQ",
+  "lat": "35.0494",
+  "lon": "-106.625"
+},
+{
+  "state": "South Dakota",
+  "city": "Aberdeen",
+  "name": "Aberdeen Regional Airport",
+  "icao": "KABR",
+  "lat": "45.4536",
+  "lon": "-98.4189"
+},
+{
+  "state": "Georgia",
+  "city": "Albany",
+  "name": "Southwest Georgia Regional Airport",
+  "icao": "KABY",
+  "lat": "31.5328",
+  "lon": "-84.1867"
+},
+{
+  "state": "Massachusetts",
+  "city": "Nantucket",
+  "name": "Nantucket Memorial Airport",
+  "icao": "KACK",
+  "lat": "41.2568",
+  "lon": "-70.0649"
+},
+{
+  "state": "Texas",
+  "city": "Waco",
+  "name": "Waco Regional Airport",
+  "icao": "KACT",
+  "lat": "31.609",
+  "lon": "-97.2234"
+},
+{
+  "state": "California",
+  "city": "Mckinleyville",
+  "name": "Arcata Airport",
+  "icao": "KACV",
+  "lat": "40.9698",
+  "lon": "-124.108"
+},
+{
+  "state": "New Jersey",
+  "city": "Egg Harbor City",
+  "name": "Atlantic City International Airport",
+  "icao": "KACY",
+  "lat": "39.4512",
+  "lon": "-74.5716"
+},
+{
+  "state": "Alaska",
+  "city": "Adak",
+  "name": "Adak Airport",
+  "icao": "PADK",
+  "lat": "51.88",
+  "lon": "-176.639"
+},
+{
+  "state": "Alaska",
+  "city": "Kodiak",
+  "name": "Kodiak Airport",
+  "icao": "PADQ",
+  "lat": "57.7545",
+  "lon": "-152.512"
+},
+{
+  "state": "Alaska",
+  "city": "Allakaket",
+  "name": "Allakaket Airport",
+  "icao": "PFAL",
+  "lat": "66.55",
+  "lon": "-152.65"
+},
+{
+  "state": "Louisiana",
+  "city": "Alexandria",
+  "name": "Alexandria International Airport",
+  "icao": "KAEX",
+  "lat": "31.323",
+  "lon": "-92.5417"
+},
+{
+  "state": "Alaska",
+  "city": "Angoon",
+  "name": "Angoon Airport",
+  "icao": "PAGN",
+  "lat": "57.4996",
+  "lon": "-134.577"
+},
+{
+  "state": "Georgia",
+  "city": "Augusta",
+  "name": "Bush Field Airport",
+  "icao": "KAGS",
+  "lat": "33.3735",
+  "lon": "-81.9732"
+},
+{
+  "state": "California",
+  "city": "Herlong",
+  "name": "Amedee Army Air Field",
+  "icao": "KAHC",
+  "lat": "40.2664",
+  "lon": "-120.151"
+},
+{
+  "state": "Nebraska",
+  "city": "Alliance",
+  "name": "Alliance Municipal Airport",
+  "icao": "KAIA",
+  "lat": "42.0622",
+  "lon": "-102.81"
+},
+{
+  "state": "Alaska",
+  "city": "Wainwright",
+  "name": "Wainwright Airport",
+  "icao": "PAWT",
+  "lat": "70.6139",
+  "lon": "-159.857"
+},
+{
+  "state": "Alaska",
+  "city": "Atka",
+  "name": "Atka Airport",
+  "icao": "PAAK",
+  "lat": "52.2217",
+  "lon": "-174.204"
+},
+{
+  "state": "Alaska",
+  "city": "Bethel",
+  "name": "Akiak Airport",
+  "icao": "PABE",
+  "lat": "60.8866",
+  "lon": "-161.218"
+},
+{
+  "state": "Alaska",
+  "city": "Kodiak",
+  "name": "Akhiok Airport",
+  "icao": "PAKH",
+  "lat": "56.95",
+  "lon": "-154.167"
+},
+{
+  "state": "Alaska",
+  "city": "King Salmon",
+  "name": "King Salmon Airport",
+  "icao": "PAKN",
+  "lat": "58.6775",
+  "lon": "-156.655"
+},
+{
+  "state": "Alaska",
+  "city": "Anaktuvuk Pass",
+  "name": "Anaktuvuk Pass Airport",
+  "icao": "PAKP",
+  "lat": "68.1916",
+  "lon": "-151.79"
+},
+{
+  "state": "New York",
+  "city": "Latham",
+  "name": "Albany International Airport",
+  "icao": "KALB",
+  "lat": "42.7426",
+  "lon": "-73.809"
+},
+{
+  "state": "New Mexico",
+  "city": "Alamogordo",
+  "name": "Alamogordo White Sands Regional Airport",
+  "icao": "KALM",
+  "lat": "32.8407",
+  "lon": "-105.994"
+},
+{
+  "state": "Iowa",
+  "city": "Waterloo",
+  "name": "Waterloo Municipal Airport",
+  "icao": "KALO",
+  "lat": "42.5509",
+  "lon": "-92.3951"
+},
+{
+  "state": "Colorado",
+  "city": "Alamosa",
+  "name": "San Luis Valley Regional Airport",
+  "icao": "KALS",
+  "lat": "37.4444",
+  "lon": "-105.865"
+},
+{
+  "state": "Washington",
+  "city": "Walla Walla",
+  "name": "Walla Walla Regional Airport",
+  "icao": "KALW",
+  "lat": "46.0879",
+  "lon": "-118.283"
+},
+{
+  "state": "Alaska",
+  "city": "Alitak",
+  "name": "Alitak Seaplane Base",
+  "icao": "KALZ",
+  "lat": "56.5358",
+  "lon": "-154.146"
+},
+{
+  "state": "Texas",
+  "city": "Amarillo",
+  "name": "Amarillo International Airport",
+  "icao": "KAMA",
+  "lat": "35.2177",
+  "lon": "-101.706"
+},
+{
+  "state": "Alaska",
+  "city": "Anchorage",
+  "name": "Anchorage International Airport",
+  "icao": "PANC",
+  "lat": "61.1767",
+  "lon": "-149.961"
+},
+{
+  "state": "Alaska",
+  "city": "Bethel",
+  "name": "Aniak Airport",
+  "icao": "PANI",
+  "lat": "61.5742",
+  "lon": "-159.535"
+},
+{
+  "state": "Alaska",
+  "city": "Anvik",
+  "name": "Anvik Airport",
+  "icao": "PANV",
+  "lat": "62.65",
+  "lon": "-160.217"
+},
+{
+  "state": "Pennsylvania",
+  "city": "Martinsburg",
+  "name": "Altoona-Blair County Airport",
+  "icao": "KAOO",
+  "lat": "40.2952",
+  "lon": "-78.324"
+},
+{
+  "state": "Alaska",
+  "city": "Amook",
+  "name": "Amook Bay Seaplane Base",
+  "icao": "",
+  "lat": "57.4672",
+  "lon": "-153.839"
+},
+{
+  "state": "Colorado",
+  "city": "Englewood",
+  "name": "Centennial Airport",
+  "icao": "KAPA",
+  "lat": "39.5752",
+  "lon": "-104.845"
+},
+{
+  "state": "Florida",
+  "city": "Naples",
+  "name": "Naples Municipal Airport",
+  "icao": "KAPF",
+  "lat": "26.1483",
+  "lon": "-81.7745"
+},
+{
+  "state": "Michigan",
+  "city": "Alpena",
+  "name": "Alpena County Regional Airport",
+  "icao": "KAPN",
+  "lat": "45.07",
+  "lon": "-83.5683"
+},
+{
+  "state": "Alaska",
+  "city": "Arctic Village",
+  "name": "Arctic Village Airport",
+  "icao": "PARC",
+  "lat": "68.1167",
+  "lon": "-145.583"
+},
+{
+  "state": "New York",
+  "city": "Dexter",
+  "name": "Watertown International Airport",
+  "icao": "KART",
+  "lat": "43.9942",
+  "lon": "-76.0232"
+},
+{
+  "state": "Wisconsin",
+  "city": "Woodruff",
+  "name": "Lakelan-Noble F. Lee Memerial Field Airport",
+  "icao": "KARV",
+  "lat": "45.9296",
+  "lon": "-89.7371"
+},
+{
+  "state": "Colorado",
+  "city": "Aspen",
+  "name": "Aspen Pitkin County Airport-Sardy Field",
+  "icao": "KASE",
+  "lat": "39.2197",
+  "lon": "-106.864"
+},
+{
+  "state": "Alaska",
+  "city": "Atqasuk",
+  "name": "Atqasuk Airport",
+  "icao": "PATQ",
+  "lat": "70.4639",
+  "lon": "-157.331"
+},
+{
+  "state": "Georgia",
+  "city": "Atlanta",
+  "name": "Hartsfield-Jackson Atlanta International Airport",
+  "icao": "KATL",
+  "lat": "33.6558",
+  "lon": "-84.4333"
+},
+{
+  "state": "Alaska",
+  "city": "Atmautluak",
+  "name": "Atmautluak Airport",
+  "icao": "KATT",
+  "lat": "60.52",
+  "lon": "-162.16"
+},
+{
+  "state": "Wisconsin",
+  "city": "Appleton",
+  "name": "Outagamie County Airport",
+  "icao": "KATW",
+  "lat": "44.2603",
+  "lon": "-88.5111"
+},
+{
+  "state": "South Dakota",
+  "city": "Watertown",
+  "name": "Watertown Municipal Airport",
+  "icao": "KATY",
+  "lat": "44.9216",
+  "lon": "-97.1609"
+},
+{
+  "state": "Maine",
+  "city": "Augusta",
+  "name": "Augusta State Airport",
+  "icao": "KAUG",
+  "lat": "44.3181",
+  "lon": "-69.7933"
+},
+{
+  "state": "Alaska",
+  "city": "Alakanuk",
+  "name": "Alakanuk Airport",
+  "icao": "PAUK",
+  "lat": "62.6833",
+  "lon": "-164.633"
+},
+{
+  "state": "Texas",
+  "city": "Austin",
+  "name": "Austin-Bergstrom International Airport",
+  "icao": "KAUS",
+  "lat": "30.2027",
+  "lon": "-97.6653"
+},
+{
+  "state": "North Carolina",
+  "city": "Fletcher",
+  "name": "Asheville Regional Airport",
+  "icao": "KAVL",
+  "lat": "35.4349",
+  "lon": "-82.5373"
+},
+{
+  "state": "Pennsylvania",
+  "city": "Pittston",
+  "name": "Wilkes Barre Scranton International Airport",
+  "icao": "KAVP",
+  "lat": "41.3354",
+  "lon": "-75.7294"
+},
+{
+  "state": "Arizona",
+  "city": "Phoenix",
+  "name": "Phoenix-Mesa Gateway Airport",
+  "icao": "KIWA",
+  "lat": "33.3078",
+  "lon": "-111.656"
+},
+{
+  "state": "Michigan",
+  "city": "Kalamazoo",
+  "name": "Kalamazoo-Battle Creek International Airport",
+  "icao": "KAZO",
+  "lat": "42.2398",
+  "lon": "-85.5563"
+},
+{
+  "state": "Connecticut",
+  "city": "Windsor Locks",
+  "name": "Bradley International Airport",
+  "icao": "KBDL",
+  "lat": "41.9271",
+  "lon": "-72.6816"
+},
+{
+  "state": "Connecticut",
+  "city": "Stratford",
+  "name": "Igor Sikorsky Memorial Airport",
+  "icao": "KBDR",
+  "lat": "41.1636",
+  "lon": "-73.1283"
+},
+{
+  "state": "Alaska",
+  "city": "Bethel",
+  "name": "Bethel Airport",
+  "icao": "PABE",
+  "lat": "60.7788",
+  "lon": "-161.847"
+},
+{
+  "state": "Pennsylvania",
+  "city": "Lewis Run",
+  "name": "Bradford Regional Airport",
+  "icao": "KBFD",
+  "lat": "41.7964",
+  "lon": "-78.6407"
+},
+{
+  "state": "Nebraska",
+  "city": "Scottsbluff",
+  "name": "William B Heilig Field Airport",
+  "icao": "KBFF",
+  "lat": "41.8683",
+  "lon": "-103.597"
+},
+{
+  "state": "Washington",
+  "city": "Seattle",
+  "name": "King County International Airport-Boeing Field",
+  "icao": "KBFI",
+  "lat": "47.5369",
+  "lon": "-122.304"
+},
+{
+  "state": "California",
+  "city": "Bakersfield",
+  "name": "Kern County-Meadows Field Airport",
+  "icao": "KBFL",
+  "lat": "35.4288",
+  "lon": "-119.044"
+},
+{
+  "state": "New York",
+  "city": "Johnson City",
+  "name": "Greater Binghamton Edwin A Link Field Airport",
+  "icao": "KBGM",
+  "lat": "42.2082",
+  "lon": "-75.9825"
+},
+{
+  "state": "Maine",
+  "city": "Bangor",
+  "name": "Bangor International Airport",
+  "icao": "KBGR",
+  "lat": "44.8086",
+  "lon": "-68.8167"
+},
+{
+  "state": "Maine",
+  "city": "Ellsworth",
+  "name": "Hancock County-Bar Harbor Airport",
+  "icao": "KBHB",
+  "lat": "44.4461",
+  "lon": "-68.3615"
+},
+{
+  "state": "Alabama",
+  "city": "Birmingham",
+  "name": "Birmingham International Airport",
+  "icao": "KBHM",
+  "lat": "33.5604",
+  "lon": "-86.7492"
+},
+{
+  "state": "Rhode Island",
+  "city": "Block Island",
+  "name": "Block Island State Airport",
+  "icao": "KBID",
+  "lat": "41.1696",
+  "lon": "-71.58"
+},
+{
+  "state": "Montana",
+  "city": "Billings",
+  "name": "Logan International Airport",
+  "icao": "KBIL",
+  "lat": "45.8034",
+  "lon": "-108.537"
+},
+{
+  "state": "North Dakota",
+  "city": "Bismarck",
+  "name": "Bismarck Municipal Airport",
+  "icao": "KBIS",
+  "lat": "46.7745",
+  "lon": "-100.757"
+},
+{
+  "state": "Minnesota",
+  "city": "Bemidji",
+  "name": "Bemidji-Beltrami County Airport",
+  "icao": "KBJI",
+  "lat": "47.5065",
+  "lon": "-94.9338"
+},
+{
+  "state": "Alaska",
+  "city": "Buckland",
+  "name": "Buckland Airport",
+  "icao": "PABL",
+  "lat": "65.9833",
+  "lon": "-161.167"
+},
+{
+  "state": "Ohio",
+  "city": "Cleveland",
+  "name": "Burke Lakefront Airport",
+  "icao": "KBKL",
+  "lat": "41.5115",
+  "lon": "-81.6869"
+},
+{
+  "state": "West Virginia",
+  "city": "Beaver",
+  "name": "Raleigh County Memorial Airport",
+  "icao": "KBKW",
+  "lat": "37.7849",
+  "lon": "-81.1174"
+},
+{
+  "state": "Washington",
+  "city": "Bellingham",
+  "name": "Bellingham International Airport",
+  "icao": "KBLI",
+  "lat": "48.7955",
+  "lon": "-122.532"
+},
+{
+  "state": "Illinois",
+  "city": "Belleville",
+  "name": "Belleville",
+  "icao": "KBLV",
+  "lat": "38.5412",
+  "lon": "-89.8499"
+},
+{
+  "state": "Illinois",
+  "city": "Bloomington",
+  "name": "Bloomington Normal Airport",
+  "icao": "KBMI",
+  "lat": "40.4841",
+  "lon": "-88.9134"
+},
+{
+  "state": "Tennessee",
+  "city": "Nashville",
+  "name": "Nashville International Airport",
+  "icao": "KBNA",
+  "lat": "36.1342",
+  "lon": "-86.6682"
+},
+{
+  "state": "Idaho",
+  "city": "Boise",
+  "name": "Boise Air Terminal",
+  "icao": "KBOI",
+  "lat": "43.5709",
+  "lon": "-116.222"
+},
+{
+  "state": "Massachusetts",
+  "city": "Boston",
+  "name": "Gen E L Logan International Airport",
+  "icao": "KBOS",
+  "lat": "42.3717",
+  "lon": "-71.0281"
+},
+{
+  "state": "Florida",
+  "city": "Bartow",
+  "name": "Bartow Municipal Airport",
+  "icao": "KBOW",
+  "lat": "27.9493",
+  "lon": "-81.7818"
+},
+{
+  "state": "Texas",
+  "city": "Beaumont",
+  "name": "Jefferson County Airport",
+  "icao": "KBPT",
+  "lat": "29.9551",
+  "lon": "-94.0185"
+},
+{
+  "state": "Georgia",
+  "city": "Brunswick",
+  "name": "Glynco Jetport Airport",
+  "icao": "KBQK",
+  "lat": "31.2525",
+  "lon": "-81.4703"
+},
+{
+  "state": "Puerto Rico",
+  "city": "Aguadilla",
+  "name": "Rafael Hernandez Airport",
+  "icao": "TJBQ",
+  "lat": "18.496",
+  "lon": "-67.1357"
+},
+{
+  "state": "Minnesota",
+  "city": "Brainerd",
+  "name": "Brainerd-Crow Wing County Regional Airport",
+  "icao": "KBRD",
+  "lat": "46.3909",
+  "lon": "-94.1413"
+},
+{
+  "state": "Iowa",
+  "city": "Burlington",
+  "name": "Burlington Municipal Airport",
+  "icao": "KBRL",
+  "lat": "40.7816",
+  "lon": "-91.1197"
+},
+{
+  "state": "Texas",
+  "city": "Brownsville",
+  "name": "Brownsville-South Padre Island International Air",
+  "icao": "KBRO",
+  "lat": "25.9064",
+  "lon": "-97.4321"
+},
+{
+  "state": "Alaska",
+  "city": "Barrow",
+  "name": "Wiley Post Will Rogers Memorial Airport",
+  "icao": "PABR",
+  "lat": "71.2892",
+  "lon": "-156.772"
+},
+{
+  "state": "Alaska",
+  "city": "Kaktovik",
+  "name": "Barter Island Airport",
+  "icao": "PABA",
+  "lat": "70.1478",
+  "lon": "-143.579"
+},
+{
+  "state": "Michigan",
+  "city": "Battle Creek",
+  "name": "W K Kellogg Airport",
+  "icao": "KBTL",
+  "lat": "42.3046",
+  "lon": "-85.2448"
+},
+{
+  "state": "Montana",
+  "city": "Butte",
+  "name": "Bert Mooney Airport",
+  "icao": "KBTM",
+  "lat": "45.9544",
+  "lon": "-112.503"
+},
+{
+  "state": "Louisiana",
+  "city": "Baton Rouge",
+  "name": "Baton Rouge Metropolitan Airport",
+  "icao": "KBTR",
+  "lat": "30.533",
+  "lon": "-91.1567"
+},
+{
+  "state": "Alaska",
+  "city": "Bettles",
+  "name": "Bettles Airport",
+  "icao": "PABT",
+  "lat": "66.9134",
+  "lon": "-151.551"
+},
+{
+  "state": "Vermont",
+  "city": "South Burlington",
+  "name": "Burlington International Airport",
+  "icao": "KBTV",
+  "lat": "44.4688",
+  "lon": "-73.1552"
+},
+{
+  "state": "New York",
+  "city": "Buffalo",
+  "name": "Greater Buffalo International Airport",
+  "icao": "KBUF",
+  "lat": "42.9309",
+  "lon": "-78.738"
+},
+{
+  "state": "California",
+  "city": "Burbank",
+  "name": "Burbank Glendale Pasadena Airport",
+  "icao": "KBUR",
+  "lat": "34.1963",
+  "lon": "-118.352"
+},
+{
+  "state": "Maryland",
+  "city": "Baltimore",
+  "name": "Baltimore-Washington International Thurgood Mars",
+  "icao": "KBWI",
+  "lat": "39.1841",
+  "lon": "-76.6745"
+},
+{
+  "state": "Montana",
+  "city": "Bozeman",
+  "name": "Gallatin Field Airport",
+  "icao": "KBZN",
+  "lat": "45.7722",
+  "lon": "-111.157"
+},
+{
+  "state": "South Carolina",
+  "city": "West Columbia",
+  "name": "Columbia Metropolitan Airport",
+  "icao": "KCAE",
+  "lat": "33.9468",
+  "lon": "-81.1241"
+},
+{
+  "state": "Ohio",
+  "city": "Canton",
+  "name": "Akron Canton Regional Airport",
+  "icao": "KCAK",
+  "lat": "40.9149",
+  "lon": "-81.4309"
+},
+{
+  "state": "Alaska",
+  "city": "Cold Bay",
+  "name": "Cold Bay Airport",
+  "icao": "PACD",
+  "lat": "55.2005",
+  "lon": "-162.705"
+},
+{
+  "state": "Utah",
+  "city": "Cedar City",
+  "name": "Cedar City Municipal Airport",
+  "icao": "KCDC",
+  "lat": "37.6992",
+  "lon": "-113.092"
+},
+{
+  "state": "Nebraska",
+  "city": "Chadron",
+  "name": "Chadron Municipal Airport",
+  "icao": "KCDR",
+  "lat": "42.8284",
+  "lon": "-103.094"
+},
+{
+  "state": "Alaska",
+  "city": "Cordova",
+  "name": "Merle K Mudhole Smith Airport",
+  "icao": "PACV",
+  "lat": "60.4924",
+  "lon": "-145.475"
+},
+{
+  "state": "New Jersey",
+  "city": "Fairfield",
+  "name": "Essex County Airport",
+  "icao": "KCDW",
+  "lat": "40.8759",
+  "lon": "-74.2775"
+},
+{
+  "state": "California",
+  "city": "Crescent City",
+  "name": "Jack Mcnamara Field Airport",
+  "icao": "KCEC",
+  "lat": "41.7765",
+  "lon": "-124.237"
+},
+{
+  "state": "Alaska",
+  "city": "Circle",
+  "name": "Central Airport",
+  "icao": "PACR",
+  "lat": "65.6121",
+  "lon": "-144.674"
+},
+{
+  "state": "Colorado",
+  "city": "Cortez",
+  "name": "Cortez-Montezuma County Airport",
+  "icao": "KCEZ",
+  "lat": "37.3044",
+  "lon": "-108.63"
+},
+{
+  "state": "Alaska",
+  "city": "Craig",
+  "name": "Craig Seaplane Base",
+  "icao": "KCGA",
+  "lat": "55.4592",
+  "lon": "-133.106"
+},
+{
+  "state": "Missouri",
+  "city": "Scott City",
+  "name": "Cape Girardeau Municipal Airport",
+  "icao": "KCGI",
+  "lat": "37.2272",
+  "lon": "-89.5637"
+},
+{
+  "state": "Tennessee",
+  "city": "Chattanooga",
+  "name": "Chattanooga Metropolitan Airport",
+  "icao": "KCHA",
+  "lat": "35.0373",
+  "lon": "-85.1966"
+},
+{
+  "state": "Virginia",
+  "city": "Earlysville",
+  "name": "Charlottesville Albemarle Airport",
+  "icao": "KCHO",
+  "lat": "38.14",
+  "lon": "-78.4487"
+},
+{
+  "state": "South Carolina",
+  "city": "North Charleston",
+  "name": "Charleston International Airport",
+  "icao": "KCHS",
+  "lat": "32.8838",
+  "lon": "-80.0356"
+},
+{
+  "state": "Alaska",
+  "city": "Chuathbaluk",
+  "name": "Chuathbaluk",
+  "icao": "KCHU",
+  "lat": "61.5769",
+  "lon": "-159.244"
+},
+{
+  "state": "California",
+  "city": "Chico",
+  "name": "Chico Municipal Airport",
+  "icao": "KCIC",
+  "lat": "39.7987",
+  "lon": "-121.854"
+},
+{
+  "state": "Iowa",
+  "city": "Cedar Rapids",
+  "name": "Cedar Rapids Municipal Airport",
+  "icao": "KCID",
+  "lat": "41.8893",
+  "lon": "-91.7008"
+},
+{
+  "state": "Alaska",
+  "city": "Chalkyitsik",
+  "name": "Chalkyitsik Airport",
+  "icao": "PACI",
+  "lat": "66.65",
+  "lon": "-143.75"
+},
+{
+  "state": "Michigan",
+  "city": "Kincheloe",
+  "name": "Chippewa County International Airport",
+  "icao": "KCIU",
+  "lat": "46.2581",
+  "lon": "-84.4739"
+},
+{
+  "state": "West Virginia",
+  "city": "Clarksburg",
+  "name": "Benedum Airport",
+  "icao": "KCKB",
+  "lat": "39.2967",
+  "lon": "-80.2314"
+},
+{
+  "state": "Alaska",
+  "city": "Aniak",
+  "name": "Crooked Creek Airport",
+  "icao": "KCKD",
+  "lat": "61.8667",
+  "lon": "-158.133"
+},
+{
+  "state": "Alaska",
+  "city": "Tok",
+  "name": "Chicken Airport",
+  "icao": "KCKX",
+  "lat": "64.0833",
+  "lon": "-141.917"
+},
+{
+  "state": "California",
+  "city": "Carlsbad",
+  "name": "Mcclellan Palomar Airport",
+  "icao": "KCRQ",
+  "lat": "33.1255",
+  "lon": "-117.275"
+},
+{
+  "state": "Ohio",
+  "city": "Cleveland",
+  "name": "Hopkins International Airport",
+  "icao": "KCLE",
+  "lat": "41.4115",
+  "lon": "-81.8339"
+},
+{
+  "state": "Texas",
+  "city": "College Station",
+  "name": "Easterwood Field Airport",
+  "icao": "KCLL",
+  "lat": "30.5938",
+  "lon": "-96.3685"
+},
+{
+  "state": "Washington",
+  "city": "Port Angeles",
+  "name": "William R Fairchild International Airport",
+  "icao": "KCLM",
+  "lat": "48.1155",
+  "lon": "-123.491"
+},
+{
+  "state": "Alaska",
+  "city": "Clarks Point",
+  "name": "Clarks Point Airport",
+  "icao": "PFCL",
+  "lat": "58.8517",
+  "lon": "-158.51"
+},
+{
+  "state": "North Carolina",
+  "city": "Charlotte",
+  "name": "Douglas International Airport",
+  "icao": "KCLT",
+  "lat": "35.2226",
+  "lon": "-80.946"
+},
+{
+  "state": "Ohio",
+  "city": "Columbus",
+  "name": "Port Columbus International Airport",
+  "icao": "KCMH",
+  "lat": "39.9974",
+  "lon": "-82.8877"
+},
+{
+  "state": "Illinois",
+  "city": "Savoy",
+  "name": "University of Illinois-Willard Airport",
+  "icao": "KCMI",
+  "lat": "40.0367",
+  "lon": "-88.2638"
+},
+{
+  "state": "Michigan",
+  "city": "Hancock",
+  "name": "Houghton County Memorial Airport",
+  "icao": "KCMX",
+  "lat": "47.1689",
+  "lon": "-88.4942"
+},
+{
+  "state": "New Mexico",
+  "city": "Carlsbad",
+  "name": "Cavern City Air Terminal Airport",
+  "icao": "KCNM",
+  "lat": "32.3458",
+  "lon": "-104.251"
+},
+{
+  "state": "Utah",
+  "city": "Thompson",
+  "name": "Canyonlands Field Airport",
+  "icao": "KCNY",
+  "lat": "38.7609",
+  "lon": "-109.742"
+},
+{
+  "state": "Wyoming",
+  "city": "Cody/Yellowstone",
+  "name": "Yellowstone Regional Airport",
+  "icao": "KCOD",
+  "lat": "44.5134",
+  "lon": "-109.031"
+},
+{
+  "state": "Colorado",
+  "city": "Colorado Springs",
+  "name": "City of Colorado Springs Municipal Airport",
+  "icao": "KCOS",
+  "lat": "38.7829",
+  "lon": "-104.697"
+},
+{
+  "state": "Missouri",
+  "city": "Columbia",
+  "name": "Columbia Regional Airport",
+  "icao": "KCOU",
+  "lat": "38.8174",
+  "lon": "-92.2218"
+},
+{
+  "state": "Wyoming",
+  "city": "Casper",
+  "name": "Natrona County International Airport",
+  "icao": "KCPR",
+  "lat": "42.8966",
+  "lon": "-106.465"
+},
+{
+  "state": "Puerto Rico",
+  "city": "Culebra",
+  "name": "Culebra Airport",
+  "icao": "TJCP",
+  "lat": "18.3204",
+  "lon": "-65.2929"
+},
+{
+  "state": "Texas",
+  "city": "Corpus Christi",
+  "name": "Corpus Christi International Airport",
+  "icao": "KCRP",
+  "lat": "27.7747",
+  "lon": "-97.5019"
+},
+{
+  "state": "West Virginia",
+  "city": "Charleston",
+  "name": "Yeager Airport",
+  "icao": "KCRW",
+  "lat": "38.3697",
+  "lon": "-81.5951"
+},
+{
+  "state": "Georgia",
+  "city": "Columbus",
+  "name": "Columbus Metropolitan Airport",
+  "icao": "KCSG",
+  "lat": "32.5184",
+  "lon": "-84.9401"
+},
+{
+  "state": "Ohio",
+  "city": "Hebron",
+  "name": "Greater Cincinnati International Airport",
+  "icao": "KCVG",
+  "lat": "39.0571",
+  "lon": "-84.6625"
+},
+{
+  "state": "New Mexico",
+  "city": "Texico",
+  "name": "Clovis Municipal Airport",
+  "icao": "KCVN",
+  "lat": "34.4271",
+  "lon": "-103.087"
+},
+{
+  "state": "Wisconsin",
+  "city": "Mosinee",
+  "name": "Central Wisconsin Airport",
+  "icao": "KCWA",
+  "lat": "44.7846",
+  "lon": "-89.6704"
+},
+{
+  "state": "Alaska",
+  "city": "Chefornak",
+  "name": "Chefornak Airport",
+  "icao": "PACK",
+  "lat": "60.1558",
+  "lon": "-164.273"
+},
+{
+  "state": "Wyoming",
+  "city": "Cheyenne",
+  "name": "Cheyenne Airport",
+  "icao": "KCYS",
+  "lat": "41.1527",
+  "lon": "-104.819"
+},
+{
+  "state": "Alaska",
+  "city": "Gakona",
+  "name": "Chisana Airport",
+  "icao": "KCZN",
+  "lat": "62.0833",
+  "lon": "-142.05"
+},
+{
+  "state": "Florida",
+  "city": "Daytona Beach",
+  "name": "Daytona Beach International Airport",
+  "icao": "KDAB",
+  "lat": "29.1874",
+  "lon": "-81.0615"
+},
+{
+  "state": "Texas",
+  "city": "Dallas",
+  "name": "Dallas Love Field Airport",
+  "icao": "KDAL",
+  "lat": "32.8439",
+  "lon": "-96.8496"
+},
+{
+  "state": "Ohio",
+  "city": "Dayton",
+  "name": "James M Cox Dayton International Airport",
+  "icao": "KDAY",
+  "lat": "39.8968",
+  "lon": "-84.2207"
+},
+{
+  "state": "Iowa",
+  "city": "Dubuque",
+  "name": "Dubuque Regional Airport",
+  "icao": "KDBQ",
+  "lat": "42.4047",
+  "lon": "-90.7037"
+},
+{
+  "state": "Virginia",
+  "city": "Arlington",
+  "name": "Washington National Airport",
+  "icao": "KDCA",
+  "lat": "38.849",
+  "lon": "-77.0438"
+},
+{
+  "state": "Kansas",
+  "city": "Dodge City",
+  "name": "Dodge City Regional Airport",
+  "icao": "KDDC",
+  "lat": "37.7573",
+  "lon": "-99.9697"
+},
+{
+  "state": "Illinois",
+  "city": "Decatur",
+  "name": "Decatur Airport",
+  "icao": "KDEC",
+  "lat": "39.8335",
+  "lon": "-88.8773"
+},
+{
+  "state": "Colorado",
+  "city": "Denver",
+  "name": "Denver International Airport",
+  "icao": "KDEN",
+  "lat": "39.8396",
+  "lon": "-104.672"
+},
+{
+  "state": "Texas",
+  "city": "Dallas",
+  "name": "Fort Worth International Airport",
+  "icao": "KDFW",
+  "lat": "32.9222",
+  "lon": "-97.0409"
+},
+{
+  "state": "Alabama",
+  "city": "Dothan",
+  "name": "Dothan Airport",
+  "icao": "KDHN",
+  "lat": "31.3144",
+  "lon": "-85.4487"
+},
+{
+  "state": "North Dakota",
+  "city": "Dickinson",
+  "name": "Dickinson Municipal Airport",
+  "icao": "KDIK",
+  "lat": "46.8035",
+  "lon": "-102.802"
+},
+{
+  "state": "Alaska",
+  "city": "Dillingham",
+  "name": "Dillingham Municipal Airport",
+  "icao": "PADL",
+  "lat": "59.0445",
+  "lon": "-158.513"
+},
+{
+  "state": "Minnesota",
+  "city": "Duluth",
+  "name": "Duluth International Airport",
+  "icao": "KDLH",
+  "lat": "46.838",
+  "lon": "-92.1781"
+},
+{
+  "state": "Alaska",
+  "city": "Deering",
+  "name": "Deering Airport",
+  "icao": "PADE",
+  "lat": "66.0833",
+  "lon": "-162.767"
+},
+{
+  "state": "Colorado",
+  "city": "Durango",
+  "name": "Durango la Plata County Airport",
+  "icao": "KDRO",
+  "lat": "37.1595",
+  "lon": "-107.751"
+},
+{
+  "state": "Texas",
+  "city": "Del Rio",
+  "name": "Del Rio International Airport",
+  "icao": "KDRT",
+  "lat": "29.3702",
+  "lon": "-100.918"
+},
+{
+  "state": "Iowa",
+  "city": "Des Moines",
+  "name": "Des Moines International Airport",
+  "icao": "KDSM",
+  "lat": "41.5328",
+  "lon": "-93.6481"
+},
+{
+  "state": "Michigan",
+  "city": "Detroit",
+  "name": "Detroit Metropolitan Wayne County Airport",
+  "icao": "KDTW",
+  "lat": "42.2327",
+  "lon": "-83.3412"
+},
+{
+  "state": "Pennsylvania",
+  "city": "Reynoldsville",
+  "name": "Du Bois Jefferson County Airport",
+  "icao": "KDUJ",
+  "lat": "41.1833",
+  "lon": "-78.8953"
+},
+{
+  "state": "Alaska",
+  "city": "Unalaska",
+  "name": "Unalaska Airport",
+  "icao": "PADU",
+  "lat": "53.896",
+  "lon": "-166.535"
+},
+{
+  "state": "North Dakota",
+  "city": "Devils Lake",
+  "name": "Devils Lake Municipal Airport",
+  "icao": "KDVL",
+  "lat": "48.108",
+  "lon": "-98.9037"
+},
+{
+  "state": "Alaska",
+  "city": "Tok",
+  "name": "Eagle Airport",
+  "icao": "PAEA",
+  "lat": "64.7667",
+  "lon": "-141.15"
+},
+{
+  "state": "Nebraska",
+  "city": "Kearney",
+  "name": "Kearney Municipal Airport",
+  "icao": "KEAR",
+  "lat": "40.7236",
+  "lon": "-99.0151"
+},
+{
+  "state": "Washington",
+  "city": "East Wenatchee",
+  "name": "Pangborn Memorial Airport",
+  "icao": "KEAT",
+  "lat": "47.4048",
+  "lon": "-120.21"
+},
+{
+  "state": "Wisconsin",
+  "city": "Eau Claire",
+  "name": "Eau Claire County Airport",
+  "icao": "KEAU",
+  "lat": "44.8625",
+  "lon": "-91.4826"
+},
+{
+  "state": "Alaska",
+  "city": "Ketchikan",
+  "name": "Edna Bay Seaplane Base",
+  "icao": "KWFB",
+  "lat": "55.9503",
+  "lon": "-133.656"
+},
+{
+  "state": "Alaska",
+  "city": "Eek",
+  "name": "Eek Airport",
+  "icao": "PAEE",
+  "lat": "60.2167",
+  "lon": "-162.017"
+},
+{
+  "state": "Colorado",
+  "city": "Gypsum",
+  "name": "Eagle County Regional Airport",
+  "icao": "KEGE",
+  "lat": "39.6395",
+  "lon": "-106.912"
+},
+{
+  "state": "Wisconsin",
+  "city": "Eagle River",
+  "name": "Eagle River Union Airport",
+  "icao": "KEGV",
+  "lat": "45.932",
+  "lon": "-89.2599"
+},
+{
+  "state": "Alaska",
+  "city": "Egegik",
+  "name": "Egegik Airport",
+  "icao": "PAII",
+  "lat": "58.2101",
+  "lon": "-157.366"
+},
+{
+  "state": "Nevada",
+  "city": "Elko",
+  "name": "Elko Municipal Airport-J C Harris Field",
+  "icao": "KEKO",
+  "lat": "40.829",
+  "lon": "-115.78"
+},
+{
+  "state": "Alaska",
+  "city": "Elim",
+  "name": "Elim Airport",
+  "icao": "PFEL",
+  "lat": "64.6167",
+  "lon": "-162.267"
+},
+{
+  "state": "New York",
+  "city": "Horseheads",
+  "name": "Elmira Corning Regional Airport",
+  "icao": "KELM",
+  "lat": "42.1633",
+  "lon": "-76.8973"
+},
+{
+  "state": "Texas",
+  "city": "El Paso",
+  "name": "El Paso International Airport",
+  "icao": "KELP",
+  "lat": "31.7982",
+  "lon": "-106.393"
+},
+{
+  "state": "Alaska",
+  "city": "Elfin Cove",
+  "name": "Elfin Cove Airport",
+  "icao": "PAEL",
+  "lat": "58.1833",
+  "lon": "-136.317"
+},
+{
+  "state": "Nevada",
+  "city": "Ely",
+  "name": "Yelland Field Airport",
+  "icao": "KELY",
+  "lat": "39.3043",
+  "lon": "-114.853"
+},
+{
+  "state": "Alaska",
+  "city": "Alakanuk",
+  "name": "Emmonak Airport",
+  "icao": "PAEM",
+  "lat": "62.785",
+  "lon": "-164.491"
+},
+{
+  "state": "Alaska",
+  "city": "Kenai",
+  "name": "Kenai Municipal Airport",
+  "icao": "PAEN",
+  "lat": "60.5651",
+  "lon": "-151.244"
+},
+{
+  "state": "Wisconsin",
+  "city": "Kenosha",
+  "name": "Kenosha Regional Airport",
+  "icao": "KENW",
+  "lat": "42.5934",
+  "lon": "-87.9299"
+},
+{
+  "state": "Pennsylvania",
+  "city": "Erie",
+  "name": "Erie International Airport",
+  "icao": "KERI",
+  "lat": "42.0829",
+  "lon": "-80.1824"
+},
+{
+  "state": "Michigan",
+  "city": "Escanaba",
+  "name": "Delta County Airport",
+  "icao": "KESC",
+  "lat": "45.718",
+  "lon": "-87.0942"
+},
+{
+  "state": "Washington",
+  "city": "Eastsound",
+  "name": "Orcas Island Airport",
+  "icao": "KORS",
+  "lat": "48.7073",
+  "lon": "-122.909"
+},
+{
+  "state": "Oregon",
+  "city": "Eugene",
+  "name": "Mahlon Sweet Field Airport",
+  "icao": "KEUG",
+  "lat": "44.1184",
+  "lon": "-123.213"
+},
+{
+  "state": "Indiana",
+  "city": "Evansville",
+  "name": "Evansville Regional Airport",
+  "icao": "KEVV",
+  "lat": "38.0464",
+  "lon": "-87.5308"
+},
+{
+  "state": "Massachusetts",
+  "city": "New Bedford",
+  "name": "New Bedford Municipal Airport",
+  "icao": "KEWB",
+  "lat": "41.6735",
+  "lon": "-70.9579"
+},
+{
+  "state": "Alaska",
+  "city": "Wildman Lake",
+  "name": "Wildman Lake",
+  "icao": "KEWD",
+  "lat": "61.1021",
+  "lon": "-149.924"
+},
+{
+  "state": "North Carolina",
+  "city": "New Bern",
+  "name": "Craven County Regional Airport",
+  "icao": "KEWN",
+  "lat": "35.0786",
+  "lon": "-77.0343"
+},
+{
+  "state": "New Jersey",
+  "city": "Newark",
+  "name": "Newark International Airport",
+  "icao": "KEWR",
+  "lat": "40.6924",
+  "lon": "-74.1843"
+},
+{
+  "state": "Florida",
+  "city": "Key West",
+  "name": "Key West International Airport",
+  "icao": "KEYW",
+  "lat": "24.5536",
+  "lon": "-81.7551"
+},
+{
+  "state": "Alaska",
+  "city": "Fairbanks",
+  "name": "Fairbanks International Airport",
+  "icao": "PAFA",
+  "lat": "64.8183",
+  "lon": "-147.866"
+},
+{
+  "state": "North Dakota",
+  "city": "Fargo",
+  "name": "Hector International Airport",
+  "icao": "KFAR",
+  "lat": "46.9195",
+  "lon": "-96.8243"
+},
+{
+  "state": "California",
+  "city": "Fresno",
+  "name": "Fresno Yosemite International Airport",
+  "icao": "KFAT",
+  "lat": "36.7675",
+  "lon": "-119.717"
+},
+{
+  "state": "North Carolina",
+  "city": "Fayetteville",
+  "name": "Fayetteville Regional Airport",
+  "icao": "KFAY",
+  "lat": "34.9914",
+  "lon": "-78.8889"
+},
+{
+  "state": "Montana",
+  "city": "Kalispell",
+  "name": "Glacier Park International Airport",
+  "icao": "KFCA",
+  "lat": "48.3075",
+  "lon": "-114.252"
+},
+{
+  "state": "Pennsylvania",
+  "city": "Franklin",
+  "name": "Chess Lamberton Airport",
+  "icao": "KFKL",
+  "lat": "41.3766",
+  "lon": "-79.8573"
+},
+{
+  "state": "Arizona",
+  "city": "Flagstaff",
+  "name": "Flagstaff Pulliam Airport",
+  "icao": "KFLG",
+  "lat": "35.139",
+  "lon": "-111.675"
+},
+{
+  "state": "Florida",
+  "city": "Dania Beach",
+  "name": "Fort Lauderdale Hollywood International Airport",
+  "icao": "KFLL",
+  "lat": "26.0722",
+  "lon": "-80.1354"
+},
+{
+  "state": "South Carolina",
+  "city": "Florence",
+  "name": "Florence Regional Airport",
+  "icao": "KFLO",
+  "lat": "34.1936",
+  "lon": "-79.7289"
+},
+{
+  "state": "New Mexico",
+  "city": "Farmington",
+  "name": "Four Corners Regional Airport",
+  "icao": "KFMN",
+  "lat": "36.7387",
+  "lon": "-108.227"
+},
+{
+  "state": "Florida",
+  "city": "Fort Myers",
+  "name": "Page Field Airport",
+  "icao": "KFMY",
+  "lat": "26.5815",
+  "lon": "-81.862"
+},
+{
+  "state": "Colorado",
+  "city": "Loveland",
+  "name": "Fort Collins Loveland Municipal Airport",
+  "icao": "KFNL",
+  "lat": "40.4505",
+  "lon": "-105.008"
+},
+{
+  "state": "Michigan",
+  "city": "Flint",
+  "name": "Bishop International Airport",
+  "icao": "KFNT",
+  "lat": "42.9756",
+  "lon": "-83.7411"
+},
+{
+  "state": "Iowa",
+  "city": "Fort Dodge",
+  "name": "Fort Dodge Regional Airport",
+  "icao": "KFOD",
+  "lat": "42.5523",
+  "lon": "-94.1819"
+},
+{
+  "state": "Washington",
+  "city": "Friday Harbor",
+  "name": "Friday Harbor Airport",
+  "icao": "KFHR",
+  "lat": "48.5252",
+  "lon": "-123.027"
+},
+{
+  "state": "South Dakota",
+  "city": "Sioux Falls",
+  "name": "Sioux Falls Regional Airport",
+  "icao": "KFSD",
+  "lat": "43.5813",
+  "lon": "-96.7317"
+},
+{
+  "state": "Arkansas",
+  "city": "Fort Smith",
+  "name": "Smith Field Airport",
+  "icao": "KFSM",
+  "lat": "36.1881",
+  "lon": "-94.4944"
+},
+{
+  "state": "Indiana",
+  "city": "Fort Wayne",
+  "name": "Fort Wayne Municipal Airport-Baer Field",
+  "icao": "KFWA",
+  "lat": "40.9883",
+  "lon": "-85.1899"
+},
+{
+  "state": "Alaska",
+  "city": "Fort Yukon",
+  "name": "Fort Yukon Airport",
+  "icao": "PFYU",
+  "lat": "66.5714",
+  "lon": "-145.25"
+},
+{
+  "state": "Alaska",
+  "city": "Galena",
+  "name": "Galena Airport",
+  "icao": "PAGA",
+  "lat": "64.7404",
+  "lon": "-156.931"
+},
+{
+  "state": "Alaska",
+  "city": "Gambell",
+  "name": "Gambell Airport",
+  "icao": "PAGM",
+  "lat": "63.7667",
+  "lon": "-171.738"
+},
+{
+  "state": "Kansas",
+  "city": "Great Bend",
+  "name": "Great Bend Municipal Airport",
+  "icao": "KGBD",
+  "lat": "38.352",
+  "lon": "-98.853"
+},
+{
+  "state": "Wyoming",
+  "city": "Gillette",
+  "name": "Gillette Campbell County Airport",
+  "icao": "KGCC",
+  "lat": "44.3465",
+  "lon": "-105.533"
+},
+{
+  "state": "Kansas",
+  "city": "Pierceville",
+  "name": "Garden City Regional Airport",
+  "icao": "KGCK",
+  "lat": "37.9267",
+  "lon": "-100.719"
+},
+{
+  "state": "Washington",
+  "city": "Spokane",
+  "name": "Spokane International Airport",
+  "icao": "KGEG",
+  "lat": "47.625",
+  "lon": "-117.538"
+},
+{
+  "state": "North Dakota",
+  "city": "Grand Forks",
+  "name": "Grand Forks Mark Andrews International Airport",
+  "icao": "KGFK",
+  "lat": "47.9494",
+  "lon": "-97.1762"
+},
+{
+  "state": "Texas",
+  "city": "Longview",
+  "name": "Gregg County Airport",
+  "icao": "KGGG",
+  "lat": "32.3874",
+  "lon": "-94.7194"
+},
+{
+  "state": "Colorado",
+  "city": "Grand Junction",
+  "name": "Walker Field Airport",
+  "icao": "KGJT",
+  "lat": "39.1217",
+  "lon": "-108.529"
+},
+{
+  "state": "Mississippi",
+  "city": "Greenville",
+  "name": "Mid Delta Regional Airport",
+  "icao": "KGLH",
+  "lat": "33.4819",
+  "lon": "-90.9903"
+},
+{
+  "state": "Alaska",
+  "city": "Golovin",
+  "name": "Golovin",
+  "icao": "PAGL",
+  "lat": "64.5433",
+  "lon": "-163.033"
+},
+{
+  "state": "Alaska",
+  "city": "Goodnews Bay",
+  "name": "Alaska",
+  "icao": "KGNU",
+  "lat": "59.1218",
+  "lon": "-161.588"
+},
+{
+  "state": "Florida",
+  "city": "Gainesville",
+  "name": "Gainesville Regional Airport",
+  "icao": "KGNV",
+  "lat": "29.6861",
+  "lon": "-82.277"
+},
+{
+  "state": "Mississippi",
+  "city": "Gulfport",
+  "name": "Gulfport Biloxi Regional Airport",
+  "icao": "KGPT",
+  "lat": "30.4133",
+  "lon": "-89.072"
+},
+{
+  "state": "Wisconsin",
+  "city": "Green Bay",
+  "name": "Austin Straubel International Airport",
+  "icao": "KGRB",
+  "lat": "44.4923",
+  "lon": "-88.1274"
+},
+{
+  "state": "Texas",
+  "city": "Killeen",
+  "name": "Killeen-Fort Hood Regional Airport",
+  "icao": "KGRK",
+  "lat": "31.0615",
+  "lon": "-97.8206"
+},
+{
+  "state": "Michigan",
+  "city": "Grand Rapids",
+  "name": "Gerald R. Ford International Airport",
+  "icao": "KGRR",
+  "lat": "42.8841",
+  "lon": "-85.5307"
+},
+{
+  "state": "North Carolina",
+  "city": "Greensboro",
+  "name": "Triad International Airport",
+  "icao": "KGSO",
+  "lat": "36.1038",
+  "lon": "-79.9427"
+},
+{
+  "state": "South Carolina",
+  "city": "Greer",
+  "name": "Greenville Spartanburg International Airport",
+  "icao": "KGSP",
+  "lat": "34.8907",
+  "lon": "-82.2167"
+},
+{
+  "state": "Alaska",
+  "city": "Gustavus",
+  "name": "Gustavus Airport",
+  "icao": "PAGS",
+  "lat": "58.4246",
+  "lon": "-135.707"
+},
+{
+  "state": "Montana",
+  "city": "Great Falls",
+  "name": "Great Falls International Airport",
+  "icao": "KGTF",
+  "lat": "47.482",
+  "lon": "-111.356"
+},
+{
+  "state": "Mississippi",
+  "city": "Columbus",
+  "name": "Golden Triangle Regional Airport",
+  "icao": "KGTR",
+  "lat": "33.4516",
+  "lon": "-88.5876"
+},
+{
+  "state": "Colorado",
+  "city": "Gunnison",
+  "name": "Gunnison County Airport",
+  "icao": "KGUC",
+  "lat": "38.5356",
+  "lon": "-106.941"
+},
+{
+  "state": "Guam",
+  "city": "Hagåtña",
+  "name": "Antonio B Won Pat International Airport",
+  "icao": "PGUM",
+  "lat": "13.4833",
+  "lon": "144.796"
+},
+{
+  "state": "Arizona",
+  "city": "Havasupai",
+  "name": "Havasupai",
+  "icao": "KHAE",
+  "lat": "36.2306",
+  "lon": "-112.669"
+},
+{
+  "state": "Alaska",
+  "city": "Holy Cross",
+  "name": "Alaska",
+  "icao": "PAHC",
+  "lat": "62.2016",
+  "lon": "-159.77"
+},
+{
+  "state": "Colorado",
+  "city": "Hayden",
+  "name": "Yampa Valley Airport",
+  "icao": "KHDN",
+  "lat": "40.485",
+  "lon": "-107.219"
+},
+{
+  "state": "South Carolina",
+  "city": "Hilton Head Island",
+  "name": "Hilton Head Airport",
+  "icao": "KHXD",
+  "lat": "32.2267",
+  "lon": "-80.6989"
+},
+{
+  "state": "Minnesota",
+  "city": "Hibbing",
+  "name": "Chisholm Hibbing Airport",
+  "icao": "KHIB",
+  "lat": "47.3934",
+  "lon": "-92.8418"
+},
+{
+  "state": "Alaska",
+  "city": "Healy Lake",
+  "name": "Healy Lake Airport",
+  "icao": "KHKB",
+  "lat": "63.8667",
+  "lon": "-148.967"
+},
+{
+  "state": "Montana",
+  "city": "Helena",
+  "name": "Helena Regional Airport",
+  "icao": "KHLN",
+  "lat": "46.6104",
+  "lon": "-111.99"
+},
+{
+  "state": "Alaska",
+  "city": "Hoonah",
+  "name": "Hoonah Airport",
+  "icao": "PAOH",
+  "lat": "58.0966",
+  "lon": "-135.41"
+},
+{
+  "state": "Hawaii",
+  "city": "Honolulu",
+  "name": "Honolulu International Airport",
+  "icao": "PHNL",
+  "lat": "21.3358",
+  "lon": "-157.919"
+},
+{
+  "state": "Hawaii",
+  "city": "Hana",
+  "name": "Hana Airport",
+  "icao": "PHHN",
+  "lat": "20.7944",
+  "lon": "-156.015"
+},
+{
+  "state": "Alaska",
+  "city": "Haines",
+  "name": "Haines Airport",
+  "icao": "PAHN",
+  "lat": "59.2439",
+  "lon": "-135.524"
+},
+{
+  "state": "New Mexico",
+  "city": "Hobbs",
+  "name": "Lea County Regional Airport",
+  "icao": "KHOB",
+  "lat": "32.6929",
+  "lon": "-103.215"
+},
+{
+  "state": "Alaska",
+  "city": "Homer",
+  "name": "Homer Airport",
+  "icao": "PAHO",
+  "lat": "59.6408",
+  "lon": "-151.499"
+},
+{
+  "state": "South Dakota",
+  "city": "Huron",
+  "name": "Howes",
+  "icao": "KHON",
+  "lat": "44.3833",
+  "lon": "-98.2333"
+},
+{
+  "state": "Texas",
+  "city": "Houston",
+  "name": "William P Hobby Airport",
+  "icao": "KHOU",
+  "lat": "29.6572",
+  "lon": "-95.2795"
+},
+{
+  "state": "Alaska",
+  "city": "Hooper Bay",
+  "name": "Hooper Bay Airport",
+  "icao": "PAHP",
+  "lat": "61.5262",
+  "lon": "-166.142"
+},
+{
+  "state": "New York",
+  "city": "Purchase",
+  "name": "Westchester County Airport",
+  "icao": "KHPN",
+  "lat": "41.0693",
+  "lon": "-73.7042"
+},
+{
+  "state": "Texas",
+  "city": "Harlingen",
+  "name": "Grande Valley International Airport",
+  "icao": "KHRL",
+  "lat": "26.2216",
+  "lon": "-97.663"
+},
+{
+  "state": "Alaska",
+  "city": "Huslia",
+  "name": "Alaska",
+  "icao": "PAHL",
+  "lat": "65.7024",
+  "lon": "-156.387"
+},
+{
+  "state": "Alabama",
+  "city": "Huntsville",
+  "name": "Huntsville International Airport",
+  "icao": "KHSV",
+  "lat": "34.6492",
+  "lon": "-86.7767"
+},
+{
+  "state": "West Virginia",
+  "city": "Huntington",
+  "name": "Tri State Walker Long Field Airport",
+  "icao": "KHTS",
+  "lat": "38.37",
+  "lon": "-82.5542"
+},
+{
+  "state": "Alaska",
+  "city": "Hughes",
+  "name": "Hughes",
+  "icao": "PAHU",
+  "lat": "66.0443",
+  "lon": "-154.258"
+},
+{
+  "state": "Connecticut",
+  "city": "East Haven",
+  "name": "Tweed New Haven Airport",
+  "icao": "KHVN",
+  "lat": "41.2709",
+  "lon": "-72.89"
+},
+{
+  "state": "Montana",
+  "city": "Havre",
+  "name": "Havre City-County Airport",
+  "icao": "KHVR",
+  "lat": "48.5461",
+  "lon": "-109.773"
+},
+{
+  "state": "Massachusetts",
+  "city": "Hyannis",
+  "name": "Barnstable Boardman Polando Airport",
+  "icao": "KHYA",
+  "lat": "41.6667",
+  "lon": "-70.2863"
+},
+{
+  "state": "Alaska",
+  "city": "Hydaburg",
+  "name": "Alaska",
+  "icao": "PAHY",
+  "lat": "55.205",
+  "lon": "-132.822"
+},
+{
+  "state": "Alaska",
+  "city": "Hollis",
+  "name": "Hollis Seaplane Base",
+  "icao": "KHYL",
+  "lat": "55.4833",
+  "lon": "-132.65"
+},
+{
+  "state": "Kansas",
+  "city": "Hays",
+  "name": "Hays Municipal Airport",
+  "icao": "KHYS",
+  "lat": "38.8546",
+  "lon": "-99.2737"
+},
+{
+  "state": "Virginia",
+  "city": "Washington",
+  "name": "Dulles International Airport",
+  "icao": "KIAD",
+  "lat": "38.9556",
+  "lon": "-77.4484"
+},
+{
+  "state": "New York",
+  "city": "Niagara Falls",
+  "name": "Niagara Falls International Airport",
+  "icao": "KIAG",
+  "lat": "43.1",
+  "lon": "-78.9423"
+},
+{
+  "state": "Texas",
+  "city": "Houston",
+  "name": "George Bush Intercontinental Airport",
+  "icao": "KIAH",
+  "lat": "29.9784",
+  "lon": "-95.3424"
+},
+{
+  "state": "Alaska",
+  "city": "Kiana",
+  "name": "Kiana",
+  "icao": "PAIK",
+  "lat": "66.9699",
+  "lon": "-160.429"
+},
+{
+  "state": "Kansas",
+  "city": "Wichita",
+  "name": "Wichita Mid-Continent Airport",
+  "icao": "KICT",
+  "lat": "37.6531",
+  "lon": "-97.43"
+},
+{
+  "state": "Idaho",
+  "city": "Idaho Falls",
+  "name": "Fanning Field Airport",
+  "icao": "KIDA",
+  "lat": "43.5147",
+  "lon": "-112.068"
+},
+{
+  "state": "Arizona",
+  "city": "Bullhead City",
+  "name": "Laughlin-Bullhead International Airport",
+  "icao": "KIFP",
+  "lat": "35.1657",
+  "lon": "-114.557"
+},
+{
+  "state": "Alaska",
+  "city": "Igiugig",
+  "name": "Igiugig",
+  "icao": "PAIG",
+  "lat": "59.3167",
+  "lon": "-155.9"
+},
+{
+  "state": "Arizona",
+  "city": "Kingman",
+  "name": "Kingman Airport",
+  "icao": "KIGM",
+  "lat": "35.2692",
+  "lon": "-113.957"
+},
+{
+  "state": "Alaska",
+  "city": "Nikolski",
+  "name": "Nikolski",
+  "icao": "PAKO",
+  "lat": "52.9389",
+  "lon": "-168.868"
+},
+{
+  "state": "Alaska",
+  "city": "Iliamna",
+  "name": "Iliamna Airport",
+  "icao": "PAIL",
+  "lat": "59.7555",
+  "lon": "-154.918"
+},
+{
+  "state": "North Carolina",
+  "city": "Wilmington",
+  "name": "Wilmington International Airport",
+  "icao": "KILM",
+  "lat": "34.2668",
+  "lon": "-77.912"
+},
+{
+  "state": "Ohio",
+  "city": "Wilmington",
+  "name": "Airborne Airpark",
+  "icao": "KILN",
+  "lat": "39.4348",
+  "lon": "-83.7982"
+},
+{
+  "state": "Michigan",
+  "city": "Kingsford",
+  "name": "Ford Airport",
+  "icao": "KIMT",
+  "lat": "45.8153",
+  "lon": "-88.1185"
+},
+{
+  "state": "Indiana",
+  "city": "Indianapolis",
+  "name": "Indianapolis International Airport",
+  "icao": "KIND",
+  "lat": "39.7322",
+  "lon": "-86.2707"
+},
+{
+  "state": "Minnesota",
+  "city": "International Falls",
+  "name": "Falls International Airport",
+  "icao": "KINL",
+  "lat": "48.5661",
+  "lon": "-93.3978"
+},
+{
+  "state": "North Carolina",
+  "city": "Winston-Salem",
+  "name": "Smith Reynolds Airport",
+  "icao": "KINT",
+  "lat": "36.1361",
+  "lon": "-80.2294"
+},
+{
+  "state": "California",
+  "city": "Imperial",
+  "name": "Imperial County Airport",
+  "icao": "KIPL",
+  "lat": "32.8332",
+  "lon": "-115.57"
+},
+{
+  "state": "Pennsylvania",
+  "city": "Montoursville",
+  "name": "Williamsport-Lycoming County Airport",
+  "icao": "KIPT",
+  "lat": "41.2441",
+  "lon": "-76.9276"
+},
+{
+  "state": "Alaska",
+  "city": "Circle",
+  "name": "Circle City Airport",
+  "icao": "PACR",
+  "lat": "65.8245",
+  "lon": "-144.063"
+},
+{
+  "state": "Wisconsin",
+  "city": "Irma",
+  "name": "Rhinelander County Airport",
+  "icao": "KRHI",
+  "lat": "45.3517",
+  "lon": "-89.6665"
+},
+{
+  "state": "North Dakota",
+  "city": "Williston",
+  "name": "Sloulin Field International Airport",
+  "icao": "KISN",
+  "lat": "48.1767",
+  "lon": "-103.631"
+},
+{
+  "state": "North Carolina",
+  "city": "Kinston",
+  "name": "Kinston Jetport Stallings Airport",
+  "icao": "KISO",
+  "lat": "35.3243",
+  "lon": "-77.6115"
+},
+{
+  "state": "New York",
+  "city": "Ronkonkoma",
+  "name": "Long Island Macarthur Airport",
+  "icao": "KISP",
+  "lat": "40.7891",
+  "lon": "-73.0984"
+},
+{
+  "state": "New York",
+  "city": "Ithaca",
+  "name": "Tompkins County Airport",
+  "icao": "KITH",
+  "lat": "42.4898",
+  "lon": "-76.4627"
+},
+{
+  "state": "Hawaii",
+  "city": "Hilo",
+  "name": "Hilo International Airport",
+  "icao": "PHTO",
+  "lat": "19.7126",
+  "lon": "-155.042"
+},
+{
+  "state": "Michigan",
+  "city": "Ironwood",
+  "name": "Gogebic-Iron County Airport",
+  "icao": "KIWD",
+  "lat": "46.5208",
+  "lon": "-90.1344"
+},
+{
+  "state": "California",
+  "city": "Inyokern",
+  "name": "Inyokern Airport",
+  "icao": "KIYK",
+  "lat": "35.6606",
+  "lon": "-117.816"
+},
+{
+  "state": "Wyoming",
+  "city": "Jackson",
+  "name": "Jackson Hole Airport",
+  "icao": "KJAC",
+  "lat": "43.6034",
+  "lon": "-110.736"
+},
+{
+  "state": "Mississippi",
+  "city": "Pearl",
+  "name": "Jackson International Airport",
+  "icao": "KJAN",
+  "lat": "32.3089",
+  "lon": "-90.0733"
+},
+{
+  "state": "Florida",
+  "city": "Jacksonville",
+  "name": "Jacksonville International Airport",
+  "icao": "KJAX",
+  "lat": "30.4914",
+  "lon": "-81.676"
+},
+{
+  "state": "Missouri",
+  "city": "Holts Summit",
+  "name": "Jefferson City Memorial Airport",
+  "icao": "KJEF",
+  "lat": "38.593",
+  "lon": "-92.1652"
+},
+{
+  "state": "New York",
+  "city": "Jamaica",
+  "name": "John F Kennedy International Airport",
+  "icao": "KJFK",
+  "lat": "40.6437",
+  "lon": "-73.79"
+},
+{
+  "state": "Arizona",
+  "city": "Williams",
+  "name": "H.A Clark Memorial Field",
+  "icao": "KCRM",
+  "lat": "35.9621",
+  "lon": "-112.133"
+},
+{
+  "state": "Hawaii",
+  "city": "Lahaina",
+  "name": "Kapalua West Maui Airport",
+  "icao": "PHJH",
+  "lat": "20.9619",
+  "lon": "-156.676"
+},
+{
+  "state": "New York",
+  "city": "Jamestown",
+  "name": "Chautauqua County-Jamestown Airport",
+  "icao": "KJHW",
+  "lat": "42.1528",
+  "lon": "-79.2666"
+},
+{
+  "state": "Kentucky",
+  "city": "Jackson",
+  "name": "Julian Carroll Airport",
+  "icao": "KJKL",
+  "lat": "37.5917",
+  "lon": "-83.315"
+},
+{
+  "state": "Missouri",
+  "city": "Webb City",
+  "name": "Joplin Regional Airport",
+  "icao": "KJLN",
+  "lat": "37.147",
+  "lon": "-94.5019"
+},
+{
+  "state": "North Dakota",
+  "city": "Jamestown",
+  "name": "Jamestown Municipal Airport",
+  "icao": "KJMS",
+  "lat": "46.9243",
+  "lon": "-98.6788"
+},
+{
+  "state": "Alaska",
+  "city": "Juneau",
+  "name": "Juneau International Airport",
+  "icao": "PAJN",
+  "lat": "58.3598",
+  "lon": "-134.583"
+},
+{
+  "state": "Alaska",
+  "city": "Soldotna",
+  "name": "Soldotna Airport",
+  "icao": "PASX",
+  "lat": "60.2830",
+  "lon": "-151.022"
+},
+{
+  "state": "New York",
+  "city": "New York",
+  "name": "Downtown Manhattan Heliport",
+  "icao": "KJRB",
+  "lat": "40.7039",
+  "lon": "-74.0129"
+},
+{
+  "state": "Pennsylvania",
+  "city": "Johnstown",
+  "name": "Johnstown Cambria County Airport",
+  "icao": "KJST",
+  "lat": "40.3208",
+  "lon": "-78.8306"
+},
+{
+  "state": "Alaska",
+  "city": "Kaltag",
+  "name": "Kaltag",
+  "icao": "PAKV",
+  "lat": "64.3248",
+  "lon": "-158.725"
+},
+{
+  "state": "Alaska",
+  "city": "Birch Creek",
+  "name": "Birch Creek Airport",
+  "icao": "KKBC",
+  "lat": "66.2667",
+  "lon": "-145.8"
+},
+{
+  "state": "Alaska",
+  "city": "Coffman Cove",
+  "name": "Alaska",
+  "icao": "KKCC",
+  "lat": "56.014",
+  "lon": "-132.826"
+},
+{
+  "state": "Alaska",
+  "city": "Chignik Lagoon",
+  "name": "Chignik Fisheries Airport",
+  "icao": "KKCQ",
+  "lat": "56.3173",
+  "lon": "-158.596"
+},
+{
+  "state": "Alaska",
+  "city": "Chignik",
+  "name": "Chignik Lake Airport",
+  "icao": "PAJC",
+  "lat": "56.3119",
+  "lon": "-158.362"
+},
+{
+  "state": "Alaska",
+  "city": "Nanwalek",
+  "name": "Nanwalek",
+  "icao": "KKEB",
+  "lat": "41.0833",
+  "lon": "-92.4583"
+},
+{
+  "state": "Alaska",
+  "city": "Ekwok",
+  "name": "Ekwok",
+  "icao": "KKEK",
+  "lat": "59.3516",
+  "lon": "-157.48"
+},
+{
+  "state": "Alaska",
+  "city": "False Pass",
+  "name": "False Pass Airport",
+  "icao": "PAKF",
+  "lat": "54.85",
+  "lon": "-163.417"
+},
+{
+  "state": "Alaska",
+  "city": "New Koliganek",
+  "name": "Koliganek Airport",
+  "icao": "PAJZ",
+  "lat": "59.7266",
+  "lon": "-157.26"
+},
+{
+  "state": "Alaska",
+  "city": "Grayling",
+  "name": "Alaska",
+  "icao": "KKGX",
+  "lat": "62.9053",
+  "lon": "-160.067"
+},
+{
+  "state": "Alaska",
+  "city": "Koyuk",
+  "name": "Koyuk",
+  "icao": "PAKK",
+  "lat": "64.9311",
+  "lon": "-161.16"
+},
+{
+  "state": "Alaska",
+  "city": "Kitoi Bay",
+  "name": "Kitoi Seaplane Base",
+  "icao": "KKKB",
+  "lat": "58.1869",
+  "lon": "-152.375"
+},
+{
+  "state": "Alaska",
+  "city": "Kongiganak",
+  "name": "Alaska",
+  "icao": "PADY",
+  "lat": "62.8903",
+  "lon": "-149.054"
+},
+{
+  "state": "Alaska",
+  "city": "Akiachak",
+  "name": "Akiachak",
+  "icao": "KKKI",
+  "lat": "60.9057",
+  "lon": "-161.424"
+},
+{
+  "state": "Alaska",
+  "city": "Clarks Point",
+  "name": "Clarks Point Airport",
+  "icao": "PFCL",
+  "lat": "58.8167",
+  "lon": "-158.55"
+},
+{
+  "state": "Alaska",
+  "city": "Kalskag",
+  "name": "Kalskag",
+  "icao": "PALG",
+  "lat": "61.5382",
+  "lon": "-160.314"
+},
+{
+  "state": "Alaska",
+  "city": "Levelock",
+  "name": "Levelock",
+  "icao": "PAKL",
+  "lat": "59.1126",
+  "lon": "-156.856"
+},
+{
+  "state": "Alaska",
+  "city": "Larsen Bay",
+  "name": "Larsen Bay",
+  "icao": "PALB",
+  "lat": "57.5383",
+  "lon": "-153.98"
+},
+{
+  "state": "Alaska",
+  "city": "Klawock",
+  "name": "Klawock Seaplane Base",
+  "icao": "PAKW",
+  "lat": "55.5743",
+  "lon": "-133.064"
+},
+{
+  "state": "Alaska",
+  "city": "Manokotak",
+  "name": "Manokotak",
+  "icao": "PAMB",
+  "lat": "58.9817",
+  "lon": "-159.058"
+},
+{
+  "state": "Alaska",
+  "city": "Moser Bay",
+  "name": "Moser Bay",
+  "icao": "PAMY",
+  "lat": "57",
+  "lon": "-154.167"
+},
+{
+  "state": "Alaska",
+  "city": "Kakhonak",
+  "name": "Kakhonak Airport",
+  "icao": "PFKK",
+  "lat": "59.4333",
+  "lon": "-154.85"
+},
+{
+  "state": "Alaska",
+  "city": "New Stuyahok",
+  "name": "New Stuyahok",
+  "icao": "PANW",
+  "lat": "59.4513",
+  "lon": "-157.317"
+},
+{
+  "state": "Hawaii",
+  "city": "Kailua Kona",
+  "name": "Kailua-Kona International Airport",
+  "icao": "PHKO",
+  "lat": "19.7334",
+  "lon": "-156.039"
+},
+{
+  "state": "Alaska",
+  "city": "Kotlik",
+  "name": "Kotlik",
+  "icao": "PFKO",
+  "lat": "63.0328",
+  "lon": "-163.554"
+},
+{
+  "state": "Alaska",
+  "city": "Olga Bay",
+  "name": "Olga Bay",
+  "icao": "PKOY",
+  "lat": "47.902",
+  "lon": "-112.265"
+},
+{
+  "state": "Alaska",
+  "city": "Ouzinkie",
+  "name": "Alaska",
+  "icao": "KKOZ",
+  "lat": "62.8903",
+  "lon": "-149.054"
+},
+{
+  "state": "Alaska",
+  "city": "Point Baker",
+  "name": "Point Baker Seaplane Base",
+  "icao": "KKPB",
+  "lat": "56.3502",
+  "lon": "-133.622"
+},
+{
+  "state": "Alaska",
+  "city": "Brevig Mission",
+  "name": "Port Clarence Coast Guard Station",
+  "icao": "PAPC",
+  "lat": "65.2544",
+  "lon": "-166.856"
+},
+{
+  "state": "Alaska",
+  "city": "Kipnuk",
+  "name": "Kipnuk",
+  "icao": "PAKI",
+  "lat": "59.9371",
+  "lon": "-164.041"
+},
+{
+  "state": "Alaska",
+  "city": "Port Williams",
+  "name": "Port Williams",
+  "icao": "PKPR",
+  "lat": "58.4833",
+  "lon": "-152.583"
+},
+{
+  "state": "Alaska",
+  "city": "Perryville",
+  "name": "Alaska",
+  "icao": "PAPE",
+  "lat": "55.9122",
+  "lon": "-159.154"
+},
+{
+  "state": "Alaska",
+  "city": "Port Bailey",
+  "name": "Alaska",
+  "icao": "KKPY",
+  "lat": "58.743",
+  "lon": "-154.96"
+},
+{
+  "state": "Alaska",
+  "city": "Akutan",
+  "name": "Akutan Airport",
+  "icao": "PAUT",
+  "lat": "54.1271",
+  "lon": "-165.889"
+},
+{
+  "state": "Alaska",
+  "city": "Saint Marys",
+  "name": "Alaska",
+  "icao": "PASM",
+  "lat": "62.0503",
+  "lon": "-163.179"
+},
+{
+  "state": "Alaska",
+  "city": "Thorne Bay",
+  "name": "Alaska",
+  "icao": "KKTB",
+  "lat": "55.6833",
+  "lon": "-132.529"
+},
+{
+  "state": "Alaska",
+  "city": "Ketchikan",
+  "name": "Ketchikan International Airport",
+  "icao": "PAKT",
+  "lat": "55.354",
+  "lon": "-131.706"
+},
+{
+  "state": "Alaska",
+  "city": "Teller Mission",
+  "name": "Teller Airport",
+  "icao": "PATE",
+  "lat": "65.3333",
+  "lon": "-166.483"
+},
+{
+  "state": "Alaska",
+  "city": "Kasigluk",
+  "name": "Kasigluk",
+  "icao": "PFKA",
+  "lat": "60.8953",
+  "lon": "-162.517"
+},
+{
+  "state": "Alaska",
+  "city": "King Cove",
+  "name": "King Cove Airport",
+  "icao": "PAVC",
+  "lat": "55.0667",
+  "lon": "-162.317"
+},
+{
+  "state": "Alaska",
+  "city": "Kivalina",
+  "name": "Kivalina",
+  "icao": "PAVL",
+  "lat": "67.7333",
+  "lon": "-164.667"
+},
+{
+  "state": "Alaska",
+  "city": "Kwigillingok",
+  "name": "Kwigillingok",
+  "icao": "PAGG",
+  "lat": "59.9077",
+  "lon": "-163.026"
+},
+{
+  "state": "Alaska",
+  "city": "Quinhagak",
+  "name": "Quinhagak",
+  "icao": "PAQH",
+  "lat": "59.7511",
+  "lon": "-161.908"
+},
+{
+  "state": "Alaska",
+  "city": "West Point",
+  "name": "Village Seaplane Base-West Point",
+  "icao": "KKWP",
+  "lat": "57.7696",
+  "lon": "-153.554"
+},
+{
+  "state": "Alaska",
+  "city": "Kwethluk",
+  "name": "Kwethluk Airport",
+  "icao": "PFKW",
+  "lat": "60.8",
+  "lon": "-161.45"
+},
+{
+  "state": "Alaska",
+  "city": "Kasaan",
+  "name": "Kasaan SPB",
+  "icao": "KKXA",
+  "lat": "55.5",
+  "lon": "-132.5"
+},
+{
+  "state": "Alaska",
+  "city": "Kodiak",
+  "name": "Karluk Airport",
+  "icao": "PAKY",
+  "lat": "57.5645",
+  "lon": "-154.454"
+},
+{
+  "state": "Alaska",
+  "city": "Koyukuk",
+  "name": "Koyukuk",
+  "icao": "PFKU",
+  "lat": "64.9",
+  "lon": "-157.7"
+},
+{
+  "state": "Alaska",
+  "city": "Zachar Bay",
+  "name": "Zachar Bay",
+  "icao": "PAZB",
+  "lat": "57.55",
+  "lon": "-153.75"
+},
+{
+  "state": "Michigan",
+  "city": "Lansing",
+  "name": "Lansing Capital City Airport",
+  "icao": "KLAN",
+  "lat": "42.7728",
+  "lon": "-84.5888"
+},
+{
+  "state": "Wyoming",
+  "city": "Laramie",
+  "name": "General Brees Field",
+  "icao": "KLAR",
+  "lat": "37.8527",
+  "lon": "-76.517"
+},
+{
+  "state": "Nevada",
+  "city": "Las Vegas",
+  "name": "Mccarran International Airport",
+  "icao": "KLAS",
+  "lat": "36.0806",
+  "lon": "-115.143"
+},
+{
+  "state": "Oklahoma",
+  "city": "Lawton",
+  "name": "Lawton Municipal Airport",
+  "icao": "KLAW",
+  "lat": "34.573",
+  "lon": "-98.4135"
+},
+{
+  "state": "California",
+  "city": "Los Angeles",
+  "name": "Los Angeles International Airport",
+  "icao": "KLAX",
+  "lat": "33.9456",
+  "lon": "-118.391"
+},
+{
+  "state": "Texas",
+  "city": "Lubbock",
+  "name": "Lubbock International Airport",
+  "icao": "KLBB",
+  "lat": "33.6566",
+  "lon": "-101.821"
+},
+{
+  "state": "Pennsylvania",
+  "city": "Latrobe",
+  "name": "Westmoreland County Airport",
+  "icao": "KLBE",
+  "lat": "40.2728",
+  "lon": "-79.4056"
+},
+{
+  "state": "Nebraska",
+  "city": "North Platte",
+  "name": "Lee Bird Field Airport",
+  "icao": "KLBF",
+  "lat": "41.1333",
+  "lon": "-100.705"
+},
+{
+  "state": "Kansas",
+  "city": "Liberal",
+  "name": "Liberal Municipal Airport",
+  "icao": "KLBL",
+  "lat": "37.0446",
+  "lon": "-100.952"
+},
+{
+  "state": "Louisiana",
+  "city": "Lake Charles",
+  "name": "Lake Charles Regional Airport",
+  "icao": "KLCH",
+  "lat": "30.1235",
+  "lon": "-93.2198"
+},
+{
+  "state": "Ohio",
+  "city": "Columbus",
+  "name": "Rickenbacker International Airport",
+  "icao": "KLCK",
+  "lat": "39.8176",
+  "lon": "-82.936"
+},
+{
+  "state": "New Hampshire",
+  "city": "West Lebanon",
+  "name": "Lebanon Municipal Airport",
+  "icao": "KLEB",
+  "lat": "43.6249",
+  "lon": "-72.3087"
+},
+{
+  "state": "Kentucky",
+  "city": "Lexington",
+  "name": "Blue Grass Field",
+  "icao": "KLEX",
+  "lat": "38.0384",
+  "lon": "-84.5989"
+},
+{
+  "state": "Louisiana",
+  "city": "Lafayette",
+  "name": "Lafayette Regional Airport",
+  "icao": "KLFT",
+  "lat": "30.2084",
+  "lon": "-91.9935"
+},
+{
+  "state": "New York",
+  "city": "Flushing",
+  "name": "LaGuardia Airport",
+  "icao": "KLGA",
+  "lat": "40.7731",
+  "lon": "-73.8756"
+},
+{
+  "state": "California",
+  "city": "Long Beach",
+  "name": "Long Beach Daugherty Field Airport",
+  "icao": "KLGB",
+  "lat": "33.8186",
+  "lon": "-118.144"
+},
+{
+  "state": "Hawaii",
+  "city": "Lihue",
+  "name": "Lihue Airport",
+  "icao": "PHLI",
+  "lat": "21.9782",
+  "lon": "-159.351"
+},
+{
+  "state": "Arkansas",
+  "city": "Little Rock",
+  "name": "Adams Field Airport",
+  "icao": "KLIT",
+  "lat": "34.7278",
+  "lon": "-92.219"
+},
+{
+  "state": "Washington",
+  "city": "Seattle",
+  "name": "Lake Union Seaplane Base",
+  "icao": "KLKE",
+  "lat": "47.6333",
+  "lon": "-122.333"
+},
+{
+  "state": "Alaska",
+  "city": "Lake Minchumina",
+  "name": "Lake Minchumina",
+  "icao": "PAMH",
+  "lat": "63.8825",
+  "lon": "-152.313"
+},
+{
+  "state": "Oregon",
+  "city": "Klamath Falls",
+  "name": "Klamath Falls International Airport",
+  "icao": "KLMT",
+  "lat": "42.1638",
+  "lon": "-121.745"
+},
+{
+  "state": "Nebraska",
+  "city": "Lincoln",
+  "name": "Lincoln Municipal Airport",
+  "icao": "KLNK",
+  "lat": "40.8461",
+  "lon": "-96.7543"
+},
+{
+  "state": "Hawaii",
+  "city": "Lanai City",
+  "name": "Lanai Airport",
+  "icao": "PHNY",
+  "lat": "20.7909",
+  "lon": "-156.951"
+},
+{
+  "state": "Kentucky",
+  "city": "Louisville",
+  "name": "Bowman Field Airport",
+  "icao": "KLOU",
+  "lat": "38.2228",
+  "lon": "-85.6669"
+},
+{
+  "state": "Texas",
+  "city": "Laredo",
+  "name": "Laredo International Airport",
+  "icao": "KLRD",
+  "lat": "27.5431",
+  "lon": "-99.4555"
+},
+{
+  "state": "Wisconsin",
+  "city": "La Crosse",
+  "name": "La Crosse Municipal Airport",
+  "icao": "KLSE",
+  "lat": "43.8751",
+  "lon": "-91.2638"
+},
+{
+  "state": "Arizona",
+  "city": "Webb",
+  "name": "Luke Air Force Base",
+  "icao": "KLUF",
+  "lat": "33.5355",
+  "lon": "-112.372"
+},
+{
+  "state": "Hawaii",
+  "city": "Kalaupapa",
+  "name": "Kalaupapa Airport",
+  "icao": "PHLU",
+  "lat": "21.2077",
+  "lon": "-156.976"
+},
+{
+  "state": "Alaska",
+  "city": "Point Hope",
+  "name": "Cape Lisburne Long-Range Radar Station",
+  "icao": "PALU",
+  "lat": "68.8482",
+  "lon": "-166.118"
+},
+{
+  "state": "West Virginia",
+  "city": "Lewisburg",
+  "name": "Greenbrier Valley Airport",
+  "icao": "KLWB",
+  "lat": "37.8571",
+  "lon": "-80.4044"
+},
+{
+  "state": "Idaho",
+  "city": "Lewiston",
+  "name": "Lewiston Nez Perce County Airport",
+  "icao": "KLWS",
+  "lat": "46.3776",
+  "lon": "-117.011"
+},
+{
+  "state": "Montana",
+  "city": "Lewistown",
+  "name": "Lewistown Municipal Airport",
+  "icao": "KLWT",
+  "lat": "47.0552",
+  "lon": "-109.46"
+},
+{
+  "state": "Virginia",
+  "city": "Lynchburg",
+  "name": "Lynchburg Regional Airport",
+  "icao": "KLYH",
+  "lat": "37.3309",
+  "lon": "-79.1944"
+},
+{
+  "state": "Texas",
+  "city": "Midland",
+  "name": "Midland International Airport",
+  "icao": "KMAF",
+  "lat": "31.9361",
+  "lon": "-102.208"
+},
+{
+  "state": "Puerto Rico",
+  "city": "Mayaguez",
+  "name": "Eugenio Maria de Hostos Airport",
+  "icao": "TJMZ",
+  "lat": "18.2531",
+  "lon": "-67.1489"
+},
+{
+  "state": "Michigan",
+  "city": "Manistee",
+  "name": "Manistee County-Blacker Airport",
+  "icao": "KMBL",
+  "lat": "44.2757",
+  "lon": "-86.2558"
+},
+{
+  "state": "Michigan",
+  "city": "Freeland",
+  "name": "MBS International Airport",
+  "icao": "KMBS",
+  "lat": "43.5311",
+  "lon": "-84.0933"
+},
+{
+  "state": "California",
+  "city": "Merced",
+  "name": "Merced Municipal Airport-Macready Field",
+  "icao": "KMCE",
+  "lat": "37.2892",
+  "lon": "-120.515"
+},
+{
+  "state": "Alaska",
+  "city": "Mcgrath",
+  "name": "Mcgrath Airport",
+  "icao": "PAMC",
+  "lat": "62.9536",
+  "lon": "-155.603"
+},
+{
+  "state": "Missouri",
+  "city": "Kansas City",
+  "name": "Kansas City International Airport",
+  "icao": "KMCI",
+  "lat": "39.2992",
+  "lon": "-94.7171"
+},
+{
+  "state": "Nebraska",
+  "city": "Mccook",
+  "name": "Mccook Municipal Airport",
+  "icao": "KMCK",
+  "lat": "40.2071",
+  "lon": "-100.599"
+},
+{
+  "state": "Georgia",
+  "city": "Macon",
+  "name": "Middle Georgia Regional Airport",
+  "icao": "KMCN",
+  "lat": "32.7023",
+  "lon": "-83.65"
+},
+{
+  "state": "Florida",
+  "city": "Orlando",
+  "name": "Orlando International Airport",
+  "icao": "KMCO",
+  "lat": "28.4418",
+  "lon": "-81.3115"
+},
+{
+  "state": "Iowa",
+  "city": "Clear Lake",
+  "name": "Mason City Municipal Airport",
+  "icao": "KMCW",
+  "lat": "43.153",
+  "lon": "-93.3361"
+},
+{
+  "state": "Pennsylvania",
+  "city": "Middletown",
+  "name": "Harrisburg International Airport",
+  "icao": "KMDT",
+  "lat": "40.1962",
+  "lon": "-76.7564"
+},
+{
+  "state": "Illinois",
+  "city": "Chicago",
+  "name": "Chicago Midway International Airport",
+  "icao": "KMDW",
+  "lat": "41.7875",
+  "lon": "-87.7416"
+},
+{
+  "state": "Mississippi",
+  "city": "Meridian",
+  "name": "Key Field Airport",
+  "icao": "KMEI",
+  "lat": "32.3334",
+  "lon": "-88.7449"
+},
+{
+  "state": "Tennessee",
+  "city": "Memphis",
+  "name": "Memphis International Airport",
+  "icao": "KMEM",
+  "lat": "35.047",
+  "lon": "-89.9823"
+},
+{
+  "state": "Texas",
+  "city": "Mcallen",
+  "name": "Miller International Airport",
+  "icao": "KMFE",
+  "lat": "26.1813",
+  "lon": "-98.2404"
+},
+{
+  "state": "Oregon",
+  "city": "Central Point",
+  "name": "Rogue Valley International-Medford Airport",
+  "icao": "KMFR",
+  "lat": "42.3691",
+  "lon": "-122.874"
+},
+{
+  "state": "Alabama",
+  "city": "Montgomery",
+  "name": "Montgomery Regional Airport",
+  "icao": "KMGM",
+  "lat": "32.3049",
+  "lon": "-86.3909"
+},
+{
+  "state": "West Virginia",
+  "city": "Morgantown",
+  "name": "Morgantown Municipal Airport-Hart Field",
+  "icao": "KMGW",
+  "lat": "39.6411",
+  "lon": "-79.9241"
+},
+{
+  "state": "Kansas",
+  "city": "Manhattan",
+  "name": "Manhattan Municipal Airport",
+  "icao": "KMHK",
+  "lat": "39.1368",
+  "lon": "-96.6699"
+},
+{
+  "state": "California",
+  "city": "Mather",
+  "name": "Mather Airport",
+  "icao": "KMHR",
+  "lat": "38.5646",
+  "lon": "-121.297"
+},
+{
+  "state": "New Hampshire",
+  "city": "Manchester",
+  "name": "Manchester-Boston Regional Airport",
+  "icao": "KMHT",
+  "lat": "42.9293",
+  "lon": "-71.4386"
+},
+{
+  "state": "Florida",
+  "city": "Miami",
+  "name": "Miami International Airport",
+  "icao": "KMIA",
+  "lat": "25.7953",
+  "lon": "-80.2727"
+},
+{
+  "state": "Missouri",
+  "city": "Kansas City",
+  "name": "Kansas City Downtown Airport",
+  "icao": "KMKC",
+  "lat": "39.1197",
+  "lon": "-94.5906"
+},
+{
+  "state": "Wisconsin",
+  "city": "Milwaukee",
+  "name": "General Mitchell International Airport",
+  "icao": "KMKE",
+  "lat": "42.9471",
+  "lon": "-87.9051"
+},
+{
+  "state": "Michigan",
+  "city": "Muskegon",
+  "name": "Muskegon County Airport",
+  "icao": "KMKG",
+  "lat": "43.1646",
+  "lon": "-86.2367"
+},
+{
+  "state": "Hawaii",
+  "city": "Hoolehua",
+  "name": "Molokai Airport",
+  "icao": "PHMK",
+  "lat": "21.1557",
+  "lon": "-157.094"
+},
+{
+  "state": "Florida",
+  "city": "Melbourne",
+  "name": "Melbourne International Airport",
+  "icao": "KMLB",
+  "lat": "28.0957",
+  "lon": "-80.6282"
+},
+{
+  "state": "Illinois",
+  "city": "Coal Valley",
+  "name": "Quad City Airport",
+  "icao": "KMLI",
+  "lat": "41.4539",
+  "lon": "-90.5058"
+},
+{
+  "state": "Alaska",
+  "city": "Marshall",
+  "name": "Marshall",
+  "icao": "PADM",
+  "lat": "61.8833",
+  "lon": "-162.067"
+},
+{
+  "state": "Louisiana",
+  "city": "Monroe",
+  "name": "Monroe Regional Airport",
+  "icao": "KMLU",
+  "lat": "32.5099",
+  "lon": "-92.044"
+},
+{
+  "state": "Alaska",
+  "city": "Manley Hot Springs",
+  "name": "Manley Hot Springs",
+  "icao": "PAML",
+  "lat": "64.9812",
+  "lon": "-150.637"
+},
+{
+  "state": "California",
+  "city": "Mammoth Lakes",
+  "name": "Mammoth June Lakes Airport",
+  "icao": "KMMH",
+  "lat": "37.6288",
+  "lon": "-118.844"
+},
+{
+  "state": "Alaska",
+  "city": "Minto",
+  "name": "Minto",
+  "icao": "PMNT",
+  "lat": "65.1987",
+  "lon": "-149.53"
+},
+{
+  "state": "Alabama",
+  "city": "Mobile",
+  "name": "Mobile Regional Airport",
+  "icao": "KMOB",
+  "lat": "30.6775",
+  "lon": "-88.243"
+},
+{
+  "state": "California",
+  "city": "Modesto",
+  "name": "Modesto City County Airport-Harry Sham Field",
+  "icao": "KMOD",
+  "lat": "37.6319",
+  "lon": "-120.959"
+},
+{
+  "state": "North Dakota",
+  "city": "Minot",
+  "name": "Minot International Airport",
+  "icao": "KMOT",
+  "lat": "48.2554",
+  "lon": "-101.291"
+},
+{
+  "state": "Alaska",
+  "city": "Mountain Village",
+  "name": "Mountain Village",
+  "icao": "PAMO",
+  "lat": "62.0833",
+  "lon": "-163.733"
+},
+{
+  "state": "Michigan",
+  "city": "Marquette",
+  "name": "Sawyer International Airport",
+  "icao": "KSAW",
+  "lat": "46.3501",
+  "lon": "-87.3871"
+},
+{
+  "state": "California",
+  "city": "Monterey",
+  "name": "Monterey Peninsula Airport",
+  "icao": "KMRY",
+  "lat": "36.5872",
+  "lon": "-121.851"
+},
+{
+  "state": "Alabama",
+  "city": "Muscle Shoals",
+  "name": "Muscle Shoals Regional Airport",
+  "icao": "KMSL",
+  "lat": "34.7439",
+  "lon": "-87.6185"
+},
+{
+  "state": "Wisconsin",
+  "city": "Madison",
+  "name": "Dane County Regional Airport-Truax Field",
+  "icao": "KMSN",
+  "lat": "43.1351",
+  "lon": "-89.3465"
+},
+{
+  "state": "Montana",
+  "city": "Missoula",
+  "name": "Missoula International Airport",
+  "icao": "KMSO",
+  "lat": "46.9192",
+  "lon": "-114.084"
+},
+{
+  "state": "Minnesota",
+  "city": "St. Paul",
+  "name": "Minneapolis St Paul International Airport",
+  "icao": "KMSP",
+  "lat": "44.8793",
+  "lon": "-93.1987"
+},
+{
+  "state": "New York",
+  "city": "Massena",
+  "name": "Massena International Airport",
+  "icao": "KMSS",
+  "lat": "44.9326",
+  "lon": "-74.8535"
+},
+{
+  "state": "Louisiana",
+  "city": "Kenner",
+  "name": "New Orleans International Airport",
+  "icao": "KMSY",
+  "lat": "29.983",
+  "lon": "-90.2569"
+},
+{
+  "state": "Colorado",
+  "city": "Montrose",
+  "name": "Montrose Regional Airport",
+  "icao": "KMTJ",
+  "lat": "38.5003",
+  "lon": "-107.899"
+},
+{
+  "state": "Alaska",
+  "city": "Metlakatla",
+  "name": "Metlakatla Sea Plane Base",
+  "icao": "PAMM",
+  "lat": "55.1333",
+  "lon": "-131.583"
+},
+{
+  "state": "Hawaii",
+  "city": "Kamuela",
+  "name": "Waimea Kohala Airport",
+  "icao": "PHMU",
+  "lat": "19.9983",
+  "lon": "-155.675"
+},
+{
+  "state": "Massachusetts",
+  "city": "Vineyard Haven",
+  "name": "Marthas Vineyard Airport",
+  "icao": "KMVY",
+  "lat": "41.3895",
+  "lon": "-70.6112"
+},
+{
+  "state": "Illinois",
+  "city": "Marion",
+  "name": "Williamson County Regional Airport",
+  "icao": "KMWA",
+  "lat": "37.7467",
+  "lon": "-89.0104"
+},
+{
+  "state": "Idaho",
+  "city": "Mccall",
+  "name": "Mccall Airport",
+  "icao": "KMYL",
+  "lat": "44.8968",
+  "lon": "-116.096"
+},
+{
+  "state": "South Carolina",
+  "city": "Myrtle Beach",
+  "name": "Myrtle Beach International Airport",
+  "icao": "KMYR",
+  "lat": "33.6821",
+  "lon": "-78.9228"
+},
+{
+  "state": "Alaska",
+  "city": "Mekoryuk",
+  "name": "Mekoryuk",
+  "icao": "PAMY",
+  "lat": "60.3906",
+  "lon": "-166.191"
+},
+{
+  "state": "Alaska",
+  "city": "New Chenega",
+  "name": "Chenega",
+  "icao": "PFCB",
+  "lat": "60.0784",
+  "lon": "-148.017"
+},
+{
+  "state": "Alaska",
+  "city": "Nikolai",
+  "name": "Nikolai",
+  "icao": "PAFS",
+  "lat": "45.9837",
+  "lon": "-108.028"
+},
+{
+  "state": "Florida",
+  "city": "Jacksonville",
+  "name": "Jacksonville Naval Air Station",
+  "icao": "KNIP",
+  "lat": "30.2342",
+  "lon": "-81.6753"
+},
+{
+  "state": "Hawaii",
+  "city": "Honolulu",
+  "name": "Honolulu International Airport",
+  "icao": "PHNL",
+  "lat": "21.3358",
+  "lon": "-157.919"
+},
+{
+  "state": "Alaska",
+  "city": "Naukiti",
+  "name": "Naukiti Airport",
+  "icao": "PNKI",
+  "lat": "55.8556",
+  "lon": "-133.183"
+},
+{
+  "state": "Alaska",
+  "city": "Nelson Lagoon",
+  "name": "Nelson Lagoon Airport",
+  "icao": "PAOU",
+  "lat": "56.0167",
+  "lon": "-161.15"
+},
+{
+  "state": "Alaska",
+  "city": "Nightmute",
+  "name": "Nightmute Airport",
+  "icao": "PAGT",
+  "lat": "60.4723",
+  "lon": "-164.699"
+},
+{
+  "state": "Alaska",
+  "city": "Nondalton",
+  "name": "Nondalton Airport",
+  "icao": "PANO",
+  "lat": "59.9717",
+  "lon": "-154.847"
+},
+{
+  "state": "Alaska",
+  "city": "Nuiqsut",
+  "name": "Nuiqsut",
+  "icao": "KNUI",
+  "lat": "70.2167",
+  "lon": "-150.917"
+},
+{
+  "state": "Alaska",
+  "city": "Nulato",
+  "name": "Nulato Airport",
+  "icao": "PANU",
+  "lat": "64.7134",
+  "lon": "-158.077"
+},
+{
+  "state": "Alaska",
+  "city": "Nunapitchuk",
+  "name": "Alaska",
+  "icao": "PNUP",
+  "lat": "60.897",
+  "lon": "-162.453"
+},
+{
+  "state": "North Carolina",
+  "city": "Richlands",
+  "name": "Albert J Ellis Airport",
+  "icao": "KOAJ",
+  "lat": "34.8307",
+  "lon": "-77.6053"
+},
+{
+  "state": "California",
+  "city": "Oakland",
+  "name": "Oakland International Airport",
+  "icao": "KOAK",
+  "lat": "37.7158",
+  "lon": "-122.209"
+},
+{
+  "state": "Alaska",
+  "city": "Kobuk",
+  "name": "Kobuk Airport",
+  "icao": "PAOB",
+  "lat": "66.9148",
+  "lon": "-156.878"
+},
+{
+  "state": "Washington",
+  "city": "Oak Harbor",
+  "name": "Oak Harbor Airpark",
+  "icao": "KOKH",
+  "lat": "48.2517",
+  "lon": "-122.68"
+},
+{
+  "state": "Hawaii",
+  "city": "Kahului",
+  "name": "Kahului Airport",
+  "icao": "PHOG",
+  "lat": "20.8926",
+  "lon": "-156.441"
+},
+{
+  "state": "New York",
+  "city": "Ogdensburg",
+  "name": "Ogdensburg International Airport",
+  "icao": "KOGS",
+  "lat": "44.6782",
+  "lon": "-75.4765"
+},
+{
+  "state": "Oklahoma",
+  "city": "Oklahoma City",
+  "name": "Will Rogers World Airport",
+  "icao": "KOKC",
+  "lat": "35.3981",
+  "lon": "-97.5974"
+},
+{
+  "state": "Montana",
+  "city": "Wolf Point",
+  "name": "L. M. Clayton Airport",
+  "icao": "KOLF",
+  "lat": "48.0964",
+  "lon": "-105.575"
+},
+{
+  "state": "Alaska",
+  "city": "Old Harbor",
+  "name": "Alaska",
+  "icao": "POLH",
+  "lat": "62.8903",
+  "lon": "-149.054"
+},
+{
+  "state": "Nebraska",
+  "city": "Omaha",
+  "name": "Eppley Airfield",
+  "icao": "KOMA",
+  "lat": "41.3",
+  "lon": "-95.8998"
+},
+{
+  "state": "Alaska",
+  "city": "Nome",
+  "name": "Nome Airport",
+  "icao": "PAOM",
+  "lat": "64.5125",
+  "lon": "-165.445"
+},
+{
+  "state": "Nebraska",
+  "city": "O'neill",
+  "name": "The Oneill Municipal Airport",
+  "icao": "KONL",
+  "lat": "42.4655",
+  "lon": "-98.6866"
+},
+{
+  "state": "California",
+  "city": "Ontario",
+  "name": "Ontario International Airport",
+  "icao": "KONT",
+  "lat": "34.062",
+  "lon": "-117.594"
+},
+{
+  "state": "Alaska",
+  "city": "Toksook Bay",
+  "name": "Toksook Bay",
+  "icao": "PAOO",
+  "lat": "60.5334",
+  "lon": "-165.114"
+},
+{
+  "state": "Florida",
+  "city": "Opa-Locka",
+  "name": "Opa Locka Airport",
+  "icao": "KOPF",
+  "lat": "25.9023",
+  "lon": "-80.2677"
+},
+{
+  "state": "Illinois",
+  "city": "Chicago",
+  "name": "Chicago O'Hare International Airport",
+  "icao": "KORD",
+  "lat": "41.9796",
+  "lon": "-87.8825"
+},
+{
+  "state": "Virginia",
+  "city": "Norfolk",
+  "name": "Norfolk International Airport",
+  "icao": "KORF",
+  "lat": "36.8977",
+  "lon": "-76.2154"
+},
+{
+  "state": "Massachusetts",
+  "city": "Worcester",
+  "name": "Worcester Municipal Airport",
+  "icao": "KORH",
+  "lat": "42.2699",
+  "lon": "-71.8706"
+},
+{
+  "state": "Alaska",
+  "city": "Port Lions",
+  "name": "Port Lions Airport",
+  "icao": "PORI",
+  "lat": "-7.6833",
+  "lon": "-39.3667"
+},
+{
+  "state": "Alaska",
+  "city": "Noorvik",
+  "name": "Curtis Memorial",
+  "icao": "PFNO",
+  "lat": "66.8333",
+  "lon": "-161.033"
+},
+{
+  "state": "Oregon",
+  "city": "North Bend",
+  "name": "North Bend Municipal Airport",
+  "icao": "KOTH",
+  "lat": "43.4141",
+  "lon": "-124.244"
+},
+{
+  "state": "Alaska",
+  "city": "Kotzebue",
+  "name": "Ralph Wien Memorial Airport",
+  "icao": "PAOT",
+  "lat": "66.8893",
+  "lon": "-162.61"
+},
+{
+  "state": "Wisconsin",
+  "city": "Boscobel",
+  "name": "Boscobel Airport",
+  "icao": "KOVS",
+  "lat": "43.1537",
+  "lon": "-90.6764"
+},
+{
+  "state": "California",
+  "city": "Oxnard",
+  "name": "Oxnard Airport",
+  "icao": "KOXR",
+  "lat": "34.1984",
+  "lon": "-119.206"
+},
+{
+  "state": "Kentucky",
+  "city": "West Paducah",
+  "name": "Barkley Regional Airport",
+  "icao": "KPAH",
+  "lat": "37.0612",
+  "lon": "-88.7672"
+},
+{
+  "state": "New York",
+  "city": "Plattsburgh",
+  "name": "Plattsburgh Air Force Base",
+  "icao": "KPBG",
+  "lat": "44.6508",
+  "lon": "-73.4683"
+},
+{
+  "state": "Florida",
+  "city": "West Palm Beach",
+  "name": "Palm Beach International Airport",
+  "icao": "KPBI",
+  "lat": "26.6909",
+  "lon": "-80.0889"
+},
+{
+  "state": "Alaska",
+  "city": "Pedro Bay",
+  "name": "Pedro Bay",
+  "icao": "PPDB",
+  "lat": "59.7868",
+  "lon": "-154.105"
+},
+{
+  "state": "Oregon",
+  "city": "Pendleton",
+  "name": "Eastern Oregon Regional Airport",
+  "icao": "KPDT",
+  "lat": "45.6893",
+  "lon": "-118.839"
+},
+{
+  "state": "Oregon",
+  "city": "Portland",
+  "name": "Portland International Airport",
+  "icao": "KPDX",
+  "lat": "45.5867",
+  "lon": "-122.587"
+},
+{
+  "state": "Alaska",
+  "city": "Pelican",
+  "name": "Pelican Sea Plane Base",
+  "icao": "PPEC",
+  "lat": "57.95",
+  "lon": "-136.233"
+},
+{
+  "state": "Florida",
+  "city": "Panama City",
+  "name": "Panama City Bay County Airport",
+  "icao": "KPFN",
+  "lat": "30.2071",
+  "lon": "-85.6829"
+},
+{
+  "state": "Arizona",
+  "city": "Page",
+  "name": "Page Municipal Airport",
+  "icao": "KPGA",
+  "lat": "36.9243",
+  "lon": "-111.451"
+},
+{
+  "state": "Alaska",
+  "city": "Port Graham",
+  "name": "Port Graham",
+  "icao": "PPGM",
+  "lat": "59.35",
+  "lon": "-151.833"
+},
+{
+  "state": "North Carolina",
+  "city": "Greenville",
+  "name": "Pitt Greenville Airport",
+  "icao": "KPGV",
+  "lat": "35.6336",
+  "lon": "-77.3808"
+},
+{
+  "state": "Virginia",
+  "city": "Newport News",
+  "name": "Newport News-Williamsburg International Airport",
+  "icao": "KPHF",
+  "lat": "37.1306",
+  "lon": "-76.5026"
+},
+{
+  "state": "Pennsylvania",
+  "city": "Philadelphia",
+  "name": "Philadelphia International Airport",
+  "icao": "KPHL",
+  "lat": "39.8768",
+  "lon": "-75.2419"
+},
+{
+  "state": "Alaska",
+  "city": "Point Hope",
+  "name": "Point Hope Airport",
+  "icao": "PAPO",
+  "lat": "68.3494",
+  "lon": "-166.797"
+},
+{
+  "state": "Arizona",
+  "city": "Phoenix",
+  "name": "Sky Harbor International Airport",
+  "icao": "KPHX",
+  "lat": "33.4376",
+  "lon": "-112.03"
+},
+{
+  "state": "Illinois",
+  "city": "Peoria",
+  "name": "Greater Peoria Regional Airport",
+  "icao": "KPIA",
+  "lat": "40.6663",
+  "lon": "-89.6909"
+},
+{
+  "state": "Mississippi",
+  "city": "Moselle",
+  "name": "Pine Belt Regional Airport",
+  "icao": "KPIB",
+  "lat": "31.4671",
+  "lon": "-89.3333"
+},
+{
+  "state": "Florida",
+  "city": "Clearwater",
+  "name": "St. Petersburg-Clearwater International Airport",
+  "icao": "KPIE",
+  "lat": "27.9065",
+  "lon": "-82.6924"
+},
+{
+  "state": "Idaho",
+  "city": "Pocatello",
+  "name": "Pocatello Municipal Airport",
+  "icao": "KPIH",
+  "lat": "42.9056",
+  "lon": "-112.588"
+},
+{
+  "state": "Alaska",
+  "city": "Pilot Point",
+  "name": "Pilot Point Airport",
+  "icao": "PUGB",
+  "lat": "57.5631",
+  "lon": "-157.558"
+},
+{
+  "state": "South Dakota",
+  "city": "Pierre",
+  "name": "Pierre Municipal Airport",
+  "icao": "KPIR",
+  "lat": "44.3801",
+  "lon": "-100.293"
+},
+{
+  "state": "Pennsylvania",
+  "city": "Coraopolis",
+  "name": "Pittsburgh International Airport",
+  "icao": "KPIT",
+  "lat": "40.4914",
+  "lon": "-80.2328"
+},
+{
+  "state": "Alaska",
+  "city": "Point Lay",
+  "name": "Dew Station",
+  "icao": "PPIZ",
+  "lat": "69.7333",
+  "lon": "-163.017"
+},
+{
+  "state": "Alaska",
+  "city": "Napaskiak",
+  "name": "Alaska",
+  "icao": "PAPK",
+  "lat": "60.7049",
+  "lon": "-161.766"
+},
+{
+  "state": "West Virginia",
+  "city": "Williamstown",
+  "name": "Wood County Airport-Gill Robb Wilson Field",
+  "icao": "KPKB",
+  "lat": "39.3462",
+  "lon": "-81.4345"
+},
+{
+  "state": "Michigan",
+  "city": "Pellston",
+  "name": "Pellston Regional Airport",
+  "icao": "KPLN",
+  "lat": "45.571",
+  "lon": "-84.7857"
+},
+{
+  "state": "California",
+  "city": "Palmdale",
+  "name": "Air Force Plant Nr 42 Palmdale",
+  "icao": "KPMD",
+  "lat": "34.6294",
+  "lon": "-118.084"
+},
+{
+  "state": "Florida",
+  "city": "Pensacola",
+  "name": "Pensacola Regional Airport",
+  "icao": "KPNS",
+  "lat": "30.4761",
+  "lon": "-87.1941"
+},
+{
+  "state": "American Samoa",
+  "city": "Pago Pago",
+  "name": "Pago Pago International Airport",
+  "icao": "NSTU",
+  "lat": "-14.3242",
+  "lon": "-170.706"
+},
+{
+  "state": "Alaska",
+  "city": "Port Protection",
+  "name": "Alaska",
+  "icao": "PPPV",
+  "lat": "62.8903",
+  "lon": "-149.054"
+},
+{
+  "state": "Maine",
+  "city": "Presque Isle",
+  "name": "Northern Maine Regional Airport",
+  "icao": "KPQI",
+  "lat": "46.6921",
+  "lon": "-68.0447"
+},
+{
+  "state": "Alaska",
+  "city": "Pilot Station",
+  "name": "Pilot Station",
+  "icao": "PPQS",
+  "lat": "61.9362",
+  "lon": "-162.882"
+},
+{
+  "state": "Arizona",
+  "city": "Prescott",
+  "name": "Ernest A Love Field Airport",
+  "icao": "KPRC",
+  "lat": "34.6492",
+  "lon": "-112.428"
+},
+{
+  "state": "Washington",
+  "city": "Pasco",
+  "name": "Tri Cities Airport",
+  "icao": "KPSC",
+  "lat": "46.2592",
+  "lon": "-119.117"
+},
+{
+  "state": "Puerto Rico",
+  "city": "Coto Laurel",
+  "name": "Mercedita Airport",
+  "icao": "TJPS",
+  "lat": "18.0116",
+  "lon": "-66.5664"
+},
+{
+  "state": "Alaska",
+  "city": "Petersburg",
+  "name": "Petersburg James A Johnson Airport",
+  "icao": "PAPG",
+  "lat": "56.8067",
+  "lon": "-132.933"
+},
+{
+  "state": "California",
+  "city": "Palm Springs",
+  "name": "Palm Springs International Airport",
+  "icao": "KPSP",
+  "lat": "33.8227",
+  "lon": "-116.509"
+},
+{
+  "state": "Alaska",
+  "city": "Port Heiden",
+  "name": "Port Heiden Airport",
+  "icao": "PAPH",
+  "lat": "56.9667",
+  "lon": "-158.633"
+},
+{
+  "state": "Alaska",
+  "city": "Platinum",
+  "name": "Platinum",
+  "icao": "PAPM",
+  "lat": "58.9216",
+  "lon": "-161.727"
+},
+{
+  "state": "Colorado",
+  "city": "Pueblo",
+  "name": "Pueblo Memorial Airport",
+  "icao": "KPUB",
+  "lat": "38.2836",
+  "lon": "-104.496"
+},
+{
+  "state": "Washington",
+  "city": "Pullman",
+  "name": "Pullman-Moscow Regional Airport",
+  "icao": "KPUW",
+  "lat": "46.743",
+  "lon": "-117.119"
+},
+{
+  "state": "Massachusetts",
+  "city": "Provincetown",
+  "name": "Provincetown Municipal Airport",
+  "icao": "KPVC",
+  "lat": "42.0771",
+  "lon": "-70.2169"
+},
+{
+  "state": "Rhode Island",
+  "city": "Warwick",
+  "name": "Theodore Francis Green State Airport",
+  "icao": "KPVD",
+  "lat": "41.723",
+  "lon": "-71.4399"
+},
+{
+  "state": "Illinois",
+  "city": "Wheeling",
+  "name": "Pal Waukee Airport",
+  "icao": "KPWK",
+  "lat": "42.1162",
+  "lon": "-87.8987"
+},
+{
+  "state": "Maine",
+  "city": "Portland",
+  "name": "Jetport International Airport",
+  "icao": "KPWM",
+  "lat": "43.6475",
+  "lon": "-70.3103"
+},
+{
+  "state": "Missouri",
+  "city": "Qulin",
+  "name": "Malden Regional Airport",
+  "icao": "KMAW",
+  "lat": "36.5922",
+  "lon": "-90.2465"
+},
+{
+  "state": "South Dakota",
+  "city": "Rapid City",
+  "name": "Rapid City Regional Airport",
+  "icao": "KRAP",
+  "lat": "44.037",
+  "lon": "-103.06"
+},
+{
+  "state": "Alaska",
+  "city": "Brooks Lodge",
+  "name": "Brooks Lodge",
+  "icao": "PRBH",
+  "lat": "64.7381",
+  "lon": "-155.489"
+},
+{
+  "state": "Alaska",
+  "city": "Ruby",
+  "name": "Ruby Airport",
+  "icao": "PARY",
+  "lat": "64.7381",
+  "lon": "-155.489"
+},
+{
+  "state": "Washington",
+  "city": "Friday Harbor",
+  "name": "Roche Harbor Airport",
+  "icao": "KRCE",
+  "lat": "48.6126",
+  "lon": "-123.14"
+},
+{
+  "state": "California",
+  "city": "Redding",
+  "name": "Redding Municipal Airport",
+  "icao": "KRDD",
+  "lat": "40.5056",
+  "lon": "-122.302"
+},
+{
+  "state": "Oregon",
+  "city": "Redmond",
+  "name": "Roberts Field Airport",
+  "icao": "KRDM",
+  "lat": "44.2533",
+  "lon": "-121.162"
+},
+{
+  "state": "North Carolina",
+  "city": "Raleigh/Durham",
+  "name": "Durham International Airport",
+  "icao": "KRDU",
+  "lat": "35.8729",
+  "lon": "-78.7923"
+},
+{
+  "state": "Alaska",
+  "city": "Red Devil",
+  "name": "Red Devil",
+  "icao": "PRDV",
+  "lat": "61.7645",
+  "lon": "-157.312"
+},
+{
+  "state": "Illinois",
+  "city": "Rockford",
+  "name": "Greater Rockford Airport",
+  "icao": "KRFD",
+  "lat": "42.2035",
+  "lon": "-89.0955"
+},
+{
+  "state": "Wisconsin",
+  "city": "Rhinelander",
+  "name": "Rhinelander-Oneida County Airport",
+  "icao": "KRHI",
+  "lat": "45.626",
+  "lon": "-89.4626"
+},
+{
+  "state": "Virginia",
+  "city": "Richmond",
+  "name": "Richmond International Airport",
+  "icao": "KRIC",
+  "lat": "37.5108",
+  "lon": "-77.3332"
+},
+{
+  "state": "California",
+  "city": "Alessandro",
+  "name": "March Air Force Base",
+  "icao": "KRIV",
+  "lat": "33.8806",
+  "lon": "-117.259"
+},
+{
+  "state": "Wyoming",
+  "city": "Riverton",
+  "name": "Riverton Regional Airport",
+  "icao": "KRIW",
+  "lat": "43.0611",
+  "lon": "-108.458"
+},
+{
+  "state": "Maine",
+  "city": "Owls Head",
+  "name": "Knox County Regional Airport",
+  "icao": "KRKD",
+  "lat": "44.0612",
+  "lon": "-69.0943"
+},
+{
+  "state": "Wyoming",
+  "city": "Rock Springs",
+  "name": "Rock Springs-Sweetwater County Airport",
+  "icao": "KRKS",
+  "lat": "41.5988",
+  "lon": "-109.072"
+},
+{
+  "state": "Alaska",
+  "city": "Rampart",
+  "name": "Rampart",
+  "icao": "PRMP",
+  "lat": "65.5063",
+  "lon": "-150.169"
+},
+{
+  "state": "Nevada",
+  "city": "Reno",
+  "name": "Reno-Tahoe International Airport",
+  "icao": "KRNO",
+  "lat": "39.5064",
+  "lon": "-119.776"
+},
+{
+  "state": "Virginia",
+  "city": "Roanoke",
+  "name": "Roanoke Regional Airport-Woodrum Field",
+  "icao": "KROA",
+  "lat": "37.3203",
+  "lon": "-79.9688"
+},
+{
+  "state": "New York",
+  "city": "Rochester",
+  "name": "Greater Rochester International Airport",
+  "icao": "KROC",
+  "lat": "43.1309",
+  "lon": "-77.6697"
+},
+{
+  "state": "Northern Mariana Islands",
+  "city": "Rota",
+  "name": "Rota International Airport",
+  "icao": "PGRO",
+  "lat": "14.1667",
+  "lon": "145.25"
+},
+{
+  "state": "New Mexico",
+  "city": "Roswell",
+  "name": "Roswell Industrial Air Center",
+  "icao": "KROW",
+  "lat": "33.3071",
+  "lon": "-104.519"
+},
+{
+  "state": "Alaska",
+  "city": "Russian Mission",
+  "name": "Russian",
+  "icao": "PARS",
+  "lat": "61.7833",
+  "lon": "-161.333"
+},
+{
+  "state": "Washington",
+  "city": "Olga",
+  "name": "Rosario Seaplane Base",
+  "icao": "PKOY",
+  "lat": "48.6339",
+  "lon": "-122.81"
+},
+{
+  "state": "Minnesota",
+  "city": "Rochester",
+  "name": "Rochester International Airport",
+  "icao": "KRST",
+  "lat": "43.9101",
+  "lon": "-92.4884"
+},
+{
+  "state": "Florida",
+  "city": "Fort Myers",
+  "name": "Southwest Florida International Airport",
+  "icao": "KRSW",
+  "lat": "26.5228",
+  "lon": "-81.7531"
+},
+{
+  "state": "Vermont",
+  "city": "North Clarendon",
+  "name": "Rutland State Airport",
+  "icao": "KRUT",
+  "lat": "43.5291",
+  "lon": "-72.945"
+},
+{
+  "state": "California",
+  "city": "San Diego",
+  "name": "San Diego International Airport",
+  "icao": "KSAN",
+  "lat": "32.7299",
+  "lon": "-117.195"
+},
+{
+  "state": "Texas",
+  "city": "San Antonio",
+  "name": "San Antonio International Airport",
+  "icao": "KSAT",
+  "lat": "29.5252",
+  "lon": "-98.4729"
+},
+{
+  "state": "Georgia",
+  "city": "Savannah",
+  "name": "Savannah International Airport",
+  "icao": "KSAV",
+  "lat": "32.1338",
+  "lon": "-81.2133"
+},
+{
+  "state": "California",
+  "city": "Goleta",
+  "name": "Santa Barbara Municipal Airport",
+  "icao": "KSBA",
+  "lat": "34.4255",
+  "lon": "-119.835"
+},
+{
+  "state": "Indiana",
+  "city": "South Bend",
+  "name": "South Bend Regional Airport",
+  "icao": "KSBN",
+  "lat": "41.7006",
+  "lon": "-86.311"
+},
+{
+  "state": "California",
+  "city": "San Luis Obispo",
+  "name": "San Luis Obispo County Airport",
+  "icao": "KSBP",
+  "lat": "35.239",
+  "lon": "-120.641"
+},
+{
+  "state": "Maryland",
+  "city": "Salisbury",
+  "name": "Salisbury-Wicomico County Regional Airport",
+  "icao": "KSBY",
+  "lat": "38.3431",
+  "lon": "-75.517"
+},
+{
+  "state": "Alaska",
+  "city": "Prudhoe Bay",
+  "name": "Deadhorse Airport",
+  "icao": "PASC",
+  "lat": "70.1975",
+  "lon": "-148.458"
+},
+{
+  "state": "Pennsylvania",
+  "city": "State College",
+  "name": "University Park Airport",
+  "icao": "KUNV",
+  "lat": "40.8515",
+  "lon": "-77.851"
+},
+{
+  "state": "California",
+  "city": "Stockton",
+  "name": "Stockton Metropolitan Airport",
+  "icao": "KSCK",
+  "lat": "37.8973",
+  "lon": "-121.253"
+},
+{
+  "state": "Alaska",
+  "city": "Scammon Bay",
+  "name": "Scammon Bay",
+  "icao": "PACM",
+  "lat": "61.8425",
+  "lon": "-165.58"
+},
+{
+  "state": "Kentucky",
+  "city": "Louisville",
+  "name": "Louisville International Airport",
+  "icao": "KSDF",
+  "lat": "38.1865",
+  "lon": "-85.7462"
+},
+{
+  "state": "Alaska",
+  "city": "Sand Point",
+  "name": "Sand Point Airport",
+  "icao": "PASD",
+  "lat": "55.3184",
+  "lon": "-160.523"
+},
+{
+  "state": "Montana",
+  "city": "Sidney",
+  "name": "Sidney Richland Municipal Airport",
+  "icao": "KSDY",
+  "lat": "47.7113",
+  "lon": "-104.184"
+},
+{
+  "state": "Washington",
+  "city": "Seattle",
+  "name": "Tacoma International Airport",
+  "icao": "KSEA",
+  "lat": "47.4405",
+  "lon": "-122.296"
+},
+{
+  "state": "Florida",
+  "city": "Sanford",
+  "name": "Orlando Sanford International Airport",
+  "icao": "KSFB",
+  "lat": "28.773",
+  "lon": "-81.2403"
+},
+{
+  "state": "California",
+  "city": "San Francisco",
+  "name": "San Francisco International Airport",
+  "icao": "KSFO",
+  "lat": "37.6148",
+  "lon": "-122.392"
+},
+{
+  "state": "Missouri",
+  "city": "Springfield",
+  "name": "Springfield Regional Airport",
+  "icao": "KSGF",
+  "lat": "37.243",
+  "lon": "-93.3817"
+},
+{
+  "state": "Utah",
+  "city": "St. George",
+  "name": "St George Municipal Airport",
+  "icao": "KSGU",
+  "lat": "37.0973",
+  "lon": "-113.591"
+},
+{
+  "state": "Alaska",
+  "city": "Skagway",
+  "name": "Skagway Airport",
+  "icao": "PAGY",
+  "lat": "59.4594",
+  "lon": "-135.314"
+},
+{
+  "state": "Virginia",
+  "city": "Weyers Cave",
+  "name": "Shenandoah Valley Regional Airport",
+  "icao": "KSHD",
+  "lat": "38.2637",
+  "lon": "-78.9013"
+},
+{
+  "state": "Alaska",
+  "city": "Shungnak",
+  "name": "Shungnak Airport",
+  "icao": "PAHG",
+  "lat": "66.8801",
+  "lon": "-157.067"
+},
+{
+  "state": "Alaska",
+  "city": "Shishmaref",
+  "name": "Shishmaref",
+  "icao": "PASH",
+  "lat": "66.2568",
+  "lon": "-166.067"
+},
+{
+  "state": "Wyoming",
+  "city": "Sheridan",
+  "name": "Sheridan County Airport",
+  "icao": "KSHR",
+  "lat": "44.7739",
+  "lon": "-106.97"
+},
+{
+  "state": "Louisiana",
+  "city": "Shreveport",
+  "name": "Shreveport Regional Airport",
+  "icao": "KSHV",
+  "lat": "32.4549",
+  "lon": "-93.8285"
+},
+{
+  "state": "Alaska",
+  "city": "Shageluk",
+  "name": "Shageluk",
+  "icao": "PAHX",
+  "lat": "62.6333",
+  "lon": "-159.583"
+},
+{
+  "state": "Puerto Rico",
+  "city": "San Juan",
+  "name": "Isla Grande Airport",
+  "icao": "TJIG",
+  "lat": "18.4558",
+  "lon": "-66.0981"
+},
+{
+  "state": "Alaska",
+  "city": "Sitka",
+  "name": "Sitka Airport",
+  "icao": "PASI",
+  "lat": "57.0535",
+  "lon": "-135.366"
+},
+{
+  "state": "California",
+  "city": "San Jose",
+  "name": "Norman Y Mineta San Jose International Airport",
+  "icao": "KSJC",
+  "lat": "37.3679",
+  "lon": "-121.926"
+},
+{
+  "state": "Texas",
+  "city": "San Angelo",
+  "name": "Mathis Field Airport",
+  "icao": "KSJT",
+  "lat": "31.3616",
+  "lon": "-100.507"
+},
+{
+  "state": "Puerto Rico",
+  "city": "Carolina",
+  "name": "Luis Munoz Marin Airport",
+  "icao": "TJSJ",
+  "lat": "18.4367",
+  "lon": "-66.0095"
+},
+{
+  "state": "Alaska",
+  "city": "Shaktoolik",
+  "name": "Shaktoolik",
+  "icao": "PFSH",
+  "lat": "64.3549",
+  "lon": "-161.193"
+},
+{
+  "state": "Utah",
+  "city": "Salt Lake City",
+  "name": "Salt Lake City International Airport",
+  "icao": "KSLC",
+  "lat": "40.7862",
+  "lon": "-111.982"
+},
+{
+  "state": "Oregon",
+  "city": "Salem",
+  "name": "Mcnary Field Airport",
+  "icao": "KSLE",
+  "lat": "44.9104",
+  "lon": "-123.008"
+},
+{
+  "state": "New York",
+  "city": "Saranac Lake",
+  "name": "Adirondack Regional Airport",
+  "icao": "KSLK",
+  "lat": "44.3804",
+  "lon": "-74.2038"
+},
+{
+  "state": "Kansas",
+  "city": "Salina",
+  "name": "Salina Municipal Airport",
+  "icao": "KSLN",
+  "lat": "38.7786",
+  "lon": "-97.6397"
+},
+{
+  "state": "Alaska",
+  "city": "Sleetmute",
+  "name": "Sleetmute Airport",
+  "icao": "PASL",
+  "lat": "61.7",
+  "lon": "-157.117"
+},
+{
+  "state": "California",
+  "city": "Sacramento",
+  "name": "Sacramento International Airport",
+  "icao": "KSMF",
+  "lat": "38.683",
+  "lon": "-121.591"
+},
+{
+  "state": "Alaska",
+  "city": "St Michael",
+  "name": "Alaska",
+  "icao": "PAMK",
+  "lat": "63.4735",
+  "lon": "-162.052"
+},
+{
+  "state": "Idaho",
+  "city": "Salmon",
+  "name": "Lemhi County Airport",
+  "icao": "KSMN",
+  "lat": "45.1148",
+  "lon": "-113.888"
+},
+{
+  "state": "California",
+  "city": "Santa Maria",
+  "name": "Santa Maria Public Airport",
+  "icao": "KSMX",
+  "lat": "34.8888",
+  "lon": "-120.437"
+},
+{
+  "state": "California",
+  "city": "Santa Ana",
+  "name": "John Wayne Airport",
+  "icao": "KSNA",
+  "lat": "33.6813",
+  "lon": "-117.859"
+},
+{
+  "state": "Alaska",
+  "city": "Saint Paul Island",
+  "name": "Saint Paul Island",
+  "icao": "PASN",
+  "lat": "57.1667",
+  "lon": "-170.217"
+},
+{
+  "state": "Alaska",
+  "city": "Seldovia",
+  "name": "Seldovia Airport",
+  "icao": "PASO",
+  "lat": "59.4428",
+  "lon": "-151.705"
+},
+{
+  "state": "Arizona",
+  "city": "Show Low",
+  "name": "Show Low Municipal Airport",
+  "icao": "KSOW",
+  "lat": "34.2595",
+  "lon": "-110.005"
+},
+{
+  "state": "US Virgin Islands",
+  "city": "Charlotte Amalie",
+  "name": "St Thomas Seaplane Base",
+  "icao": "KSPB",
+  "lat": "18.3409",
+  "lon": "-64.9698"
+},
+{
+  "state": "Illinois",
+  "city": "Springfield",
+  "name": "Capital Airport",
+  "icao": "KSPI",
+  "lat": "39.8445",
+  "lon": "-89.672"
+},
+{
+  "state": "Northern Mariana Islands",
+  "city": "Saipan",
+  "name": "Saipan International Airport",
+  "icao": "PGSN",
+  "lat": "15.1333",
+  "lon": "145.717"
+},
+{
+  "state": "Texas",
+  "city": "Wichita Falls",
+  "name": "Sheppard Air Force Base",
+  "icao": "KSPS",
+  "lat": "33.9862",
+  "lon": "-98.4984"
+},
+{
+  "state": "Florida",
+  "city": "Sarasota",
+  "name": "Sarasota Bradenton Airport",
+  "icao": "KSRQ",
+  "lat": "27.3868",
+  "lon": "-82.5516"
+},
+{
+  "state": "Alaska",
+  "city": "Stony River",
+  "name": "Alaska",
+  "icao": "PFSR",
+  "lat": "62.8903",
+  "lon": "-149.054"
+},
+{
+  "state": "US Virgin Islands",
+  "city": "Christiansted",
+  "name": "Christiansted Harbor Seaplane Base",
+  "icao": "TISX",
+  "lat": "17.75",
+  "lon": "-64.7"
+},
+{
+  "state": "Minnesota",
+  "city": "St. Cloud",
+  "name": "St Cloud Regional Airport",
+  "icao": "KSTC",
+  "lat": "45.5463",
+  "lon": "-94.066"
+},
+{
+  "state": "Alaska",
+  "city": "St George Island",
+  "name": "Alaska",
+  "icao": "PAPB",
+  "lat": "62.8903",
+  "lon": "-149.054"
+},
+{
+  "state": "Missouri",
+  "city": "St. Louis",
+  "name": "Lambert St Louis International Airport",
+  "icao": "KSTL",
+  "lat": "38.7414",
+  "lon": "-90.3647"
+},
+{
+  "state": "California",
+  "city": "Windsor",
+  "name": "Sonoma County Airport",
+  "icao": "KSTS",
+  "lat": "38.511",
+  "lon": "-122.805"
+},
+{
+  "state": "US Virgin Islands",
+  "city": "Charlotte Amalie",
+  "name": "Cyril E King International Airport",
+  "icao": "TIST",
+  "lat": "18.3333",
+  "lon": "-64.9667"
+},
+{
+  "state": "US Virgin Islands",
+  "city": "Frederiksted",
+  "name": "Henry E Rohlson International Airport",
+  "icao": "TISX",
+  "lat": "17.6988",
+  "lon": "-64.7977"
+},
+{
+  "state": "Idaho",
+  "city": "Hailey",
+  "name": "Friedman Memorial Airport",
+  "icao": "KSUN",
+  "lat": "43.5065",
+  "lon": "-114.301"
+},
+{
+  "state": "Iowa",
+  "city": "Sioux City",
+  "name": "Sioux Gateway Airport",
+  "icao": "KSUX",
+  "lat": "42.4012",
+  "lon": "-96.3784"
+},
+{
+  "state": "Alaska",
+  "city": "Savoonga",
+  "name": "Alaska",
+  "icao": "PASA",
+  "lat": "63.6951",
+  "lon": "-170.465"
+},
+{
+  "state": "New Mexico",
+  "city": "Silver City",
+  "name": "Silver City-Grant County Airport",
+  "icao": "KSVC",
+  "lat": "32.6301",
+  "lon": "-108.164"
+},
+{
+  "state": "Alaska",
+  "city": "Stevens Village",
+  "name": "Stevens Village",
+  "icao": "PSVS",
+  "lat": "66.0044",
+  "lon": "-149.091"
+},
+{
+  "state": "New York",
+  "city": "New Windsor",
+  "name": "Stewart International Airport",
+  "icao": "KSWF",
+  "lat": "41.4869",
+  "lon": "-74.0974"
+},
+{
+  "state": "Oklahoma",
+  "city": "Stillwater",
+  "name": "Stillwater Municipal Airport",
+  "icao": "KSWO",
+  "lat": "36.1618",
+  "lon": "-97.0751"
+},
+{
+  "state": "Alaska",
+  "city": "Sheldon Point",
+  "name": "Nunam Iqua Sea Plane Base",
+  "icao": "PSXP",
+  "lat": "62.5333",
+  "lon": "-164.833"
+},
+{
+  "state": "Alaska",
+  "city": "Kodiak",
+  "name": "Seal Bay Airport",
+  "icao": "PSYB",
+  "lat": "58.1667",
+  "lon": "-152.5"
+},
+{
+  "state": "New York",
+  "city": "Syracuse",
+  "name": "Hancock International Airport",
+  "icao": "KSYR",
+  "lat": "43.1141",
+  "lon": "-76.1121"
+},
+{
+  "state": "Alaska",
+  "city": "Tanana",
+  "name": "Ralph Calhoun",
+  "icao": "PATA",
+  "lat": "47.7184",
+  "lon": "-115.431"
+},
+{
+  "state": "Missouri",
+  "city": "Fort Leonard Wood",
+  "name": "Waynesville Regional Airport At Forney Field",
+  "icao": "KTBN",
+  "lat": "37.7327",
+  "lon": "-92.1361"
+},
+{
+  "state": "Alaska",
+  "city": "Takotna",
+  "name": "Takotna",
+  "icao": "PTCT",
+  "lat": "62.9845",
+  "lon": "-156.07"
+},
+{
+  "state": "New Jersey",
+  "city": "Teterboro",
+  "name": "Teterboro Airport",
+  "icao": "KTEB",
+  "lat": "40.8541",
+  "lon": "-74.0662"
+},
+{
+  "state": "Alaska",
+  "city": "Valdez",
+  "name": "Pioneer Field",
+  "icao": "PAVD",
+  "lat": "64.0844",
+  "lon": "-146.143"
+},
+{
+  "state": "Colorado",
+  "city": "Telluride",
+  "name": "Telluride Regional Airport",
+  "icao": "KTEX",
+  "lat": "37.9544",
+  "lon": "-107.901"
+},
+{
+  "state": "Tennessee",
+  "city": "Milan",
+  "name": "Gibson County Airport",
+  "icao": "KTGC",
+  "lat": "35.9349",
+  "lon": "-88.8506"
+},
+{
+  "state": "Alaska",
+  "city": "Tenakee Springs",
+  "name": "Tenakee Springs",
+  "icao": "PTKE",
+  "lat": "57.7773",
+  "lon": "-135.208"
+},
+{
+  "state": "Alaska",
+  "city": "Tok",
+  "name": "Tok Airport",
+  "icao": "PATJ",
+  "lat": "48.1205",
+  "lon": "21.4125"
+},
+{
+  "state": "Alaska",
+  "city": "Teller",
+  "name": "Teller",
+  "icao": "PATE",
+  "lat": "65.2413",
+  "lon": "-166.331"
+},
+{
+  "state": "Florida",
+  "city": "Tallahassee",
+  "name": "Tallahassee Regional Airport",
+  "icao": "KTLH",
+  "lat": "30.3964",
+  "lon": "-84.3503"
+},
+{
+  "state": "Alaska",
+  "city": "Tatalina",
+  "name": "Takotna Airport",
+  "icao": "PATL",
+  "lat": "44.2044",
+  "lon": "23.5396"
+},
+{
+  "state": "Alaska",
+  "city": "Tuluksak",
+  "name": "Tuluksak",
+  "icao": "PTLT",
+  "lat": "61.0959",
+  "lon": "-160.968"
+},
+{
+  "state": "Alaska",
+  "city": "Tin City",
+  "name": "Tin City AFS",
+  "icao": "PATC",
+  "lat": "65.5639",
+  "lon": "-167.919"
+},
+{
+  "state": "Alaska",
+  "city": "Tununak",
+  "name": "Tununak Airport",
+  "icao": "PTNK",
+  "lat": "60.5813",
+  "lon": "-165.253"
+},
+{
+  "state": "Alaska",
+  "city": "Togiak Village",
+  "name": "Togiak Village",
+  "icao": "PATG",
+  "lat": "37.1198",
+  "lon": "-89.8786"
+},
+{
+  "state": "Ohio",
+  "city": "Swanton",
+  "name": "Toledo Express Airport",
+  "icao": "KTOL",
+  "lat": "41.5923",
+  "lon": "-83.8072"
+},
+{
+  "state": "Florida",
+  "city": "Tampa",
+  "name": "Tampa International Airport",
+  "icao": "KTPA",
+  "lat": "27.9744",
+  "lon": "-82.5356"
+},
+{
+  "state": "Tennessee",
+  "city": "Blountville",
+  "name": "Tri-Cities Regional Airport",
+  "icao": "KTRI",
+  "lat": "36.4805",
+  "lon": "-82.4087"
+},
+{
+  "state": "New York",
+  "city": "New York",
+  "name": "East 34th Street Heliport",
+  "icao": "PTSS",
+  "lat": "40.7474",
+  "lon": "-73.9912"
+},
+{
+  "state": "Oklahoma",
+  "city": "Tulsa",
+  "name": "Tulsa International Airport",
+  "icao": "KTUL",
+  "lat": "36.1877",
+  "lon": "-95.8892"
+},
+{
+  "state": "Mississippi",
+  "city": "Tupelo",
+  "name": "Tupelo Municipal-C D Lemons Airport",
+  "icao": "KTUP",
+  "lat": "34.2662",
+  "lon": "-88.766"
+},
+{
+  "state": "Arizona",
+  "city": "Tucson",
+  "name": "Tucson International Airport",
+  "icao": "KTUS",
+  "lat": "32.1204",
+  "lon": "-110.936"
+},
+{
+  "state": "Michigan",
+  "city": "Traverse City",
+  "name": "Cherry Capital Airport",
+  "icao": "KTVC",
+  "lat": "44.7365",
+  "lon": "-85.5796"
+},
+{
+  "state": "Minnesota",
+  "city": "Thief River Falls",
+  "name": "Thief River Falls Regional Airport",
+  "icao": "KTVF",
+  "lat": "48.0655",
+  "lon": "-96.1791"
+},
+{
+  "state": "Alaska",
+  "city": "Twin Hills",
+  "name": "Twin Hills",
+  "icao": "PTWA",
+  "lat": "36.8259",
+  "lon": "-83.3212"
+},
+{
+  "state": "Idaho",
+  "city": "Twin Falls",
+  "name": "Twin Falls-Sun Valley Regional Airport",
+  "icao": "KTWF",
+  "lat": "42.4838",
+  "lon": "-114.485"
+},
+{
+  "state": "Arkansas",
+  "city": "Texarkana",
+  "name": "Texarkana Regional Airport",
+  "icao": "KTXK",
+  "lat": "33.457",
+  "lon": "-93.9943"
+},
+{
+  "state": "Texas",
+  "city": "Tyler",
+  "name": "Tyler Pounds Field Airport",
+  "icao": "KTYR",
+  "lat": "32.3506",
+  "lon": "-95.4118"
+},
+{
+  "state": "Tennessee",
+  "city": "Knoxville",
+  "name": "Mcghee Tyson Airport",
+  "icao": "KTYS",
+  "lat": "35.8064",
+  "lon": "-83.9889"
+},
+{
+  "state": "Alaska",
+  "city": "Pilot Point",
+  "name": "Ugashik Bay Airport",
+  "icao": "PUGB",
+  "lat": "57.4253",
+  "lon": "-157.74"
+},
+{
+  "state": "Alaska",
+  "city": "Kodiak",
+  "name": "Uganik Airport",
+  "icao": "PAKD",
+  "lat": "57.8838",
+  "lon": "-153.369"
+},
+{
+  "state": "Illinois",
+  "city": "Quincy",
+  "name": "Quincy Municipal Airport-Baldwin Field",
+  "icao": "KUIN",
+  "lat": "39.9348",
+  "lon": "-91.196"
+},
+{
+  "state": "Alaska",
+  "city": "Unalakleet",
+  "name": "Unalakleet",
+  "icao": "PAUN",
+  "lat": "63.8833",
+  "lon": "-160.783"
+},
+{
+  "state": "Alaska",
+  "city": "Hooper Bay",
+  "name": "Chevak Airport",
+  "icao": "PAVA",
+  "lat": "61.5338",
+  "lon": "-165.584"
+},
+{
+  "state": "Texas",
+  "city": "Victoria",
+  "name": "Victoria Regional Airport",
+  "icao": "KVCT",
+  "lat": "28.8449",
+  "lon": "-96.9201"
+},
+{
+  "state": "California",
+  "city": "Victorville",
+  "name": "Southern California Logistics Airport",
+  "icao": "KVCV",
+  "lat": "34.588",
+  "lon": "-117.373"
+},
+{
+  "state": "Alaska",
+  "city": "Valdez",
+  "name": "Valdez Airport",
+  "icao": "PAVD",
+  "lat": "61.1294",
+  "lon": "-146.256"
+},
+{
+  "state": "Alaska",
+  "city": "Venetie",
+  "name": "Venetie Airport",
+  "icao": "PAVE",
+  "lat": "67.009",
+  "lon": "-146.406"
+},
+{
+  "state": "Utah",
+  "city": "Vernal",
+  "name": "Vernal Airport",
+  "icao": "KVEL",
+  "lat": "40.4485",
+  "lon": "-109.514"
+},
+{
+  "state": "California",
+  "city": "Visalia",
+  "name": "Visalia Municipal Airport",
+  "icao": "KVIS",
+  "lat": "36.3253",
+  "lon": "-119.394"
+},
+{
+  "state": "Georgia",
+  "city": "Valdosta",
+  "name": "Valdosta Regional Airport",
+  "icao": "KVLD",
+  "lat": "30.7892",
+  "lon": "-83.2787"
+},
+{
+  "state": "Florida",
+  "city": "Eglin Village",
+  "name": "Eglin Air Force Base",
+  "icao": "KVPS",
+  "lat": "30.496",
+  "lon": "-86.55"
+},
+{
+  "state": "Puerto Rico",
+  "city": "Puerto Ferro",
+  "name": "Aeropuerto Antonio Rivera Rodríguez",
+  "icao": "TJVQ",
+  "lat": "18.1355",
+  "lon": "-65.487"
+},
+{
+  "state": "Alaska",
+  "city": "Wales",
+  "name": "Wales Airport",
+  "icao": "PAIW",
+  "lat": "65.6112",
+  "lon": "-168.098"
+},
+{
+  "state": "Alaska",
+  "city": "Stebbins",
+  "name": "Stebbins",
+  "icao": "PWBB",
+  "lat": "63.52",
+  "lon": "-162.279"
+},
+{
+  "state": "Alaska",
+  "city": "Beaver",
+  "name": "Alaska",
+  "icao": "PAWB",
+  "lat": "66.359",
+  "lon": "-147.396"
+},
+{
+  "state": "Alaska",
+  "city": "Aleknagik",
+  "name": "Aleknagik",
+  "icao": "PWKK",
+  "lat": "59.2667",
+  "lon": "-158.633"
+},
+{
+  "state": "Alaska",
+  "city": "Selawik",
+  "name": "Alaska",
+  "icao": "PASK",
+  "lat": "62.8903",
+  "lon": "-149.054"
+},
+{
+  "state": "Alaska",
+  "city": "Meyers Chuck",
+  "name": "Meyers Chuck",
+  "icao": "PWMK",
+  "lat": "55.7389",
+  "lon": "-132.258"
+},
+{
+  "state": "Alaska",
+  "city": "White Mountain",
+  "name": "White Mountain",
+  "icao": "PAWM",
+  "lat": "64.6811",
+  "lon": "-163.408"
+},
+{
+  "state": "Alaska",
+  "city": "Napaskiak",
+  "name": "Napaskiak",
+  "icao": "PAPK",
+  "lat": "60.7049",
+  "lon": "-161.766"
+},
+{
+  "state": "Alaska",
+  "city": "Wrangell",
+  "name": "Wrangell Airport",
+  "icao": "PAWG",
+  "lat": "56.4876",
+  "lon": "-132.378"
+},
+{
+  "state": "Wyoming",
+  "city": "Worland",
+  "name": "Worland Municipal Airport",
+  "icao": "KWRL",
+  "lat": "43.9747",
+  "lon": "-107.953"
+},
+{
+  "state": "Alaska",
+  "city": "South Naknek",
+  "name": "Naknek",
+  "icao": "PNNK",
+  "lat": "58.7285",
+  "lon": "-157.014"
+},
+{
+  "state": "Rhode Island",
+  "city": "Westerly",
+  "name": "Westerly State Airport",
+  "icao": "KWST",
+  "lat": "41.3492",
+  "lon": "-71.8115"
+},
+{
+  "state": "Washington",
+  "city": "Westsound",
+  "name": "Westsound Seaplane Base",
+  "icao": "KWSX",
+  "lat": "48.8907",
+  "lon": "-116.982"
+},
+{
+  "state": "Alaska",
+  "city": "Noatak",
+  "name": "Alaska",
+  "icao": "PAWN",
+  "lat": "62.8903",
+  "lon": "-149.054"
+},
+{
+  "state": "Alaska",
+  "city": "Tuntutuliak",
+  "name": "Tuntutuliak",
+  "icao": "PWTL",
+  "lat": "60.3432",
+  "lon": "-162.664"
+},
+{
+  "state": "Alaska",
+  "city": "Whale Pass",
+  "name": "North Whale Pass Seaplane Base",
+  "icao": "PWWP",
+  "lat": "62.8903",
+  "lon": "-149.054"
+},
+{
+  "state": "Alaska",
+  "city": "Newtok",
+  "name": "Alaska",
+  "icao": "PWWT",
+  "lat": "62.8903",
+  "lon": "-149.054"
+},
+{
+  "state": "Montana",
+  "city": "West Yellowstone",
+  "name": "Yellowstone Airport",
+  "icao": "KWYS",
+  "lat": "44.6876",
+  "lon": "-111.114"
+},
+{
+  "state": "Arkansas",
+  "city": "Bentonville",
+  "name": "Northwest Arkansas Regional Airport",
+  "icao": "KXNA",
+  "lat": "36.2756",
+  "lon": "-94.2955"
+},
+{
+  "state": "Minnesota",
+  "city": "Longville",
+  "name": "Longville Municipal Airport",
+  "icao": "KXVG",
+  "lat": "46.9929",
+  "lon": "-94.2075"
+},
+{
+  "state": "Alaska",
+  "city": "Yakutat",
+  "name": "Yakutat Airport",
+  "icao": "PAYA",
+  "lat": "59.5103",
+  "lon": "-139.668"
+},
+{
+  "state": "Michigan",
+  "city": "Ypsilanti",
+  "name": "Willow Run Airport",
+  "icao": "KYIP",
+  "lat": "42.2385",
+  "lon": "-83.5467"
+},
+{
+  "state": "Washington",
+  "city": "Yakima",
+  "name": "Yakima Air Terminal",
+  "icao": "KYKM",
+  "lat": "46.5703",
+  "lon": "-120.54"
+},
+{
+  "state": "Ohio",
+  "city": "Vienna",
+  "name": "Youngstown-Warren Regional Airport",
+  "icao": "KYNG",
+  "lat": "41.2576",
+  "lon": "-80.6648"
+},
+{
+  "state": "Arizona",
+  "city": "Yuma",
+  "name": "Yuma International Airport",
+  "icao": "KYUM",
+  "lat": "32.6685",
+  "lon": "-114.599"
+},
+{
+  "state": "Maryland",
+  "city": "Baltimore",
+  "name": "Baltimore Marshall Airport",
+  "icao": "KBWI",
+  "lat": "39.3117",
+  "lon": "-76.6183"
+},
+{
+  "state": "Pennsylvania",
+  "city": "Philadelphia",
+  "name": "Philadelphia International",
+  "icao": "KPHL",
+  "lat": "40.9946",
+  "lon": "-77.6045"
+},
+{
+  "state": "New York",
+  "city": "Buffalo",
+  "name": "Buffalo New York International Airport",
+  "icao": "KBUF",
+  "lat": "40.7145",
+  "lon": "-74.0071"
+},
+{
+  "state": "Connecticut",
+  "city": "Groton",
+  "name": "New London",
+  "icao": "KGON",
+  "lat": "41.3564",
+  "lon": "-72.0965"
+},
+{
+  "state": "Texas",
+  "city": "Houston",
+  "name": "George Bush Intercontinental Airport",
+  "icao": "KIAH",
+  "lat": "29.5904",
+  "lon": "-95.2029"
+},
+{
+  "state": "New York",
+  "city": "Albany",
+  "name": "Albany International Airport",
+  "icao": "KALB",
+  "lat": "42.7426",
+  "lon": "-73.809"
+},
+{
+  "state": "New Jersey",
+  "city": "Newark",
+  "name": "New Jersey",
+  "icao": "KEWR",
+  "lat": "40.1428",
+  "lon": "-74.7267"
+},
+{
+  "state": "Wisconsin",
+  "city": "Milwaukee",
+  "name": "General Mitchell International Airport",
+  "icao": "KMKE",
+  "lat": "42.9471",
+  "lon": "-87.9051"
+},
+{
+  "state": "Virginia",
+  "city": "Richmond",
+  "name": "Richmond International",
+  "icao": "KRIC",
+  "lat": "37.3018",
+  "lon": "-77.1910"
+},
+{
+  "state": "Pennsylvania",
+  "city": "Lancaster",
+  "name": "Lancaster",
+  "icao": "KLNS",
+  "lat": "40.038",
+  "lon": "-76.3013"
+},
+{
+  "state": "Connecticut",
+  "city": "Hartford",
+  "name": "Hartford Brainard",
+  "icao": "KHFD",
+  "lat": "41.4412",
+  "lon": "-72.3858"
+},
+{
+  "state": "Massachusetts",
+  "city": "Boston",
+  "name": "Logan International Airport",
+  "icao": "KBOS",
+  "lat": "42.322",
+  "lon": "-71.0918"
+},
+{
+  "state": "Rhode Island",
+  "city": "Providence",
+  "name": "Providence",
+  "icao": "KPVD",
+  "lat": "41.8238",
+  "lon": "-71.412"
+},
+{
+  "state": "Massachusetts",
+  "city": "Springfield",
+  "name": "Springfield Branson",
+  "icao": "KSGF",
+  "lat": "37.1444",
+  "lon": "-93.2319"
+},
+{
+  "state": "New York",
+  "city": "Schenectady",
+  "name": "Schenectady County Airport",
+  "icao": "KSCH",
+  "lat": "42.8161",
+  "lon": "-73.9442"
+},
+{
+  "state": "New York",
+  "city": "Rochester",
+  "name": "Rochester International Airport",
+  "icao": "KROC",
+  "lat": "43.1531",
+  "lon": "-77.6177"
+},
+{
+  "state": "New Jersey",
+  "city": "Princeton",
+  "name": "New Jersey",
+  "icao": "KPCT",
+  "lat": "40.2357",
+  "lon": "-74.3932"
+},
+{
+  "state": "Kentucky",
+  "city": "Louisville",
+  "name": "Louisville International Airport",
+  "icao": "KSDF",
+  "lat": "38.1865",
+  "lon": "-85.7462"
+},
+{
+  "state": "New York",
+  "city": "Utica",
+  "name": "Utica",
+  "icao": "KUCA",
+  "lat": "43.0842",
+  "lon": "-75.2302"
+},
+{
+  "state": "Pennsylvania",
+  "city": "Harrisburg",
+  "name": "Harrisburg International Airport",
+  "icao": "KMDT",
+  "lat": "47.1715",
+  "lon": "8.51622"
+},
+{
+  "state": "New Mexico",
+  "city": "Zuni",
+  "name": "Black Rock Airport",
+  "icao": "KZUN",
+  "lat": "35.0843",
+  "lon": "-108.789"
+},
+{
+  "state": "Connecticut",
+  "city": "New Haven",
+  "name": "Tweed New Haven Airport",
+  "icao": "KHVN",
+  "lat": "41.3071",
+  "lon": "-72.9249"
+},
+{
+  "state": "Virginia",
+  "city": "Newport News",
+  "name": "Williamsburg International",
+  "icao": "KPHF",
+  "lat": "37.0755",
+  "lon": "-76.2935"
+},
+{
+  "state": "Pennsylvania",
+  "city": "Wilmington",
+  "name": "Delaware Airport",
+  "icao": "KILG",
+  "lat": "39.4043",
+  "lon": "-75.3624"
+},
+{
+  "state": "New York",
+  "city": "Syracuse",
+  "name": "Syracuse",
+  "icao": "KSYR",
+  "lat": "43.0640",
+  "lon": "-76.0623"
+}]

@@ -2,9 +2,9 @@
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
-using PreFlightAI.Shared;
+using DensityServer.Shared;
 
-namespace PreFlightAI.Server.Services
+namespace DensityServer.Server.Services
 {
     public class CountryDataService : ICountryDataService
     {

@@ -13,64 +13,64 @@ namespace PreFlight.AI.Server.Pages.Shared
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\danny\source\repos\Density_Android\Server\PreFlightAI\_Imports.razor"
+#line 1 "c:\users\danny\source\repos\density_android\Server\PreFlightAI\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\danny\source\repos\Density_Android\Server\PreFlightAI\_Imports.razor"
+#line 2 "c:\users\danny\source\repos\density_android\Server\PreFlightAI\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\danny\source\repos\Density_Android\Server\PreFlightAI\_Imports.razor"
+#line 3 "c:\users\danny\source\repos\density_android\Server\PreFlightAI\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\danny\source\repos\Density_Android\Server\PreFlightAI\_Imports.razor"
+#line 4 "c:\users\danny\source\repos\density_android\Server\PreFlightAI\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\danny\source\repos\Density_Android\Server\PreFlightAI\_Imports.razor"
+#line 5 "c:\users\danny\source\repos\density_android\Server\PreFlightAI\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\danny\source\repos\Density_Android\Server\PreFlightAI\_Imports.razor"
+#line 6 "c:\users\danny\source\repos\density_android\Server\PreFlightAI\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\danny\source\repos\Density_Android\Server\PreFlightAI\_Imports.razor"
+#line 7 "c:\users\danny\source\repos\density_android\Server\PreFlightAI\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\danny\source\repos\Density_Android\Server\PreFlightAI\_Imports.razor"
-using PreFlightAI;
+#line 8 "c:\users\danny\source\repos\density_android\Server\PreFlightAI\_Imports.razor"
+using DensityServer;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\danny\source\repos\Density_Android\Server\PreFlightAI\_Imports.razor"
-using PreFlightAI.Shared;
+#line 9 "c:\users\danny\source\repos\density_android\Server\PreFlightAI\_Imports.razor"
+using DensityServer.Shared;
 
 #line default
 #line hidden

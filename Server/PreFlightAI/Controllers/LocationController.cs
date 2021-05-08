@@ -1,9 +1,9 @@
-﻿using PreFlightAI.Api.Models;
+﻿using DensityServer.Api.Models;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace PreFlightAI.Api.Controllers
+namespace DensityServer.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

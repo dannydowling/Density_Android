@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PreFlightAI.Shared
+namespace DensityServer.Shared
 {
     public class Location
     {

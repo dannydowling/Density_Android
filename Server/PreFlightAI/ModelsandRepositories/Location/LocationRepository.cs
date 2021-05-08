@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using PreFlightAI.Data;
-using PreFlightAI.Shared;
+using DensityServer.Data;
+using DensityServer.Shared;
 
-namespace PreFlightAI.Api.Models
+namespace DensityServer.Api.Models
 {
     public class LocationRepository : ILocationRepository
     {

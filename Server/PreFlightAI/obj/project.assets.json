@@ -8948,11 +8948,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\danny\\source\\repos\\Density_Android\\Server\\PreFlightAI\\PreFlight.AI.Server.csproj",
-      "projectName": "PreFlight.AI.Server",
-      "projectPath": "C:\\Users\\danny\\source\\repos\\Density_Android\\Server\\PreFlightAI\\PreFlight.AI.Server.csproj",
+      "projectUniqueName": "C:\\Users\\danny\\Source\\Repos\\Density_Android\\Server\\PreFlightAI\\PreFlight.AI.Server.csproj",
+      "projectName": "DensityServer",
+      "projectPath": "C:\\Users\\danny\\Source\\Repos\\Density_Android\\Server\\PreFlightAI\\PreFlight.AI.Server.csproj",
       "packagesPath": "C:\\Users\\danny\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\danny\\source\\repos\\Density_Android\\Server\\PreFlightAI\\obj\\",
+      "outputPath": "C:\\Users\\danny\\Source\\Repos\\Density_Android\\Server\\PreFlightAI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

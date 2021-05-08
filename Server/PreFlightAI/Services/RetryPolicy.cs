@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace PreFlight.AI.Server.Http.Services
+namespace DensityServer.AI.Server.Http.Services
 {    
         public class RetryPolicy : DelegatingHandler
         {

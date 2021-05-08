@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\danny\\Source\\Repos\\Density_Android\\Server\\PreFlightAI\\PreFlight.AI.Server.csproj",
-        "projectName": "PreFlight.AI.Server",
+        "projectName": "DensityServer",
         "projectPath": "C:\\Users\\danny\\Source\\Repos\\Density_Android\\Server\\PreFlightAI\\PreFlight.AI.Server.csproj",
         "packagesPath": "C:\\Users\\danny\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\danny\\Source\\Repos\\Density_Android\\Server\\PreFlightAI\\obj\\",

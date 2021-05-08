@@ -3,24 +3,27 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
-using PreFlightAI.Server.Services;
-using PreFlightAI.Shared;
+using DensityServer.Server.Services;
+using DensityServer.Shared;
 
-namespace PreFlightAI.Server.Pages
+namespace DensityServer.Server.Pages
 {
     public class LocationOverviewBase: ComponentBase
     {
         [Inject]
         public IEmployeeDataService employeeDataService { get; set; }
 
+
         [Inject]
         public ILocationDataService locationDataService { get; set; }
 
-        public List<Employee> employees { get; set; }
+        public List<Location> locations { get; set; }
 
-        protected AddLocationDialogBase AddEmployeeDialog { get; set; }
+        protected AddLocationDialogBase AddLocationDialog { get; set; }
 
         IEnumerable<Location> employeeLocations { get; set; }
+
+        List<Employee> employees { get; set; } //CoWorkers
           
 
         protected override async Task OnInitializedAsync()
@@ -28,9 +31,9 @@ namespace PreFlightAI.Server.Pages
             employeeLocations = (await locationDataService.GetAllLocations()).ToList();
             employees = (await employeeDataService.GetAllEmployees(employeeLocations)).ToList();
         }
-        protected void QuickAddEmployee()
+        protected void QuickAddLocation()
         {
-            AddEmployeeDialog.Show();
+            AddLocationDialog.Show();
         }
     }
 }

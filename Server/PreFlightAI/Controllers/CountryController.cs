@@ -1,9 +1,9 @@
-﻿using PreFlightAI.Api.Models;
+﻿using DensityServer.Api.Models;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace PreFlightAI.Api.Controllers
+namespace DensityServer.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -25,9 +25,9 @@ namespace PreFlightAI.Api.Controllers
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public IActionResult GetLocationById(int id)
+        public IActionResult GetLocationById(string icao)
         {
-            return Ok(_locationRepository.GetLocationById(id));
+            return Ok(_locationRepository.GetLocationById(icao));
         }
     }
 }

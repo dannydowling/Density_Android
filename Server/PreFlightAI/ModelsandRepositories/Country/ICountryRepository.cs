@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using PreFlightAI.Shared;
+using DensityServer.Shared;
 
-namespace PreFlightAI.Api.Models
+namespace DensityServer.Api.Models
 {
     public interface ICountryRepository
     {

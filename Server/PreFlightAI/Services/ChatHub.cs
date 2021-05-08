@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PreFlightAI.Server.Services
+namespace DensityServer.Server.Services
 {
     public class ChatHub : Hub
     {

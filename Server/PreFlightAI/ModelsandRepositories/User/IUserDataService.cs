@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using PreFlightAI.Shared;
+using DensityServer.Shared;
 
-namespace PreFlightAI.Server.Services
+namespace DensityServer.Server.Services
 {
     public interface IUserDataService
     {
