@@ -84,7 +84,7 @@ using PreFlightAI.Server.Pages;
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/employeeedit")]
     [Microsoft.AspNetCore.Components.RouteAttribute("/employeeedit/{EmployeeId}")]
-    public partial class LocationEdit : EmployeeEditBase
+    public partial class LocationEdit : LocationEditBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)

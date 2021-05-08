@@ -31,9 +31,9 @@ namespace PreFlightAI.Server.Services
             return null;
         }
 
-        public async Task DeleteLocation(int locationId)
+        public async Task DeleteLocation(string icao)
         {
-            await _httpClient.DeleteAsync($"api/location/{locationId}");
+            await _httpClient.DeleteAsync($"api/location/{icao}");
         }
 
         public async Task<IEnumerable<Location>> GetAllLocations()
@@ -42,10 +42,10 @@ namespace PreFlightAI.Server.Services
                 (await _httpClient.GetStreamAsync($"api/location"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
 
-        public async Task<Location> GetLocationById(int locationId)
+        public async Task<Location> GetLocationById(string icao)
         {
             return await JsonSerializer.DeserializeAsync<Location>
-                (await _httpClient.GetStreamAsync($"api/location{locationId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+                (await _httpClient.GetStreamAsync($"api/location{icao}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
 
         public async Task UpdateLocation(Location location)

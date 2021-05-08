@@ -10,18 +10,16 @@ namespace PreFlightAI.Server.Pages
     public class LocationDetailBase : ComponentBase
     {
         [Inject]
-        public IEmployeeDataService EmployeeDataService { get; set; }
+        public ILocationDataService locationDataService { get; set; }
 
         [Parameter]
-        public string EmployeeId { get; set; }
+        public string Id { get; set; }
 
-        protected string jobCategoryName = string.Empty;
-       
-        public Employee Employee { get; set; } = new Employee();
+        public Location location { get; set; } = new Location();
 
         protected override async Task OnInitializedAsync()
         {
-            Employee = await EmployeeDataService.GetEmployeeDetails(int.Parse(EmployeeId));
+            location = await locationDataService.GetLocationById(Id);
         }
     }
 }

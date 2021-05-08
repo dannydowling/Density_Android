@@ -7,9 +7,9 @@ namespace PreFlightAI.Server.Services
     public interface ILocationDataService
     {
         Task<IEnumerable<Location>> GetAllLocations();
-        Task<Location> GetLocationById(int locationId);
+        Task<Location> GetLocationById(string icao);
         Task<Location> AddLocation(Location location);
         Task UpdateLocation(Location location);
-        Task DeleteLocation(int locationId);
+        Task DeleteLocation(string icao);
     }
 }

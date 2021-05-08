@@ -76,7 +76,7 @@ using PreFlightAI.Shared;
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/employeedetail/{EmployeeId}")]
-    public partial class LocationDetail : EmployeeDetailBase
+    public partial class LocationDetail : LocationDetailBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
