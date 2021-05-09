@@ -34,8 +34,7 @@ namespace DensityServer.Server.Services
             if (!_started)
             {
                 //creating hubconnction   
-                _hubConnection = new HubConnectionBuilder()
-                                        .WithUrl((_navigationManager.ToAbsoluteUri("/Chat")))     
+                _hubConnection = new HubConnectionBuilder()                                            
                                         .Build();
                 
                 Console.WriteLine("ChatClient: calling Start()");

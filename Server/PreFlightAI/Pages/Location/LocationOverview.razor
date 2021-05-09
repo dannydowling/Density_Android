@@ -1,4 +1,4 @@
-﻿@page "/locationoverview"
+﻿@page "/Locations"
 @inherits LocationOverviewBase
 @using DensityServer.Server.Pages
 
@@ -48,4 +48,5 @@ else
 
 <button @onclick="@QuickAddLocation" class="btn btn-dark table-btn quick-add-btn">Add Location</button>
 
-<AddEmployeeDialog @ref="AddLocationDialog"></AddEmployeeDialog>
+<AddLocationDialog @ref="AddLocationDialog" 
+CloseEventCallback="@AllLocationsDialog_OnDialogClose"></AddLocationDialog>

@@ -1,0 +1,3 @@
+﻿[{
+  "MapsAPI": "AIzaSyA7_xqTgHHdFo6Fe19OmcVpkF7If4Vz8Zw"
+  }]

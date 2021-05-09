@@ -18,6 +18,7 @@ namespace DensityServer.Data
         public DbSet<typedUser> typedUsers { get; set; }
         public DbSet<Employee> employees { get; set; }
         public DbSet<Location> locations { get; set; }
+        public DbSet<Country> countries { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

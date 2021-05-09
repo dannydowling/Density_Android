@@ -35,5 +35,11 @@ namespace DensityServer.Server.Pages
         {
             AddLocationDialog.Show();
         }
+
+        public async void AllLocationsDialog_OnDialogClose()
+        {
+            locations = (await locationDataService.GetAllLocations()).ToList();
+            StateHasChanged();
+        }
     }
 }

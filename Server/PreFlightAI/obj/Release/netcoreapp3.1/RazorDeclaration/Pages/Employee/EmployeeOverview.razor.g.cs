@@ -82,7 +82,7 @@ using DensityServer.Server.Pages;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/employeeoverview")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/Employees")]
     public partial class EmployeeOverview : EmployeeOverviewBase
     {
         #pragma warning disable 1998

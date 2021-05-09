@@ -14,7 +14,6 @@ namespace Density
         public Picker Source_State_Picker { get; set; }
         public Picker Source_City_Picker { get; set; }
         public Picker Source_Airport_Picker { get; set; }
-        public WeatherCamClass sourceWeatherCamClass { get; set; }
         public ImageSource sourceAirportImage { get; set; }
         
 
@@ -23,7 +22,6 @@ namespace Density
         public Picker Destination_State_Picker { get; set; }
         public Picker Destination_City_Picker { get; set; }          
         public Picker Destination_Airport_Picker { get; set; }
-        public WeatherCamClass destinationWeatherCamClass { get; set; }
 
         public ImageSource destinationAirportImage { get; set; }
         

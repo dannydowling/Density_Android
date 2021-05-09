@@ -58,11 +58,11 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[3.5.0.169047, )"
+              "version": "[5.0.0.2012, )"
             },
             "Xamarin.Forms.Maps": {
               "target": "Package",
-              "version": "[3.5.0.169047, )"
+              "version": "[5.0.0.2012, )"
             }
           },
           "imports": [

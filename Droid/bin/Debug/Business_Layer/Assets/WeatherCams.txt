@@ -1,0 +1,3 @@
+﻿[{
+  "Juneau": "https://weathercams.faa.gov/map/-136.49545,56.88676,-128.82699,59.76355/airport/JNU/details/camera/10018"
+  }]

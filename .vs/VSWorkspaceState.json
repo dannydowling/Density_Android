@@ -1,16 +1,20 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Density",
+    "\\Density\\Properties",
     "\\Server",
     "\\Server\\PreFlightAI",
     "\\Server\\PreFlightAI\\obj",
     "\\Server\\PreFlightAI\\obj\\Debug",
     "\\Server\\PreFlightAI\\obj\\Debug\\netcoreapp3.1",
-    "\\Server\\PreFlightAI\\obj\\Debug\\netcoreapp3.1\\RazorDeclaration",
-    "\\Server\\PreFlightAI\\obj\\Debug\\netcoreapp3.1\\RazorDeclaration\\Pages",
-    "\\Server\\PreFlightAI\\obj\\Debug\\netcoreapp3.1\\RazorDeclaration\\Pages\\Employee",
-    "\\Server\\PreFlightAI\\obj\\Debug\\netcoreapp3.1\\RazorDeclaration\\Pages\\Location"
+    "\\Server\\PreFlightAI\\obj\\Debug\\netcoreapp3.1\\Razor",
+    "\\Server\\PreFlightAI\\obj\\Debug\\netcoreapp3.1\\Razor\\Pages",
+    "\\Server\\PreFlightAI\\Pages",
+    "\\Server\\PreFlightAI\\Pages\\Location",
+    "\\Server\\PreFlightAI\\Pages\\Shared",
+    "\\UWP"
   ],
-  "SelectedNode": "\\Server\\PreFlightAI\\obj\\Debug\\netcoreapp3.1\\RazorDeclaration\\Pages\\Employee\\EmployeeDetail.razor.g.cs",
+  "SelectedNode": "\\Server\\PreFlightAI\\Startup.cs",
   "PreviewInSolutionExplorer": false
 }

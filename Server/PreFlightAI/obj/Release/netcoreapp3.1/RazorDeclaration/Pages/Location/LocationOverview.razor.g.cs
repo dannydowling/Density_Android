@@ -82,7 +82,7 @@ using DensityServer.Server.Pages;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/locationoverview")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/Locations")]
     public partial class LocationOverview : LocationOverviewBase
     {
         #pragma warning disable 1998

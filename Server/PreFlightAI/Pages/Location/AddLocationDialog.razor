@@ -1,5 +1,4 @@
-﻿
-@page "/Airport/Register"
+﻿@page "/Airport/Register"
 @inherits AddLocationDialogBase
 @using DensityServer.Server.Pages
 
@@ -57,7 +56,7 @@
                             <ValidationMessage For="@(() => location.lon)" />
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Save employee</button>
+                        <button type="submit" class="btn btn-primary">Save location</button>
                         <a class="btn btn-outline-primary" @onclick="@Close">Close</a>
                     </EditForm>
 

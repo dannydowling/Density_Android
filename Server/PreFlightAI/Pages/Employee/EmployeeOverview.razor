@@ -1,10 +1,10 @@
-﻿@page "/employeeoverview"
+﻿@page "/Employees"
 @inherits EmployeeOverviewBase
 @using DensityServer.Server.Pages 
 
 <h1 class="page-title">All Employees</h1>
 
-@if (Employees == null)
+@if (employees == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -20,7 +20,7 @@ else
         </thead>
 
         <tbody>
-            @foreach (var employee in Employees)
+            @foreach (var employee in employees)
             {
             <tr>
                 <td>@employee.firstName</td>
@@ -28,16 +28,13 @@ else
                 <td>@employee.Id</td>
 
                 <td>
-
                     <a href="@($"employeedetail/{employee.Id}")" class="btn btn-outline-dark table-btn">
                         <i class="fas fa-info-circle">details</i>
                     </a>               
                     <a href="@($"employeeedit/{employee.Id}")" class="btn btn-outline-dark table-btn">
                         <i class="fas fa-edit">edit</i>
                     </a>
-
                 </td>
-
             </tr>
             }
         </tbody>
@@ -46,4 +43,5 @@ else
 
 <button @onclick="@QuickAddEmployee" class="btn btn-dark table-btn quick-add-btn">Add Employee</button>
 
-<AddEmployeeDialog @ref="AddEmployeeDialog"> </AddEmployeeDialog>
+<AddEmployeeDialog @ref="AddEmployeeDialog" 
+ CloseEventCallback="@AllEmployeesDialog_OnDialogClose"></AddEmployeeDialog>

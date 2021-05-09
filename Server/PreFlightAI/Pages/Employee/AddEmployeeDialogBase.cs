@@ -15,7 +15,7 @@ namespace DensityServer.Server.Pages
         public EventCallback<bool> CloseEventCallback { get; set; }
 
         [Inject]
-        public IEmployeeDataService? employeeDataService { get; set; }
+        public IEmployeeDataService employeeDataService { get; set; }
         public Employee employee { get; set; }
 
         

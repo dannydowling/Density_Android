@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "28rRBNQ5tXir0mm/sntbXUK2Vb1zLf/HFv8QAV7ng/6A7w0X0WnGBv7mrPROmE6kCy9u8pLyGFNKDxPuKLLsVg==",
+  "dgSpecHash": "Dmc/UkA2lEYwovExLMostavXLy1mzT2R08WAK7+UBwg67fR47SeDsqZkse88M0EcW5rWU/+Bsoq9QJrd+hIaKw==",
   "success": true,
   "projectFilePath": "C:\\Users\\danny\\Source\\Repos\\Density_Android\\Density\\Density.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\danny\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\danny\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\danny\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
-    "C:\\Users\\danny\\.nuget\\packages\\xamarin.forms\\3.5.0.169047\\xamarin.forms.3.5.0.169047.nupkg.sha512",
-    "C:\\Users\\danny\\.nuget\\packages\\xamarin.forms.maps\\3.5.0.169047\\xamarin.forms.maps.3.5.0.169047.nupkg.sha512"
+    "C:\\Users\\danny\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512",
+    "C:\\Users\\danny\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2012\\xamarin.forms.maps.5.0.0.2012.nupkg.sha512"
   ],
   "logs": []
 }

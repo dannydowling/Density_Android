@@ -76,13 +76,13 @@ using DensityServer.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\danny\Source\Repos\Density_Android\Server\PreFlightAI\Pages\Employee\AddEmployeeDialog.razor"
+#line 3 "C:\Users\danny\Source\Repos\Density_Android\Server\PreFlightAI\Pages\Employee\AddEmployeeDialog.razor"
 using DensityServer.Server.Pages;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Account/Register")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/Employee/Register")]
     public partial class AddEmployeeDialog : AddEmployeeDialogBase
     {
         #pragma warning disable 1998
