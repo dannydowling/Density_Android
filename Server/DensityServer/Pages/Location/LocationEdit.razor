@@ -1,0 +1,72 @@
+﻿@page "/locationedit/{icao}"
+@using DensityServer.Server.Pages
+@inherits LocationEditBase
+
+<section class="location-edit">
+    @if (!Saved)
+    {
+        <h1 class="page-title">Details for @location.name</h1>
+
+        <EditForm Model="@location" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
+
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="form-group row">
+                <label for="name" class="col-sm-3">Location name: </label>
+                <InputText id="name" class="form-control col-sm-8" @bind-Value="@location.name" placeholder="Enter Airport Name"></InputText>
+                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => location.name)" />
+            </div>
+
+            <div class="form-group row">
+                <label for="city" class="col-sm-3">City name: </label>
+                <InputText id="city" class="form-control col-sm-8" @bind-Value="@location.city" placeholder="Enter City name"></InputText>
+                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => location.city)" />
+            </div>
+
+            <div class="form-group row">
+                <label for="icao" class="col-sm-3">Icao: </label>
+                <InputDate id="icao" class="form-control col-sm-8" @bind-Value="@location.icao" placeholder="Enter Icao Code"></InputDate>
+                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => location.icao)" />
+            </div>
+
+            <div class="form-group row">
+                <label for="state" class="col-sm-3">State: </label>
+                <InputText id="state" class="form-control col-sm-8" @bind-Value="@location.state" placeholder="Enter State name"></InputText>
+                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => location.state)" />
+            </div>
+
+            <div class="form-group row">
+                <label for="latitude" class="col-sm-3">Latitude: </label>
+                <InputText id="latitude" class="form-control col-sm-8" @bind-Value="@location.lat" placeholder="Enter latitude"></InputText>
+                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => location.lat)" />
+            </div>
+
+            <div class="form-group row">
+                <label for="longitude" class="col-sm-3">Longitude: </label>
+                <InputText id="longitude" class="form-control col-sm-8" @bind-Value="@location.lon" placeholder="Enter longitude"></InputText>
+                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => location.lon)" />
+            </div>
+            
+            <div class="form-group row">
+                <label for="location" class="col-sm-3">Location: </label>
+                <InputSelect id="location" class="form-control col-sm-8" @bind-Value="@location.icao">
+                    @foreach (var location in locations)
+                        {
+                        <option value="@location.icao">@location.name</option>
+                        }
+                </InputSelect>
+                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => location.name)" />
+            </div>
+
+           
+            <button type="submit" class="btn btn-primary edit-btn">Save location</button>
+            <a class="btn btn-outline-primary edit-outline-btn" @onclick="@NavigateToOverview">Cancel</a>
+           
+        </EditForm>
+
+        <div class="alert @StatusClass">@Message</div>
+        <a class="btn btn-outline-primary" @onclick="@NavigateToOverview">Back to overview</a>
+
+    }
+</section>

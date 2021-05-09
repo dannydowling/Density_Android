@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Dmc/UkA2lEYwovExLMostavXLy1mzT2R08WAK7+UBwg67fR47SeDsqZkse88M0EcW5rWU/+Bsoq9QJrd+hIaKw==",
+  "dgSpecHash": "/JOfjU+WKf6dFaQoQgshJ1p66Nr2KTFCLs5vg9MAAwJtJeZ6Azmoe+i432FSaeq2VdOZwSBrEBgIimANyFcjhg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\danny\\Source\\Repos\\Density_Android\\Density\\Density.csproj",
+  "projectFilePath": "C:\\Users\\danny\\source\\repos\\Density_Android\\Density\\Density.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\danny\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\danny\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

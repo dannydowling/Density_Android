@@ -5,4 +5,7 @@
     <DefaultDevice>pixel_2_r_11_0_-_api_30</DefaultDevice>
     <ActiveDebugProfile>pixel_2_r_11_0_-_api_30</ActiveDebugProfile>
   </PropertyGroup>
+  <PropertyGroup>
+    <ReferencePath>C:\Users\danny\Source\Repos\Density_Android\Droid\Assets\</ReferencePath>
+  </PropertyGroup>
 </Project>

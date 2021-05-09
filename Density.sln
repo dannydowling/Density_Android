@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Density.iOS", "iOS\Density.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Density.Droid", "Droid\Density.Droid.csproj", "{5D892129-D547-4BE6-BCBD-D0527BE4CA71}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DensityServer", "Server\PreFlightAI\DensityServer.csproj", "{46CAE61C-F542-43CC-B4C2-1326D5BC1377}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DensityServer", "Server\DensityServer\DensityServer.csproj", "{46CAE61C-F542-43CC-B4C2-1326D5BC1377}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

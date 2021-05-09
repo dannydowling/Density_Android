@@ -7,7 +7,6 @@ C:\Users\danny\Source\Repos\Density_Android\iOS\obj\iPhoneSimulator\Debug\optimi
 C:\Users\danny\Source\Repos\Density_Android\iOS\obj\iPhoneSimulator\Debug\Density.iOS.csprojAssemblyReference.cache
 C:\Users\danny\Source\Repos\Density_Android\iOS\obj\iPhoneSimulator\Debug\Density.iOS.csproj.CoreCompileInputs.cache
 C:\Users\danny\Source\Repos\Density_Android\iOS\bin\iPhoneSimulator\Debug\Business_Layer\Assets\Aircraft.txt
-C:\Users\danny\Source\Repos\Density_Android\iOS\bin\iPhoneSimulator\Debug\Business_Layer\Assets\Keys.txt
 C:\Users\danny\Source\Repos\Density_Android\iOS\bin\iPhoneSimulator\Debug\Business_Layer\Assets\Positions.txt
 C:\Users\danny\Source\Repos\Density_Android\iOS\bin\iPhoneSimulator\Debug\Business_Layer\Assets\WeatherCams.txt
 C:\Users\danny\Source\Repos\Density_Android\iOS\bin\iPhoneSimulator\Debug\DensityiOS.exe

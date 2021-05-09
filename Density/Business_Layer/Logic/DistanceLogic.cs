@@ -46,14 +46,12 @@ namespace Density
 
         private string GetURL((double, double) sourcePosition, (double, double) destinationPosition, int mode)
         {
-            if (Density.Properties.Resources.Keys != null)
-            {
-                JArray APIKey = JArray.Parse(Density.Properties.Resources.Keys);
+          
+                JArray APIKey = JArray.Parse(Density.Properties.Resources.MapsAPIKey);
                 string key = APIKey.Select(x => x["MapsAPI"].ToString()).FirstOrDefault();
 
                 return string.Format("https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins={0}&destinations={1}&mode={2}&key={3}", sourcePosition, destinationPosition, mode, key);
-            }
-            return "";
+            
         }
 
         public async Task<TransportModel> GetInfoForRoute(int mode, LocationClass sourceLocation, LocationClass destinationLocation)

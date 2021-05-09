@@ -85,13 +85,11 @@ namespace Density.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [{
-        ///  &quot;MapsAPI&quot;: &quot;AIzaSyA7_xqTgHHdFo6Fe19OmcVpkF7If4Vz8Zw&quot;
-        ///  }].
+        ///   Looks up a localized string similar to AIzaSyA7_xqTgHHdFo6Fe19OmcVpkF7If4Vz8Zw.
         /// </summary>
-        public static string Keys {
+        public static string MapsAPIKey {
             get {
-                return ResourceManager.GetString("Keys", resourceCulture);
+                return ResourceManager.GetString("MapsAPIKey", resourceCulture);
             }
         }
         
@@ -122,7 +120,8 @@ namespace Density.Properties {
         ///},
         ///{
         ///  &quot;state&quot;: &quot;New Mexico&quot;,
-        ///  &quot;city&quot;: &quot;Albuquerque&quot; [rest of string was truncated]&quot;;.
+        ///  &quot;city&quot;: &quot;Albuquerque&quot;,
+        ///  &quot;name&quot;: &quot;Albuquerque I [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Positions {
             get {

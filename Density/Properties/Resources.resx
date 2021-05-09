@@ -121,8 +121,9 @@
   <data name="Aircraft" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Business_Layer\Assets\Aircraft.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="Keys" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Business_Layer\Assets\Keys.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="MapsAPIKey" xml:space="preserve">
+    <value>AIzaSyA7_xqTgHHdFo6Fe19OmcVpkF7If4Vz8Zw</value>
+    <comment>Google Maps API Key</comment>
   </data>
   <data name="Positions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Business_Layer\Assets\Positions.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
