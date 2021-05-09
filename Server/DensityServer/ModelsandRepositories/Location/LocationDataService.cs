@@ -55,7 +55,7 @@ namespace DensityServer.Server.Services
             var locationJson =
                 new StringContent(JsonSerializer.Serialize(location), Encoding.UTF8, "application/json");
 
-            await _httpClient.PutAsync($"/location/{0}", locationJson);
+            await _httpClient.PatchAsync($"/location/{0}", locationJson);
         }
     }
 }

@@ -17,11 +17,17 @@ namespace DensityServer.Api.Controllers
             _locationRepository = locationRepository;
         }
 
-        // GET: location/<controller>
-        [HttpGet]
-        public IActionResult GetLocations()
+        // Post: location/aaaa
+        [HttpPost("{id}")]
+        public IActionResult AddLocation(Location location)
         {
-            return Ok(_locationRepository.GetAllLocations());
+            return Ok(_locationRepository.AddLocation(location));
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteLocation(string icao)
+        {
+            return Ok(_locationRepository.DeleteLocation(icao));
         }
 
         // GET location/<controller>/5
@@ -31,10 +37,19 @@ namespace DensityServer.Api.Controllers
             return Ok(_locationRepository.GetLocationById(icao));
         }
 
-        [HttpPost("{id}")]
-        public IActionResult AddLocation(Location location) 
+        // GET: location/<controller>
+        [HttpGet]
+        public IActionResult GetAllLocations()
         {
-            return Ok(_locationRepository.AddLocation(location));
+            return Ok(_locationRepository.GetAllLocations());
+        }
+
+
+        // Put: location/aaaa
+        [HttpPatch("{Id}")]
+        public IActionResult UpdateLocation(Location location)
+        {
+            return Ok(_locationRepository.UpdateLocation(location));
         }
     }
 }

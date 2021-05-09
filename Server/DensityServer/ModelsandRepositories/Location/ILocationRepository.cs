@@ -11,5 +11,7 @@ namespace DensityServer.Api.Models
         IEnumerable<Location> GetAllLocations();
         Location GetLocationById(string icao);
         Location AddLocation(Location location);
+        object DeleteLocation(string icao);
+        Location UpdateLocation(Location location);
     }
 }
