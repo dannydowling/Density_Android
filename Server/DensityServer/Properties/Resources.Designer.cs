@@ -130,16 +130,5 @@ namespace DensityServer.Properties {
                 return ResourceManager.GetString("Positions", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [{
-        ///  &quot;Juneau&quot;: &quot;https://weathercams.faa.gov/map/-136.49545,56.88676,-128.82699,59.76355/airport/JNU/details/camera/10018&quot;
-        ///  }].
-        /// </summary>
-        public static string WeatherCams {
-            get {
-                return ResourceManager.GetString("WeatherCams", resourceCulture);
-            }
-        }
     }
 }

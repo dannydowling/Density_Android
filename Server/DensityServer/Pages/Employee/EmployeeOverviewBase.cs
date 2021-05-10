@@ -16,24 +16,35 @@ namespace DensityServer.Server.Pages
         public ILocationDataService locationDataService { get; set; }
 
         public List<Employee> employees { get; set; }
-        public List<Location> employeeLocations { get; set; }
+        protected IEnumerable<string> employeeLocations { get; set; }
+        private IEnumerable<Location> allLocations { get; set; }
 
-        protected AddLocationDialogBase AddEmployeeDialog { get; set; }
+
+        protected AddEmployeeDialogBase AddEmployeeDialog { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
-            employeeLocations = (await locationDataService.GetAllLocations()).ToList();
-            employees = (await employeeDataService.GetAllEmployees(employeeLocations)).ToList();
+            if (employeeLocations != null)
+            {
+                //get all the locations
+                allLocations = (await locationDataService.GetAllLocations());
+
+                //reduce the location list down to match the employees list of icao codes.
+              allLocations = allLocations.Where(x => x.icao.AsEnumerable() == employeeLocations);
+
+                //this is where the operation is triggered, due to lazy linq. Get the employees.
+              employees = (await employeeDataService.GetAllEmployees(allLocations)).ToList();
+            }
+
         }
 
         protected void QuickAddEmployee()
         {
-            AddEmployeeDialog.Show();
+            AddEmployeeDialog.ShowEmployeeDialog();
         }
 
-        public async void AllEmployeesDialog_OnDialogClose()
-        {
-            employees = (await employeeDataService.GetAllEmployees(employeeLocations)).ToList();
+        public void AllEmployeesDialog_OnDialogClose()
+        {           
             StateHasChanged();
         }
     }

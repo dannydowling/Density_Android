@@ -7,7 +7,7 @@ namespace DensityServer.Server.Pages
 {
     public class AddEmployeeDialogBase : ComponentBase
     {
-        public bool showDialog { get; set; }
+        protected bool showDialog { get; set; }
 
         [Parameter]
         public EventCallback<bool> closeEmployeeEventCallback { get; set; }
@@ -16,9 +16,7 @@ namespace DensityServer.Server.Pages
         public IEmployeeDataService employeeDataService { get; set; }
         public Employee employee { get; set; }
 
-        
-
-        public void Show()
+        public void ShowEmployeeDialog()
         {           
             ResetDialog();
             showDialog = true;

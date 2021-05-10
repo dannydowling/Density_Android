@@ -4,13 +4,12 @@
 
 @if (showDialog)
 {
-    <div class="modal fade show d-block" id="densityServerModal" tabindex="-1" role="dialog">
+    <div class="modal fade show d-block" id="locationModal" tabindex="-1">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="titleLabel">Location Quick Add</h5>
+                    <h5 class="modal-title" id="locationAdd_Title">Location Quick Add</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" @onclick="Close">
-                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -22,7 +21,7 @@
 
                         <div class="form-group">
                             <label for="state">State: </label>
-                            <InputText id="lastName" class="form-control" @bind-Value="@location.state" placeholder="Enter state"></InputText>
+                            <InputText id="state" class="form-control" @bind-Value="@location.state" placeholder="Enter state"></InputText>
                             <ValidationMessage For="@(() => location.state)" />
                         </div>
 
@@ -46,13 +45,13 @@
 
                         <div class="form-group">
                             <label for="lat">Airport Latitude: </label>
-                            <InputText id="lat" class="form-control" @bind-Value="@location.lat.ToString()" placeholder="Enter Airport Latitude"></InputText>
+                            <InputText id="lat" class="form-control" @bind-Value="@location.lat" placeholder="Enter Airport Latitude"></InputText>
                             <ValidationMessage For="@(() => location.lat)" />
                         </div>
 
                         <div class="form-group">
                             <label for="lon">Airport Longitude: </label>
-                            <InputText id="lon" class="form-control" @bind-Value="@location.lon.ToString()" placeholder="Enter Airport Longitude"></InputText>
+                            <InputText id="lon" class="form-control" @bind-Value="@location.lon" placeholder="Enter Airport Longitude"></InputText>
                             <ValidationMessage For="@(() => location.lon)" />
                         </div>
 

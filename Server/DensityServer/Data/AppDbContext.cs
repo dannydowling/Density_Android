@@ -60,8 +60,8 @@ namespace DensityServer.Data
                                     city = x["city"].ToString(),        //the name of the city matches the city tag
                                     icao = x["icao"].ToString(),        //the icao code matches the icao tag
                                     name = x["name"].ToString(),        //the name of the airport matches the name tag
-                                    lat = Convert.ToDouble(x["lat"]),   //the latitude matches the lat tag
-                                    lon = Convert.ToDouble(x["lon"])    //the longitude matches the lon tag
+                                    lat = (x["lat"]).ToString(),   //the latitude matches the lat tag
+                                    lon = (x["lon"]).ToString()    //the longitude matches the lon tag
                                 }))
                                      .ToList()                          //set the locations into a list
             }).ToDictionary(s => s.StateName, s => s.Cities);           //into a dictionary of statename and a list of locations called cities

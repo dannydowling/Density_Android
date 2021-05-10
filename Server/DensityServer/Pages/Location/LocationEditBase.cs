@@ -32,7 +32,7 @@ namespace DensityServer.Server.Pages
             if (string.IsNullOrEmpty(location.icao)) //new location
             {
                 //add some defaults
-                location = new Location { city = "", icao = "", name = "", state = "", lat = 0, lon = 0};
+                location = new Location { city = "", icao = "", name = "", state = "", lat = "", lon = ""};
             }
             else
             {

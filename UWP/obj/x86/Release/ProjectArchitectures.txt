@@ -1,1 +1,0 @@
-C:\Users\danny\Source\Repos\Density_Android\UWP\Density.UWP.csproj;x86

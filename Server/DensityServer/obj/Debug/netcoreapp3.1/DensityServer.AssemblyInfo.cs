@@ -11,7 +11,6 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("DensityServer")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Kaurai")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]

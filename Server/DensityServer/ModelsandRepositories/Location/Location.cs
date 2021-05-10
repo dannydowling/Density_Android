@@ -14,9 +14,9 @@ namespace DensityServer.Shared
 
         public string icao { get; set; }
 
-        public double lat { get; set; }
+        public string lat { get; set; }
 
-        public double lon { get; set; }
+        public string lon { get; set; }
 
     }
 }

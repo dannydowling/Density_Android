@@ -42,8 +42,6 @@ namespace DensityServer
             services.AddScoped<IUserRepository, UserRepository>();            
             services.AddScoped<MessageModel>();
 
-            
-
             services.AddHttpClient<ICountryDataService, CountryDataService>(client =>
             { client.BaseAddress = new Uri("https://localhost:44336/");  })
                 .AddHttpMessageHandler(handler => new RetryPolicy(2, TimeSpan.FromSeconds(20)));

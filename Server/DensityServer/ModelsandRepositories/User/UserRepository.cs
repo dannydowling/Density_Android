@@ -37,12 +37,9 @@ namespace DensityServer.Api.Models
 
             if (foundUser != null)
             {              
-                foundUser.Email =           user.Email;
-                foundUser.FirstName =       user.FirstName;
-                foundUser.LastName =        user.LastName;               
-                foundUser.Comment =         user.Comment;
-                foundUser.ExitDate =        user.ExitDate;
-                foundUser.JoinedDate =      user.JoinedDate;
+                foundUser.email =           user.email;
+                foundUser.firstName =       user.firstName;
+                foundUser.lastName =        user.lastName;   
                 foundUser.Password =        user.Password;
 
                 _appDbContext.SaveChanges();

@@ -76,13 +76,12 @@ using DensityServer.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\danny\source\repos\Density_Android\Server\DensityServer\Pages\Location\LocationEdit.razor"
+#line 2 "C:\Users\danny\source\repos\Density_Android\Server\DensityServer\Pages\Location\LocationEdit.razor"
 using DensityServer.Server.Pages;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/locationedit")]
     [Microsoft.AspNetCore.Components.RouteAttribute("/locationedit/{icao}")]
     public partial class LocationEdit : LocationEditBase
     {

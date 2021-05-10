@@ -76,13 +76,13 @@ using DensityServer.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\danny\source\repos\Density_Android\Server\DensityServer\Pages\Location\LocationDetail.razor"
+#line 3 "C:\Users\danny\source\repos\Density_Android\Server\DensityServer\Pages\Location\LocationDetail.razor"
 using DensityServer.Server.Pages;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/employeedetail/{EmployeeId}")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/locationdetail/{icao}")]
     public partial class LocationDetail : LocationDetailBase
     {
         #pragma warning disable 1998
