@@ -1,11 +1,11 @@
-﻿@page "/locationedit/{icao}"
+﻿@page "/Airport/{icao}"
 @using DensityServer.Server.Pages
 @inherits LocationEditBase
 
 <section class="location-edit">
     @if (!Saved)
     {
-        <h1 class="page-title">Details for @location.name</h1>
+        <h1 class="page-title">Edit for @location.name</h1>
 
         <EditForm Model="@location" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
 

@@ -12,6 +12,6 @@ namespace DensityServer.Api.Models
         Employee GetEmployeeById(int employeeId);
         Employee AddEmployee(Employee employee);
         Employee UpdateEmployee(Employee employee);
-        void DeleteEmployee(int employeeId);
+        object DeleteEmployee(Employee employee);
     }
 }

@@ -22,7 +22,7 @@ namespace DensityServer.Api.Models
 
         public Employee GetEmployeeById(int employeeId)
         {
-            return _appDbContext.employees.FirstOrDefault(c => c.Id == employeeId);
+            return _appDbContext.employees.Single(c => c.Id == employeeId);
         }
 
         public Employee AddEmployee(Employee employee)
@@ -34,34 +34,16 @@ namespace DensityServer.Api.Models
 
         public Employee UpdateEmployee(Employee employee)
         {
-            var foundEmployee = _appDbContext.employees.FirstOrDefault(e => e.Id == employee.Id);
-
-            if (foundEmployee != null)
-            {
-                
-                foundEmployee.city = employee.city;
-                foundEmployee.email = employee.email;
-                foundEmployee.firstName = employee.firstName;
-                foundEmployee.lastName = employee.lastName;
-                foundEmployee.street = employee.street;
-                foundEmployee.password = employee.password;
-                
-
-        _appDbContext.SaveChanges();
-
-                return foundEmployee;
-            }
-
-            return null;
+            employee = _appDbContext.employees.Single(e => e.Id == employee.Id);
+            _appDbContext.SaveChanges();
+            return employee;
         }
 
-        public void DeleteEmployee(int employeeId)
+        public object DeleteEmployee(Employee employee)
         {
-            var foundEmployee = _appDbContext.employees.FirstOrDefault(e => e.Id == employeeId);
-            if (foundEmployee == null) return;
-
+            var foundEmployee = _appDbContext.employees.Single(e => e.Id == employee.Id);
             _appDbContext.employees.Remove(foundEmployee);
-            _appDbContext.SaveChanges();
+            return _appDbContext.SaveChanges();
         }
     }
 }

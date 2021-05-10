@@ -44,19 +44,9 @@ namespace DensityServer
             //the error parameter cannot be null is from the version of .Net.Authorization being 5.0  ... 5/10/21 
             services.AddRazorPages();
 
-            services.AddScoped<ICountryRepository, CountryRepository>();            
-            services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ILocationRepository, LocationRepository>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<MessageModel>();
-
-            services.AddHttpClient<ICountryDataService, CountryDataService>(client =>
-            { client.BaseAddress = new Uri("https://localhost:44336/");  })
-                .AddHttpMessageHandler(handler => new RetryPolicy(2, TimeSpan.FromSeconds(20)));
-
-            services.AddHttpClient<IUserDataService, UserDataService>(client =>
-            { client.BaseAddress = new Uri("https://localhost:44336/");  })
-                .AddHttpMessageHandler(handler => new RetryPolicy(2, TimeSpan.FromSeconds(20)));
 
             services.AddHttpClient<ILocationDataService, LocationDataService>(client =>
             { client.BaseAddress = new Uri("https://localhost:44336/"); })

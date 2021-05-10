@@ -1,4 +1,4 @@
-﻿@page "/Locations"
+﻿@page "/Airports"
 @inherits LocationOverviewBase
 @using DensityServer.Server.Pages
 
@@ -31,12 +31,13 @@ else
 
                 <td>
 
-                    <a href="@($"locationdetail/{location.icao}")" class="btn btn-outline-dark table-btn">
-                        <i class="fas fa-info-circle">details</i>
-                    </a>
-                    <a href="@($"locationedit/{location.icao}")" class="btn btn-outline-dark table-btn">
-                        <i class="fas fa-edit">edit</i>
-                    </a>
+                    <form action="@($"Airport/{location.icao}")" method="get">
+                        <button type="submit" name="details" value="details" class="btn btn-outline-dark table-btn">Go</button>
+                    </form>
+
+                    <form action="@($"Airport/Edit/{location.icao}")" method="post">
+                        <button type="submit" name="edit" value="edit" class="btn btn-outline-dark table-btn">Go</button>
+                    </form>
 
                 </td>
 

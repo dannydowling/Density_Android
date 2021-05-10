@@ -47,7 +47,7 @@ namespace DensityServer.Server.Services
         public async Task<Location> GetLocationById(string icao)
         {
             return await JsonSerializer.DeserializeAsync<Location>
-                (await _httpClient.GetStreamAsync($"location/location{icao}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+                (await _httpClient.GetStreamAsync($"/location/{icao}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
 
         public async Task UpdateLocation(Location location)

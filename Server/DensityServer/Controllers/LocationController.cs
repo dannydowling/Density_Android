@@ -1,12 +1,13 @@
 ﻿using DensityServer.Api.Models;
 using DensityServer.Shared;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace DensityServer.Api.Controllers
 {
-    [Route("location/[controller]")]
+    [Route("Airport/[controller]")]
     [ApiController]
     public class LocationController : Controller
     {
@@ -17,36 +18,39 @@ namespace DensityServer.Api.Controllers
             _locationRepository = locationRepository;
         }
 
-        // Post: location/aaaa
+        [Authorize]
+        // Post: Airport/airport
         [HttpPost("{id}")]
         public IActionResult AddLocation(Location location)
         {
             return Ok(_locationRepository.AddLocation(location));
         }
 
-        [HttpDelete("{id}")]
+        [Authorize]
+        //Delete: Airport/Delete/aaaa
+        [HttpDelete("/Delete/{id}")]
         public IActionResult DeleteLocation(string icao)
         {
             return Ok(_locationRepository.DeleteLocation(icao));
         }
 
-        // GET location/<controller>/5
+        // GET Airport/aaaa
         [HttpGet("{id}")]
         public IActionResult GetLocationById(string icao)
         {
             return Ok(_locationRepository.GetLocationById(icao));
         }
 
-        // GET: location/<controller>
+        // GET: Airport
         [HttpGet]
         public IActionResult GetAllLocations()
         {
             return Ok(_locationRepository.GetAllLocations());
         }
 
-
-        // Put: location/aaaa
-        [HttpPatch("{Id}")]
+        [Authorize]
+        // Patch: Airport/Edit/aaaa
+        [HttpPatch("/Edit/{Id}")]
         public IActionResult UpdateLocation(Location location)
         {
             return Ok(_locationRepository.UpdateLocation(location));
