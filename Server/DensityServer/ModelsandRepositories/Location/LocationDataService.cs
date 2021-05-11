@@ -9,7 +9,7 @@ namespace DensityServer.Server.Services
 {
     public class LocationDataService : ILocationDataService
     {
-        private readonly HttpClient _httpClient;
+        private HttpClient _httpClient { get; set; }
 
         public LocationDataService(HttpClient httpClient)
         {

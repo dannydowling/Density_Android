@@ -82,7 +82,7 @@ using DensityServer.Server.Pages;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/locationedit/{icao}")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/Airport/{icao}")]
     public partial class LocationEdit : LocationEditBase
     {
         #pragma warning disable 1998

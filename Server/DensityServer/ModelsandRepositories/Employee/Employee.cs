@@ -8,33 +8,41 @@ namespace DensityServer.Shared
     public class Employee
     {
         [Key]
-        public int Id { get; set; }
+        public string EmployeeId { get; set; }
         [Required]
         [StringLength(50, ErrorMessage = "First name is too long.")]
-        public string firstName { get; set; }
+        public string FirstName { get; set; }
 
         [Required]
         [StringLength(50, ErrorMessage = "Last name is too long.")]
-        public string lastName { get; set; }
+        public string LastName { get; set; }
 
        
         [Required]
         [EmailAddress]
-        public string email { get; set; }
-        public string street { get; set; }
-        public string zip { get; set; }
-        public string city { get; set; }
+        public string Email { get; set; }
+        public string Street { get; set; }
+        public string Zip { get; set; }
+        public string City { get; set; }
         
-
-        [StringLength(1000, ErrorMessage = "Comment length can't exceed 1000 characters.")]
-       
-
         [Timestamp]
         public byte[] rowVersion { get; set; }
 
 
         [DataType(DataType.Password)]
-        public string password { get; set; }
+        public string Password { get; set; }
+
+        public Employee(string employeeId, string firstName, string lastName, string email, string street, string zip, string city, string password)
+        {
+            EmployeeId = employeeId;
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            Street = street;
+            Zip = zip;
+            City = city;
+            Password = password;
+        }
               
     }
 }

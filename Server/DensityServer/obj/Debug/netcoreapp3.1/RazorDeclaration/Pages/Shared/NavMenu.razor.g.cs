@@ -90,7 +90,7 @@ using DensityServer.Server.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 100 "C:\Users\danny\source\repos\Density_Android\Server\DensityServer\Pages\Shared\NavMenu.razor"
+#line 96 "C:\Users\danny\source\repos\Density_Android\Server\DensityServer\Pages\Shared\NavMenu.razor"
        
     bool collapseNavMenu = true;
     string NavMenuCssClass => collapseNavMenu ? "collapse" : null;

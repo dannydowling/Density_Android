@@ -5,7 +5,7 @@
 <section class="employee-edit">
     @if (!Saved)
     {
-        <h1 class="page-title">Details for @employee.firstName @employee.lastName</h1>
+        <h1 class="page-title">Details for @employee.FirstName @employee.lastName</h1>
 
         <EditForm Model="@employee" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
 
@@ -31,8 +31,8 @@
 
             <div class="form-group row">
                 <label for="firstName" class="col-sm-3">First name: </label>
-                <InputText id="firstName" class="form-control col-sm-8" @bind-Value="@employee.firstName" placeholder="Enter first name"></InputText>
-                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => employee.firstName)" />
+                <InputText id="firstName" class="form-control col-sm-8" @bind-Value="@employee.FirstName" placeholder="Enter first name"></InputText>
+                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => employee.FirstName)" />
             </div>
 
 

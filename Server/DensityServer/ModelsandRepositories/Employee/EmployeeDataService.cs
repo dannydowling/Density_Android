@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 using DensityServer.Shared;
 using Microsoft.AspNetCore.Http;
 using System.Linq;
+using Microsoft.Extensions.Options;
 
 namespace DensityServer.Server.Services
 {
     public class EmployeeDataService : IEmployeeDataService
     {
-        private readonly HttpClient _httpClient;
-        private readonly IHttpContextAccessor _httpContextAccessor;
+        private HttpClient _httpClient;
+        private IHttpContextAccessor _httpContextAccessor;
 
         // The httpContextAccessor is registered in configure services, then accessible in any class.
         // gives information on the context the user is running in. Such as authenticated...
-        public EmployeeDataService(HttpClient httpClient, IHttpContextAccessor httpContextAccessor)
+        public EmployeeDataService( HttpClient httpClient, IHttpContextAccessor httpContextAccessor)
         {
             _httpClient = httpClient ?? throw new System.ArgumentNullException(nameof(httpClient));
             _httpContextAccessor = httpContextAccessor ?? throw new System.ArgumentNullException(nameof(httpContextAccessor));
@@ -27,12 +28,12 @@ namespace DensityServer.Server.Services
             List<Employee> employees = await JsonSerializer.DeserializeAsync<List<Employee>>(
                 await _httpClient.GetStreamAsync($"/employee"));
             
-            if (employees.Select(x => x.firstName + ", " + x.lastName) 
+            if (employees.Select(x => x.FirstName + ", " + x.LastName) 
                 == (_httpContextAccessor.HttpContext.User.Identity.Name).ToList() 
                 && _httpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
             {
                 foreach (var item in employeeLocations)
-                {  return employees.Where(x => x.city == item.city);  }
+                {  return employees.Where(x => x.City == item.city);  }
             }
             return null;
         }
@@ -55,7 +56,7 @@ namespace DensityServer.Server.Services
             if (response.IsSuccessStatusCode)
             {
                 return await JsonSerializer.DeserializeAsync<Employee>(
-                    await _httpClient.GetStreamAsync(string.Format($"employee/{0}", employee.Id)));
+                    await _httpClient.GetStreamAsync(string.Format($"employee/{0}", employee.EmployeeId)));
             }
             return null;
         }
@@ -65,7 +66,7 @@ namespace DensityServer.Server.Services
             var employeeJson =
                 new StringContent(JsonSerializer.Serialize(employee), Encoding.UTF8, "application/json");
 
-            await _httpClient.PutAsync($"employee/{employee.Id}", employeeJson);
+            await _httpClient.PutAsync($"employee/{employee.EmployeeId}", employeeJson);
         }
 
         public async Task DeleteEmployee(int Id)

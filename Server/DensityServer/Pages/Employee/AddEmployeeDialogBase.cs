@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Components;
 using DensityServer.Shared;
 using DensityServer.Server.Services;
+using System;
 
 namespace DensityServer.Server.Pages
 {
@@ -25,7 +26,8 @@ namespace DensityServer.Server.Pages
 
         private void ResetDialog()
         {
-            employee = new Employee { Id = 0, firstName = "", city = "" };
+            //string employeeId, string firstName, string lastName, string email, string street, string zip, string city, string password
+            employee = new Employee ("", "","", "", "", "", "", "");
         }
 
         public void Close()

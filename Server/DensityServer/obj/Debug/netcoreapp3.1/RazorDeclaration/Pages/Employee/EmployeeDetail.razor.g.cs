@@ -82,7 +82,7 @@ using DensityServer.Server.Pages;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/employeedetail/{EmployeeId}")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/Employee/{EmployeeId}")]
     public partial class EmployeeDetail : EmployeeDetailBase
     {
         #pragma warning disable 1998

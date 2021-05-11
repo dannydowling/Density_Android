@@ -11,14 +11,16 @@ namespace DensityServer.Api.Controllers
     [ApiController]
     public class LocationController : Controller
     {
-        private readonly ILocationRepository _locationRepository;
+        private ILocationRepository _locationRepository { get; set; }
 
         public LocationController(ILocationRepository locationRepository)
         {
             _locationRepository = locationRepository;
         }
 
-        [Authorize]
+        [Authorize(Policy = "CheckPassword")]
+        [Authorize(Policy = "CheckFirstName")]
+        [Authorize(Policy = "CheckLastName")]
         // Post: Airport/airport
         [HttpPost("{id}")]
         public IActionResult AddLocation(Location location)
@@ -26,7 +28,9 @@ namespace DensityServer.Api.Controllers
             return Ok(_locationRepository.AddLocation(location));
         }
 
-        [Authorize]
+        [Authorize(Policy = "CheckPassword")]
+        [Authorize(Policy = "CheckFirstName")]
+        [Authorize(Policy = "CheckLastName")]
         //Delete: Airport/Delete/aaaa
         [HttpDelete("/Delete/{id}")]
         public IActionResult DeleteLocation(string icao)
@@ -48,7 +52,9 @@ namespace DensityServer.Api.Controllers
             return Ok(_locationRepository.GetAllLocations());
         }
 
-        [Authorize]
+        [Authorize(Policy = "CheckPassword")]
+        [Authorize(Policy = "CheckFirstName")]
+        [Authorize(Policy = "CheckLastName")]
         // Patch: Airport/Edit/aaaa
         [HttpPatch("/Edit/{Id}")]
         public IActionResult UpdateLocation(Location location)

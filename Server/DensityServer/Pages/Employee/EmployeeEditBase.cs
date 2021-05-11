@@ -46,7 +46,7 @@ namespace DensityServer.Server.Pages
             if (employeeId == 0) //new employee is being created
             {
                 //add some defaults
-                employee = new Employee { Id = 0, city = "", email = "", firstName = "", lastName = "", password = "", street = "", zip = ""};
+                employee = new Employee { EmployeeId = 0, City = "", Email = "", FirstName = "", LastName = "", Password = "", Street = "", Zip = ""};
             }
             else
             {
@@ -56,7 +56,7 @@ namespace DensityServer.Server.Pages
 
         protected async Task HandleValidSubmit()
         {
-            if (employee.Id == 0) //new
+            if (employee.EmployeeId == 0) //new
             {
                 var addedEmployee = await employeeDataService.AddEmployee(employee);
                 if (addedEmployee != null)
@@ -89,7 +89,7 @@ namespace DensityServer.Server.Pages
 
         protected async Task DeleteEmployee()
         {
-            await employeeDataService.DeleteEmployee(employee.Id);
+            await employeeDataService.DeleteEmployee(employee.EmployeeId);
 
             StatusClass = "alert-success";
             Message = "Deleted successfully";

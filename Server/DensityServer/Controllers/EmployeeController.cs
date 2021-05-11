@@ -7,12 +7,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DensityServer.Api.Controllers
 {
-    [Authorize]
+    [Authorize(Policy = "CheckPassword")]
+    [Authorize(Policy = "CheckFirstName")]
+    [Authorize(Policy = "CheckLastName")]
     [Route("Employee/[controller]")]
     [ApiController]
     public class EmployeeController : Controller
     {
-        private readonly IEmployeeRepository _employeeRepository;
+        private IEmployeeRepository _employeeRepository { get; set; }
 
         public EmployeeController(IEmployeeRepository employeeRepository)
         {
@@ -42,7 +44,7 @@ namespace DensityServer.Api.Controllers
 
         // GET employee/<controller>/5
         [HttpGet("{id}")]
-        public IActionResult GetEmployeeById(int Id)
+        public IActionResult GetEmployeeById(string Id)
         {
             return Ok(_employeeRepository.GetEmployeeById(Id));
         }

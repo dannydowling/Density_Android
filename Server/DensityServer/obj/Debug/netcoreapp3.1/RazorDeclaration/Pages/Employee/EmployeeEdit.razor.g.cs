@@ -76,14 +76,13 @@ using DensityServer.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\danny\source\repos\Density_Android\Server\DensityServer\Pages\Employee\EmployeeEdit.razor"
+#line 2 "C:\Users\danny\source\repos\Density_Android\Server\DensityServer\Pages\Employee\EmployeeEdit.razor"
 using DensityServer.Server.Pages;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/employeeedit")]
-    [Microsoft.AspNetCore.Components.RouteAttribute("/employeeedit/{EmployeeId}")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/Employee/{EmployeeId}")]
     public partial class EmployeeEdit : EmployeeEditBase
     {
         #pragma warning disable 1998
