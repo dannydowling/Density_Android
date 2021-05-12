@@ -20,6 +20,8 @@ using Serilog;
 using Serilog.Events;
 using System.Net.Http;
 using DensityServer.Services.GameInvitation;
+using System.Globalization;
+using DensityServer.Services.Localizer;
 
 namespace DensityServer
 {
@@ -42,6 +44,8 @@ namespace DensityServer
 
         {
             services.AddAntiforgery();
+
+            services.AddLocalization(options => options.ResourcesPath = "Localization");
 
             services.AddAuthentication();
 
@@ -123,6 +127,18 @@ namespace DensityServer
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            var supportedCultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
+            var localizationOptions = new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("en-US"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
+            };
+            localizationOptions.RequestCultureProviders.Clear();
+            localizationOptions.RequestCultureProviders.Add(new CultureProviderResolverService());
+
+            app.UseRequestLocalization(localizationOptions);
 
             app.UseAuthentication();
             app.UseAuthorization();
