@@ -1,0 +1,13 @@
+﻿@page "/Hang/GameInvitation"
+@model DensityServer.Services.GameInvitationModel
+@{ ViewData["Title"] = "GameInvitationConfirmation";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>@Localizer["You have been invited by {0} to play a game of Hang, please wait until {0} is connected", Model.EmailTo]</h1>
+
+@section Scripts{ 
+<script>
+    $(document).ready(function () { GameInvitationConfirmation('Model.Id'); });
+    </script>
+}

@@ -2,8 +2,8 @@
 
 namespace DensityServer
 {
-    internal interface IEmailService
+    public interface IEmailService
     {
-        Task SendEmail(string emailTo, string subject, string message);
+       public Task SendEmail(string emailTo, string subject, string message);
     }
 }

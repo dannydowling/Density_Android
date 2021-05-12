@@ -34,6 +34,8 @@ namespace DensityServer.Shared
 
         public Employee(string employeeId, string firstName, string lastName, string email, string street, string zip, string city, string password)
         {
+            if (string.IsNullOrEmpty(employeeId))
+            {   EmployeeId = Guid.NewGuid().ToString();    }
             EmployeeId = employeeId;
             FirstName = firstName;
             LastName = lastName;

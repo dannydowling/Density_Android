@@ -19,6 +19,7 @@ using Microsoft.Extensions.Options;
 using Serilog;
 using Serilog.Events;
 using System.Net.Http;
+using DensityServer.Services.GameInvitation;
 
 namespace DensityServer
 {
@@ -97,6 +98,8 @@ namespace DensityServer
 
             services.Configure<EmailServiceOptions>(Configuration.GetSection("Email"));
             services.AddSingleton<IEmailService, EmailService>();
+
+            services.AddSingleton<IGameInvitationService, GameInvitationService>();
 
         }
 
