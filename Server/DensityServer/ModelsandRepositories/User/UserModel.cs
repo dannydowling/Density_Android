@@ -23,7 +23,7 @@ namespace DensityServer.ModelsandRepositories.User
         public string Password { get; set; }
 
         [NotMapped]
-        public bool IsEmailConfirmed { get { return EmailConfirmed; } }
+        public bool IsEmailConfirmed { get { return EmailConfirmed; } set { EmailConfirmed = value; } }
 
         public DateTime? EmailConfirmationDate { get; set; }
 

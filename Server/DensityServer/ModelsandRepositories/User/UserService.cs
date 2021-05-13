@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace DensityServer.Services
 {
-    public class UserService
+    public class UserService : IUserService
     {
         private ILogger<UserService> _logger;
         private ApplicationUserManager _userManager;
-        public UserService(ApplicationUserManager applicationUserManager, ILogger<UserService> logger )
+        public UserService(ApplicationUserManager applicationUserManager, ILogger<UserService> logger)
         {
             _userManager = applicationUserManager;
             _logger = logger;
@@ -25,7 +25,7 @@ namespace DensityServer.Services
         }
 
 
-        public async Task<bool> ConfirmEmail (string email, string code)
+        public async Task<bool> ConfirmEmail(string email, string code)
         {
             var start = DateTime.Now;
             _logger.LogTrace($"Confirm Email email for user {email}");
@@ -40,11 +40,10 @@ namespace DensityServer.Services
                 if (user == null)
                 {
                     return false;
-
-                    var result = await _userManager.ConfirmedEmailAsync(user, code);
-                    return result.Succeeded;
                 }
 
+                var result = await _userManager.ConfirmEmailAsync(user, code);
+                return result.Succeeded;
             }
             catch (Exception ex)
             {
@@ -69,7 +68,7 @@ namespace DensityServer.Services
             {
                 userModel.UserName = userModel.Email;
                 var result = await _userManager.CreateAsync(userModel, userModel.Password);
-                return result == IdentityResult.Success; 
+                return result == IdentityResult.Success;
             }
             catch (Exception ex)
             {
@@ -83,18 +82,24 @@ namespace DensityServer.Services
             }
         }
 
-        public async Task<UserModel> GetUserByEmail (string email)
+        public async Task<UserModel> GetUserByEmail(string email)
         {
             return await _userManager.FindByEmailAsync(email);
-        } 
+        }
 
-        public async Task<bool> IsUserExisting (string email)
+        public async Task<bool> IsUserExisting(string email)
         {
             return (await _userManager.FindByEmailAsync(email)) != null;
         }
 
+        //pass in a big number, get a list of all users.
         public async Task<IEnumerable<UserModel>> GetTopUsers(int numberOfUsers)
         {
+            if (numberOfUsers >= 15)
+            {
+                numberOfUsers = 15;
+            }
+
             var userList = await _userManager.Users.OrderByDescending(x => x.Score).ToListAsync();
             return userList.GetRange(0, numberOfUsers);
         }
@@ -103,7 +108,6 @@ namespace DensityServer.Services
         {
             await _userManager.UpdateAsync(userModel);
         }
-
 
     }
 }

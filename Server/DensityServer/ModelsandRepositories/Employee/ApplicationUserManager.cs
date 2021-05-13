@@ -67,7 +67,7 @@ namespace DensityServer.ModelsandRepositories.Employee
             }
         }
 
-        public override async Task<IdentityResult> ConfirmedEmailAsync (UserModel user, string token)
+        public override async Task<IdentityResult> ConfirmEmailAsync (UserModel user, string token)
         {
             var isValid = await base.VerifyUserTokenAsync(user, Options.Tokens.EmailConfirmationTokenProvider, ConfirmEmailTokenPurpose, token);
 
