@@ -10,10 +10,32 @@
                 <div align="center">
                     @if (chatting)
                     {
-            <div>Hello @context.User.Identity.Name</div>
-                                <span>Connected as <b>@username</b></span>
-                                                    <button class="btn btn-info" @onclick="@DisconnectAsync">  Disconnect</button>}
+    <div>Hello @context.User.Identity.Name</div>
+                        <span>Connected as <b>@username</b></span>
+                                            <button class="btn btn-info" @onclick="@DisconnectAsync">  Disconnect</button>}
                 </div>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Settings<span class="caret"></span></a>
+                    <ul class="dropdown-menu multi-level">
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Select your language (@ViewData.Language)
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li @ViewData.Language= ="EN" ? "active" : "" )>
+                                    <a asp-controller="Home" asp-action="SetCulture" asp-route-controller="EN">English</a>
+                                </li>
+                                <li @ViewData.Language= ="EN" ? "active" : "" )>
+                                    <a asp-controller="Home" asp-action="SetCulture" asp-route-controller="FR">French</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                               
+
                 <NavLink class="list-group-item list-group-item-action bg-light" href="/" Match="NavLinkMatch.All">
                     <span class="oi oi-home" aria-hidden="true"></span> Home
                 </NavLink>
@@ -35,7 +57,7 @@
                     <span class="oi oi-list-rich" aria-hidden="true"></span> Log Out
 
                     (@context.User.Claims.FirstOrDefault(c =>
-                 c.Type == "http://schemas.microsoft.com/2012/01/devicecontext/claims/displayname")?.Value)
+                         c.Type == "http://schemas.microsoft.com/2012/01/devicecontext/claims/displayname")?.Value)
 
                 </NavLink>
 
@@ -44,37 +66,37 @@
 
                         @if (!chatting)
                         {
-            <p>
-                Enter a username to chat:
-            </p>
-                                <section>
-                                    <input type="text" maxlength="20" @bind="@username" />
-                                    <button type="button" @onclick="@Chat" class="btn btn-outline-danger" aria-hidden="true"> Login</button>
-                                </section>
-                                                    @if (message != null)
-                                                    {
-                                <div class="invalid-feedback">@message</div>}}
+        <p>
+            Enter a username to chat:
+        </p>
+                            <section>
+                                <input type="text" maxlength="20" @bind="@username" />
+                                <button type="button" @onclick="@Chat" class="btn btn-outline-danger" aria-hidden="true"> Login</button>
+                            </section>
+                                                @if (message != null)
+                                                {
+                            <div class="invalid-feedback">@message</div>}}
 
                         @if (chatting)
                         {
-            <chat>
-                <div align="center">
+        <chat>
+            <div align="center">
 
-                    @foreach (var item in messages)
-                    {
-            <section>
-                <text class="user">@item.Username :</text>
-                <text class="msg">@item.Body</text>
-            </section>}
-                </div>
+                @foreach (var item in messages)
+                {
+<section>
+    <text class="user">@item.Username :</text>
+    <text class="msg">@item.Body</text>
+</section>}
+            </div>
 
-            </chat>
+        </chat>
 
-                                <div>
-                                    <hr />
-                                    <textarea class="input-lg" placeholder="Say anything" @bind="@newMessage"></textarea>
-                                    <button class="btn btn-outline-danger" @onclick="@SendAsync">  Send</button>
-                                </div>}
+                            <div>
+                                <hr />
+                                <textarea class="input-lg" placeholder="Say anything" @bind="@newMessage"></textarea>
+                                <button class="btn btn-outline-danger" @onclick="@SendAsync">  Send</button>
+                            </div>}
                         <p>@DateTime.Now.Year - KaurAI</p>
 
                     </div>
@@ -93,109 +115,107 @@
 </div>
 
 
-@code {
-    bool collapseNavMenu = true;
-    string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-    void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-
-    bool chatting = false;
-    string username = null;
-    ChatClient client = null;
-    string message = null;
-    string newMessage = null;
-    List<Message> messages = new List<Message>();
-
-
-    async Task Chat()
-    {
-        if (string.IsNullOrWhiteSpace(username))
-        {
-            message = "Please enter a name";
-            return;
-        };
-
-        try
-        {
-
-            messages.Clear();
-
-            client = new ChatClient(username, navigationManager);
-            client.MessageReceived += MessageReceived;
-            Console.WriteLine("Index: chat starting...");
-            await client.StartAsync();
-            Console.WriteLine("Index: chat started?");
-
-            chatting = true;
-        }
-        catch (Exception e)
-        {
-            message = $"ERROR: Failed to start chat client: {e.Message}";
-            Console.WriteLine(e.Message);
-            Console.WriteLine(e.StackTrace);
-        }
-    }
-
-
-    void MessageReceived(object sender, MessageReceivedEventArgs e)
-    {
-        Console.WriteLine($"Blazor: receive {e.Username}: {e.Message}");
-        bool isMine = false;
-        if (!string.IsNullOrWhiteSpace(e.Username))
-        {
-            isMine = string.Equals(e.Username, username, StringComparison.CurrentCultureIgnoreCase);
-        }
-
-        var newMsg = new Message(e.Username, e.Message, isMine);
-        messages.Add(newMsg);
-
-        // Inform blazor the UI needs updating
-        StateHasChanged();
-    }
-
-    async Task DisconnectAsync()
-    {
-        if (chatting)
-        {
-            await client.StopAsync();
-            client = null;
-            message = "chat ended";
-            chatting = false;
-        }
-    }
-
-    async Task SendAsync()
-    {
-        if (chatting && !string.IsNullOrWhiteSpace(newMessage))
-        {
-            await client.SendAsync(newMessage);
-            newMessage = "";
-        }
-    }
-
-    class Message
-    {
-        public Message(string username, string body, bool mine)
-        {
-            Username = username;
-            Body = body;
-            Mine = mine;
-        }
-
-        public string Username { get; set; }
-        public string Body { get; set; }
-        public bool Mine { get; set; }
-
-
-        public string CSS
-        {
-            get
+@code { bool collapseNavMenu = true;
+            string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+            void ToggleNavMenu()
             {
-                return Mine ? "sent" : "received";
+                collapseNavMenu = !collapseNavMenu;
             }
-        }
-    }
-}
+
+            bool chatting = false;
+            string username = null;
+            ChatClient client = null;
+            string message = null;
+            string newMessage = null;
+            List<Message> messages = new List<Message>();
+
+
+            async Task Chat()
+            {
+                if (string.IsNullOrWhiteSpace(username))
+                {
+                    message = "Please enter a name";
+                    return;
+                };
+
+                try
+                {
+
+                    messages.Clear();
+
+                    client = new ChatClient(username, navigationManager);
+                    client.MessageReceived += MessageReceived;
+                    Console.WriteLine("Index: chat starting...");
+                    await client.StartAsync();
+                    Console.WriteLine("Index: chat started?");
+
+                    chatting = true;
+                }
+                catch (Exception e)
+                {
+                    message = $"ERROR: Failed to start chat client: {e.Message}";
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine(e.StackTrace);
+                }
+            }
+
+
+            void MessageReceived(object sender, MessageReceivedEventArgs e)
+            {
+                Console.WriteLine($"Blazor: receive {e.Username}: {e.Message}");
+                bool isMine = false;
+                if (!string.IsNullOrWhiteSpace(e.Username))
+                {
+                    isMine = string.Equals(e.Username, username, StringComparison.CurrentCultureIgnoreCase);
+                }
+
+                var newMsg = new Message(e.Username, e.Message, isMine);
+                messages.Add(newMsg);
+
+                // Inform blazor the UI needs updating
+                StateHasChanged();
+            }
+
+            async Task DisconnectAsync()
+            {
+                if (chatting)
+                {
+                    await client.StopAsync();
+                    client = null;
+                    message = "chat ended";
+                    chatting = false;
+                }
+            }
+
+            async Task SendAsync()
+            {
+                if (chatting && !string.IsNullOrWhiteSpace(newMessage))
+                {
+                    await client.SendAsync(newMessage);
+                    newMessage = "";
+                }
+            }
+
+            class Message
+            {
+                public Message(string username, string body, bool mine)
+                {
+                    Username = username;
+                    Body = body;
+                    Mine = mine;
+                }
+
+                public string Username { get; set; }
+                public string Body { get; set; }
+                public bool Mine { get; set; }
+
+
+                public string CSS
+                {
+                    get
+                    {
+                        return Mine ? "sent" : "received";
+                    }
+                }
+            } }
 

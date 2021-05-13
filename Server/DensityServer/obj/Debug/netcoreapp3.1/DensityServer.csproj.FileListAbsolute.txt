@@ -131,3 +131,5 @@ C:\Users\danny\source\repos\Density_Android\Server\DensityServer\bin\Debug\netco
 C:\Users\danny\source\repos\Density_Android\Server\DensityServer\obj\Debug\netcoreapp3.1\DensityServer.Views.pdb
 C:\Users\danny\source\repos\Density_Android\Server\DensityServer\obj\Debug\netcoreapp3.1\DensityServer.csproj.CopyComplete
 C:\Users\danny\source\repos\Density_Android\Server\DensityServer\obj\Debug\netcoreapp3.1\DensityServer.genruntimeconfig.cache
+C:\Users\danny\source\repos\Density_Android\Server\DensityServer\obj\Debug\netcoreapp3.1\DensityServer.Controllers.GameInvitationController.resources
+C:\Users\danny\source\repos\Density_Android\Server\DensityServer\obj\Debug\netcoreapp3.1\DensityServer.Controllers.GameInvitationController.fr.resources

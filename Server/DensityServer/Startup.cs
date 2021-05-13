@@ -22,6 +22,7 @@ using System.Net.Http;
 using DensityServer.Services.GameInvitation;
 using System.Globalization;
 using DensityServer.Services.Localizer;
+using DensityServer.ModelsandRepositories.Employee;
 
 namespace DensityServer
 {
@@ -76,6 +77,8 @@ namespace DensityServer
 
             //the error parameter configure cannot be null is from the version of .Net.Authorization being 5.0  ... 5/10/21 
             services.AddRazorPages();
+
+            services.AddTransient<ApplicationUserManager>();
 
             services.AddSingleton<ILocationDataService, LocationDataService>();
             services.AddScoped<ILocationRepository, LocationRepository>();

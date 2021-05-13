@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components;
 using DensityServer.Shared;
 using DensityServer.Server.Services;
 using Microsoft.AspNetCore.Components.Forms;
+using System;
 
 namespace DensityServer.Server.Pages
 {
@@ -41,24 +42,23 @@ namespace DensityServer.Server.Pages
         {
             Saved = false;       
 
-            int.TryParse(Id, out var employeeId);
 
-            if (employeeId == 0) //new employee is being created
+            if (string.IsNullOrEmpty(employee.EmployeeId)) //new employee is being created
             {
                 //add some defaults
-                employee = new Employee { EmployeeId = 0, City = "", Email = "", FirstName = "", LastName = "", Password = "", Street = "", Zip = ""};
+                employee = new Employee ( Guid.NewGuid().ToString(), "", "", "", "", "", "", "");
             }
             else
             {
-                employee = await employeeDataService.GetEmployeeDetails(int.Parse(Id));
+                employee = await employeeDataService.GetEmployeeDetails(employee.EmployeeId);
             }
         }
 
         protected async Task HandleValidSubmit()
         {
-            if (employee.EmployeeId == 0) //new
+            if (string.IsNullOrEmpty(employee.EmployeeId)) //new
             {
-                var addedEmployee = await employeeDataService.AddEmployee(employee);
+                var addedEmployee = await employeeDataService.AddEmployee(employee);                
                 if (addedEmployee != null)
                 {
                     StatusClass = "alert-success";

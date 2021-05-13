@@ -90,111 +90,110 @@ using DensityServer.Server.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 96 "C:\Users\danny\source\repos\Density_Android\Server\DensityServer\Pages\Shared\NavMenu.razor"
-       
-    bool collapseNavMenu = true;
-    string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-    void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-
-    bool chatting = false;
-    string username = null;
-    ChatClient client = null;
-    string message = null;
-    string newMessage = null;
-    List<Message> messages = new List<Message>();
-
-
-    async Task Chat()
-    {
-        if (string.IsNullOrWhiteSpace(username))
-        {
-            message = "Please enter a name";
-            return;
-        };
-
-        try
-        {
-
-            messages.Clear();
-
-            client = new ChatClient(username, navigationManager);
-            client.MessageReceived += MessageReceived;
-            Console.WriteLine("Index: chat starting...");
-            await client.StartAsync();
-            Console.WriteLine("Index: chat started?");
-
-            chatting = true;
-        }
-        catch (Exception e)
-        {
-            message = $"ERROR: Failed to start chat client: {e.Message}";
-            Console.WriteLine(e.Message);
-            Console.WriteLine(e.StackTrace);
-        }
-    }
-
-
-    void MessageReceived(object sender, MessageReceivedEventArgs e)
-    {
-        Console.WriteLine($"Blazor: receive {e.Username}: {e.Message}");
-        bool isMine = false;
-        if (!string.IsNullOrWhiteSpace(e.Username))
-        {
-            isMine = string.Equals(e.Username, username, StringComparison.CurrentCultureIgnoreCase);
-        }
-
-        var newMsg = new Message(e.Username, e.Message, isMine);
-        messages.Add(newMsg);
-
-        // Inform blazor the UI needs updating
-        StateHasChanged();
-    }
-
-    async Task DisconnectAsync()
-    {
-        if (chatting)
-        {
-            await client.StopAsync();
-            client = null;
-            message = "chat ended";
-            chatting = false;
-        }
-    }
-
-    async Task SendAsync()
-    {
-        if (chatting && !string.IsNullOrWhiteSpace(newMessage))
-        {
-            await client.SendAsync(newMessage);
-            newMessage = "";
-        }
-    }
-
-    class Message
-    {
-        public Message(string username, string body, bool mine)
-        {
-            Username = username;
-            Body = body;
-            Mine = mine;
-        }
-
-        public string Username { get; set; }
-        public string Body { get; set; }
-        public bool Mine { get; set; }
-
-
-        public string CSS
-        {
-            get
+#line 118 "C:\Users\danny\source\repos\Density_Android\Server\DensityServer\Pages\Shared\NavMenu.razor"
+        bool collapseNavMenu = true;
+            string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+            void ToggleNavMenu()
             {
-                return Mine ? "sent" : "received";
+                collapseNavMenu = !collapseNavMenu;
             }
-        }
-    }
+
+            bool chatting = false;
+            string username = null;
+            ChatClient client = null;
+            string message = null;
+            string newMessage = null;
+            List<Message> messages = new List<Message>();
+
+
+            async Task Chat()
+            {
+                if (string.IsNullOrWhiteSpace(username))
+                {
+                    message = "Please enter a name";
+                    return;
+                };
+
+                try
+                {
+
+                    messages.Clear();
+
+                    client = new ChatClient(username, navigationManager);
+                    client.MessageReceived += MessageReceived;
+                    Console.WriteLine("Index: chat starting...");
+                    await client.StartAsync();
+                    Console.WriteLine("Index: chat started?");
+
+                    chatting = true;
+                }
+                catch (Exception e)
+                {
+                    message = $"ERROR: Failed to start chat client: {e.Message}";
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine(e.StackTrace);
+                }
+            }
+
+
+            void MessageReceived(object sender, MessageReceivedEventArgs e)
+            {
+                Console.WriteLine($"Blazor: receive {e.Username}: {e.Message}");
+                bool isMine = false;
+                if (!string.IsNullOrWhiteSpace(e.Username))
+                {
+                    isMine = string.Equals(e.Username, username, StringComparison.CurrentCultureIgnoreCase);
+                }
+
+                var newMsg = new Message(e.Username, e.Message, isMine);
+                messages.Add(newMsg);
+
+                // Inform blazor the UI needs updating
+                StateHasChanged();
+            }
+
+            async Task DisconnectAsync()
+            {
+                if (chatting)
+                {
+                    await client.StopAsync();
+                    client = null;
+                    message = "chat ended";
+                    chatting = false;
+                }
+            }
+
+            async Task SendAsync()
+            {
+                if (chatting && !string.IsNullOrWhiteSpace(newMessage))
+                {
+                    await client.SendAsync(newMessage);
+                    newMessage = "";
+                }
+            }
+
+            class Message
+            {
+                public Message(string username, string body, bool mine)
+                {
+                    Username = username;
+                    Body = body;
+                    Mine = mine;
+                }
+
+                public string Username { get; set; }
+                public string Body { get; set; }
+                public bool Mine { get; set; }
+
+
+                public string CSS
+                {
+                    get
+                    {
+                        return Mine ? "sent" : "received";
+                    }
+                }
+            } 
 
 #line default
 #line hidden

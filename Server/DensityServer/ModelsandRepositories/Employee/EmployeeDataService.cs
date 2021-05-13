@@ -7,6 +7,7 @@ using DensityServer.Shared;
 using Microsoft.AspNetCore.Http;
 using System.Linq;
 using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DensityServer.Server.Services
 {
@@ -38,7 +39,7 @@ namespace DensityServer.Server.Services
             return null;
         }
 
-        public async Task<Employee> GetEmployeeDetails(int Id)
+        public async Task<Employee> GetEmployeeDetails(string Id)
         {
             return await JsonSerializer.DeserializeAsync<Employee>
                 (await _httpClient.GetStreamAsync($"employee/{Id}"), 
@@ -69,7 +70,7 @@ namespace DensityServer.Server.Services
             await _httpClient.PutAsync($"employee/{employee.EmployeeId}", employeeJson);
         }
 
-        public async Task DeleteEmployee(int Id)
+        public async Task DeleteEmployee(string Id)
         {
             await _httpClient.DeleteAsync($"employee/{Id}");
         }
