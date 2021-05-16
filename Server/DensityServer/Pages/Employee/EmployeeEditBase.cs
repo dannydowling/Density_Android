@@ -21,7 +21,7 @@ namespace DensityServer.Server.Pages
         [Parameter]
         public EventCallback<bool> closeEmployeeEventCallback { get; set; }
 
-        public Employee employee { get; set; }
+        public EmployeeModel employee { get; set; }
         
         [Parameter]
         public string Id { get; set; }        
@@ -49,7 +49,7 @@ namespace DensityServer.Server.Pages
             if (string.IsNullOrEmpty(employee.LastName)) //new employee is being created
             {
                 //add some defaults
-                employee = new Employee ( "", "", "", "", "", "", "");
+                employee = new EmployeeModel ( "", "", "", "", "", "", "");
             }
             else
             {
@@ -69,7 +69,7 @@ namespace DensityServer.Server.Pages
             }
             catch (Exception)
             {
-                Employee tempEmployee = await employeeDataService.GetEmployeeDetails(employee.FirstName + "" + employee.LastName );
+                EmployeeModel tempEmployee = await employeeDataService.GetEmployeeDetails(employee.FirstName + "" + employee.LastName );
                 await employeeDataService.DeleteEmployee(employee.FirstName + " " + employee.LastName);
                 await employeeDataService.AddEmployee(tempEmployee);
                 StateHasChanged();

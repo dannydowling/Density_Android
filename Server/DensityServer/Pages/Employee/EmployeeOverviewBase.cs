@@ -15,7 +15,7 @@ namespace DensityServer.Server.Pages
         [Inject]
         public ILocationDataService locationDataService { get; set; }
 
-        public List<Employee> employees { get; set; }
+        public List<EmployeeModel> employees { get; set; }
         protected IEnumerable<string> employeeLocations { get; set; }
         private IEnumerable<Location> allLocations { get; set; }
 

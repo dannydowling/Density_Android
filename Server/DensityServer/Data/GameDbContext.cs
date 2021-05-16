@@ -8,7 +8,7 @@ using DensityServer.ModelsandRepositories.User;
 
 namespace DensityServer.Data
 {
-    public class GameDbContext : IdentityDbContext
+    public class GameDbContext : DbContext
     {
         public GameDbContext(DbContextOptions<GameDbContext> options)
             : base(options)

@@ -15,7 +15,7 @@ namespace DensityServer.Server.Pages
 
         [Inject]
         public IEmployeeDataService employeeDataService { get; set; }
-        public Employee employee { get; set; }
+        public EmployeeModel employee { get; set; }
 
         public void ShowEmployeeDialog()
         {           
@@ -27,7 +27,7 @@ namespace DensityServer.Server.Pages
         private void ResetDialog()
         {
             //string firstName, string lastName, string email, string street, string zip, string city, string password
-            employee = new Employee ("", "","", "", "", "", "");
+            employee = new EmployeeModel ("", "","", "", "", "", "");
         }
 
         public void Close()

@@ -7,44 +7,44 @@ namespace DensityServer.Api.Models
 {
     public class EmployeeRepository : IEmployeeRepository
     {
-        private AppDbContext _appDbContext { get; set; }
+        private UserModelsDbContext _appDbContext { get; set; }
 
-        public EmployeeRepository(AppDbContext appDbContext)
+        public EmployeeRepository(UserModelsDbContext appDbContext)
         {
             _appDbContext = appDbContext;
         }
 
-        public IEnumerable<Employee> GetAllEmployees()
+        public IEnumerable<EmployeeModel> GetAllEmployees()
         {
 
-            return _appDbContext.employees;
+            return _appDbContext.emplpoyeeModels;
         }
 
-        public Employee GetEmployeeByName(string name)
+        public EmployeeModel GetEmployeeByName(string name)
         {
-            return _appDbContext.employees.Single(c => c.FirstName + " " + c.LastName == name);
+            return _appDbContext.emplpoyeeModels.Single(c => c.FirstName + " " + c.LastName == name);
         }
 
-        public Employee AddEmployee(Employee employee)
+        public EmployeeModel AddEmployee(EmployeeModel employee)
         {
-            var addedEntity = _appDbContext.employees.Add(employee);
+            var addedEntity = _appDbContext.emplpoyeeModels.Add(employee);
             _appDbContext.SaveChanges();
             return addedEntity.Entity;
         }
 
-        public Employee UpdateEmployee(Employee employee)
+        public EmployeeModel UpdateEmployee(EmployeeModel employee)
         {
-            employee = _appDbContext.employees.Single(
+            employee = _appDbContext.emplpoyeeModels.Single(
                 e => e.FirstName + " " + e.LastName == employee.FirstName + " " + employee.LastName);
             _appDbContext.SaveChanges();
             return employee;
         }
 
-        public object DeleteEmployee(Employee employee)
+        public object DeleteEmployee(EmployeeModel employee)
         {
-            var foundEmployee = _appDbContext.employees.Single(
+            var foundEmployee = _appDbContext.emplpoyeeModels.Single(
                 e => e.FirstName + " " + e.LastName == employee.FirstName + " " + employee.LastName);
-            _appDbContext.employees.Remove(foundEmployee);
+            _appDbContext.emplpoyeeModels.Remove(foundEmployee);
             return _appDbContext.SaveChanges();
         }
     }

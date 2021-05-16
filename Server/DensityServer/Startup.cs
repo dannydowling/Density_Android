@@ -37,7 +37,7 @@ namespace DensityServer
         public IWebHostEnvironment Environment { get; }
         public IConfiguration Configuration { get; }
 
-        private Employee employeeConfigOptions;
+        private EmployeeModel employeeConfigOptions;
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
@@ -70,13 +70,19 @@ namespace DensityServer
 
             services.AddAuthentication();
 
-            services.AddPooledDbContextFactory<AppDbContext>(options => options.UseSqlServer(
+            services.AddPooledDbContextFactory<AirportDbContext>(options => options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.Configure<Employee>(Configuration.GetSection("Employee"));
+            services.AddPooledDbContextFactory<UserModelsDbContext>(options => options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddPooledDbContextFactory<GameDbContext>(options => options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+
+            services.Configure<EmployeeModel>(Configuration.GetSection("Employee"));
             // need to find a way to compare the employee's to the list of user claims.
 
-            IOptions<Employee> employeeConfig = (IOptions<Employee>)employeeConfigOptions;
+            IOptions<EmployeeModel> employeeConfig = (IOptions<EmployeeModel>)employeeConfigOptions;
 
             services.AddAuthorization(options =>
             options.AddPolicy("CheckPassword", policy => policy.RequireAssertion
@@ -93,7 +99,7 @@ namespace DensityServer
 
             services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
             services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
-               .AddEntityFrameworkStores<AppDbContext>();
+               .AddEntityFrameworkStores<UserModelsDbContext>();
 
             //the error parameter configure cannot be null is from the version of .Net.Authorization being 5.0  ... 5/10/21 
             services.AddRazorPages();

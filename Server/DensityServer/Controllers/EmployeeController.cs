@@ -25,13 +25,13 @@ namespace DensityServer.Api.Controllers
         
         //Post: Employee/employee
         [HttpPost("{id}")]
-        public IActionResult AddEmployee(Employee employee)
+        public IActionResult AddEmployee(EmployeeModel employee)
         {            
             return Ok(_employeeRepository.AddEmployee(employee));
         }
 
         [HttpDelete("/Delete/{id}")]
-        public IActionResult DeleteEmployee(Employee employee)
+        public IActionResult DeleteEmployee(EmployeeModel employee)
         {
             return Ok(_employeeRepository.DeleteEmployee(employee));
         }

@@ -16,7 +16,7 @@ namespace DensityServer.Server.Pages
         [Inject]
         public NavigationManager NavigationManager { get; set; }
        
-        public Employee employee { get; set; }
+        public EmployeeModel employee { get; set; }
 
         protected override async Task OnInitializedAsync()
         {

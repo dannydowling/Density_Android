@@ -8,9 +8,9 @@ namespace DensityServer.Api.Models
 {
     public class LocationRepository : ILocationRepository
     {
-        private AppDbContext _appDbContext { get; set; }
+        private AirportDbContext _appDbContext { get; set; }
 
-        public LocationRepository(AppDbContext appDbContext)
+        public LocationRepository(AirportDbContext appDbContext)
         {
             _appDbContext = appDbContext;
         }

@@ -25,15 +25,15 @@ namespace DensityServer.Server.Services
         }
         
      
-        public async Task<Employee> GetEmployeeDetails(string Id)
+        public async Task<EmployeeModel> GetEmployeeDetails(string Id)
         {
-            return await JsonSerializer.DeserializeAsync<Employee>
+            return await JsonSerializer.DeserializeAsync<EmployeeModel>
                 (await _httpClient.GetStreamAsync($"employee/{Id}"), 
                 new JsonSerializerOptions() 
                 { PropertyNameCaseInsensitive = true });
         }
 
-        public async Task<Employee> AddEmployee(Employee employee)
+        public async Task<EmployeeModel> AddEmployee(EmployeeModel employee)
         {
             var employeeJson =
                 new StringContent(JsonSerializer.Serialize(employee), Encoding.UTF8, "application/json");
@@ -42,13 +42,13 @@ namespace DensityServer.Server.Services
 
             if (response.IsSuccessStatusCode)
             {
-                return await JsonSerializer.DeserializeAsync<Employee>(
+                return await JsonSerializer.DeserializeAsync<EmployeeModel>(
                     await _httpClient.GetStreamAsync(string.Format($"employee/{0}", employee.FirstName + " " + employee.LastName)));
             }
             return null;
         }
 
-        public async Task<bool> UpdateEmployee(Employee employee)
+        public async Task<bool> UpdateEmployee(EmployeeModel employee)
         {
             var employeeJson =
                 new StringContent(JsonSerializer.Serialize(employee), Encoding.UTF8, "application/json");
