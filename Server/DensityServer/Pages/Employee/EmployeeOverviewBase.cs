@@ -31,13 +31,10 @@ namespace DensityServer.Server.Pages
 
                 //reduce the location list down to match the employees list of icao codes.
               allLocations = allLocations.Where(x => x.icao.AsEnumerable() == employeeLocations);
-
-                //this is where the operation is triggered, due to lazy linq. Get the employees.
-              employees = (await employeeDataService.GetAllEmployees(allLocations)).ToList();
             }
 
         }
-
+        
         protected void QuickAddEmployee()
         {
             AddEmployeeDialog.ShowEmployeeDialog();

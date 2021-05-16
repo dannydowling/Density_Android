@@ -16,13 +16,13 @@ using DensityServer.Shared;
 using DensityServer.Services.Email;
 using DensityServer.Services;
 using Microsoft.Extensions.Options;
-using Serilog;
-using Serilog.Events;
 using System.Net.Http;
 using DensityServer.Services.GameInvitation;
 using System.Globalization;
 using DensityServer.Services.Localizer;
-using DensityServer.ModelsandRepositories.Employee;
+using DensityServer.ModelsandRepositories.User;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Localization;
 
 namespace DensityServer
 {
@@ -47,6 +47,26 @@ namespace DensityServer
             services.AddAntiforgery();
 
             services.AddLocalization(options => options.ResourcesPath = "Localization");
+            services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix, options => options.ResourcesPath = "Languages");
+
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                var supportedCultures = new[]
+                 {
+                      new CultureInfo("en"),
+                      new CultureInfo("de"),
+                      new CultureInfo("fr"),
+                      new CultureInfo("es"),
+                      new CultureInfo("ru"),
+                      new CultureInfo("ja"),
+                      new CultureInfo("ar"),
+                      new CultureInfo("zh"),
+                      new CultureInfo("en-GB")
+    };
+                options.DefaultRequestCulture = new RequestCulture("en-GB");
+                options.SupportedCultures = supportedCultures;
+                options.SupportedUICultures = supportedCultures;
+            });
 
             services.AddAuthentication();
 
@@ -131,16 +151,11 @@ namespace DensityServer
 
             app.UseRouting();
 
-            var supportedCultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
-            var localizationOptions = new RequestLocalizationOptions
-            {
-                DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("en-US"),
-                SupportedCultures = supportedCultures,
-                SupportedUICultures = supportedCultures
-            };
-            localizationOptions.RequestCultureProviders.Clear();
-            localizationOptions.RequestCultureProviders.Add(new CultureProviderResolverService());
+            
+            
 
+            var supportedCultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
+            var localizationOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>().Value;
             app.UseRequestLocalization(localizationOptions);
 
             app.UseAuthentication();

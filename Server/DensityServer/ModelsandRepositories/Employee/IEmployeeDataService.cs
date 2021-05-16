@@ -6,10 +6,9 @@ namespace DensityServer.Server.Services
 {
     public interface IEmployeeDataService
     {
-        Task<IEnumerable<Employee>> GetAllEmployees(IEnumerable<Location> employeeLocations);
-        Task<Employee> GetEmployeeDetails(string employeeId);
+        Task<Employee> GetEmployeeDetails(string name);
         Task<Employee> AddEmployee(Employee employee);
-        Task UpdateEmployee(Employee employee);
-        Task DeleteEmployee(string employeeId);
+        Task<bool> UpdateEmployee(Employee employee);
+        Task DeleteEmployee(string name);
     }
 }

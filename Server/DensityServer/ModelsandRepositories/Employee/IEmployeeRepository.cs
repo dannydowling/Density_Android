@@ -9,7 +9,7 @@ namespace DensityServer.Api.Models
     public interface IEmployeeRepository
     {
         IEnumerable<Employee> GetAllEmployees();
-        Employee GetEmployeeById(string employeeId);
+        Employee GetEmployeeByName(string employeeId);
         Employee AddEmployee(Employee employee);
         Employee UpdateEmployee(Employee employee);
         object DeleteEmployee(Employee employee);

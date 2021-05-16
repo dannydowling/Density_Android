@@ -5,9 +5,9 @@
 <section class="employee-edit">
     @if (!Saved)
     {
-        <h1 class="page-title">Details for @employee.FirstName @employee.lastName</h1>
+        <h1 class="page-title">Details for @employee.FirstName @employee.LastName</h1>
 
-        <EditForm Model="@employee" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInvalidSubmit">
+        <EditForm Model="@employee" OnValidSubmit+="@HandleValidSubmit()" OnInvalidSubmit="@HandleInvalidSubmit">
 
             <DataAnnotationsValidator />
             <ValidationSummary />
@@ -18,51 +18,50 @@
             </div>
 
             <div class="form-group row">
-                <label for="lastName" class="col-sm-3">Last name: </label>
-                <InputText id="lastName" class="form-control col-sm-8" @bind-Value="@employee.lastName" placeholder="Enter last name" @ref="LastNameInputText"></InputText>
-                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => employee.lastName)" />
-            </div>
-
-            <div class="form-group row">
-                <label for="lastName" class="col-sm-3">Last name: </label>
-                <InputText id="password" class="form-control col-sm-8" @bind-Value="@employee.password" placeholder="Enter password" @ref="PasswordInputText"></InputText>
-                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => employee.password)" />
-            </div>
-
-            <div class="form-group row">
                 <label for="firstName" class="col-sm-3">First name: </label>
                 <InputText id="firstName" class="form-control col-sm-8" @bind-Value="@employee.FirstName" placeholder="Enter first name"></InputText>
                 <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => employee.FirstName)" />
             </div>
 
+            <div class="form-group row">
+                <label for="lastName" class="col-sm-3">Last name: </label>
+                <InputText id="lastName" class="form-control col-sm-8" @bind-Value="@employee.LastName" placeholder="Enter last name" @ref="LastNameInputText"></InputText>
+                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => employee.LastName)" />
+            </div>
+
+            <div class="form-group row">
+                <label for="lastName" class="col-sm-3">Last name: </label>
+                <InputText id="password" class="form-control col-sm-8" @bind-Value="@employee.Password" placeholder="Enter password" @ref="PasswordInputText"></InputText>
+                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => employee.Password)" />
+            </div>
 
             <div class="form-group row">
                 <label for="email" class="col-sm-3">Email: </label>
-                <InputText id="email" class="form-control col-sm-8" @bind-Value="@employee.email" placeholder="Enter email"></InputText>
-                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => employee.email)" />
+                <InputText id="email" class="form-control col-sm-8" @bind-Value="@employee.Email" placeholder="Enter email"></InputText>
+                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => employee.Email)" />
             </div>
 
             <div class="form-group row">
                 <label for="street" class="col-sm-3">Street: </label>
-                <InputText id="street" class="form-control col-sm-8" @bind-Value="@employee.street" placeholder="Enter street"></InputText>
-                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => employee.street)" />
-            </div>
-
-            <div class="form-group row">
-                <label for="zip" class="col-sm-3">Zip code: </label>
-                <InputText id="zip" class="form-control col-sm-8" @bind-Value="@employee.zip" placeholder="Enter zip code"></InputText>
-                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => employee.zip)" />
+                <InputText id="street" class="form-control col-sm-8" @bind-Value="@employee.Street" placeholder="Enter street"></InputText>
+                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => employee.Street)" />
             </div>
 
             <div class="form-group row">
                 <label for="city" class="col-sm-3">City: </label>
-                <InputText id="city" class="form-control col-sm-8" @bind-Value="@employee.city" placeholder="Enter city"></InputText>
-                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => employee.city)" />
+                <InputText id="city" class="form-control col-sm-8" @bind-Value="@employee.City" placeholder="Enter city"></InputText>
+                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => employee.City)" />
+            </div>
+
+            <div class="form-group row">
+                <label for="zip" class="col-sm-3">Zip code: </label>
+                <InputText id="zip" class="form-control col-sm-8" @bind-Value="@employee.Zip" placeholder="Enter zip code"></InputText>
+                <ValidationMessage class="offset-sm-3 col-sm-8" For="@(() => employee.Zip)" />
             </div>
 
             <button type="submit" class="btn btn-primary edit-btn">Save employee</button>
             <a class="btn btn-outline-primary edit-outline-btn" @onclick="@NavigateToOverview">Cancel</a>
-           
+
         </EditForm>
 
     }

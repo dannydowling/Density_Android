@@ -26,8 +26,8 @@ namespace DensityServer.Server.Pages
 
         private void ResetDialog()
         {
-            //string employeeId, string firstName, string lastName, string email, string street, string zip, string city, string password
-            employee = new Employee ("", "","", "", "", "", "", "");
+            //string firstName, string lastName, string email, string street, string zip, string city, string password
+            employee = new Employee ("", "","", "", "", "", "");
         }
 
         public void Close()

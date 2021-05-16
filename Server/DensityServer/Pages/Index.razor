@@ -1,10 +1,32 @@
 ﻿@page "/"
+@using DensityServer.Localization 
+@using Microsoft.AspNetCore.Mvc.Localization
 
-<h1>There's SO MUCH to DO!</h1>
+@inject IViewLocalizer Localizer
 
-You need to register the website again
-migrate preflight functionality into this app and go from there...
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Looking at data types with hopefully culture information</p>
 
-
+    <table class="table culture-table">
+      
+        <tr>
+            <td>Date</td>
+            <td>@DateTime.Now.ToLongDateString()</td>
+        </tr>
+        <tr>
+            <td>Currency</td>
+            <td>
+                @(12345.00.ToString("c"))
+            </td>
+        </tr>
+        <tr>
+            <td>Number</td>
+            <td>
+                @(123.45m.ToString("F2"))
+            </td>
+        </tr>
+    </table>
+</div>
 
 

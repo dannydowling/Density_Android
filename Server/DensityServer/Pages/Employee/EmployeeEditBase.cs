@@ -18,6 +18,9 @@ namespace DensityServer.Server.Pages
         [Inject] 
         public NavigationManager NavigationManager { get; set; }
 
+        [Parameter]
+        public EventCallback<bool> closeEmployeeEventCallback { get; set; }
+
         public Employee employee { get; set; }
         
         [Parameter]
@@ -43,42 +46,39 @@ namespace DensityServer.Server.Pages
             Saved = false;       
 
 
-            if (string.IsNullOrEmpty(employee.EmployeeId)) //new employee is being created
+            if (string.IsNullOrEmpty(employee.LastName)) //new employee is being created
             {
                 //add some defaults
-                employee = new Employee ( Guid.NewGuid().ToString(), "", "", "", "", "", "", "");
+                employee = new Employee ( "", "", "", "", "", "", "");
             }
             else
             {
-                employee = await employeeDataService.GetEmployeeDetails(employee.EmployeeId);
+                employee = await employeeDataService.GetEmployeeDetails(employee.FirstName + " " + employee.LastName);
             }
         }
 
         protected async Task HandleValidSubmit()
         {
-            if (string.IsNullOrEmpty(employee.EmployeeId)) //new
-            {
-                var addedEmployee = await employeeDataService.AddEmployee(employee);                
-                if (addedEmployee != null)
-                {
-                    StatusClass = "alert-success";
-                    Message = "New employee added successfully.";
-                    Saved = true;
-                }
-                else
-                {
-                    StatusClass = "alert-danger";
-                    Message = "Something went wrong adding the new employee. Please try again.";
-                    Saved = false;
-                }
-            }
-            else
+            try
             {
                 await employeeDataService.UpdateEmployee(employee);
+                StateHasChanged();
                 StatusClass = "alert-success";
                 Message = "Employee updated successfully.";
                 Saved = true;
             }
+            catch (Exception)
+            {
+                Employee tempEmployee = await employeeDataService.GetEmployeeDetails(employee.FirstName + "" + employee.LastName );
+                await employeeDataService.DeleteEmployee(employee.FirstName + " " + employee.LastName);
+                await employeeDataService.AddEmployee(tempEmployee);
+                StateHasChanged();
+                StatusClass = "alert-success";
+                Message = "New employee added successfully.";
+                Saved = true;
+            }
+
+           await closeEmployeeEventCallback.InvokeAsync(true);
         }
 
         protected void HandleInvalidSubmit()
@@ -89,7 +89,7 @@ namespace DensityServer.Server.Pages
 
         protected async Task DeleteEmployee()
         {
-            await employeeDataService.DeleteEmployee(employee.EmployeeId);
+            await employeeDataService.DeleteEmployee(employee.FirstName + " " + employee.LastName);
 
             StatusClass = "alert-success";
             Message = "Deleted successfully";

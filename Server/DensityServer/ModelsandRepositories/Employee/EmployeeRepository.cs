@@ -20,9 +20,9 @@ namespace DensityServer.Api.Models
             return _appDbContext.employees;
         }
 
-        public Employee GetEmployeeById(string employeeId)
+        public Employee GetEmployeeByName(string name)
         {
-            return _appDbContext.employees.Single(c => c.EmployeeId == employeeId);
+            return _appDbContext.employees.Single(c => c.FirstName + " " + c.LastName == name);
         }
 
         public Employee AddEmployee(Employee employee)
@@ -34,14 +34,16 @@ namespace DensityServer.Api.Models
 
         public Employee UpdateEmployee(Employee employee)
         {
-            employee = _appDbContext.employees.Single(e => e.EmployeeId == employee.EmployeeId);
+            employee = _appDbContext.employees.Single(
+                e => e.FirstName + " " + e.LastName == employee.FirstName + " " + employee.LastName);
             _appDbContext.SaveChanges();
             return employee;
         }
 
         public object DeleteEmployee(Employee employee)
         {
-            var foundEmployee = _appDbContext.employees.Single(e => e.EmployeeId == employee.EmployeeId);
+            var foundEmployee = _appDbContext.employees.Single(
+                e => e.FirstName + " " + e.LastName == employee.FirstName + " " + employee.LastName);
             _appDbContext.employees.Remove(foundEmployee);
             return _appDbContext.SaveChanges();
         }

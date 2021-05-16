@@ -24,21 +24,7 @@ namespace DensityServer.Server.Services
             _httpContextAccessor = httpContextAccessor ?? throw new System.ArgumentNullException(nameof(httpContextAccessor));
         }
         
-        public async Task<IEnumerable<Employee>> GetAllEmployees(IEnumerable<Location> employeeLocations)
-        {
-            List<Employee> employees = await JsonSerializer.DeserializeAsync<List<Employee>>(
-                await _httpClient.GetStreamAsync($"/employee"));
-            
-            if (employees.Select(x => x.FirstName + ", " + x.LastName) 
-                == (_httpContextAccessor.HttpContext.User.Identity.Name).ToList() 
-                && _httpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
-            {
-                foreach (var item in employeeLocations)
-                {  return employees.Where(x => x.City == item.city);  }
-            }
-            return null;
-        }
-
+     
         public async Task<Employee> GetEmployeeDetails(string Id)
         {
             return await JsonSerializer.DeserializeAsync<Employee>
@@ -57,17 +43,19 @@ namespace DensityServer.Server.Services
             if (response.IsSuccessStatusCode)
             {
                 return await JsonSerializer.DeserializeAsync<Employee>(
-                    await _httpClient.GetStreamAsync(string.Format($"employee/{0}", employee.EmployeeId)));
+                    await _httpClient.GetStreamAsync(string.Format($"employee/{0}", employee.FirstName + " " + employee.LastName)));
             }
             return null;
         }
 
-        public async Task UpdateEmployee(Employee employee)
+        public async Task<bool> UpdateEmployee(Employee employee)
         {
             var employeeJson =
                 new StringContent(JsonSerializer.Serialize(employee), Encoding.UTF8, "application/json");
 
-            await _httpClient.PutAsync($"employee/{employee.EmployeeId}", employeeJson);
+            await _httpClient.PutAsync($"employee/{employee.FirstName + " " + employee.LastName}", employeeJson);
+
+            return Task.CompletedTask.IsCompletedSuccessfully;
         }
 
         public async Task DeleteEmployee(string Id)

@@ -1,4 +1,10 @@
 ﻿@page "/Hang/GameInvitation"
+@using DensityServer.Services.Localizer 
+@using Microsoft.AspNetCore.Mvc.Localization 
+
+@inject IViewLocalizer Localizer   
+
+
 @model DensityServer.Services.GameInvitationModel
 @{ ViewData["Title"] = "GameInvitationConfirmation";
     Layout = "~/Pages/Shared/_Layout.cshtml";

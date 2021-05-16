@@ -20,17 +20,7 @@ namespace DensityServer.Server.Pages
         public List<Location> locations { get; set; }
 
         protected AddLocationDialogBase AddLocationDialog { get; set; }
-
-        IEnumerable<Location> employeeLocations { get; set; }
-
-        List<Employee> employees { get; set; } //CoWorkers
           
-
-        protected override async Task OnInitializedAsync()
-        {
-            employeeLocations = (await locationDataService.GetAllLocations()).ToList();
-            employees = (await employeeDataService.GetAllEmployees(employeeLocations)).ToList();
-        }
         protected void QuickAddLocation()
         {
             AddLocationDialog.Show();

@@ -20,15 +20,15 @@
                         <ValidationSummary />
 
                         <div class="form-group">
-                            <label for="lastName">Last name: </label>
-                            <InputText id="lastName" class="form-control" @bind-Value="@employee.lastName" placeholder="Enter last name"></InputText>
-                            <ValidationMessage For="@(() => employee.lastName)" />
+                            <label for="firstName">First name: </label>
+                            <InputText id="firstName" class="form-control" @bind-Value="@employee.FirstName" placeholder="Enter first name"></InputText>
+                            <ValidationMessage For="@(() => employee.FirstName)" />
                         </div>
 
                         <div class="form-group">
-                            <label for="firstName">First name: </label>
-                            <InputText id="firstName" class="form-control" @bind-Value="@employee.firstName" placeholder="Enter first name"></InputText>
-                            <ValidationMessage For="@(() => employee.firstName)" />
+                            <label for="lastName">Last name: </label>
+                            <InputText id="lastName" class="form-control" @bind-Value="@employee.LastName" placeholder="Enter last name"></InputText>
+                            <ValidationMessage For="@(() => employee.LastName)" />
                         </div>
 
                         <div class="form-group">

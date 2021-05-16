@@ -15,15 +15,12 @@ namespace DensityServer.Server.Pages
 
         [Inject]
         public NavigationManager NavigationManager { get; set; }
-
-        [Parameter]
-        public string Id { get; set; }
        
         public Employee employee { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
-            employee = await employeeDataService.GetEmployeeDetails(int.Parse(Id));
+            employee = await employeeDataService.GetEmployeeDetails(employee.FirstName + " " + employee.LastName);
             
         }
     }

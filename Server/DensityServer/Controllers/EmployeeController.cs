@@ -47,7 +47,7 @@ namespace DensityServer.Api.Controllers
         [HttpGet("{id}")]
         public IActionResult GetEmployeeById(string Id)
         {
-            return Ok(_employeeRepository.GetEmployeeById(Id));
+            return Ok(_employeeRepository.GetEmployeeByName(Id));
         }
     }
 }

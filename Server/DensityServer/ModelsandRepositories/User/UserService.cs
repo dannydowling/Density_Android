@@ -1,5 +1,4 @@
-﻿using DensityServer.ModelsandRepositories.Employee;
-using DensityServer.ModelsandRepositories.User;
+﻿using DensityServer.ModelsandRepositories.User;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;

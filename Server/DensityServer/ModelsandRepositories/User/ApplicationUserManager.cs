@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DensityServer.ModelsandRepositories.Employee
+namespace DensityServer.ModelsandRepositories.User
 {
     public class ApplicationUserManager : UserManager<UserModel>
     {

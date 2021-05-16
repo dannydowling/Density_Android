@@ -6,7 +6,9 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace DensityServer.Services.Localizer
-{
+{  
+
+
     public class CultureProviderResolverService : RequestCultureProvider
     {
         private static readonly char[] _cookieSeparator = new[] { '|' };

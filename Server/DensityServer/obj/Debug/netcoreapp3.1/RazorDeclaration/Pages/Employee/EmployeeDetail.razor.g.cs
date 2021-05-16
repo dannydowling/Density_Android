@@ -56,21 +56,42 @@ using Microsoft.AspNetCore.Components.Web;
 #nullable disable
 #nullable restore
 #line 7 "C:\Users\danny\source\repos\Density_Android\Server\DensityServer\_Imports.razor"
-using Microsoft.JSInterop;
+using Microsoft.AspNetCore.Localization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 8 "C:\Users\danny\source\repos\Density_Android\Server\DensityServer\_Imports.razor"
-using DensityServer;
+using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 9 "C:\Users\danny\source\repos\Density_Android\Server\DensityServer\_Imports.razor"
+using DensityServer;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 10 "C:\Users\danny\source\repos\Density_Android\Server\DensityServer\_Imports.razor"
 using DensityServer.Shared;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "C:\Users\danny\source\repos\Density_Android\Server\DensityServer\_Imports.razor"
+using DensityServer.Localization;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "C:\Users\danny\source\repos\Density_Android\Server\DensityServer\_Imports.razor"
+using System.Globalization;
 
 #line default
 #line hidden

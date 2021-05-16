@@ -3,70 +3,55 @@
 @using DensityServer.Server.Pages
 
 <section class="employee-detail">
-    <h1 class="page-title">Details for @employee.firstName @employee.lastName</h1>
+    <h1 class="page-title">Details for @employee.FirstName @employee.LastName</h1>
 
-    @{
-        var leadingFormat = "00000";
-    }
-
-
+    
     <div class="col-12 row">
 
-        <div class="col-10 row">
-            <div class="col-xs-12 col-sm-8">
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Employee ID</label>
-                    <div class="col-sm-8">
-                        <label type="text" class="form-control-plaintext">@employee.employeeId.ToString(leadingFormat)</label>
-                    </div>
-                </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">First name</label>
+            <div class="col-sm-8">
+                <label type="text" readonly class="form-control-plaintext">@employee.FirstName</label>
+            </div>
+        </div>
 
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">First name</label>
-                    <div class="col-sm-8">
-                        <label type="text" readonly class="form-control-plaintext">@employee.firstName</label>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Last name</label>
-                    <div class="col-sm-8">
-                        <label type="text" readonly class="form-control-plaintext">@employee.lastName</label>
-                    </div>
-                </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Last name</label>
+            <div class="col-sm-8">
+                <label type="text" readonly class="form-control-plaintext">@employee.LastName</label>
+            </div>
+        </div>
 
 
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Email</label>
-                    <div class="col-sm-8">
-                        <label type="text" readonly class="form-control-plaintext">@employee.email</label>
-                    </div>
-                </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Email</label>
+            <div class="col-sm-8">
+                <label type="text" readonly class="form-control-plaintext">@employee.Email</label>
+            </div>
+        </div>
 
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Street</label>
-                    <div class="col-sm-8">
-                        <label type="text" readonly class="form-control-plaintext">@employee.street</label>
-                    </div>
-                </div>
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Street</label>
+            <div class="col-sm-8">
+                <label type="text" readonly class="form-control-plaintext">@employee.Street</label>
+            </div>
+        </div>
 
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Zip</label>
-                    <div class="col-sm-8">
-                        <label type="text" readonly class="form-control-plaintext">@employee.zip</label>
-                    </div>
-                </div>
 
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">City</label>
-                    <div class="col-sm-8">
-                        <label type="text" readonly class="form-control-plaintext">@employee.city</label>
-                    </div>
-                </div>
+
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">City</label>
+            <div class="col-sm-8">
+                <label type="text" readonly class="form-control-plaintext">@employee.City</label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Zip</label>
+            <div class="col-sm-8">
+                <label type="text" readonly class="form-control-plaintext">@employee.Zip</label>
             </div>
         </div>
     </div>
-
-
-
+       
 </section>
