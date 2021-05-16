@@ -12,11 +12,6 @@
             <DataAnnotationsValidator />
             <ValidationSummary />
 
-            <div>
-                <hidden for="Rowversion"> </hidden>
-                <ValidationMessage For="@(() => employee.rowVersion)" />
-            </div>
-
             <div class="form-group row">
                 <label for="firstName" class="col-sm-3">First name: </label>
                 <InputText id="firstName" class="form-control col-sm-8" @bind-Value="@employee.FirstName" placeholder="Enter first name"></InputText>
