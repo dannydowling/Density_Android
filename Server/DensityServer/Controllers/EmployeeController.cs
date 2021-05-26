@@ -1,10 +1,10 @@
 ﻿using DensityServer.Api.Models;
+using DensityServer.Data;
+using DensityServer.ModelsandRepositories.User;
 using DensityServer.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace DensityServer.Api.Controllers
 {
@@ -17,12 +17,17 @@ namespace DensityServer.Api.Controllers
     {
         private IEmployeeRepository _employeeRepository { get; set; }
 
-        public EmployeeController(IEmployeeRepository employeeRepository)
+        //the constructor, injects the user database into the employee repository.
+        //need to work on the filtering to select users that match the employee model.
+        public EmployeeController(IEmployeeRepository employeeRepository, [FromServices] UserModelsDbContext userDb )
         {
             _employeeRepository = employeeRepository;
+            foreach (EmployeeModel user in userDb.userModels)
+            {
+                _employeeRepository = (IEmployeeRepository)userDb.Add(user);
+            }                      
         }
-
-        
+                
         //Post: Employee/employee
         [HttpPost("{id}")]
         public IActionResult AddEmployee(EmployeeModel employee)
@@ -39,7 +44,7 @@ namespace DensityServer.Api.Controllers
         // GET: employee/<controller>
         [HttpGet]
         public IActionResult GetEmployees()
-        {
+        {            
             return Ok(_employeeRepository.GetAllEmployees());
         }
 

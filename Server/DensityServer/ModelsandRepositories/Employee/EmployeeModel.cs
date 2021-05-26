@@ -2,10 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace DensityServer.Shared
 {
+    [Table("employeeModels", Schema = "Employees")]
     public class EmployeeModel : UserModel
     {
         public string Street { get; set; }

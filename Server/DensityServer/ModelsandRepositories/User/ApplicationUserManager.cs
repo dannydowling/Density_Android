@@ -2,6 +2,7 @@
 using DensityServer.ModelsandRepositories.User;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System;
@@ -13,18 +14,31 @@ namespace DensityServer.ModelsandRepositories.User
 {
     public class ApplicationUserManager : UserManager<UserModel>
     {
+        private readonly IConfiguration _config;
         private IUserStore<UserModel> _store;
         DbContextOptions<UserModelsDbContext> _dbContextOptions;
 
-        public ApplicationUserManager(DbContextOptions<UserModelsDbContext> dbContextOptions, IUserStore<UserModel> store, IOptions<IdentityOptions> optionsAccessor, IPasswordHasher<UserModel> passwordHasher, IEnumerable<IUserValidator<UserModel>> userValidators, IEnumerable<IPasswordValidator<UserModel>> passwordValidators, ILookupNormalizer keyNormalizer, IdentityErrorDescriber errors, IServiceProvider services, ILogger<UserManager<UserModel>> logger) : base(store, optionsAccessor, passwordHasher, userValidators, passwordValidators, keyNormalizer, errors, services, logger)
+        public ApplicationUserManager(
+            DbContextOptions<UserModelsDbContext> dbContextOptions, 
+            IUserStore<UserModel> store, 
+            IOptions<IdentityOptions> optionsAccessor, 
+            IPasswordHasher<UserModel> passwordHasher, 
+            IEnumerable<IUserValidator<UserModel>> userValidators, 
+            IEnumerable<IPasswordValidator<UserModel>> passwordValidators, 
+            ILookupNormalizer keyNormalizer, 
+            IdentityErrorDescriber errors, 
+            IServiceProvider services, 
+            ILogger<UserManager<UserModel>> logger,
+            IConfiguration config) : base(store, optionsAccessor, passwordHasher, userValidators, passwordValidators, keyNormalizer, errors, services, logger)
         {
             _store = store;
             _dbContextOptions = dbContextOptions;
+            _config = config;
         }
 
         public override async Task<UserModel> FindByEmailAsync (string email)
         {
-            using (var dbContext = new UserModelsDbContext(_dbContextOptions))
+            using (var dbContext = new UserModelsDbContext(_config, _dbContextOptions))
             {
                 return await dbContext.Set<UserModel>().FirstOrDefaultAsync(x => x.Email == email);
             }
@@ -32,7 +46,7 @@ namespace DensityServer.ModelsandRepositories.User
 
         public override async Task<UserModel> FindByIdAsync (string userId)
         {
-            using (var dbContext = new UserModelsDbContext(_dbContextOptions))
+            using (var dbContext = new UserModelsDbContext(_config, _dbContextOptions))
             {
                 Guid id = Guid.Parse(userId);
                 return await dbContext.Set<UserModel>().FirstOrDefaultAsync(x => x.Id == id);
@@ -41,7 +55,7 @@ namespace DensityServer.ModelsandRepositories.User
 
         public override async Task<IdentityResult> UpdateAsync (UserModel user)
         {
-            using (var dbContext = new UserModelsDbContext(_dbContextOptions))
+            using (var dbContext = new UserModelsDbContext(_config, _dbContextOptions))
             {
                 var current = await dbContext.Set<UserModel>().FirstOrDefaultAsync(x => x.Id == user.Id);
                 current.AccessFailedCount = user.AccessFailedCount;
@@ -73,7 +87,7 @@ namespace DensityServer.ModelsandRepositories.User
 
             if (isValid)
             {
-                using (var dbContext = new UserModelsDbContext(_dbContextOptions))
+                using (var dbContext = new UserModelsDbContext(_config, _dbContextOptions))
                 {
                     var current = await dbContext.userModels.FindAsync(user.Id);
                     current.EmailConfirmationDate = DateTime.Now;

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace DensityServer.ModelsandRepositories.User
 {
+    [Table("userModels", Schema = "Users")]
     public class UserModel : IdentityUser<Guid>
     {
         [Display(Name = "FirstName")]

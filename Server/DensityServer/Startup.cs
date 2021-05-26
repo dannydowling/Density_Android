@@ -44,6 +44,8 @@ namespace DensityServer
         public void ConfigureServices(IServiceCollection services)
 
         {
+            services.AddControllers();
+
             services.AddAntiforgery();
 
             services.AddLocalization(options => options.ResourcesPath = "Localization");
@@ -70,18 +72,14 @@ namespace DensityServer
 
             services.AddAuthentication();
 
-            services.AddPooledDbContextFactory<AirportDbContext>(options => options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                       //these are overridden in their onconfiguring methods.
+            services.AddDbContext<UserModelsDbContext>();
+            services.AddDbContext<AirportsDbContext>();
+            services.AddDbContext<GamesDbContext>();
 
-            services.AddPooledDbContextFactory<UserModelsDbContext>(options => options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
-
-            services.AddPooledDbContextFactory<GameDbContext>(options => options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+            services.AddMvc();
 
             services.Configure<EmployeeModel>(Configuration.GetSection("Employee"));
-            // need to find a way to compare the employee's to the list of user claims.
-
             IOptions<EmployeeModel> employeeConfig = (IOptions<EmployeeModel>)employeeConfigOptions;
 
             services.AddAuthorization(options =>
@@ -101,7 +99,6 @@ namespace DensityServer
             services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                .AddEntityFrameworkStores<UserModelsDbContext>();
 
-            //the error parameter configure cannot be null is from the version of .Net.Authorization being 5.0  ... 5/10/21 
             services.AddRazorPages();
 
             services.AddTransient<ApplicationUserManager>();
@@ -116,22 +113,28 @@ namespace DensityServer
             services.AddScoped<MessageModel>();
 
             services.AddHttpClient<ILocationDataService, LocationDataService>(client =>
-            { client.BaseAddress = new Uri("https://localhost:44336/"); })
+            { client.BaseAddress = new Uri("https://localhost:44336/locations/"); })
+              .AddHttpMessageHandler(handler => new RetryPolicy(2, TimeSpan.FromSeconds(20)))
+              .ConfigurePrimaryHttpMessageHandler(handler => new HttpClientHandler()
+              { AutomaticDecompression = System.Net.DecompressionMethods.GZip });
+
+            services.AddHttpClient<IGameDataService, GameModelDataService>(client =>
+            { client.BaseAddress = new Uri("https://localhost:44336/games/"); })
               .AddHttpMessageHandler(handler => new RetryPolicy(2, TimeSpan.FromSeconds(20)))
               .ConfigurePrimaryHttpMessageHandler(handler => new HttpClientHandler()
               { AutomaticDecompression = System.Net.DecompressionMethods.GZip });
 
             services.AddHttpClient<IEmployeeDataService, EmployeeDataService>(client =>
-            { client.BaseAddress = new Uri("https://localhost:44336/"); })
+            { client.BaseAddress = new Uri("https://localhost:44336/employees/"); })
               .AddHttpMessageHandler(handler => new RetryPolicy(2, TimeSpan.FromSeconds(20)));
 
             services.AddHttpClient<MessageModel>(client =>
-            { client.BaseAddress = new Uri("https://localhost:44336/"); })
+            { client.BaseAddress = new Uri("https://localhost:44336/chat/"); })
                 .AddHttpMessageHandler(handler => new RetryPolicy(2, TimeSpan.FromSeconds(20)));
 
             services.Configure<EmailServiceOptions>(Configuration.GetSection("Email"));
             services.AddSingleton<IEmailService, EmailService>();
-
+             
             services.AddSingleton<IGameInvitationService, GameInvitationService>();
 
         }
@@ -157,9 +160,6 @@ namespace DensityServer
 
             app.UseRouting();
 
-            
-            
-
             var supportedCultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
             var localizationOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>().Value;
             app.UseRequestLocalization(localizationOptions);
@@ -167,12 +167,13 @@ namespace DensityServer
             app.UseAuthentication();
             app.UseAuthorization();
 
+            var userProfileInformation = app.ApplicationServices.GetService<IOptions<IdentityUser>>().Value;
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapHub<ChatHub>("/Chat");
+                endpoints.MapHub<ChatHub>($"{userProfileInformation.SecurityStamp}/Chat");
                 endpoints.MapFallbackToPage("/_Host");
-
             });
 
         }

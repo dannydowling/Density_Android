@@ -11,14 +11,11 @@ namespace DensityServer.Server.Services
 {       
     public class ChatClient : IAsyncDisposable
     {        
-        private readonly NavigationManager _navigationManager;
 
         public HubConnection _hubConnection;
                
-        public ChatClient(string username, NavigationManager navigationManager)
+        public ChatClient(string username)
         {
-            _navigationManager = navigationManager;
-
             // save username
             if (string.IsNullOrWhiteSpace(username))
                 throw new ArgumentNullException(nameof(username));

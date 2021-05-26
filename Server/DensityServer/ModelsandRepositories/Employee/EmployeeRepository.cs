@@ -17,24 +17,24 @@ namespace DensityServer.Api.Models
         public IEnumerable<EmployeeModel> GetAllEmployees()
         {
 
-            return _appDbContext.emplpoyeeModels;
+            return _appDbContext.employeeModels;
         }
 
         public EmployeeModel GetEmployeeByName(string name)
         {
-            return _appDbContext.emplpoyeeModels.Single(c => c.FirstName + " " + c.LastName == name);
+            return _appDbContext.employeeModels.Single(c => c.FirstName + " " + c.LastName == name);
         }
 
         public EmployeeModel AddEmployee(EmployeeModel employee)
         {
-            var addedEntity = _appDbContext.emplpoyeeModels.Add(employee);
+            var addedEntity = _appDbContext.employeeModels.Add(employee);
             _appDbContext.SaveChanges();
             return addedEntity.Entity;
         }
 
         public EmployeeModel UpdateEmployee(EmployeeModel employee)
         {
-            employee = _appDbContext.emplpoyeeModels.Single(
+            employee = _appDbContext.employeeModels.Single(
                 e => e.FirstName + " " + e.LastName == employee.FirstName + " " + employee.LastName);
             _appDbContext.SaveChanges();
             return employee;
@@ -42,9 +42,9 @@ namespace DensityServer.Api.Models
 
         public object DeleteEmployee(EmployeeModel employee)
         {
-            var foundEmployee = _appDbContext.emplpoyeeModels.Single(
+            var foundEmployee = _appDbContext.employeeModels.Single(
                 e => e.FirstName + " " + e.LastName == employee.FirstName + " " + employee.LastName);
-            _appDbContext.emplpoyeeModels.Remove(foundEmployee);
+            _appDbContext.employeeModels.Remove(foundEmployee);
             return _appDbContext.SaveChanges();
         }
     }

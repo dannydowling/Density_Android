@@ -113,85 +113,85 @@ using DensityServer.Server.Services;
 #nullable restore
 #line 96 "C:\Users\danny\source\repos\Density_Android\Server\DensityServer\Pages\Shared\NavMenu.razor"
         bool collapseNavMenu = true;
-    string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-    void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-
-    bool chatting = false;
-    string username = null;
-    ChatClient client = null;
-    string message = null;
-    string newMessage = null;
-    List<Message> messages = new List<Message>();
-
-
-    async Task Chat()
-    {
-        if (string.IsNullOrWhiteSpace(username))
+        string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+        void ToggleNavMenu()
         {
-            message = "Please enter a name";
-            return;
-        };
-
-        try
-        {
-
-            messages.Clear();
-
-            client = new ChatClient(username, navigationManager);
-            client.MessageReceived += MessageReceived;
-            Console.WriteLine("Index: chat starting...");
-            await client.StartAsync();
-            Console.WriteLine("Index: chat started?");
-
-            chatting = true;
-        }
-        catch (Exception e)
-        {
-            message = $"ERROR: Failed to start chat client: {e.Message}";
-            Console.WriteLine(e.Message);
-            Console.WriteLine(e.StackTrace);
-        }
-    }
-
-
-    void MessageReceived(object sender, MessageReceivedEventArgs e)
-    {
-        Console.WriteLine($"Blazor: receive {e.Username}: {e.Message}");
-        bool isMine = false;
-        if (!string.IsNullOrWhiteSpace(e.Username))
-        {
-            isMine = string.Equals(e.Username, username, StringComparison.CurrentCultureIgnoreCase);
+            collapseNavMenu = !collapseNavMenu;
         }
 
-        var newMsg = new Message(e.Username, e.Message, isMine);
-        messages.Add(newMsg);
+        bool chatting = false;
+        string username = null;
+        ChatClient client = null;
+        string message = null;
+        string newMessage = null;
+        List<Message> messages = new List<Message>();
 
-        // inform viewcontroller that the UI needs updating
-        StateHasChanged();
-    }
 
-    async Task DisconnectAsync()
-    {
-        if (chatting)
+        async Task Chat()
         {
-            await client.StopAsync();
-            client = null;
-            message = "chat ended";
-            chatting = false;
-        }
-    }
+            if (string.IsNullOrWhiteSpace(username))
+            {
+                message = "Please enter a name";
+                return;
+            };
 
-    async Task SendAsync()
-    {
-        if (chatting && !string.IsNullOrWhiteSpace(newMessage))
-        {
-            await client.SendAsync(newMessage);
-            newMessage = "";
+            try
+            {
+
+                messages.Clear();
+
+                client = new ChatClient(username);
+                client.MessageReceived += MessageReceived;
+                Console.WriteLine("Chat starting...");
+                await client.StartAsync();
+                Console.WriteLine("Chat started");
+
+                chatting = true;
+            }
+            catch (Exception e)
+            {
+                message = $"ERROR: Failed to start chat client: {e.Message}";
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+            }
         }
-    }
+
+
+        void MessageReceived(object sender, MessageReceivedEventArgs e)
+        {
+            Console.WriteLine($"Chat: receive message {e.Username}: {e.Message}");
+            bool isMine = false;
+            if (!string.IsNullOrWhiteSpace(e.Username))
+            {
+                isMine = string.Equals(e.Username, username, StringComparison.CurrentCultureIgnoreCase);
+            }
+
+            var newMsg = new Message(e.Username, e.Message, isMine);
+            messages.Add(newMsg);
+
+            // inform viewcontroller that the UI needs updating
+            StateHasChanged();
+        }
+
+        async Task DisconnectAsync()
+        {
+            if (chatting)
+            {
+                await client.StopAsync();
+                client = null;
+                message = "Chat ended";
+                chatting = false;
+            }
+        }
+
+        async Task SendAsync()
+        {
+            if (chatting && !string.IsNullOrWhiteSpace(newMessage))
+            {
+                await client.SendAsync(newMessage);
+                newMessage = "";
+            }
+        }
 
     class Message
     {

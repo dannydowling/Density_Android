@@ -13,7 +13,7 @@ namespace DensityServer.Server.Pages
         public IEmployeeDataService employeeDataService { get; set; }
 
         [Inject]
-        public ILocationDataService locationDataService { get; set; }
+        public IGameDataService locationDataService { get; set; }
 
         public List<EmployeeModel> employees { get; set; }
         protected IEnumerable<string> employeeLocations { get; set; }
