@@ -10,7 +10,7 @@ namespace DensityServer.Server.Pages
     public class LocationDetailBase : ComponentBase
     {
         [Inject]
-        public IGameDataService locationDataService { get; set; }
+        public ILocationDataService locationDataService { get; set; }
 
         [Parameter]
         public string Id { get; set; }

@@ -14,7 +14,7 @@ namespace DensityServer.Server.Pages
         public EventCallback<bool> closeLocationEventCallback { get; set; }
 
         [Inject]
-        protected IGameDataService locationDataService { get; set; }
+        protected ILocationDataService locationDataService { get; set; }
         protected Location location { get; set; }
 
         public void Show()

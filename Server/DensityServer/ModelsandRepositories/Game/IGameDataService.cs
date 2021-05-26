@@ -12,5 +12,6 @@ namespace DensityServer.Server.Services
         Task<GameModel> AddGameModel(GameModel game);
         Task UpdateGameModel(GameModel game);
         Task DeleteGameModel(string Id);
+        
     }
 }

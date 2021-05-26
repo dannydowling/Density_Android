@@ -10,7 +10,7 @@ namespace DensityServer.Server.Pages
     public class LocationEditBase : ComponentBase
     {
         [Inject]
-        public IGameDataService locationDataService { get; set; }
+        public ILocationDataService locationDataService { get; set; }
 
         [Inject] 
         public NavigationManager NavigationManager { get; set; }

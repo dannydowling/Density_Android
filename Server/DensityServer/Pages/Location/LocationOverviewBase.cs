@@ -15,7 +15,7 @@ namespace DensityServer.Server.Pages
 
 
         [Inject]
-        public IGameDataService locationDataService { get; set; }
+        public ILocationDataService locationDataService { get; set; }
 
         public List<Location> locations { get; set; }
 
