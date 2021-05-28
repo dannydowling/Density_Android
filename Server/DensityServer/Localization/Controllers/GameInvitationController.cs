@@ -35,6 +35,9 @@ namespace DensityServer.Controllers
                     "GameInvitation",
                     new
                     {
+                        
+                        //make it so that remotesecuritystamp is sent as the value of the identity user security stamp, probably done in the setter...
+                        gameInvitationModel.RemoteSecurityStamp,
                         gameInvitationModel.InvitedBy,
                         gameInvitationModel.EmailTo
                     },
@@ -42,7 +45,7 @@ namespace DensityServer.Controllers
                     Request.Host.ToString()]);
 
                 var invitation = gameInvitationService.Add(gameInvitationModel).Result;
-                return RedirectToAction("GameInvitationConfirmation", new { id = invitation.Id });
+                return RedirectToAction("GameInvitationConfirmation", new { id = invitation.gameId });
             }
             return View(gameInvitationModel);
         }

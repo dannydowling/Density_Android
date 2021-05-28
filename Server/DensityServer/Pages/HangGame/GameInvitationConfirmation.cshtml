@@ -1,8 +1,8 @@
 ﻿@page "/Hang/GameInvitation"
-@using DensityServer.Services.Localizer 
-@using Microsoft.AspNetCore.Mvc.Localization 
+@using DensityServer.Services.Localizer
+@using Microsoft.AspNetCore.Mvc.Localization
 
-@inject IViewLocalizer Localizer   
+@inject IViewLocalizer Localizer
 
 
 @model DensityServer.Services.GameInvitationModel
@@ -13,8 +13,11 @@
 <h1>@Localizer[$"You have been invited by {0} to play a game of Hang, please wait until {0} is connected", Model.EmailTo]</h1>
 
 
-@section Scripts{ 
-<script>
-    $(document).ready(function () { GameInvitationConfirmation('Model.Id'); });
+@section Scripts{
+    <script>
+        $(document).ready(function () { GameInvitationConfirmation('Model.Id', 'Model.RemoteSecurityStamp'); });
     </script>
 }
+
+ @*$(document).ready(function () { GameInvitationConfirmation('Model.Id'); });*@ 
+

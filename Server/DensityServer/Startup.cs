@@ -19,7 +19,6 @@ using Microsoft.Extensions.Options;
 using System.Net.Http;
 using DensityServer.Services.GameInvitation;
 using System.Globalization;
-using DensityServer.Services.Localizer;
 using DensityServer.ModelsandRepositories.User;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Localization;
@@ -42,20 +41,18 @@ namespace DensityServer
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
-
         {
-            services.AddControllers();
-
             services.AddAntiforgery();
 
             services.AddLocalization(options => options.ResourcesPath = "Localization");
-            services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix, options => options.ResourcesPath = "Languages");
+            services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix, 
+                options => options.ResourcesPath = "Languages");
 
             services.Configure<RequestLocalizationOptions>(options =>
             {
                 var supportedCultures = new[]
                  {
-                      new CultureInfo("en"),
+                      new CultureInfo("en-US"),
                       new CultureInfo("de"),
                       new CultureInfo("fr"),
                       new CultureInfo("es"),
@@ -65,19 +62,19 @@ namespace DensityServer
                       new CultureInfo("zh"),
                       new CultureInfo("en-GB")
     };
-                options.DefaultRequestCulture = new RequestCulture("en-GB");
+
+                options.DefaultRequestCulture = new RequestCulture("en-US");
                 options.SupportedCultures = supportedCultures;
                 options.SupportedUICultures = supportedCultures;
             });
 
+            services.AddControllers();
             services.AddAuthentication();
 
-                       //these are overridden in their onconfiguring methods.
+            //these are overridden in their onconfiguring methods.
             services.AddDbContext<UserModelsDbContext>();
             services.AddDbContext<AirportsDbContext>();
             services.AddDbContext<GamesDbContext>();
-
-            services.AddMvc();
 
             services.Configure<EmployeeModel>(Configuration.GetSection("Employee"));
             IOptions<EmployeeModel> employeeConfig = (IOptions<EmployeeModel>)employeeConfigOptions;
@@ -96,16 +93,16 @@ namespace DensityServer
 
 
             services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<IdentityUser>>();
+            services.AddTransient<ApplicationUserManager>();
             services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
                .AddEntityFrameworkStores<UserModelsDbContext>();
 
-            services.AddRazorPages();
-
-            services.AddTransient<ApplicationUserManager>();
-
+            services.AddRazorPages();            
+            services.Configure<EmailServiceOptions>(Configuration.GetSection("Email"));
+            services.AddSingleton<IEmailService, EmailService>();
+            services.AddSingleton<IGameInvitationService, GameInvitationService>();
             services.AddSingleton<ILocationDataService, LocationDataService>();
             services.AddScoped<ILocationRepository, LocationRepository>();
-
             services.AddSingleton<IEmployeeDataService, EmployeeDataService>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
@@ -131,12 +128,6 @@ namespace DensityServer
             services.AddHttpClient<MessageModel>(client =>
             { client.BaseAddress = new Uri("https://localhost:44336/chat/"); })
                 .AddHttpMessageHandler(handler => new RetryPolicy(2, TimeSpan.FromSeconds(20)));
-
-            services.Configure<EmailServiceOptions>(Configuration.GetSection("Email"));
-            services.AddSingleton<IEmailService, EmailService>();
-             
-            services.AddSingleton<IGameInvitationService, GameInvitationService>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -168,14 +159,19 @@ namespace DensityServer
             app.UseAuthorization();
 
             var userProfileInformation = app.ApplicationServices.GetService<IOptions<IdentityUser>>().Value;
+            var gameInvitationModel = app.ApplicationServices.GetService <IOptions<GameInvitationModel>>().Value;
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                if (!string.IsNullOrEmpty(gameInvitationModel.RemoteSecurityStamp) 
+                || !string.IsNullOrWhiteSpace(gameInvitationModel.RemoteSecurityStamp.Trim()))
+                {
+                    endpoints.MapHub<ChatHub>(string.Format($"{0}/Chat", gameInvitationModel.RemoteSecurityStamp));
+                }
                 endpoints.MapHub<ChatHub>($"{userProfileInformation.SecurityStamp}/Chat");
                 endpoints.MapFallbackToPage("/_Host");
             });
-
         }
     }
 }

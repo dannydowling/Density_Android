@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DensityServer.Api.Controllers
 {
-    [Route("Airport/[controller]")]
+    [Route("/[controller]")]
     [ApiController]
     public class LocationController : Controller
     {

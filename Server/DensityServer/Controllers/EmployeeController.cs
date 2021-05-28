@@ -11,7 +11,7 @@ namespace DensityServer.Api.Controllers
     [Authorize(Policy = "CheckPassword")]
     [Authorize(Policy = "CheckFirstName")]
     [Authorize(Policy = "CheckLastName")]
-    [Route("Employee/[controller]")]
+    [Route("/[controller]")]
     [ApiController]
     public class EmployeeController : Controller
     {
