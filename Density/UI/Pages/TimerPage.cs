@@ -8,8 +8,6 @@ namespace Density
     class TimerPage : ContentPage
     {
         public Label remainTime { get; set; }
-
-        
         public void TimerCreate(WeatherClass weatherClass)
         {
             try

@@ -14,6 +14,8 @@ namespace Density
         private Label AirTemperature_Label { get; set; }
         private Label AirPressure_Label { get; set; }
 
+       
+             
         private Picker StatePicker { get; set; }
         private Picker CityPicker { get; set; }
         private Picker AirportPicker { get; set; }
@@ -23,6 +25,16 @@ namespace Density
         Dictionary<string, List<string>> cities { get; set; }
         Dictionary<string, List<string>> airports { get; set; }
 
+        public Image hydrometer_fluid_background { get; set; }
+        private static double hydrometer_Y_scale { get; set; }
+        private Image hydrometer_glass_foreground { get; set; }
+
+
+        public static void HydrometerScaled(object sender, HydrometerMovedEventArgs e)
+        {
+            hydrometer_Y_scale = e.ScaleFactor;            
+        }
+            
         public void DensityPageCreate(
             LocationHelper locationHelper,
             WeatherHelper weatherHelper,
@@ -38,9 +50,18 @@ namespace Density
                   .ContinueWith<object>(antecedent => weatherHelper = new WeatherHelper())
                   .ContinueWith<object>(antecedent => densityHelper = new DensityHelper());
             }
-
+         
             try
             {
+                hydrometer_fluid_background.ScaleY = hydrometer_Y_scale; 
+                hydrometer_fluid_background.WidthRequest = 150;
+                hydrometer_fluid_background.Source = "Hydrometer_Fluid.png";
+
+                hydrometer_glass_foreground = new Image();
+                hydrometer_glass_foreground.HeightRequest = 150;
+                hydrometer_glass_foreground.WidthRequest = 150;
+                hydrometer_glass_foreground.Source = "Hydrometer_Glass.png";
+
                 gallonsEntryLabel = new Entry();
                 gallonsEntryLabel.BindingContext = gallonsEntryLabel;
                 gallonsEntryLabel.Text = "";

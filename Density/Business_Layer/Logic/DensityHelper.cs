@@ -7,7 +7,8 @@ namespace Density.Business_Layer.Logic
 {
     public class DensityHelper
     {
-        
+        public event EventHandler<HydrometerMovedEventArgs> HydrometerMoved;
+
         internal DensityClass ConvertToDensity(WeatherClass weatherClass, DensityClass densityModel)
         {
             if (densityModel == null)
@@ -34,6 +35,8 @@ namespace Density.Business_Layer.Logic
                 for (int f = 6900; ; decrementer--)              
                 {
                     density = f;
+                                                                             //can set a delay here to animate over a time later
+                    HydrometerMoved += DensityPage.HydrometerScaled;
                 }
             }
 
@@ -41,5 +44,10 @@ namespace Density.Business_Layer.Logic
 
             return densityModel;
         }
+    }
+
+    public class HydrometerMovedEventArgs : EventArgs
+    {
+        public double ScaleFactor { get; set; }
     }
 }
