@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "XhOJC/uIBv7WhNvbXefNVmrvI5QHEcI/B1QXj/DCHfgYuGEBABYFLCUdYpiAKl05M21QzbbILB/C/Refx5eyYA==",
+  "dgSpecHash": "xxuCGyJCBmblPrr3Kjo4y40Mpvhp4oFROn1q1qiZCh/rcJafip/72gYi8uji+ey/9PuN5skwJm6croGn7m8hiQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\danny\\source\\repos\\Density_Android\\Server\\DensityServer\\DensityServer.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\danny\\.nuget\\packages\\documentformat.openxml\\2.13.0\\documentformat.openxml.2.13.0.nupkg.sha512",
     "C:\\Users\\danny\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.0.3\\microsoft.aspnetcore.antiforgery.2.0.3.nupkg.sha512",
     "C:\\Users\\danny\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.0.3\\microsoft.aspnetcore.authentication.abstractions.2.0.3.nupkg.sha512",
     "C:\\Users\\danny\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.0.3\\microsoft.aspnetcore.authentication.core.2.0.3.nupkg.sha512",
@@ -164,6 +165,7 @@
     "C:\\Users\\danny\\.nuget\\packages\\system.io.compression.zipfile\\4.3.0\\system.io.compression.zipfile.4.3.0.nupkg.sha512",
     "C:\\Users\\danny\\.nuget\\packages\\system.io.filesystem\\4.3.0\\system.io.filesystem.4.3.0.nupkg.sha512",
     "C:\\Users\\danny\\.nuget\\packages\\system.io.filesystem.primitives\\4.3.0\\system.io.filesystem.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\danny\\.nuget\\packages\\system.io.packaging\\4.7.0\\system.io.packaging.4.7.0.nupkg.sha512",
     "C:\\Users\\danny\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
     "C:\\Users\\danny\\.nuget\\packages\\system.linq\\4.3.0\\system.linq.4.3.0.nupkg.sha512",
     "C:\\Users\\danny\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",

@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "DocumentFormat.OpenXml/2.13.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Packaging": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/DocumentFormat.OpenXml.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/DocumentFormat.OpenXml.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Antiforgery/2.0.3": {
         "type": "package",
         "dependencies": {
@@ -2366,6 +2378,15 @@
           "lib/netstandard1.3/System.IO.FileSystem.Primitives.dll": {}
         }
       },
+      "System.IO.Packaging/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.IO.Packaging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.IO.Packaging.dll": {}
+        }
+      },
       "System.IO.Pipelines/5.0.1": {
         "type": "package",
         "compile": {
@@ -3398,6 +3419,28 @@
     }
   },
   "libraries": {
+    "DocumentFormat.OpenXml/2.13.0": {
+      "sha512": "0m9oxdnAwIyq6+0L/bGfyPkkakPuVI/zT5AYQgN5jbMmNJkCVFLiZmtjtqXrTbStCBJu/yxS3nS/6zTe2mT1Nw==",
+      "type": "package",
+      "path": "documentformat.openxml/2.13.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "documentformat.openxml.2.13.0.nupkg.sha512",
+        "documentformat.openxml.nuspec",
+        "icon.png",
+        "lib/net35/DocumentFormat.OpenXml.dll",
+        "lib/net35/DocumentFormat.OpenXml.xml",
+        "lib/net40/DocumentFormat.OpenXml.dll",
+        "lib/net40/DocumentFormat.OpenXml.xml",
+        "lib/net46/DocumentFormat.OpenXml.dll",
+        "lib/net46/DocumentFormat.OpenXml.xml",
+        "lib/netstandard1.3/DocumentFormat.OpenXml.dll",
+        "lib/netstandard1.3/DocumentFormat.OpenXml.xml",
+        "lib/netstandard2.0/DocumentFormat.OpenXml.dll",
+        "lib/netstandard2.0/DocumentFormat.OpenXml.xml"
+      ]
+    },
     "Microsoft.AspNetCore.Antiforgery/2.0.3": {
       "sha512": "ohhHt48DKvTIeu9n7B/XpF52buHQ8MmdOqm7B6Xyg2R7gj4wCPtyaZqb9qZzh1URPdcHESSaGmh6FO+LBIl2EQ==",
       "type": "package",
@@ -7467,6 +7510,33 @@
         "system.io.filesystem.primitives.nuspec"
       ]
     },
+    "System.IO.Packaging/4.7.0": {
+      "sha512": "9VV4KAbgRQZ79iEoG40KIeZy38O30oWwewScAST879+oki8g/Wa2HXZQgrhDDxQM4GkP1PnRJll05NMiVPbYAw==",
+      "type": "package",
+      "path": "system.io.packaging/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net46/System.IO.Packaging.dll",
+        "lib/net46/System.IO.Packaging.xml",
+        "lib/netstandard1.3/System.IO.Packaging.dll",
+        "lib/netstandard1.3/System.IO.Packaging.xml",
+        "lib/netstandard2.0/System.IO.Packaging.dll",
+        "lib/netstandard2.0/System.IO.Packaging.xml",
+        "ref/net46/System.IO.Packaging.dll",
+        "ref/net46/System.IO.Packaging.xml",
+        "ref/netstandard1.3/System.IO.Packaging.dll",
+        "ref/netstandard1.3/System.IO.Packaging.xml",
+        "ref/netstandard2.0/System.IO.Packaging.dll",
+        "ref/netstandard2.0/System.IO.Packaging.xml",
+        "system.io.packaging.4.7.0.nupkg.sha512",
+        "system.io.packaging.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.IO.Pipelines/5.0.1": {
       "sha512": "qEePWsaq9LoEEIqhbGe6D5J8c9IqQOUuTzzV6wn1POlfdLkJliZY3OlB0j0f17uMWlqZYjH7txj+2YbyrIA8Yg==",
       "type": "package",
@@ -10373,6 +10443,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "DocumentFormat.OpenXml >= 2.13.0",
       "Microsoft.AspNetCore.Authorization >= 3.1.15",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 3.1.14",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.5",
@@ -10432,6 +10503,10 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "DocumentFormat.OpenXml": {
+            "target": "Package",
+            "version": "[2.13.0, )"
+          },
           "Microsoft.AspNetCore.Authorization": {
             "target": "Package",
             "version": "[3.1.15, )"
@@ -10493,7 +10568,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
