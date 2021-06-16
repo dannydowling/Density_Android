@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using DensityServer.ModelsandRepositories.Manifest;
-using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.Packaging;
-using DocumentFormat.OpenXml.Spreadsheet;
+using static DensityServer.ModelsandRepositories.Manifest.ManifestModel;
 
 namespace DensityServer.Server.Services
 {
@@ -17,6 +14,8 @@ namespace DensityServer.Server.Services
         private HttpClient _httpClient { get; set; }
         public ManifestModelDataService(HttpClient httpClient)
         { _httpClient = httpClient; }
+
+        public EventHandler<ManifestStateChangedEventArgs> manifestChanged { get; set; }
 
         public async Task<ManifestModel> AddManifestModel(ManifestModel manifest)
         {
@@ -46,46 +45,57 @@ namespace DensityServer.Server.Services
         public async Task<ManifestModel> GetManifestModelById(string Id)
         {
             return await JsonSerializer.DeserializeAsync<ManifestModel>
-                (await _httpClient.GetStreamAsync($"/manifests/{Id}"), 
+                (await _httpClient.GetStreamAsync($"/manifests/{Id}"),
                 new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
 
+            //ready,
+            //changes_pending,
+            //read_only,
+            //write_only,
+            //final
 
-        public async Task<string> ReplaceCellValueAsync(string fileName, string sheetName, string addressName, string newValue)
+        public async Task<ManifestModel> ReadManifestEnum(string Id)
         {
-            // Retrieve the value of a cell, given a file name, sheet name, 
-            // and address name.
-            OpenXmlElement value = null;
-            
-            using (SpreadsheetDocument document =
-                SpreadsheetDocument.Open(fileName, false))
-            {                
-                WorkbookPart wbPart = document.WorkbookPart;                
-                Sheet theSheet = wbPart.Workbook.Descendants<Sheet>().
-                  Where(s => s.Name == sheetName).FirstOrDefault();
+            //get manifest by its ID
+            ManifestModel manifest =  await JsonSerializer.DeserializeAsync<ManifestModel>
+                 (await _httpClient.GetStreamAsync($"/manifests/{Id}"),
+                 new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+  
+            //convert the integer being stored into the enum
+        StateEnum dbManifestState = (StateEnum)manifest.manifestState;
 
-                if (theSheet == null)
-                {
-                    throw new ArgumentException("sheetName");
-                }
-                
-                WorksheetPart wsPart = (WorksheetPart)(wbPart.GetPartById(theSheet.Id));
-                
-                Cell theCell = wsPart.Worksheet.Descendants<Cell>().
-                  Where(c => c.CellReference == addressName).FirstOrDefault();
+           //raise an event that shows what state the manifest is now in.
+            manifestChanged?.Invoke(this, new ManifestStateChangedEventArgs { ManifestState = ((int)dbManifestState) });
 
-
-                // The cell will contain a string reference and not the actual value in the cell.
-                // I'm hoping that the Sum function will still calculate a total, referencing the string.
-                theCell.CellValue.Text = newValue;               
-
-                var manifestJson =
-                new StringContent(JsonSerializer.Serialize(document), Encoding.UTF8, "application/json");
-
-                await _httpClient.PatchAsync($"/manifests/{0}", manifestJson);
-                return value.ToString();
+            switch (dbManifestState)
+            {
+                case StateEnum.ready:
+                     manifest.ready = true;                   
+                    break;
+                case StateEnum.changes_pending:
+                    manifest.changes_pending = true;
+                    break;
+                case StateEnum.read_only:
+                    manifest.read_only = true;
+                    break;
+                case StateEnum.write_only:
+                    manifest.write_only = true;
+                    break;
+                case StateEnum.final:
+                    manifest.final = true;
+                    break;
+                default:
+                    break;
             }
         }
+        public class ManifestStateChangedEventArgs : EventArgs
+        {
+            public int ManifestState { get; set; }
+        }
+
+
     }
 }
+
 

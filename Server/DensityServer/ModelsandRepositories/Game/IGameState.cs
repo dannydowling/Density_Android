@@ -13,6 +13,4 @@ namespace DensityServer.ModelsandRepositories.Game
         public GameModel Increment_GameState(int gameState);
 
     }
-
-
 }
